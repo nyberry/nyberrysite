@@ -73,9 +73,10 @@ title: US-UK lab unit converter
 </form>
 
 <style>
-  table {  margin: 0 auto; border-collapse: collapse; width: 100%; max-width: 800px;  table-layout: fixed; }
-  th, td { padding: 0.5rem; border: 1px solid #ccc; }
+  table {  margin: 0 auto; border-collapse: collapse; width: 100%; max-width: 600px;  table-layout: fixed; }
+  th, td { padding: 0.5rem; border: 1px solid #ccc; width: 25%; text-align: center;}
   .flag { color: red; font-size: 1.2rem; }
+  input { width: 90%; max-width: 100px; box-sizing: border-box;}
 </style>
 
 <!-- lab converter info (initially hidden) -->
