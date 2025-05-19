@@ -1,0 +1,59 @@
+---
+layout: layout.html
+title: BMI Calculator
+---
+
+<h2>BMI Calculator</h2>
+
+<form id="bmi-form">
+  <label for="height">Height (cm):</label>
+  <input type="number" id="height" required>
+  <br><br>
+  <label for="weight">Weight (kg):</label>
+  <input type="number" id="weight" required>
+  <br><br>
+  <button type="submit">Calculate BMI</button>
+</form>
+
+<h3 id="bmi-result"></h3>
+
+<!-- BMI info (initially hidden) -->
+<div id="bmi-info" style="display: none; text-align: centre; margin-top: 2rem;">
+
+  <hr>
+
+  <p>The Body Mass Index (BMI) estimates a person’s body fat based on their height and weight. It can be used to screen for obesity, which is linked to a range of health problems, including type 2 diabetes, heart disease, and some cancers.</p>
+
+  <p>BMI has important limitations when applied to individuals, and should be interpreted alongside other indicators such as waist circumference, fitness level, and metabolic health.</p>
+
+  <p>BMI does not differentiate between fat and muscle mass. Athletes or individuals with higher muscle content may be classified as overweight or even obese, despite having low body fat and excellent cardiovascular health. Similarly, BMI does not account for fat distribution, which is an important factor in health risk. Visceral fat (fat around the abdominal organs) poses a higher health risk than fat stored in other areas, but BMI cannot distinguish this.</p>
+
+  <p>BMI does not account for age, sex, or ethnicity, all of which influence body composition. Older adults may lose muscle mass and gain fat without a significant change in BMI, and certain ethnic groups may experience metabolic risks at lower BMI thresholds than others.</p>
+
+  <p>According to the <a href="https://digital.nhs.uk/data-and-information/publications/statistical/health-survey-for-england/2021">Health Survey for England 2021</a>, 64% of adults in the UK are classified as overweight or obese. Around 28% are considered obese (BMI ≥ 30). BMI can form part of a wider conversation about individual health and lifestyle.</p>
+
+  <img src="/assets/images/scales.png" alt="scales" width=200px>
+
+</div>
+
+<script>
+  document.getElementById('bmi-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+    const height = parseFloat(document.getElementById('height').value) / 100;
+    const weight = parseFloat(document.getElementById('weight').value);
+    const bmi = (weight / (height * height)).toFixed(1);
+    
+    let category = '';
+    if (bmi < 18.5) category = 'Underweight';
+    else if (bmi < 25) category = 'Normal weight';
+    else if (bmi < 30) category = 'E66 Overweight';
+    else if (bmi < 35) category = 'E66.811 Obesity 1';
+    else if (bmi < 40) category = 'E66.812 Obesity 2';
+    else category = 'E66.813 Obesity 3';
+
+    document.getElementById('bmi-result').textContent = `${bmi} kg/m² (${category})`;
+
+    // Show the BMI information section
+    document.getElementById('bmi-info').style.display = 'block';
+  });
+</script>
