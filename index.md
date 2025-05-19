@@ -6,7 +6,7 @@ title: nyberry
 <img class="profile_img" src="/assets/images/headshot.jpg" alt="Centered Image">
 
 ### Hi, I'm Nick.
-Here are some things you may find interesting or useful.
+Here are some interesting, useful things.
 
 <div class="icons">
     <a href="https://www.linkedin.com/in/nick-berry-767329232/" aria-label="LinkedIn">
