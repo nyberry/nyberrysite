@@ -3,7 +3,7 @@ layout: layout.html
 title: nyberry
 ---
 
-<img src="assets/images/headshot.jpg" alt="Centered Image">
+<img class="profile_img" src="/assets/images/headshot.jpg" alt="Centered Image">
 
 ### Hi, I'm Nick.
 Here are some things you may find interesting or useful.

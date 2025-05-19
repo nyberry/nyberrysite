@@ -79,15 +79,19 @@ nav .title {
 
 .container {
     text-align: center;
-    margin-top: 60px;
     padding: 1rem;
+    max-width: 1000px;
+    margin: 60px auto 0 auto;
+    width: 100%;
+    box-sizing: border-box;
 }
 
-img {
+.profile_img {
     max-width: 200px;
     height: auto;
     border-radius: 50%;
 }
+
 
 .icons {
     display: flex;
@@ -103,3 +107,6 @@ img {
     text-decoration: none;
 }
 
+img {
+    max-width: 100%
+}
