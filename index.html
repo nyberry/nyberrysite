@@ -10,15 +10,19 @@
 <body>
     <nav>
         <div class="title">nyberry</div>
-        <div class="dropdown">
-            <button>Menu ▾</button>
-            <div class="dropdown-content">
-                <a href="#bio">Bio</a>
-                <a href="#blog">Blog</a>
-                <a href="#tools">Tools</a>
-                <a href="#ai">AI</a>
-            </div>
-        </div>
+        <ul class="menu">
+            <li><a href="#bio">Bio</a></li>
+            <li><a href="#blog">Blog</a></li>
+            <li><a href="#ai">AI</a></li>
+            <li class="dropdown">
+                <a href="#">Tools ▾</a>
+                <ul class="dropdown-content">
+                    <li><a href="#tool1">Tool 1</a></li>
+                    <li><a href="#tool2">Tool 2</a></li>
+                    <!-- Add more tools as needed -->
+                </ul>
+            </li>
+        </ul>
     </nav>
 
     <div class="container" id="bio">
@@ -42,27 +46,6 @@
                 </svg>
             </a>
         </div>
-    </div>
-
-    <!-- Placeholder sections -->
-    <div id="bio" class="container">
-        <h2>Bio</h2>
-        <p>About me.</p>
-    </div>
-
-    <div id="blog" class="container">
-        <h2>Blog</h2>
-        <p>Thoughts on healthcare, tech and other stuff.</p>
-    </div>
-
-    <div id="tools" class="container">
-        <h2>Tools</h2>
-        <p>A collection of tools and utilities.</p>
-    </div>
-
-    <div id="ai" class="container">
-        <h2>AI</h2>
-        <p>Practical uses of Artificial intelligence in healthcare</p>
     </div>
 </body>
 </html>
