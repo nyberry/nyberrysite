@@ -1,42 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>NYBerry</title>
-    <style>
-        body {
-            margin: 0;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: #cccccc;
-            font-family: sans-serif;
-        }
-        .container {
-            text-align: center;
-        }
-        img {
-            max-width: 50%;
-            height: auto;
-            border-radius: 50%; /* Optional: make image circular */
-        }
-        .icons {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            font-size: 2rem;
-            padding-top: 15px;
-            color: #0c4a6e; /* Tailwind's sky-700 */
-        }
-        .icons a {
-            color: inherit;
-            text-decoration: none;
-        }
-    </style>
+        <meta charset="UTF-8">
+        <title>nyberry</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="assets/css/styles.css">
 </head>
+
 <body>
-    <div class="container">
+    <nav>
+        <div class="title">nyberry</div>
+        <div class="dropdown">
+            <button>Menu ▾</button>
+            <div class="dropdown-content">
+                <a href="#bio">Bio</a>
+                <a href="#blog">Blog</a>
+                <a href="#tools">Tools</a>
+                <a href="#ai">AI</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container" id="bio">
         <img src="assets/images/headshot.jpg" alt="Centered Image">
         <h2>Hi, I'm Nick.</h2>
         <p>Here are some things you may find interesting or useful.</p>
@@ -57,6 +42,27 @@
                 </svg>
             </a>
         </div>
+    </div>
+
+    <!-- Placeholder sections -->
+    <div id="bio" class="container">
+        <h2>Bio</h2>
+        <p>About me.</p>
+    </div>
+
+    <div id="blog" class="container">
+        <h2>Blog</h2>
+        <p>Thoughts on healthcare, tech and other stuff.</p>
+    </div>
+
+    <div id="tools" class="container">
+        <h2>Tools</h2>
+        <p>A collection of tools and utilities.</p>
+    </div>
+
+    <div id="ai" class="container">
+        <h2>AI</h2>
+        <p>Practical uses of Artificial intelligence in healthcare</p>
     </div>
 </body>
 </html>
