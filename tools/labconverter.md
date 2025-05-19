@@ -86,13 +86,13 @@ title: US-UK lab unit converter
 
 ### Americans Use Different Lab Units
 
-The US prefers to measure things in milligrams per deciliter (mg/dL) - how many crumbs of stuff are floating in a small tube of blood. Meanwhile, the UK and most of the rest of the world use millimoles per liter (mmol/L) - the metric way of stating how many molecules of the stuff are in there.
+The US prefers to measure things in milligrams per deciliter (mg/dL) - how heavy the stuff floating the blood is. Meanwhile, the UK and most of the rest of the world use millimoles per liter (mmol/L) - the metric way of stating how many molecules of the stuff are in there.
 
-It’s a bit like measuring your coffee in beans, versus counting how many molecules of caffeine you’re ingesting. Same buzz, different number.
+It’s a bit like measuring your coffee in ounces, versus counting how many molecules of caffeine you’re ingesting. Same buzz, different number.
 
-And then there’s HbA1c. In the US, this is expressed as a percentage (of glycated hemoglobin), while in the UK it’s measured in mmol/mol. No-one knows why, but apparently no global meeting has ever ended with “Let’s just agree on this one.”
+And then there’s HbA1c. In the US, this is expressed as a percentage (of glycated hemoglobin), while in the UK it’s measured in mmol/mol.
 
-So if you’ve ever looked at a lab report from across the Atlantic and thought, “That number looks way off” - this converter is here to help you bridge The Pond.
+So if you’ve ever looked at a lab report from across the Atlantic and thought “That number looks way off”, this converter is here to help you bridge The Pond.
 
 <img src="/assets/images/USUKbridge.png" alt="cartoon" width = 400>
 
