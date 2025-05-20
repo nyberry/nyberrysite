@@ -1,7 +1,7 @@
 ---
 title: "Moser’s Circle Problem - and why we still need GPs"
 layout: layout.html
-date: 2024-03-24
+date: 2025-05-20
 tags: blog
 ---
 
