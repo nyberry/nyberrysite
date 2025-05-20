@@ -8,7 +8,7 @@ title: bio
 ### Hi, I'm Nick.
 I'm a medical doctor with an interest in the applications of technology in healthcare.
 
-I specialise in Family Medicine, working in England and more recently in Qatar. I have Postgraduate qualifications in Sports and Exercise Medicine and in Medical Education, and work as a GP trainer, mentoring resident doctors as they specialise in Family Medicine.
+I specialise in Family Medicine, working in the UK and more recently in the Middle East. I have Postgraduate qualifications in Sports and Exercise Medicine and in Medical Education, and work as a GP trainer, mentoring resident doctors as they specialise in Family Medicine.
 
 I am CMO of clini.co.uk, a medical project which uses AI to help improve patient care and communication. From September 2025 I will be studying Data Science for HealthCare at Exeter University's MSc programme.
 
