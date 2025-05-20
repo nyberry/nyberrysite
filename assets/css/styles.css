@@ -116,6 +116,10 @@ nav .title {
 }
 
 
+.img {
+    width: 100%;
+}
+
 .icons {
     display: flex;
     justify-content: center;
