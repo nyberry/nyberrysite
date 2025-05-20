@@ -161,3 +161,18 @@ hr {margin: 15px 0;
   margin: 0 auto;
   padding: 1rem;
 }
+
+.center-table {
+  text-align: center;
+}
+
+.grid-table {
+  border-collapse: collapse;
+  margin: 0 auto;
+}
+
+.grid-table th,
+.grid-table td {
+  border: 1px solid grey;
+  padding: 8px;
+}
