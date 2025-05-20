@@ -205,7 +205,7 @@ New technologies will change the way we work, undoubtedly. And we should celebra
 
 They are getting better and better all the time, and they will allow us to be better and better too.
 
-But can GPs be *replaced* by a reasonably smart person with a computer?
+Will GPs be *replaced* by reasonably smart people with computers?
 
 <img src="/blog/images/moser3.jpg" alt="chatGPT having a go" class="blog-img">
 
