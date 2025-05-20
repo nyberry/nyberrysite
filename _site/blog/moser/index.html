@@ -34,7 +34,7 @@
       <h1 style="margin-bottom: 0.3em; text-align: center;">Moser’s Circle Problem - and why we still need GPs</h2>
         
           <p style="color: #666; font-size: 0.9em; margin-bottom: 1rem; text-align: center;">
-             March 24, 2024
+             May 20, 2025
         
       </p>
       <p>Recently I was thinking about why GP training needs to take so long. Why can't we just replace GPs with reasonably smart people and computers?</p>
@@ -46,9 +46,9 @@
 <ul>
 <li>The circle with one point has just one region.</li>
 <li>The circle with two points has two regions.</li>
-<li>The circle with three points as four regions.
-And so on.</li>
+<li>The circle with three points has four regions...</li>
 </ul>
+<p>And so on.</p>
 <p>The relationship between points and regions goes like this:</p>
 <div class="center-table">
   <table class="grid-table">
@@ -63,7 +63,7 @@ And so on.</li>
       <tr><td>2</td><td>2</td></tr>
       <tr><td>3</td><td>4</td></tr>
       <tr><td>4</td><td>8</td></tr>
-      <tr><td>5</td><td>16...</td></tr>
+      <tr><td>5...</td><td>16...</td></tr>
     </tbody>
   </table>
 </div>
@@ -75,17 +75,19 @@ And so on.</li>
 <p>Patient B was a fit 30 year old man whose family had a string of colds, but his cough seemed to have lingered far longer than anyone else’s and &quot;gone to his chest&quot; – he was keeping the whole house up with his coughing.</p>
 <p>Patient C was a woman in her 40s who had a flu like illness with dry cough, headache and aching limbs for 10 days. Initially she took herself off to bed and it seemed to be getting better. But she phoned for advice as it seemed to be getting worse again.</p>
 <p>These are bread and butter primary care presentations, right?</p>
-<p>You probably won’t be surprised to hear that Patient A's rib pain got better with ibuprofen and time. Patient B had a chest infection; he felt better after a course of antibiotics. Patient C just needed to rest up and to continue taking paracetamol, and perhaps a few more days off work, while she recovered.</p>
+<p>Right. Patient A's rib pain got better with ibuprofen and tincture of time. Patient B had a chest infection; he felt better after a course of antibiotics. Patient C just needed to rest up and to continue taking paracetamol, and took a few more days off work while she recovered.</p>
 <p>Except actually, no. That's not what happened.</p>
 <p>These are all fake patients, but are based on very real presentations to me or my GP colleagues over the years.</p>
-<p>Patient A had multiple myeloma. Patient B had sarcoidosis. And Patient C had leptospirosis entering the second, immune phase.
-Happily, all were diagnosed and treated, and I'd like to think lived happily ever after (although not sure this is strictly true of patient A.)</p>
+<p>Patient A in fact had multiple myeloma, a rare form of bone cancer. It needs chemotherapy, not ibuprofen.</p>
+<p>Patient B had sarcoidosis, a weird condition where clusters of inflammatory cells called granulomas form in the lungs. It needs steroids, not antibiotics.</p>
+<p>And Patient C had Weils disease or leptospirosis entering the second, immune phase. This is a very bad thing. Her kidneys and liver were failing, as the little bugs wreaked havoc in her bloodstream. You can treat it, but you need to recognise it first.</p>
+<p>Happily, all three were diagnosed and treated, and I'd like to think lived happily ever after (although not sure this is strictly true of patient A.)</p>
 <p>Now, clearly bruised ribs and coughs and flu are common. Like horses in a field.</p>
-<p>Myeloma, leptospirosis and sarcoidosis, on the other hand - these are not very common things. They are zebras in the field of horses, at night.</p>
-<p>But still, there was a fleeting sense that something was not quite right.</p>
-<p>In each case, there was something about the beast that did not quite sit comfortably with the GP's mental model of a horse, when they shone an inquisitive torch on it.</p>
-<p>The Policewoman had very dark urine- is that normal in flu? The grandmother was losing weight, why would that be? The young guy with the cough, well, this was the first time he’d phoned the surgery in fifteen years, what's that about?</p>
-<p>These patterns, these anomalies- whatever they were, they somehow resonated. A faint but discernible bell sounding somewhere deep in the subconscious. Which led to a particular line of enquiry or action. And which in turn led to accurate diagnosis, and timely treatment.</p>
+<p>Myeloma, leptospirosis and sarcoidosis, on the other hand - these are not very common things. They are in the field of horses, but they are zebras, and it's night-time.</p>
+<p>In each case, it would have been easy for the GP to walk on by and miss the zebra. But there was something intangible in the air.</p>
+<p>Something that perhaps did not quite sit comfortably with the GP's mental model of a horse. And so they shone an inquisitive torch on it.</p>
+<p>The woman with &quot;flu&quot; had very dark urine- is that normal in flu? The older lady was losing weight, why would that be? The young guy with the cough, well, this was the first time he’d phoned the surgery in fifteen years, what's that about?</p>
+<p>These dischords, these quirks, these anomalies- whatever they were, they somehow resonated. A faint but discernible bell sounding somewhere deep in the subconscious. Which led to a particular line of enquiry or action. And which in turn led to the full picture becoming clear, accurate diagnosis, and treatment.</p>
 <hr>
 <p>Let's go back to the circle question. Can you guess where this is going?</p>
 <img src="/blog/images/moser1.png" alt="Moser's circles" class="blog-img">
@@ -126,7 +128,7 @@ Happily, all were diagnosed and treated, and I'd like to think lived happily eve
 <p>You can count them here:</p>
 <img src="/blog/images/moser2.png" alt="Moser's circles" class="blog-img">
 <p>This is Moser's circle problem. It's a classic demonstration of the danger of &quot;false induction&quot;: projecting something from a small sample, or limited knowledge.</p>
-<p>For those who are interested, the relationship is actually <a href="https://en.wikipedia.org/wiki/Dividing_a_circle_into_areas">rather more complicated</a>, it is given as:</p>
+<p>For those who are interested, the relationship is actually given as:</p>
 <div class="center-table">
   <table class="grid-table">
     <thead>
@@ -165,15 +167,15 @@ Happily, all were diagnosed and treated, and I'd like to think lived happily eve
 <img src="/blog/images/zebra1.png" alt="Zebras at night" class="blog-img" style ="border-radius: 70%;">
 <p>But that’s not all.  Our decisions can be informed by a knowledge of the human: their background, their fears, their behaviour in the past. Subtle cues from their demeanour, voice, and body language.</p>
 <p>This is one of the reasons why training a GP from medical school currently takes a minimum of 10 years. There are many so animals in the zoo- please let me know if I’m working this metaphor too hard- and learning about them all simply takes a long time.</p>
-<p>We draw on these hard-earned intellectual tools for illumination, in the same way that a mathematician might draw on their accumulated knowledge of geometry, algebra and combinatorics to solve Moser's circle problem. Or some other problem in their field, at night.</p>
+<p>We draw on these hard-earned intellectual tools for illumination, in the same way that a mathematician might draw on their accumulated knowledge of geometry, algebra and combinatorics to solve Moser's circle problem. Or some other problem in their field. At night.</p>
 <img src="/blog/images/zebra2.png" alt="Zebras lit up at night" class="blog-img" style="border-radius: 70%;">
-<p>And this is why currently, GPs represent the gold standard when dealing with undifferentiated medical presentations in the community.</p>
+<p>This is why GPs represent the gold standard when dealing with undifferentiated medical presentations in the community.</p>
 <p>And it's not just about new presentations either. It's about recognising and dealing with normal and abnormal illness progression, treatment failures, unexpected outcomes, marginal cases, diverse and ever-expanding management options, calibrating risk, weighing and judging when to sit back, and when to act. The list goes on.</p>
 <p>This is the worth of a GP, and it takes time to train one.</p>
-<p>New technologies will change the way we work, undoubtedly. And we should celebrate this. Every week wonderful new tools are emerging to help us recognise patterns, avoid pitfalls, and draw information together for the benefit of our patients.</p>
+<p>New technologies will change the way we work, undoubtedly. And we should celebrate and embrace them. Every week wonderful new tools are emerging to help us recognise patterns, avoid pitfalls, and draw information together for the benefit of our patients.</p>
 <p>They are getting better and better all the time, and they will allow us to be better and better too.</p>
-<p>But can GPs be <em>replaced</em> by a reasonably smart person with a computer?</p>
-<img src="/blog/images/moser3.jpg" alt="chatGPT having a go" class="blog-img">
+<p>But will GPs eventually be <em>replaced</em> by reasonably smart people with computers?</p>
+<img src="/blog/images/moser3.png" alt="chatGPT having a go" class="blog-img" style="width: 100%; height: auto; max-width: 100%; display: block;">
 <p>It seems we are not there yet.</p>
 
     </div>

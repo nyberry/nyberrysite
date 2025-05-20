@@ -19,7 +19,8 @@ How many regions are in each of these circles?
 Well, if you count the regions, you will see that:
 - The circle with one point has just one region.
 - The circle with two points has two regions.
-- The circle with three points as four regions.
+- The circle with three points has four regions...
+
 And so on.
 
 The relationship between points and regions goes like this:
@@ -37,7 +38,7 @@ The relationship between points and regions goes like this:
       <tr><td>2</td><td>2</td></tr>
       <tr><td>3</td><td>4</td></tr>
       <tr><td>4</td><td>8</td></tr>
-      <tr><td>5</td><td>16...</td></tr>
+      <tr><td>5...</td><td>16...</td></tr>
     </tbody>
   </table>
 </div>
@@ -58,24 +59,29 @@ Patient C was a woman in her 40s who had a flu like illness with dry cough, head
 
 These are bread and butter primary care presentations, right?
 
-You probably won’t be surprised to hear that Patient A's rib pain got better with ibuprofen and time. Patient B had a chest infection; he felt better after a course of antibiotics. Patient C just needed to rest up and to continue taking paracetamol, and perhaps a few more days off work, while she recovered.
+Right. Patient A's rib pain got better with ibuprofen and tincture of time. Patient B had a chest infection; he felt better after a course of antibiotics. Patient C just needed to rest up and to continue taking paracetamol, and took a few more days off work while she recovered.
 
 Except actually, no. That's not what happened. 
 
 These are all fake patients, but are based on very real presentations to me or my GP colleagues over the years.
 
-Patient A had multiple myeloma. Patient B had sarcoidosis. And Patient C had leptospirosis entering the second, immune phase.
-Happily, all were diagnosed and treated, and I'd like to think lived happily ever after (although not sure this is strictly true of patient A.)
+Patient A in fact had multiple myeloma, a rare form of bone cancer. It needs chemotherapy, not ibuprofen.
+
+Patient B had sarcoidosis, a weird condition where clusters of inflammatory cells called granulomas form in the lungs. It needs steroids, not antibiotics.
+
+And Patient C had Weils disease or leptospirosis entering the second, immune phase. This is a very bad thing. Her kidneys and liver were failing, as the little bugs wreaked havoc in her bloodstream. You can treat it, but you need to recognise it first.
+
+Happily, all three were diagnosed and treated, and I'd like to think lived happily ever after (although not sure this is strictly true of patient A.)
 
 Now, clearly bruised ribs and coughs and flu are common. Like horses in a field. 
 
 Myeloma, leptospirosis and sarcoidosis, on the other hand - these are not very common things. They are in the field of horses, but they are zebras, and it's night-time.
 
-It would have been easy to walk on by and miss the zebra, but there was something intangible in the air.
+In each case, it would have been easy for the GP to walk on by and miss the zebra. But there was something intangible in the air.
 
-Something that did not quite sit comfortably with the GP's mental model of a horse. And so they shone an inquisitive torch on it.
+Something that perhaps did not quite sit comfortably with the GP's mental model of a horse. And so they shone an inquisitive torch on it.
 
-The woman with "flu" had very dark urine- is that normal in flu? The grandmother was losing weight, why would that be? The young guy with the cough, well, this was the first time he’d phoned the surgery in fifteen years, what's that about?
+The woman with "flu" had very dark urine- is that normal in flu? The older lady was losing weight, why would that be? The young guy with the cough, well, this was the first time he’d phoned the surgery in fifteen years, what's that about?
 
 These dischords, these quirks, these anomalies- whatever they were, they somehow resonated. A faint but discernible bell sounding somewhere deep in the subconscious. Which led to a particular line of enquiry or action. And which in turn led to the full picture becoming clear, accurate diagnosis, and treatment.
 
@@ -135,7 +141,7 @@ You can count them here:
 
 This is Moser's circle problem. It's a classic demonstration of the danger of "false induction": projecting something from a small sample, or limited knowledge.
 
-For those who are interested, the relationship is actually [rather more complicated](https://en.wikipedia.org/wiki/Dividing_a_circle_into_areas), it is given as:
+For those who are interested, the relationship is actually given as:
 
 <div class="center-table">
   <table class="grid-table">
@@ -201,12 +207,12 @@ And it's not just about new presentations either. It's about recognising and dea
 
 This is the worth of a GP, and it takes time to train one.
 
-New technologies will change the way we work, undoubtedly. And we should celebrate this. Every week wonderful new tools are emerging to help us recognise patterns, avoid pitfalls, and draw information together for the benefit of our patients.
+New technologies will change the way we work, undoubtedly. And we should celebrate and embrace them. Every week wonderful new tools are emerging to help us recognise patterns, avoid pitfalls, and draw information together for the benefit of our patients.
 
 They are getting better and better all the time, and they will allow us to be better and better too.
 
-Will GPs be *replaced* by reasonably smart people with computers?
+But will GPs eventually be *replaced* by reasonably smart people with computers?
 
-<img src="/blog/images/moser3.jpg" alt="chatGPT having a go" class="blog-img">
+<img src="/blog/images/moser3.png" alt="chatGPT having a go" class="blog-img" style="width: 100%; height: auto; max-width: 100%; display: block;">
 
 It seems we are not there yet. 
