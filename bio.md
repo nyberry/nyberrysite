@@ -12,7 +12,9 @@ I qualified at Nottingham Medical School, and since 2002 have worked as a Specia
 
 I am CMO of clini.co.uk, a medical project which uses AI to help improve patient care and communication. From September 2025 I will be studying for a MSc in Data Science for HealthCare at Exeter University.
 
-Roughly half your health is in your hands — eat well, move more, and steer clear of harm. For the rest, tomorrow’s tech is turning today’s dreams into reality.
+<hr>
+
+*Roughly half your health is in your hands — eat well, keep active, and steer clear of harm. And for the rest? The tech is getting better every day.*
 
 <div class="icons">
     <a href="https://www.linkedin.com/in/nick-berry-767329232/" aria-label="LinkedIn">
