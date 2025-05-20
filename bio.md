@@ -14,7 +14,7 @@ I am CMO of clini.co.uk, a medical project which uses AI to help improve patient
 
 <hr>
 
-*Roughly half your health is in your hands — eat well, keep active, and steer clear of harm. And for the rest? The tech is getting better every day.*
+*Roughly half your health is in your own hands — eat well, keep active, and steer clear of harm. And for the rest? The tech is getting better every day.*
 
 <div class="icons">
     <a href="https://www.linkedin.com/in/nick-berry-767329232/" aria-label="LinkedIn">
