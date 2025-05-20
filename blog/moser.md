@@ -191,11 +191,11 @@ But that’s not all.  Our decisions can be informed by a knowledge of the human
 
 This is one of the reasons why training a GP from medical school currently takes a minimum of 10 years. There are many so animals in the zoo- please let me know if I’m working this metaphor too hard- and learning about them all simply takes a long time.
 
-We draw on these hard-earned intellectual tools for illumination, in the same way that a mathematician might draw on their accumulated knowledge of geometry, algebra and combinatorics to solve Moser's circle problem. Or some other problem in their field, at night.
+We draw on these hard-earned intellectual tools for illumination, in the same way that a mathematician might draw on their accumulated knowledge of geometry, algebra and combinatorics to solve Moser's circle problem. Or some other problem in their field. At night.
 
 <img src="/blog/images/zebra2.png" alt="Zebras lit up at night" class="blog-img" style="border-radius: 70%;">
 
-And this is why currently, GPs represent the gold standard when dealing with undifferentiated medical presentations in the community.
+This is why GPs represent the gold standard when dealing with undifferentiated medical presentations in the community.
 
 And it's not just about new presentations either. It's about recognising and dealing with normal and abnormal illness progression, treatment failures, unexpected outcomes, marginal cases, diverse and ever-expanding management options, calibrating risk, weighing and judging when to sit back, and when to act. The list goes on.
 
