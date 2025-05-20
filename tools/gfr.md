@@ -37,9 +37,9 @@ title: kidney calculator
 <h2>eGFR or CrCl ?</h2>
 
 
-<p>The estimated glomerular filtration rate (eGFR) is the preferred method for assessing overall kidney function in most clinical situations. It is calculated using the CKD-EPI equation, which takes into account a person’s age, sex, and serum creatinine level. This estimate reflects the filtration capacity of the kidneys and is used for diagnosing, staging, and monitoring chronic kidney disease (CKD). eGFR is automatically reported by most laboratories and is standardised to a body surface area of 1.73 m², which allows for comparison across individuals.</p>
+<p>The estimated glomerular filtration rate (eGFR) is the preferred method for describing kidney function in most clinical situations. It is calculated using the CKD-EPI equation, which takes into account a person’s age, sex, and serum creatinine level. This estimate reflects the filtration capacity of the kidneys and is used for diagnosing, staging, and monitoring chronic kidney disease (CKD). eGFR is automatically reported by many laboratories and is standardised to a body surface area of 1.73 m², which allows for comparison across individuals.</p>
 
-<p>Creatinine Clearance (CrCl), typically calculated using the Cockcroft-Gault formula, provides an estimate of the actual rate at which the kidneys are clearing creatinine from the blood. CrCl is important in situations where accurate drug dosing is critical, such as with aminoglycosides, anticoagulants, and chemotherapeutic agents. Unlike eGFR, it incorporates body weight, making it particularly relevant for medications dosed by kidney function in patients who are very underweight or overweight.</p>
+<p>Creatinine Clearance (CrCl), calculated using the Cockcroft-Gault formula, provides an estimate of the actual rate at which the kidneys are clearing creatinine from the blood. CrCl is important in situations where accurate drug dosing is critical, such as with aminoglycosides, anticoagulants, and chemotherapeutic agents. Unlike eGFR, it incorporates body weight, making it relevant for medications dosed by kidney function in patients who may be underweight or overweight.</p>
 
   <img src="/assets/images/kidneyEquations.png" alt="equations" width=500px>
 <hr>
