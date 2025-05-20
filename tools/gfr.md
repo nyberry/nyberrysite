@@ -26,7 +26,7 @@ title: kidney calculator
   </table>
 </form>
 
-<div class="results" id="output" style="margin-top: 1.5rem; padding: 1rem; background: #f0f0f0; max-width: 500px; margin-left: auto; margin-right: auto;"></div>
+<div class="results" id="output" style="margin-top: 1.5rem; padding: 1rem; background: #f0f0f0; max-width: 500px; margin-left: auto; margin-right: auto; display:none"></div>
 
 
 <!-- GFR info (initially hidden) -->
@@ -75,6 +75,7 @@ title: kidney calculator
     if (!sex || isNaN(age) || isNaN(creatinine)) {
       output.innerHTML = "Please enter age, sex, and creatinine to calculate eGFR.";
       document.getElementById('gfr-info').style.display = 'none';
+      document.getElementById('output').style.display = 'block';
       return;
     }
 // Determine creatinine units
@@ -105,5 +106,6 @@ const eGFR = 142 *
 
     output.innerHTML = html;
     document.getElementById('gfr-info').style.display = 'block';
+    document.getElementById('output').style.display = 'block';
   }
 </script>

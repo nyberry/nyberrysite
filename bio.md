@@ -8,7 +8,7 @@ title: bio
 ### Hi, I'm Nick.
 I'm a British medical doctor with an interest in preventative health and the applications of technology in healthcare.
 
-I qualified at Nottingam Medical School, and since 2002 have worked as a Specialist in Family Medicine in South West England and more recently in Qatar.
+I qualified at Nottingham Medical School, and since 2002 have worked as a Specialist in Family Medicine in South West England and more recently in Qatar.
 
 I have Postgraduate qualifications in Sports and Exercise Medicine and Medical Education, and work as a GP trainer, mentoring resident doctors as they specialise in Family Medicine.
 
