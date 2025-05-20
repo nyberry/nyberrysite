@@ -13,10 +13,12 @@ The [Ishihara Test](https://en.wikipedia.org/wiki/Ishihara_test) is the most wid
 
 The full test consists of 38 plates, but the existence of a severe deficiency is usually apparent after only a few plates. Some plates are designed to be seen by everyone, while others hide digits or shapes depending on a person's type of color deficiency — making it a fast and accurate screening tool. 
 
-The eight plates above contain these numbers:
+<img class="profile_img" src="/assets/images/ShinobuIshihara.jpg" alt="石原 忍" width=200px>
+
+<hr>
+
+The Ishihara plates above contain these numbers:
 
 7, 6, 26, 15
 
 6, 73, 5, 16
-
-<img src="/assets/images/ShinobuIshihara.jpg" alt="石原 忍" width=200px>
