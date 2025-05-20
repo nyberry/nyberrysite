@@ -51,4 +51,4 @@ title: clini
 
 Medical test results need to be relayed in a way that is clear and easy to understand, and with interpretation and advice based on the recipient's particular issues.
 
-The secure [clini]((https://www.clini.co.uk)) app allows results and medical information to be collated, then generating a detailed and professional report which can be shared. All data is encrypted and no data is stored, once the report is done.
+The [clini]((https://www.clini.co.uk)) app allows test results and other medical information to be built into a detailed and professional report which can be shared. All data is encrypted and no data is stored, once the report is done.

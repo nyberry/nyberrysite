@@ -14,7 +14,7 @@ I have Postgraduate qualifications in Sports and Exercise Medicine and Medical E
 
 I am CMO of clini.co.uk, a medical software company which uses AI to help improve patient care and communication. From September 2025 I will be studying for a MSc in Data Science for HealthCare at Exeter University.
 
-My approach to health is simple. You can, and should, control about half of it by eating well, being active and avoiding harmful things. For everything else, technology is advancing rapidly. Things that could only be dreamed of yesterday, will be reality tomorrow.
+Roughly half your health is in your hands — eat well, move more, and steer clear of harm. For the rest, tomorrow’s tech is turning today’s dreams into reality.
 
 <div class="icons">
     <a href="https://www.linkedin.com/in/nick-berry-767329232/" aria-label="LinkedIn">
