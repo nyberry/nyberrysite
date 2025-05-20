@@ -185,7 +185,7 @@ It takes a broad training to spot species we have not previously encountered, to
 
 And even then, zebras can be really difficult to spot in a field of horses, at night.
 
-<img src="/blog/images/zebra1.png" alt="Zebras at night" class="blog-img">
+<img src="/blog/images/zebra1.png" alt="Zebras at night" class="blog-img" style ="border-radius: 70%;">
 
 But that’s not all.  Our decisions can be informed by a knowledge of the human: their background, their fears, their behaviour in the past. Subtle cues from their demeanour, voice, and body language.
 
@@ -193,7 +193,7 @@ This is one of the reasons why training a GP from medical school currently takes
 
 We draw on these hard-earned intellectual tools for illumination, in the same way that a mathematician might draw on their accumulated knowledge of geometry, algebra and combinatorics to solve Moser's circle problem. Or some other problem in their field, at night.
 
-<img src="/blog/images/zebra2.png" alt="Zebras lit up at night" class="blog-img">
+<img src="/blog/images/zebra2.png" alt="Zebras lit up at night" class="blog-img" style="border-radius: 70%;">
 
 And this is why currently, GPs represent the gold standard when dealing with undifferentiated medical presentations in the community.
 
