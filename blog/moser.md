@@ -16,7 +16,11 @@ Here's a picture:
 
 How many regions are in each of these circles?
 
-Well, if you count the regions, you will see that the circle with one point has just one region. The circle with two points has two regions. The circle with three points as four regions. And so on.
+Well, if you count the regions, you will see that:
+- The circle with one point has just one region.
+- The circle with two points has two regions.
+- The circle with three points as four regions.
+And so on.
 
 The relationship between points and regions goes like this:
 
@@ -181,19 +185,23 @@ It takes a broad training to spot species we have not previously encountered, to
 
 And even then, zebras can be really difficult to spot in a field of horses, at night.
 
-We draw on these hard-earned intellectual tools in the same way that a mathematician might draw on their accumulated knowledge of geometry, algebra and combinatorics to solve Moser's circle problem. Or some other problem relevant in their field, at night.
+<img src="/blog/images/zebra1.png" alt="Zebras at night" class="blog-img">
 
 But that’s not all.  Our decisions can be informed by a knowledge of the human: their background, their fears, their behaviour in the past. Subtle cues from their demeanour, voice, and body language.
 
 This is one of the reasons why training a GP from medical school currently takes a minimum of 10 years. There are many so animals in the zoo- please let me know if I’m working this metaphor too hard- and learning about them all simply takes a long time.
 
+We draw on these hard-earned intellectual tools for illumination, in the same way that a mathematician might draw on their accumulated knowledge of geometry, algebra and combinatorics to solve Moser's circle problem. Or some other problem in their field, at night.
+
+<img src="/blog/images/zebra2.png" alt="Zebras lit up at night" class="blog-img">
+
 And this is why currently, GPs represent the gold standard when dealing with undifferentiated medical presentations in the community.
 
 And it's not just about new presentations either. It's about recognising and dealing with normal and abnormal illness progression, treatment failures, unexpected outcomes, marginal cases, diverse and ever-expanding management options, calibrating risk, weighing and judging when to sit back, and when to act. The list goes on.
 
-This is the worth of a GP.
+This is the worth of a GP, and it takes time to train one.
 
-New technologies will change the way GPs work. Undoubtedly. And we should celebrate this. Every week wonderful new tools are emerging to help us recognise patterns, avoid pitfalls, and draw information together for the benefit of our patients.
+New technologies will change the way we work, undoubtedly. And we should celebrate this. Every week wonderful new tools are emerging to help us recognise patterns, avoid pitfalls, and draw information together for the benefit of our patients.
 
 They are getting better and better all the time, and they will allow us to be better and better too.
 
