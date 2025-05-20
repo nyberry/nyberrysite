@@ -10,7 +10,7 @@ I'm a British medical doctor with an interest in the applications of technology 
 
 I qualified at Nottingham Medical School, and since 2002 have worked as a Specialist in Family Medicine in South West England and more recently in Qatar. I have Postgraduate qualifications in Sports and Exercise Medicine and Medical Education, and work as a GP trainer, mentoring resident doctors as they specialise in Family Medicine.
 
-I am CMO of clini.co.uk, a medical software company which uses AI to help improve patient care and communication. From September 2025 I will be studying for a MSc in Data Science for HealthCare at Exeter University.
+I am CMO of clini.co.uk, a medical project which uses AI to help improve patient care and communication. From September 2025 I will be studying for a MSc in Data Science for HealthCare at Exeter University.
 
 Roughly half your health is in your hands — eat well, move more, and steer clear of harm. For the rest, tomorrow’s tech is turning today’s dreams into reality.
 
