@@ -15,7 +15,10 @@ Here's a picture:
 <img src="/blog/images/moser1.png" alt="Moser's circles" class="blog-img">
 
 How many regions are in each of these circles?
-Well, if you count the regions, you will see that the circle with one point has just one region. The circle with two points has two regions. The circle with three points as four regions. And so on. The relationship between points and regions goes like this:
+
+Well, if you count the regions, you will see that the circle with one point has just one region. The circle with two points has two regions. The circle with three points as four regions. And so on.
+
+The relationship between points and regions goes like this:
 
 <div class="center-table">
   <table class="grid-table">
@@ -47,9 +50,11 @@ Patient A was a 70 year old grandmother, who had pain from a cracked rib. She fe
 
 Patient B was a fit 30 year old man whose family had a string of colds, but his cough seemed to have lingered far longer than anyone else’s and "gone to his chest" – he was keeping the whole house up with his coughing.
 
-Patient C was a policewoman in her 40s who had a flu like illness with dry cough, headache and aching limbs for 10 days. Initially she took herself off to bed and it seemed to be getting better. But she phoned for advice as it seemed to be getting worse again.
+Patient C was a woman in her 40s who had a flu like illness with dry cough, headache and aching limbs for 10 days. Initially she took herself off to bed and it seemed to be getting better. But she phoned for advice as it seemed to be getting worse again.
 
-These are bread and butter primary care presentations, right? So you probably won’t be surprised to hear that Patient A's rib pain got better with ibuprofen and time. Patient B had a chest infection; he felt better after a course of antibiotics. Patient C just needed to rest up and to continue taking paracetamol, and perhaps a few more days off work, while she recovered.
+These are bread and butter primary care presentations, right?
+
+You probably won’t be surprised to hear that Patient A's rib pain got better with ibuprofen and time. Patient B had a chest infection; he felt better after a course of antibiotics. Patient C just needed to rest up and to continue taking paracetamol, and perhaps a few more days off work, while she recovered.
 
 Except actually, no. That's not what happened. 
 
