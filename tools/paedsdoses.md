@@ -88,9 +88,9 @@ title: Paeds Doses
   <div class="modal-content">
     <h2>Disclaimer</h2>
     <p>
-      This tool is intended as a quick reference guide for qualified prescribers to sense-check paediatric doses.<br><br>
-      It is not a substitute for clinical judgement or for consultation with authoritative sources such as the BNFc or local prescribing guidelines.<br><br>
+      This tool is intended as a quick reference guide for qualified prescribers to sense-check paediatric doses. It is not a substitute for clinical judgement.<br><br>
       While every effort has been made to ensure accuracy, the creators accept no liability for errors or clinical decisions made using this tool.<br><br>
+      Confirm doses with authoritative sources such as the BNFc or local prescribing guidelines.<br><br>
       <strong>Prescribers remain fully responsible for verifying doses and ensuring safe prescribing.</strong>
     </p>
     <button onclick="acceptDisclaimer()">I Agree</button>
@@ -199,7 +199,7 @@ else if (drug === "amoxicillin40") {
       const dose2 = dose/2;
       const dose2liq = dose2/50;
       result = `
-        <strong>Amoxicillin 40mg/kg</strong><br>
+        <strong>Amoxicillin 90mg/kg</strong><br>
         <strong>Dose:</strong> ${dose2.toFixed(0)} mg every 12 hours, which is ${dose2liq.toFixed(1)} ml of 250mg/5ml solution<br>
         
         <br><br>This dose may be appropriate in communities with a high prevalence of penicillin-resistant S. pneumoniae<br><br>
