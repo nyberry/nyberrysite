@@ -69,15 +69,15 @@ Happily, all were diagnosed and treated, and I'd like to think lived happily eve
 
 Now, clearly bruised ribs and coughs and flu are common. Like horses in a field. 
 
-Myeloma, leptospirosis and sarcoidosis, on the other hand - these are not very common things. They are zebras in the field of horses, at night.
+Myeloma, leptospirosis and sarcoidosis, on the other hand - these are not very common things. They are in the field of horses, but they are zebras, and it's night-time.
 
-But still, there was a fleeting sense that something was not quite right. 
+It would have been easy to walk on by and miss the zebra, but there was something intangible in the air.
 
-In each case, there was something about the beast that did not quite sit comfortably with the GP's mental model of a horse, when they shone an inquisitive torch on it.
+Something that did not quite sit comfortably with the GP's mental model of a horse. And so they shone an inquisitive torch on it.
 
-The Policewoman had very dark urine- is that normal in flu? The grandmother was losing weight, why would that be? The young guy with the cough, well, this was the first time he’d phoned the surgery in fifteen years, what's that about?
+The woman with "flu" had very dark urine- is that normal in flu? The grandmother was losing weight, why would that be? The young guy with the cough, well, this was the first time he’d phoned the surgery in fifteen years, what's that about?
 
-These patterns, these anomalies- whatever they were, they somehow resonated. A faint but discernible bell sounding somewhere deep in the subconscious. Which led to a particular line of enquiry or action. And which in turn led to accurate diagnosis, and timely treatment.
+These dischords, these quirks, these anomalies- whatever they were, they somehow resonated. A faint but discernible bell sounding somewhere deep in the subconscious. Which led to a particular line of enquiry or action. And which in turn led to the full picture becoming clear, accurate diagnosis, and treatment.
 
 <hr>
 
