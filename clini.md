@@ -3,13 +3,47 @@ layout: layout.html
 title: clini
 ---
 
-## [clini.co.uk](https://www.clini.co.uk)
+<style>
+  .image-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+  }
 
+  .image-table img {
+    max-height: 400px;
+    height: auto;
+    width: auto;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+  }
 
-<table style="margin: 0 auto; border-collapse: collapse;">
+  .image-table td {
+    vertical-align: middle;
+    padding: 0 10px;
+  }
+
+  @media (max-width: 600px) {
+    .image-table {
+      display: block;
+    }
+
+    .image-table tr {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .image-table td {
+      padding-bottom: 10px;
+    }
+  }
+</style>
+
+<table class="image-table">
   <tr>
-    <td><img src="/assets/images/phonedemo.jpg" alt="Image 1" height=300px></td>
-    <td><img src="/assets/images/reportdemo.jpg" alt="Image 2" height=300px></td>
+    <td><img src="/assets/images/phonedemo.jpg" alt="Image 1"></td>
+    <td><img src="/assets/images/reportdemo.jpg" alt="Image 2"></td>
   </tr>
 </table>
 

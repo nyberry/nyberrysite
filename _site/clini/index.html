@@ -27,11 +27,46 @@
   </nav>
 
   <main class="container">
-    <h2><a href="https://www.clini.co.uk">clini.co.uk</a></h2>
-<table style="margin: 0 auto; border-collapse: collapse;">
+    <style>
+  .image-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+  }
+
+  .image-table img {
+    max-height: 400px;
+    height: auto;
+    width: auto;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+  }
+
+  .image-table td {
+    vertical-align: middle;
+    padding: 0 10px;
+  }
+
+  @media (max-width: 600px) {
+    .image-table {
+      display: block;
+    }
+
+    .image-table tr {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .image-table td {
+      padding-bottom: 10px;
+    }
+  }
+</style>
+<table class="image-table">
   <tr>
-    <td><img src="/assets/images/phonedemo.jpg" alt="Image 1" height=300px></td>
-    <td><img src="/assets/images/reportdemo.jpg" alt="Image 2" height=300px></td>
+    <td><img src="/assets/images/phonedemo.jpg" alt="Image 1"></td>
+    <td><img src="/assets/images/reportdemo.jpg" alt="Image 2"></td>
   </tr>
 </table>
 <p><a href="https://www.clini.co.uk">clini</a> is an app designed to streamline the extraction of medical data from clinical documents, and generate patient-friendly reports using AI.</p>
