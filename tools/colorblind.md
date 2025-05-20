@@ -3,7 +3,7 @@ layout: layout.html
 title: colorblind test
 ---
 
-<img src="/assets/images/colorblindTest.jpg" alt="colorblind test">
+<img class="full-screen-width" src="/assets/images/colorblindTest.jpg" alt="colorblind test">
 
 <hr>
 

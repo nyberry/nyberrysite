@@ -2,7 +2,7 @@
 body {
     margin: 0;
     font-family: sans-serif;
-    background-color: #cccccc;
+    background-color: #dddddd;
 }
 
 nav {
@@ -87,8 +87,8 @@ nav .title {
 .container {
     text-align: center;
     padding: 1rem;
-    max-width: 1000px;
-    margin: 60px auto 0 auto;
+    max-width: 600px;
+    margin: 20px auto 0 auto;
     width: 100%;
     box-sizing: border-box;
 }
@@ -97,6 +97,22 @@ nav .title {
     max-width: 200px;
     height: auto;
     border-radius: 50%;
+}
+
+.full-screen-width {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  overflow: hidden;
+  padding: 1rem 0;
+}
+
+.full-screen-width img {
+  max-width: 1000px;
+  width: 100%;
+  height: auto;
 }
 
 
@@ -114,17 +130,30 @@ nav .title {
     text-decoration: none;
 }
 
-img {
-    max-width: 100%
-}
-
 input {
     width: 90%;
     max-width: 100px;
     box-sizing: border-box;
 }
 
-hr {margin: 2rem 0;
+hr {margin: 15px 0;
     border: none;
     border-top: 1px solid #999;
+}
+
+/* blog CSS */
+
+.blog-content {
+  background-color: #ffffff; 
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 1rem;
+  text-align: left;
+}
+
+.blog-img {
+  display: block;
+  max-width: 80%;
+  margin: 0 auto;
+  padding: 1rem;
 }

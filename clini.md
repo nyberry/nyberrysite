@@ -6,12 +6,14 @@ title: clini
 <style>
   .image-table {
     width: 100%;
+    max-width: 100%;
     border-collapse: collapse;
     text-align: center;
   }
 
   .image-table img {
-    max-height: 400px;
+    max-height: 300px;
+    max-width: 100%;
     height: auto;
     width: auto;
     object-fit: contain;
