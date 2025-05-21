@@ -6,7 +6,7 @@ title: clini
 
 [clini](https://www.clini.co.uk) is a pilot version of an app designed to streamline the extraction of medical data from clinical documents, and generate patient-friendly reports using AI. 
 
-<a href="https:/www.clini.co.uk">
+<a href="https://www.clini.co.uk">
 <img src="/assets/images/phonedemo.jpg" alt="phone">
 </a>
 
