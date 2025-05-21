@@ -11,10 +11,10 @@ title: US-UK lab unit converter
       <tr>
         <th></th>
             <th>
-                <img src="https://flagcdn.com/us.svg" alt="US flag" width="24"> mg/dl
+                <img src="https://flagcdn.com/us.svg" alt="US flag" width="24"><br>mg/dl
             </th>
             <th>
-                <img src="https://flagcdn.com/gb.svg" alt="UK flag" width="24"> mmol/L
+                <img src="https://flagcdn.com/gb.svg" alt="UK flag" width="24"><br>mmol/L
             </th>
         <th></th>
       </tr>
@@ -46,14 +46,14 @@ title: US-UK lab unit converter
       </tr>
       <!-- HbA1c heading -->
        <tr>
-        <td></td>
-            <td>
-                <img src="https://flagcdn.com/us.svg" alt="US flag" width="24"> DCCT (%)
-            </td>
-            <td>
-                <img src="https://flagcdn.com/gb.svg" alt="UK flag" width="24"> IFFC (mmol/mol)
-            </td>
-        <td></td>
+        <th></th>
+            <th>
+                <img src="https://flagcdn.com/us.svg" alt="US flag" width="24"><br>%
+            </th>
+            <th>
+                <img src="https://flagcdn.com/gb.svg" alt="UK flag" width="24"><br>mmol/mol
+            </th>
+        <th></th>
       </tr>
     
   <!-- HbA1c row -->
