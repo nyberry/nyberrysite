@@ -65,9 +65,9 @@ Except actually, no. That's not what happened.
 
 The bony pain was in fact due to multiple myeloma, a rare form of bone cancer. It needed chemotherapy, not ibuprofen.
 
-The persistent cough was a sign of sarcoidosis, a weird condition where clusters of inflammatory cells called granulomas form in the lungs. It needed steroids, not antibiotics.
+The persistent cough was a sign of sarcoidosis, a rare condition where clusters of inflammatory cells called granulomas form in the lungs. It needed steroids, not antibiotics.
 
-And the patient with flu-like symptoms had contracted Weils disease, or leptospirosis, while working on her farm's water supply. It was entering its' second, immune phase, which is a very bad thing. Her kidneys and liver were failing, as the little bugs wreaked havoc in her bloodstream. You can fix leptospirosis, but you need to recognise it while the patient is still alive- and preferably with working kidneys.
+And the patient with flu-like symptoms had contracted Weils disease, or leptospirosis, while working on her farm's water supply. It was entering the second, immune phase, which is a very bad thing. Her kidneys and liver were failing, as the little bugs wreaked havoc in her bloodstream. You can fix leptospirosis, but it is best recognised while the patient still has working kidneys.
 
 Happily, all three were diagnosed and treated, and recovered.
 
