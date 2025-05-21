@@ -71,17 +71,19 @@
         <td><input type="number" step="any" id="hdl-uk"></td>
         <td><span class="flag" id="flag-hdl"></span></td>
       </tr>
-      <!-- HbA1c heading -->
-       <tr>
-        <th></th>
-            <th>
-                <img src="https://flagcdn.com/us.svg" alt="US flag" width="24"><br>%
-            </th>
-            <th>
-                <img src="https://flagcdn.com/gb.svg" alt="UK flag" width="24"><br>mmol/mol
-            </th>
-        <th></th>
+      <tr>
+        <td>Urate</td>
+        <td><input type="number" step="any" id="urate-us"></td>
+        <td><input type="number" step="any" id="urate-uk"></td>
+        <td><span class="flag" id="flag-urate"></span></td>
       </tr>
+  <!-- HbA1c heading -->
+  <tr>
+    <th></th>
+    <th><img src="https://flagcdn.com/us.svg" alt="US flag" width="24"><br>%</th>
+    <th><img src="https://flagcdn.com/gb.svg" alt="UK flag" width="24"><br>mmol/mol</th>
+    <th></th>
+  </tr>
   <!-- HbA1c row -->
   <tr>
     <td>HbA1c</td>
@@ -176,6 +178,12 @@ convertRow('hdl-us', 'hdl-uk', 'flag-hdl',
   v => v * 0.0259,
   v => v * 38.67,
   0, 1);
+
+// Urate: US = 0 dp, UK = 1 dp
+convertRow('urate-us', 'urate-uk', 'flag-urate',
+  v => v * 0.05948,
+  v => v * 16.812,
+  1, 2);
 });
 
 // Clear button logic
