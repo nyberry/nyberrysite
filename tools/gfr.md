@@ -28,6 +28,9 @@ title: kidney calculator
 
 <div class="results" id="output" style="display:none"></div>
 
+<br>
+<img src="/assets/images/kidney.png" alt="kidney" style="width: 200px;">
+
 
 <!-- GFR info (initially hidden) -->
 <div id="gfr-info" style="display: none; text-align: centre; margin-top: 2rem;">
