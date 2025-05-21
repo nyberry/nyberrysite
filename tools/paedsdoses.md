@@ -103,7 +103,7 @@ title: Paeds Doses
   <label for="drug">Select drug:</label>
   <select id="drug" onchange="checkFormCompletion()">
     <option value="">--Select--</option>
-    <option value="acetaminophen">Acetaminophen = Paracetamol</option>
+    <option value="acetaminophen">Acetaminophen (paracetamol)</option>
     <option value="amoxicillin">Amoxicillin</option>
     <option value="coamoxiclav">Co-amoxiclav</option>
     <option value="ibuprofen">Ibuprofen</option>
