@@ -59,15 +59,26 @@ function calculateAge() {
     ageMonths += 12;
   }
 
-const ageOutput = document.getElementById("age-output");
-ageOutput.textContent = `Age: ${ageYears} years, ${ageMonths} months, ${ageDays} days`;
-ageOutput.style.display = "block";
-
 // Determine sex
 const sex = document.querySelector('input[name="sex"]:checked').value;
 
 // Compute decimal age
 const decimalAge = ageYears + ageMonths / 12 + ageDays / 365.25;
+
+if (decimalAge > 20 || decimalAge < 0) {
+  const ageOutput = document.getElementById("age-output");
+  ageOutput.textContent = "Age must be 0-20 years.";
+  ageOutput.style.display = "block";
+
+  // Hide chart and return early
+  document.getElementById("growth-chart").style.display = "none";
+  return;
+}
+
+const ageOutput = document.getElementById("age-output");
+ageOutput.textContent = `Age: ${ageYears} years, ${ageMonths} months, ${ageDays} days`;
+ageOutput.style.display = "block";
+
 
 // Determine image path
 let imgPath = "";
