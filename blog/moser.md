@@ -113,7 +113,7 @@ And The question is:
 
 **Q. How many areas will there be if there are 6 dots on the circle?**
 
-Well, we are not mathematicians. But we all did a bit of maths back at school, right?
+We all did a bit of maths at school, right?
 
 And so it might be tempting to look at the pattern: 1,2,4,8,16… , doubling with each step, and conclude that the relationship between dots and areas is:
 
