@@ -19,6 +19,7 @@
         <ul class="dropdown-content">
           <li><a href="/tools/bmi">BMI</a></li>  
           <li><a href="/tools/colorblind">Colorblind Test</a></li>
+          <li><a href="/tools/neuro">Dermatomes</a></li>
           <li><a href="/tools/gfr">Kidney Calculator</a></li> </li>
           <li><a href="/tools/labconverter">Lab Unit Converter</a></li>
           <li><a href="/tools/paedsdoses">Paeds Doses</a></li>
@@ -116,7 +117,7 @@
     <p>
       This tool is intended as a quick reference guide for qualified prescribers to sense-check paediatric doses. It is not a substitute for clinical judgement.<br><br>
       Confirm doses with authoritative sources such as the BNFc or local prescribing guidelines.<br><br>
-      <strong>Prescribers remain fully responsible for verifying doses and ensuring safe prescribing.</strong>
+      <strong>Prescribers remain fully responsible for verifying doses.</strong>
     </p>
     <button onclick="acceptDisclaimer()">I Agree</button>
   </div>
@@ -127,7 +128,7 @@
 <p><label for="drug">Select drug:</label>
 <select id="drug" onchange="checkFormCompletion()">
 <option value="">--Select--</option>
-<option value="acetaminophen">Acetaminophen = Paracetamol</option>
+<option value="acetaminophen">Acetaminophen (paracetamol)</option>
 <option value="amoxicillin">Amoxicillin</option>
 <option value="coamoxiclav">Co-amoxiclav</option>
 <option value="ibuprofen">Ibuprofen</option>
