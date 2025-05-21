@@ -213,6 +213,6 @@ They are getting better and better all the time, and they will allow us to be be
 
 But will GPs eventually be *replaced* by reasonably smart people with computers?
 
-<img src="/blog/images/moser3.png" alt="chatGPT having a go" class="blog-img" style="width: 100%; height: auto; max-width: 100%; display: block;">
+<img src="/blog/images/moser3.png" alt="chatGPT having a go" class="blog-img">
 
 It seems we are not there yet. 
