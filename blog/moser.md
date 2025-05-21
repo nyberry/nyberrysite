@@ -51,11 +51,11 @@ So let me ask you a question.
 
 But shelve that for a moment, and let me tell you about a few patients I dealt with recently.
 
-A 76 year old grandmother, who had pain from a cracked rib. She felt it go when she leaned over a sofa arm 6 weeks earlier. It was painful to sneeze, and the pain was bothering her at night.
+An elderly lady, who had pain from a cracked rib. She felt it go when she leaned over a sofa arm 6 weeks earlier. It was painful to sneeze, and the pain was bothering her at night.
 
-A fit 35 year old man whose family had a string of colds, but his cough seemed to have lingered far longer than anyone else’s and "gone to his chest" – he was keeping the whole house up with his coughing.
+A fit young man whose family had a string of colds, but his cough seemed to have lingered far longer than anyone else’s and "gone to his chest" – he was keeping the whole house up with his coughing.
 
-And a woman in her 40s who had a flu like illness with dry cough, headache and aching limbs for 10 days. Initially she took herself off to bed and it seemed to be getting better. But she phoned for advice as it seemed to be getting worse again.
+And a middle-aged farmer who had a flu like illness with dry cough, headache and aching limbs for 10 days. Initially she took herself off to bed and it seemed to be getting better. But she phoned for advice as it seemed to be getting worse again.
 
 These are all bread and butter primary care presentations, right?
 
@@ -75,7 +75,7 @@ Now, clearly bruised ribs and coughs and flu are common. Like horses in a field.
 
 But myeloma, sarcoidoisis and leptospirosis- these are not very common things. They may be in the same field as the horses, but they are in fact zebras.
 
-Zebras seem easy to recognise in broad daylight. But dealing with patients on the phone takes away all those visual cues- it is more like night than day. And it's easy to miss a zebra at night.
+Zebras seem easy to recognise in broad daylight. But dealing with patients on the phone takes away all those visual cues- it is more like night than day. And it's easy to miss a zebra in a field at night.
 
 And yet, there may still be a sense of something intangible in the air. Something about the murky silhouette that suggests shining an inquisitive torch on it.
 
