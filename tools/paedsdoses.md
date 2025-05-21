@@ -90,7 +90,7 @@ title: Paeds Doses
     <p>
       This tool is intended as a quick reference guide for qualified prescribers to sense-check paediatric doses. It is not a substitute for clinical judgement.<br><br>
       Confirm doses with authoritative sources such as the BNFc or local prescribing guidelines.<br><br>
-      <strong>Prescribers remain fully responsible for verifying doses and ensuring safe prescribing.</strong>
+      <strong>Prescribers remain fully responsible for verifying doses.</strong>
     </p>
     <button onclick="acceptDisclaimer()">I Agree</button>
   </div>
