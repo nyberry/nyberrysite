@@ -89,7 +89,6 @@ title: Paeds Doses
     <h2>Disclaimer</h2>
     <p>
       This tool is intended as a quick reference guide for qualified prescribers to sense-check paediatric doses. It is not a substitute for clinical judgement.<br><br>
-      While every effort has been made to ensure accuracy, the creators accept no liability for errors or clinical decisions made using this tool.<br><br>
       Confirm doses with authoritative sources such as the BNFc or local prescribing guidelines.<br><br>
       <strong>Prescribers remain fully responsible for verifying doses and ensuring safe prescribing.</strong>
     </p>
@@ -102,19 +101,17 @@ title: Paeds Doses
   <h2>Paediatric Dose Calculator</h2>
 
   <label for="drug">Select drug:</label>
-  <select id="drug">
+  <select id="drug" onchange="checkFormCompletion()">
     <option value="">--Select--</option>
     <option value="acetaminophen">Acetaminophen = Paracetamol</option>
-    <option value="amoxicillin40">Amoxicillin 40 mg/kg</option>
-    <option value="amoxicillin90">Amoxicillin 90 mg/kg</option>
-    <option value="coamoxiclav40">Co-amoxiclav 400/57</option>
-    <option value="coamoxiclav90">Co-amoxiclav 600/42.9</option>
+    <option value="amoxicillin">Amoxicillin</option>
+    <option value="coamoxiclav">Co-amoxiclav</option>
     <option value="ibuprofen">Ibuprofen</option>
     <!-- Add more drugs here -->
   </select>
 
   <label for="weight">Weight (kg):</label>
-  <input type="number" id="weight" step="0.1" placeholder="weight" oninput="checkFormCompletion()">
+  <input type="number" id="weight" step="0.1" oninput="checkFormCompletion()">
 
 
 
@@ -123,19 +120,22 @@ title: Paeds Doses
 
 <button id="calculate-button" onclick="calculateDose()" style="display: none;">Calculate </button>
 
+<div class="results" id="resultbox" style="display: none;">
   <div id="result"></div>
+</div>
+
 </div>
 
 <script>
 function acceptDisclaimer() {
   document.getElementById("disclaimer-modal").style.display = "none";
   document.getElementById("dose-tool").style.display = "block";
+document.getElementById("weight").focus();
 }
 
 function checkFormCompletion() {
   const drug = document.getElementById("drug").value;
   const weight = document.getElementById("weight").value;
-
   const calculateButton = document.getElementById("calculate-button");
 
   if (drug && weight) {
@@ -170,73 +170,50 @@ function calculateDose() {
     }
   }
 
-else if (drug === "amoxicillin40") {
+else if (drug === "amoxicillin") {
     if (isNaN(weight)) {
       result = "Please enter a valid weight in kg.";
     } else {
-      const dose = Math.min(40 * weight, 4000);
-      const dose2 = dose/2;
-      const dose3 = dose/3;
-      const dose2liq = dose2/50;
-      const dose3liq = dose3/50;
+      const dose40 = Math.min(40 * weight, 4000);
+      const dose40_2 = dose40/2;
+      const dose40_3 = dose40/3;
+      const dose40_2liq = dose40_2/50;
+      const dose40_3liq = dose40_3/50;
+      const dose90 = Math.min(90 * weight, 4000);
+      const dose90_2 = dose90/2;
+      const dose90_2liq = dose90_2/50;
+
       result = `
         <strong>Amoxicillin 40mg/kg</strong><br><br>
-        <strong>Dose:</strong> ${dose2.toFixed(0)} mg every 12 hours, which is ${dose2liq.toFixed(1)} ml of 250mg/5ml solution<br>
-        <strong>Or:</strong> ${dose3.toFixed(0)} mg every 8 hours, which is ${dose3liq.toFixed(1)} ml of 250mg/5ml solution.<br>
-        
+        <strong>Dose:</strong> ${dose40_2.toFixed(0)} mg every 12 hours, which is ${dose40_2liq.toFixed(1)} ml of 250mg/5ml solution<br>
+        <strong>Or:</strong> ${dose40_3.toFixed(0)} mg every 8 hours, which is ${dose40_3liq.toFixed(1)} ml of 250mg/5ml solution.<br>
         <br><br>
-        This dose may be appropriate in communities with a low prevalence of penicillin-resistant S. pneumoniae<br><br>
-        Source: UpToDate 2025-05-20
-      `;
-    }
-  }
-
-  else if (drug === "amoxicillin90") {
-    if (isNaN(weight)) {
-      result = "Please enter a valid weight in kg.";
-    } else {
-      const dose = Math.min(90 * weight, 4000);
-      const dose2 = dose/2;
-      const dose2liq = dose2/50;
-      result = `
         <strong>Amoxicillin 90mg/kg</strong><br><br>
-        <strong>Dose:</strong> ${dose2.toFixed(0)} mg every 12 hours, which is ${dose2liq.toFixed(1)} ml of 250mg/5ml solution<br>
-        
-        <br><br>This dose may be appropriate in communities with a high prevalence of penicillin-resistant S. pneumoniae<br><br>
+        <strong>Dose:</strong> ${dose90_2.toFixed(0)} mg every 12 hours, which is ${dose90_2liq.toFixed(1)} ml of 250mg/5ml solution<br>
+        <br><br>
+        The lower dose may be appropriate in communities with a low prevalence of penicillin-resistant S. pneumoniae<br><br>
         Source: UpToDate 2025-05-20
       `;
     }
   }
 
-else if (drug === "coamoxiclav40") {
+else if (drug === "coamoxiclav") {
     if (isNaN(weight)) {
       result = "Please enter a valid weight in kg.";
     } else {
-      const dose = Math.min(40 * weight, 4000);
-      const dose2 = dose/2;
-      const dose2liq = dose2/80;
+      const dose40 = Math.min(40 * weight, 4000);
+      const dose40_2 = dose40/2;
+      const dose40_2liq = dose40_2/80;
+      const dose90 = Math.min(90 * weight, 4000);
+      const dose90_2 = dose90/2;
+      const dose90_2liq = dose90_2/120;
       result = `
         <strong>Amoxicillin 40mg/kg per day with clavulanate 5.7mg/kg per day in 2 doses</strong><br><br>
-        <strong>Dose:</strong> ${dose2.toFixed(0)} mg every 12 hours, which is ${dose2liq.toFixed(1)} ml of 400/57mg per 5ml solution<br>
+        <strong>Dose:</strong> ${dose40_2.toFixed(0)} mg every 12 hours, which is ${dose40_2liq.toFixed(1)} ml of 400/57mg per 5ml solution<br>
         <br><br>
-        This dose may be appropriate in communities with a low prevalence of penicillin-resistant S. pneumoniae<br><br>
-        Source: UpToDate 2025-05-20
-      `;
-    }
-  }
-
-  else if (drug === "coamoxiclav90") {
-    if (isNaN(weight)) {
-      result = "Please enter a valid weight in kg.";
-    } else {
-      const dose = Math.min(90 * weight, 4000);
-      const dose2 = dose/2;
-      const dose2liq = dose2/120;
-      result = `
         <strong>Amoxicillin 90mg/kg per day with clavulanate 6.4mg/kg per day in 2 doses</strong><br><br>
-        <strong>Dose:</strong> ${dose2.toFixed(0)} mg every 12 hours, which is ${dose2liq.toFixed(1)} ml of 600/42.9mg per 5ml solution<br>
-        
-        <br><br>This dose may be appropriate in communities with a high prevalence of penicillin-resistant S. pneumoniae<br><br>
+        <strong>Dose:</strong> ${dose90_2.toFixed(0)} mg every 12 hours, which is ${dose90_2liq.toFixed(1)} ml of 600/42.9mg per 5ml solution<br><br><br>
+        The lower dose may be appropriate in communities with a low prevalence of penicillin-resistant S. pneumoniae<br><br>
         Source: UpToDate 2025-05-20
       `;
     }
@@ -263,5 +240,7 @@ else if (drug === "coamoxiclav40") {
   }
 
   document.getElementById("result").innerHTML = result;
+  document.getElementById("resultbox").style.display = "block";
 }
+
 </script>
