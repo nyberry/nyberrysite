@@ -115,7 +115,7 @@ And The question is:
 
 We all did a bit of maths at school, right?
 
-And so it might be tempting to look at the pattern: 1,2,4,8,16… , doubling with each step, and conclude that the relationship between dots and areas is:
+And it might be tempting to look at the pattern: 1,2,4,8,16 - the numbers doubling with each step - and conclude that the relationship between dots and areas is:
 
 <div class="center-table">
   <table class="grid-table">
