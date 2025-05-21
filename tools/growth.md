@@ -2,7 +2,7 @@
 layout: layout.html
 title: Growth Charts
 ---
-
+<h2>Plot Growth on Chart</h3>
 <div class="input-section">
   <div class="form-row">
     <label for="dob">Date of Birth:</label>
@@ -25,6 +25,8 @@ title: Growth Charts
 <button id="calc-btn" onclick="calculateAge()" style="display: none;">Plot</button>
 
 <div class="results" id="age-output" style="display: none"></div>
+
+<img id ="cartoon" src="/assets/images/nurseandchild.png">
 
 <div id="growth-chart" style="display: none; margin-top: 1em; position: relative; max-width: 100%; border: 1px solid #ccc;">
   <img id="growth-chart-img" src="" alt="Growth Chart" style="width: 100%; display: block;">
@@ -98,6 +100,8 @@ chartImg.onload = () => {
 
 chartImg.src = imgPath;
 chartDiv.style.display = "block";
+document.getElementById("cartoon").style.display = "none";
+
 }
 
 // Show or hide custom plot date input
@@ -210,13 +214,14 @@ function plotGrowthPoint(ageYearsDecimal, weightKg, heightCm, sex, img) {
   padding: 1em;
   background-color: #f9f9f9;
   border-bottom: 1px solid #ccc;
-  max-width: 90%;
+  max-width: 100%;
   margin: 1em auto;
 }
 
 .form-row {
   display: flex;
   align-items: center;
+  margin: auto;
   gap: 10px;
 }
 
@@ -248,7 +253,7 @@ function plotGrowthPoint(ageYearsDecimal, weightKg, heightCm, sex, img) {
 
 
 <hr>
-<h2>CDC Growth Charts</h2>
+<h3>Download CDC Growth Charts (pdf)</h3>
 
 <div class="results">
 <a href="/assets/pdf/growthM0-3.pdf">Boys 0-3 </a>|
