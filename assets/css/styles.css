@@ -1,10 +1,11 @@
-/* assets/css/styles.css */
 body {
     margin: 0;
     font-family: sans-serif;
     background-color: #dddddd;
 }
 
+
+/* nav bar */
 nav {
     background-color: #0c4a6e;
     color: white;
@@ -83,6 +84,7 @@ nav .title {
     display: block;
 }
 
+/* main text container */
 
 .container {
     text-align: center;
@@ -93,32 +95,23 @@ nav .title {
     box-sizing: border-box;
 }
 
+img {
+    max-width: 100%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
 .profile_img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
     max-width: 200px;
     height: auto;
     border-radius: 50%;
 }
 
-.full-screen-width {
-  width: 100vw;
-  position: relative;
-  left: 50%;
-  transform: translateX(-50%);
-  text-align: center;
-  overflow: hidden;
-  padding: 1rem 0;
-}
-
-.full-screen-width img {
-  max-width: 1000px;
-  width: 100%;
-  height: auto;
-}
-
-
-.img {
-    width: 100%;
-}
 
 .icons {
     display: flex;
@@ -138,12 +131,40 @@ input {
     width: 90%;
     max-width: 100px;
     box-sizing: border-box;
+    font-size: 1.3rem;
 }
+
+.results {
+    margin-top: 1.5rem;
+    padding: 1rem;
+    background: #f0f0f0;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 
 hr {margin: 15px 0;
     border: none;
     border-top: 1px solid #999;
 }
+
+button {
+    margin-top: 1rem;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+
+button:hover {
+    background-color: #218838;
+  }
+
+
 
 /* blog CSS */
 

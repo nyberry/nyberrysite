@@ -15,24 +15,39 @@ title: BMI Calculator
   <button type="submit">Calculate BMI</button>
 </form>
 
-<h3 id="bmi-result"></h3>
+<br>
+
+<div id="bmi-result" style="display: none;" class="results">
+    <h3 id="bmi-value"><h3>
+</div>
+
+<img src="/assets/images/scales.png" alt="scales" width=300px>
 
 <!-- BMI info (initially hidden) -->
 <div id="bmi-info" style="display: none; text-align: centre; margin-top: 2rem;">
 
   <hr>
 
-  <p>The Body Mass Index (BMI) estimates a person’s body fat based on their height and weight. It can be used to screen for obesity, which is linked to a range of health problems, including type 2 diabetes, heart disease, and some cancers.</p>
+  Body mass index (BMI) is a value derived from the weight and height of a person. The BMI is defined as the body mass divided by the square of the body height, and is expressed in units of kg/m2.
 
-  <p>BMI has important limitations when applied to individuals, and should be interpreted alongside other indicators such as waist circumference, fitness level, and metabolic health.</p>
+  The Body Mass Index (BMI) is a "rule of thumb" used to broadly categorize a person as underweight, normal weght, overweight or obese.
+  
+   <a href="https://digital.nhs.uk/data-and-information/publications/statistical/health-survey-for-england/2021">In 2021</a>, 28% of adults in the UK were obese (BMI > 30) and 64% of adults were overweight or obese.
+   
+   Obesity is linked with an increased risk of heart disease, type 2 diabetes, and some cancers. Both low and high BMIs are associated with increased all cause mortality, with the risk increasing with distance from the 20-25 range.
 
-  <p>BMI does not differentiate between fat and muscle mass. Athletes or individuals with higher muscle content may be classified as overweight or even obese, despite having low body fat and excellent cardiovascular health. Similarly, BMI does not account for fat distribution, which is an important factor in health risk. Visceral fat (fat around the abdominal organs) poses a higher health risk than fat stored in other areas, but BMI cannot distinguish this.</p>
+  <hr>
 
-  <p>BMI does not account for age, sex, or ethnicity, all of which influence body composition. Older adults may lose muscle mass and gain fat without a significant change in BMI, and certain ethnic groups may experience metabolic risks at lower BMI thresholds than others.</p>
+  <h3>limitations</h3>
 
-  <p>According to the <a href="https://digital.nhs.uk/data-and-information/publications/statistical/health-survey-for-england/2021">Health Survey for England 2021</a>, 64% of adults in the UK are classified as overweight or obese. Around 28% are considered obese (BMI ≥ 30). BMI can form part of a wider conversation about individual health and lifestyle.</p>
+  BMI has limitations when applied to individuals, and should be interpreted alongside other indicators such as waist circumference, fitness level, and metabolic health.
 
-  <img src="/assets/images/scales.png" alt="scales" width=200px>
+  BMI does not differentiate between fat and muscle mass. Athletes or individuals with higher muscle content may be classified as overweight or even obese, despite having low body fat and excellent cardiovascular health.
+  
+  Similarly, BMI does not account for fat distribution, which is an important factor in health risk. Visceral fat (fat around the abdominal organs) poses a higher health risk than fat stored in other areas, but BMI cannot distinguish this.
+
+  BMI does not account for age, sex, or ethnicity- all of which influence body composition. Older adults may lose muscle mass and gain fat without a significant change in BMI, and some ethnic groups may experience metabolic risks at lower BMI thresholds than others.
+
 
 </div>
 
@@ -51,7 +66,9 @@ title: BMI Calculator
     else if (bmi < 40) category = 'E66.812 Obesity 2';
     else category = 'E66.813 Obesity 3';
 
-    document.getElementById('bmi-result').textContent = `${bmi} kg/m² (${category})`;
+
+document.getElementById('bmi-value').textContent = `BMI ${bmi} kg/m² (${category})`;
+document.getElementById('bmi-result').style.display = "block";
 
     // Show the BMI information section
     document.getElementById('bmi-info').style.display = 'block';

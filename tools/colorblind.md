@@ -3,22 +3,35 @@ layout: layout.html
 title: colorblind test
 ---
 
-<img class="full-screen-width" src="/assets/images/colorblindTest.jpg" alt="colorblind test">
+<a href="/assets/images/colorblindTest.jpg" target="_blank">
+    <img src="/assets/images/colorblindTest.jpg" alt="colorblind test">
+</a>
 
 <hr>
 
 ### Ishihara Color Vision Test
 
-The [Ishihara Test](https://en.wikipedia.org/wiki/Ishihara_test) is the most widely used method for detecting red–green color blindness. Created in 1917 by Japanese ophthalmologist Shinobu Ishihara, the test uses a series of colored dot patterns called plates, which reveal numbers or shapes only visible to those with normal or deficient color vision.
+The [Ishihara Test](https://en.wikipedia.org/wiki/Ishihara_test) is a widely used method for detecting red–green color blindness.
 
-The full test consists of 38 plates, but the existence of a severe deficiency is usually apparent after only a few plates. Some plates are designed to be seen by everyone, while others hide digits or shapes depending on a person's type of color deficiency — making it a fast and accurate screening tool. 
+Created in 1917 by Japanese ophthalmologist Shinobu Ishihara, the test uses a series of colored dot patterns called plates, which reveal numbers or shapes only visible to those with normal or deficient color vision.
+
+Some plates are designed to be seen by everyone, while others hide digits or shapes depending on a person's type of color deficiency.
+
+The full test consists of 38 plates, but the existence of a severe deficiency is usually apparent after only a few plates such as the selection above. 
 
 <img class="profile_img" src="/assets/images/ShinobuIshihara.jpg" alt="石原 忍" width=200px>
 
 <hr>
 
-The Ishihara plates above contain these numbers:
+The Ishihara plates above contain these numbers
 
-7, 6, 26, 15
-
-6, 73, 5, 16
+<div class="center-table">
+  <table class="grid-table">
+  <tr>
+    <td>7</td><td>6</td><td>26</td><td>15</td>
+  </tr>
+  <tr>
+    <td>6</td><td>73</td><td>5</td><td>16</td>
+  </tr>
+</table>
+</div>

@@ -121,7 +121,7 @@ title: Paeds Doses
   <!-- <label for="age">Age (years):</label>
   <input type="number" id="age" placeholder="Optional fallback if weight unknown"> -->
 
-<button id="calculate-button" class="calculate" onclick="calculateDose()" style="display: none;">Calculate </button>
+<button id="calculate-button" onclick="calculateDose()" style="display: none;">Calculate </button>
 
   <div id="result"></div>
 </div>
@@ -161,7 +161,7 @@ function calculateDose() {
       const dosehirectal = 20 * weight;
       const maxDailyDose = Math.min(75 * weight, 4000);
       result = `
-        <strong>Acetaminophen / Paracetamol</strong><br>
+        <strong>Acetaminophen / Paracetamol</strong><br><br>
         <strong>Oral Dose:</strong> ${doselo.toFixed(0)} to ${dosehioral.toFixed(0)} mg every 4-6 hours.<br>
         <strong>Rectal Dose:</strong> ${doselo.toFixed(0)} to ${dosehirectal.toFixed(0)} mg every 4-6 hours.<br>
         <strong>Max Daily Dose:</strong> ${maxDailyDose.toFixed(0)} mg/day (not more than 5 doses).<br>
@@ -180,7 +180,7 @@ else if (drug === "amoxicillin40") {
       const dose2liq = dose2/50;
       const dose3liq = dose3/50;
       result = `
-        <strong>Amoxicillin 40mg/kg</strong><br>
+        <strong>Amoxicillin 40mg/kg</strong><br><br>
         <strong>Dose:</strong> ${dose2.toFixed(0)} mg every 12 hours, which is ${dose2liq.toFixed(1)} ml of 250mg/5ml solution<br>
         <strong>Or:</strong> ${dose3.toFixed(0)} mg every 8 hours, which is ${dose3liq.toFixed(1)} ml of 250mg/5ml solution.<br>
         
@@ -199,7 +199,7 @@ else if (drug === "amoxicillin40") {
       const dose2 = dose/2;
       const dose2liq = dose2/50;
       result = `
-        <strong>Amoxicillin 90mg/kg</strong><br>
+        <strong>Amoxicillin 90mg/kg</strong><br><br>
         <strong>Dose:</strong> ${dose2.toFixed(0)} mg every 12 hours, which is ${dose2liq.toFixed(1)} ml of 250mg/5ml solution<br>
         
         <br><br>This dose may be appropriate in communities with a high prevalence of penicillin-resistant S. pneumoniae<br><br>
@@ -216,7 +216,7 @@ else if (drug === "coamoxiclav40") {
       const dose2 = dose/2;
       const dose2liq = dose2/80;
       result = `
-        <strong>Amoxicillin 40mg/kg per day with clavulanate 5.7mg/kg per day in 2 doses</strong><br>
+        <strong>Amoxicillin 40mg/kg per day with clavulanate 5.7mg/kg per day in 2 doses</strong><br><br>
         <strong>Dose:</strong> ${dose2.toFixed(0)} mg every 12 hours, which is ${dose2liq.toFixed(1)} ml of 400/57mg per 5ml solution<br>
         <br><br>
         This dose may be appropriate in communities with a low prevalence of penicillin-resistant S. pneumoniae<br><br>
@@ -233,7 +233,7 @@ else if (drug === "coamoxiclav40") {
       const dose2 = dose/2;
       const dose2liq = dose2/120;
       result = `
-        <strong>Amoxicillin 90mg/kg per day with clavulanate 6.4mg/kg per day in 2 doses</strong><br>
+        <strong>Amoxicillin 90mg/kg per day with clavulanate 6.4mg/kg per day in 2 doses</strong><br><br>
         <strong>Dose:</strong> ${dose2.toFixed(0)} mg every 12 hours, which is ${dose2liq.toFixed(1)} ml of 600/42.9mg per 5ml solution<br>
         
         <br><br>This dose may be appropriate in communities with a high prevalence of penicillin-resistant S. pneumoniae<br><br>
@@ -250,7 +250,7 @@ else if (drug === "coamoxiclav40") {
       const doseHigh = 10 * weight;
        const maxDailyDose = Math.min(40 * weight, 3200);
       result = `
-        <strong>Ibuprofen</strong><br>
+        <strong>Ibuprofen</strong><br><br>
         <strong>Oral Dose:</strong> ${doseLow.toFixed(0)} to ${doseHigh.toFixed(0)} mg every 6–8 hours.<br>
         <strong>Max Daily Dose:</strong> ${maxDailyDose.toFixed(0)} mg/day.
         <br><br>Source: UpToDate 2025-05-20

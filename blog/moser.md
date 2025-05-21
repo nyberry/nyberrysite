@@ -153,7 +153,7 @@ For those who are interested, the relationship is actually given as:
   </table>
 </div>
  
-and the sequence continues like this:
+And the sequence continues like this:
 
 
 <div class="center-table">
@@ -168,12 +168,12 @@ and the sequence continues like this:
       <tr><td>6</td><td>31</td></tr>
       <tr><td>7</td><td>57</td></tr>
       <tr><td>8</td><td>99</td></tr>
-      <tr><td>9</td><td>163...</td></tr>
+      <tr><td>9...</td><td>163...</td></tr>
     </tbody>
   </table>
 </div>
 
-But how might a mathematician correctly "diagnose" the 6th circle as having 31 sides, not 32?
+But how might a mathematician correctly "diagnose" the 6th circle as having 31 regions, not 32?
 
 I suggest there are two main ways.
 
@@ -187,7 +187,7 @@ And maybe it’s like that when GPs encounter illnesses. Most of the time we dea
 
 But if we see enough undifferentiated equine presentations in primary care, sooner or later we'll see a zebra.
 
-It takes a broad training to spot species we have not previously encountered, to question zebrahood when some aspect of a horse does not quite fit the horseshoes. To go back to the basics of physiology and pathology & run the various points, lines and regions through our own complex mental models. 
+It takes a broad training to spot species we have not previously encountered, to question zebrahood when some aspect does not quite fit the horseshoes. To go back to the basics of physiology and pathology & run the various points, lines and regions through our own complex mental models. 
 
 And even then, zebras can be really difficult to spot in a field of horses, at night.
 
@@ -197,7 +197,7 @@ But that’s not all.  Our decisions can be informed by a knowledge of the human
 
 This is one of the reasons why training a GP from medical school currently takes a minimum of 10 years. There are many so animals in the zoo- please let me know if I’m working this metaphor too hard- and learning about them all simply takes a long time.
 
-We draw on these hard-earned intellectual tools for illumination, in the same way that a mathematician might draw on their accumulated knowledge of geometry, algebra and combinatorics to solve Moser's circle problem. Or some other problem in their field. At night.
+We draw on these hard-earned intellectual tools for illumination, in the same way that a mathematician might draw on their accumulated knowledge of geometry, algebra and combinatorics to solve Moser's circle problem. Or to shine light on some other problem in their field. At night.
 
 <img src="/blog/images/zebra2.png" alt="Zebras lit up at night" class="blog-img" style="border-radius: 70%;">
 

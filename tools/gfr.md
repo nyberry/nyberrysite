@@ -26,7 +26,7 @@ title: kidney calculator
   </table>
 </form>
 
-<div class="results" id="output" style="margin-top: 1.5rem; padding: 1rem; background: #f0f0f0; max-width: 500px; margin-left: auto; margin-right: auto; display:none"></div>
+<div class="results" id="output" style="display:none"></div>
 
 
 <!-- GFR info (initially hidden) -->
@@ -34,23 +34,32 @@ title: kidney calculator
 
 <hr>
 
-<h2>eGFR or CrCl ?</h2>
+<h3>eGFR</h3>
 
+The estimated glomerular filtration rate (eGFR) is the preferred method for describing kidney function in most clinical situations.< 
 
-<p>The estimated glomerular filtration rate (eGFR) is the preferred method for describing kidney function in most clinical situations. It is calculated using the CKD-EPI equation, which takes into account a person’s age, sex, and serum creatinine level. This estimate reflects the filtration capacity of the kidneys and is used for diagnosing, staging, and monitoring chronic kidney disease (CKD). eGFR is automatically reported by many laboratories and is standardised to a body surface area of 1.73 m², which allows for comparison across individuals.</p>
+It is calculated using the CKD-EPI equation, which takes into account a person’s age, sex, and serum creatinine level. This estimate reflects the filtration capacity of the kidneys and is used for diagnosing, staging, and monitoring chronic kidney disease (CKD).
 
-<p>Creatinine Clearance (CrCl), calculated using the Cockcroft-Gault formula, provides an estimate of the actual rate at which the kidneys are clearing creatinine from the blood. CrCl is important in situations where accurate drug dosing is critical, such as with aminoglycosides, anticoagulants, and chemotherapeutic agents. Unlike eGFR, it incorporates body weight, making it relevant for medications dosed by kidney function in patients who may be underweight or overweight.</p>
+eGFR is standardised to a body surface area of 1.73 m², which allows for comparison across individuals.
 
-  <img src="/assets/images/kidneyEquations.png" alt="equations" width=500px>
+<h3>CrCl</h3>
+
+Creatinine Clearance (CrCl) provides an estimate of the actual rate at which the kidneys are clearing creatinine from the blood. 
+
+It is calculated using the Cockcroft-Gualt equation. Unlike eGFR, CrCl incorporates body weight, making it relevant when accurate weight-based dosing is needed- such as with aminoglycoside antibiotics, anticoagulants, and chemotherapy drugs.
+
+<img src="/assets/images/kidneyEquations.png" alt="equations">
 <hr>
 
 <h2>CKD</h2>
 
-<p>Chronic Kidney Disease (CKD) is a common, progressive condition where the kidneys gradually lose function over time. It is usually asymptomatic in its early stages and is often detected through routine blood tests showing a reduced eGFR (<90 mL/min/1.73m²) or evidence of kidney damage (e.g., proteinuria). CKD is staged from 1 to 5, with stage 3 or worse (eGFR <60) indicating moderate to severe impairment.</p>
+Chronic Kidney Disease (CKD) is a common, progressive condition where the kidneys gradually lose function over time. It is usually asymptomatic in its early stages and is often detected through routine blood tests showing a reduced eGFR or evidence of kidney damage, such as proteinuria.
 
-<p>CKD is strongly associated with cardiovascular risk, diabetes, and hypertension. Early detection allows interventions like blood pressure control, glycaemic management, and ACE inhibitors which can slow progression. Monitoring eGFR over time helps guide treatment decisions, detect complications, and plan specialist referral when needed.</p>
+CKD is staged from 1 to 5, with stage 3 or worse (eGFR <60) indicating moderate to severe impairment.
 
-  <img src="/assets/images/ckdStages.png" alt="CKD stages" width=500px>
+CKD is strongly associated with cardiovascular risk, diabetes, and hypertension. Early detection allows interventions like blood pressure control, glycaemic management, and ACE inhibitors which can slow progression. Monitoring eGFR over time helps guide treatment decisions, detect complications, and plan specialist referral when needed.
+
+  <img src="/assets/images/ckdStages.png" alt="CKD stages">
 
 [National Kidney Foundation. eGFR Calculators and Equation Overview](https://www.kidney.org/professionals/kdoqi/gfr_calculator)
 
@@ -79,7 +88,12 @@ title: kidney calculator
       return;
     }
 // Determine creatinine units
-const creat_mgdl = creatinine < 25 ? creatinine : creatinine / 88.4;
+const isMgDl = creatinine < 25;
+const creat_mgdl = isMgDl ? creatinine : creatinine / 88.4;
+const creat_display = isMgDl
+    ? `${creatinine.toFixed(1)} mg/dL`
+    : `${creatinine.toFixed(0)} µmol/L`;
+
 
 // CKD-EPI 2021 formula (race-free)
 const k = sex === 'female' ? 0.7 : 0.9;
@@ -96,16 +110,30 @@ const eGFR = 142 *
              Math.pow(0.9938, age) *
              s;
 
-    let html = `<strong>eGFR (CKD-EPI):</strong> ${eGFR.toFixed(1)} mL/min/1.73m²`;
+ // CrCl (Cockcroft-Gault)
+  let html = `<strong>Creatinine:</strong> ${creat_display}<br><br>`;
+  html += `<strong>eGFR (CKD-EPI):</strong> ${eGFR.toFixed(1)} mL/min/1.73m²`;
 
     if (!isNaN(weight)) {
       const sexFactor = sex === 'male' ? 1 : 0.85;
       const crcl = ((140 - age) * weight * sexFactor) / (72 * creat_mgdl);
-      html += `<br><strong>CrCl (Cockcroft-Gault):</strong> ${crcl.toFixed(1)} mL/min`;
+      html += `<br><strong>CrCl (Cockcroft-Gault):</strong> ${crcl.toFixed(1)} mL/min<br><br>`;
     }
+
+  // CKD Stage
+  let stage = "";
+  if (eGFR >= 90) stage = "normal, or stage 1 if proteinuria";
+  else if (eGFR >= 60) stage = "normal, or Stage 2 if proteinuria";
+  else if (eGFR >= 45) stage = "Stage 3a";
+  else if (eGFR >= 30) stage = "Stage 3b";
+  else if (eGFR >= 15) stage = "Stage 4";
+  else stage = "Stage 5";
+
+  html += `<strong>CKD Stage:</strong> ${stage}`;
 
     output.innerHTML = html;
     document.getElementById('gfr-info').style.display = 'block';
     document.getElementById('output').style.display = 'block';
+
   }
 </script>
