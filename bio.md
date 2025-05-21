@@ -14,7 +14,7 @@ From September 2025 I will be studying Data Science for HealthCare through Exete
 
 <hr>
 
-*Roughly half your health is in your own hands — eat well, keep active, and steer clear of harm. And for the rest? The tech is getting better every day.*
+*Roughly half your health is in your own hands — eat well, keep active, and steer clear of harm. For the rest, technology is getting better every day.*
 
 <div class="icons">
     <a href="https://www.linkedin.com/in/nick-berry-767329232/" aria-label="LinkedIn">
