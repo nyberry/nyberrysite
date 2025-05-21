@@ -89,9 +89,7 @@ The US prefers to measure things in milligrams per deciliter (mg/dL) - how heavy
 
 Meanwhile, the UK and most of the rest of the world use millimoles per liter (mmol/L) - how many molecules of stuff are in it.
 
-It’s like measuring your coffee in ounces per cup, versus how many molecules of caffeine you’re ingesting. Same buzz, different number.
-
-And then there’s HbA1c. In the US, this is expressed as a percentage (of glycated hemoglobin), while in the UK it’s measured in mmol/mol.
+And then there’s HbA1c. In the US, this is expressed as a percentage (of glycated hemoglobin), while in the UK it’s measured in millimoles per mole.
 
 If you’ve ever looked at a lab report from across the Atlantic and thought “That number looks way off”, this converter can help you bridge The Pond.
 
