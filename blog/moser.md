@@ -49,7 +49,7 @@ So let me ask you a question.
 
 <hr>
 
-But shelve that for a moment, and let me tell you about a few patients I dealt with recently.
+But shelve that for a moment, and let me tell you about a few patients I made up.
 
 An elderly lady, who had pain from a cracked rib. She felt it go when she leaned over a sofa arm 6 weeks earlier. It was painful to sneeze, and the pain was bothering her at night.
 
@@ -59,29 +59,33 @@ And a middle-aged farmer who had a flu like illness with dry cough, headache and
 
 These are all bread and butter primary care presentations, right?
 
-The patient with rib pain got better with ibuprofen and tincture of time. The man's chest infection improved with a course of antibiotics. The patient with flu just needed to rest up and take paracetamol while she recovered.
+The patient with rib pain will get better with ibuprofen and tincture of time. The man's chest infection will improve, but he may need a course of antibiotics. The patient with flu just needs to rest up and take paracetamol while she recovers.
 
-Except actually, no. That's not what happened. 
+But actually, no. That's not what always happens.
 
-The bony pain was in fact due to multiple myeloma, a rare form of bone cancer. It needed chemotherapy, not ibuprofen.
+What if the bony pain is in fact due to multiple myeloma, a rare form of bone cancer? It needs chemotherapy, not ibuprofen.
 
-The persistent cough was a sign of sarcoidosis, a rare condition where clusters of inflammatory cells called granulomas form in the lungs. It needed steroids, not antibiotics.
+What if the persistent cough is a sign of sarcoidosis, a rare condition where clusters of inflammatory cells called granulomas form in the lungs. It probably needs steroids, not antibiotics.
 
-And the patient with flu-like symptoms had contracted Weils disease, or leptospirosis, while working on her farm's water supply. It was entering the second, immune phase, which is a very bad thing. Her kidneys and liver were failing, as the little bugs wreaked havoc in her bloodstream. You can fix leptospirosis, but it is best recognised while the patient still has working kidneys.
+And what if the patient with flu-like symptoms has contracted Weils disease, or leptospirosis, while working on the farm's water supply? What if it is entering the second, immune phase, which is a very bad thing, and her kidneys and liver are failing as millions of tiny clots form in her bloodstream? You can fix leptospirosis, but it is best recognised while the patient still has working kidneys.
 
-Happily, all three were diagnosed and treated, and recovered.
+I'm not trying to give anyone nightmares here. Happily, in the UK we still have a pretty good healthcare system, and usually even rare conditions like these tend to be porperly diagnosed and treated.
 
-Now, clearly bruised ribs and coughs and flu are common. Like horses in a field. 
+But have you paused to consider how this happens?
 
-But myeloma, sarcoidoisis and leptospirosis- these are not very common things. They may be in the same field as the horses, but they are in fact zebras.
+Clearly, things like bruised ribs and coughs and flu are common. They are like horses in a field. 
 
-Zebras seem easy to recognise in broad daylight. But dealing with patients on the phone takes away all those visual cues- it is more like night than day. And it's easy to miss a zebra in a field at night.
+But things like myeloma, sarcoidoisis and leptospirosis- these are not very common. They may graze in the same field as the horses, but they are in fact zebras.
 
-And yet, there may still be a sense of something intangible in the air. Something about the murky silhouette that suggests shining an inquisitive torch on it.
+Zebras can be quite easy to recognise in broad daylight. The stripes are a dead giveaway, or "a strong visual cue" as some might say in medical education circles.
 
-The patient with painful ribs as losing weight, why would that be? The young guy with the cough, well, this was the first time he’d phoned the surgery in fifteen years, what's that about? The patient with "flu" said she had very dark urine- is that normal in flu? 
+But dealing with patients on the phone takes away those cues, and more. It can feel more like night than day. And it's easy to miss a zebra in a field at night.
 
-These subtle discords, these incongruencies, these anomalies- whatever they are, they somehow resonate. A faint but discernible bell sounding deep in the subconscious. Which leads to a particular line of enquiry or attention. And which in turn can lead to the zebra's form becoming clear, to accurate diagnosis, and to proper treatment.
+And yet, there may be something about the murky silhouette that doesn't sit well. 
+
+If the patient with painful ribs is also losing weight, why might that be? If this is the first time the young guy with the cough had troubled his doctor in fifteen years, what's that about? If the patient with "flu" also had very dark urine- is that normal in flu? 
+
+These subtle discords, these incongruencies, these anomalies- they somehow resonate. A faint but discernible bell sounding deep in the subconscious. Experience tells us to pursue a particular line of enquiry or attention. To shine an inquisitive torch into the field, to make the zebra's form clearer. To accurate diagnosis, and to proper treatment.
 
 <hr>
 
