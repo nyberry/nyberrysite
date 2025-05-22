@@ -26,7 +26,7 @@ title: Growth Charts
 
 <div class="results" id="age-output" style="display: none"></div>
 
-<img id ="cartoon" src="/assets/images/nurseandchild.png">
+<img style="border-radius: 50%" id ="cartoon" src="/assets/images/nurseandchild.png">
 
 <div id="growth-chart" style="display: none; margin-top: 1em; position: relative; max-width: 100%; border: 1px solid #ccc;">
   <img id="growth-chart-img" src="" alt="Growth Chart" style="width: 100%; display: block;">
@@ -207,6 +207,8 @@ function plotGrowthPoint(ageYearsDecimal, weightKg, heightCm, sex, img) {
 </script>
 
 <style>
+
+/*
 .input-section {
   display: flex;
   flex-direction: column;
@@ -241,6 +243,7 @@ function plotGrowthPoint(ageYearsDecimal, weightKg, heightCm, sex, img) {
   gap: 20px;
   align-items: center;
 }
+*/
 
 #growth-canvas {
   position: absolute;
