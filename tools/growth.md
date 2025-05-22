@@ -3,30 +3,40 @@ layout: layout.html
 title: Growth Charts
 ---
 <h2>Plot Growth on Chart</h3>
-<div class="input-section">
-  <div class="form-row">
+
+
+<h2>BMI Calculator</h2>
+
+<form id="bmi-form">
+  <label for="height">Height (cm):</label>
+  <input type="number" id="height" required>
+  <br><br>
+  <label for="weight">Weight (kg):</label>
+  <input type="number" id="weight" required>
+  <br><br>
+  <button type="submit">Calculate BMI</button>
+</form>
+
+
+<form id="input-section">
     <label for="dob">Date of Birth:</label>
     <input type="date" id="dob" oninput="checkFormCompletion()">
-  </div>
-  <div class="form-row">
+    <br><br>
     <label for="weight">Weight (kg):</label>
     <input type="number" id="weight" step="0.01" oninput="checkFormCompletion()">
-  </div>
-   <div class="form-row">
+    <br><br>
     <label for="height">Height (cm):</label>
     <input type="number" id="height" step="1" oninput="checkFormCompletion()">
-  </div>
-  <div class="form-row radio-group">
+    <br><br>
     <label><input type="radio" name="sex" value="girl" checked> Girl</label>
     <label><input type="radio" name="sex" value="boy"> Boy</label>
-  </div>
-</div>
-
-<button id="calc-btn" onclick="calculateAge()" style="display: none;">Plot</button>
+    <br><br>
+    <button id="calc-btn" onclick="calculateAge()" style="display: none;">Plot</button>
+</form>
 
 <div class="results" id="age-output" style="display: none"></div>
 
-<img style="border-radius: 50%" id ="cartoon" src="/assets/images/nurseandchild.png">
+<img style="border-radius: 50%; width: 400px;" id ="cartoon" src="/assets/images/nurseandchild.png">
 
 <div id="growth-chart" style="display: none; margin-top: 1em; position: relative; max-width: 100%; border: 1px solid #ccc;">
   <img id="growth-chart-img" src="" alt="Growth Chart" style="width: 100%; display: block;">
@@ -235,6 +245,7 @@ function plotGrowthPoint(ageYearsDecimal, weightKg, heightCm, sex, img) {
 .input-section input {
   padding: 8px;
 }
+*/
 
 .input-section input[type="date"] {min-width: 180px; max-width: 180px;}
 
@@ -243,7 +254,7 @@ function plotGrowthPoint(ageYearsDecimal, weightKg, heightCm, sex, img) {
   gap: 20px;
   align-items: center;
 }
-*/
+
 
 #growth-canvas {
   position: absolute;
