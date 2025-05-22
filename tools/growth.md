@@ -4,20 +4,6 @@ title: Growth Charts
 ---
 <h2>Plot Growth on Chart</h3>
 
-
-<h2>BMI Calculator</h2>
-
-<form id="bmi-form">
-  <label for="height">Height (cm):</label>
-  <input type="number" id="height" required>
-  <br><br>
-  <label for="weight">Weight (kg):</label>
-  <input type="number" id="weight" required>
-  <br><br>
-  <button type="submit">Calculate BMI</button>
-</form>
-
-
 <form id="input-section">
     <label for="dob">Date of Birth:</label>
     <input type="date" id="dob" oninput="checkFormCompletion()">
@@ -31,12 +17,12 @@ title: Growth Charts
     <label><input type="radio" name="sex" value="girl" checked> Girl</label>
     <label><input type="radio" name="sex" value="boy"> Boy</label>
     <br><br>
-    <button id="calc-btn" onclick="calculateAge()" style="display: none;">Plot</button>
+    <button id="calc-btn" style="display: none;">Plot</button>
 </form>
 
 <div class="results" id="age-output" style="display: none"></div>
 
-<img style="border-radius: 50%; width: 400px;" id ="cartoon" src="/assets/images/nurseandchild.png">
+<img style="border-radius: 50%; width: 300px;" id ="cartoon" src="/assets/images/nurseandchild.png">
 
 <div id="growth-chart" style="display: none; margin-top: 1em; position: relative; max-width: 100%; border: 1px solid #ccc;">
   <img id="growth-chart-img" src="" alt="Growth Chart" style="width: 100%; display: block;">
@@ -45,7 +31,8 @@ title: Growth Charts
 
 
 <script>
-function calculateAge() {
+function calculateAge(event) {
+  if (event) event.preventDefault();
   const dob = new Date(document.getElementById("dob").value); 
   const refDate = new Date() 
   const weightKg = parseFloat(document.getElementById("weight").value);
@@ -212,7 +199,7 @@ function plotGrowthPoint(ageYearsDecimal, weightKg, heightCm, sex, img) {
   if (heightY !== null) drawCross(ctx, ageX, heightY, 12, "black");
 }
 
-
+document.getElementById("calc-btn").addEventListener("click", calculateAge);
 
 </script>
 
