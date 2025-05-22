@@ -6,9 +6,9 @@ title: nyberry
 <img class="profile_img" src="/assets/images/headshot.jpg" alt="Centered Image">
 
 ### Hi, I'm Nick.
-Here are some medical things which I hope you may find useful.
-<br>
-There are some tools and calculators, some blog type posts, and some links to sites with helpul or interesting content.
+Here are some things which I hope you might find interesting and useful.
+<br><br>
+
 
 <div class="icons">
     <a href="https://www.linkedin.com/in/nick-berry-767329232/" aria-label="LinkedIn">
