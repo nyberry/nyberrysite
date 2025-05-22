@@ -43,6 +43,9 @@ title: Paeds Doses
   <div id="result"></div>
 </div>
 
+<br>
+<img src="/assets/images/medicine.png" class="circle-image">
+
 </div>
 
 <script>
