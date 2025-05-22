@@ -35,7 +35,8 @@ title: Growth Charts
   </div>
 </form>
 
-<img style="border-radius: 50%; width: 300px;" id ="cartoon" src="/assets/images/nurseandchild.png">
+<br>
+<img style="border-radius: 50%; width: 200px;" id ="cartoon" src="/assets/images/nurseandchild.png">
 
 <div id="growth-chart" style="display: none; margin-top: 1em; position: relative; max-width: 100%; border: 1px solid #ccc;">
   <img id="growth-chart-img" src="" alt="Growth Chart" style="width: 100%; display: block;">
