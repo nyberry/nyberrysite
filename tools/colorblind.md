@@ -3,13 +3,12 @@ layout: layout.html
 title: colorblind test
 ---
 
+<h3>Ishihara Color Vision Test</h3>
+<br>
 <a href="/assets/images/colorblindTest.jpg" target="_blank">
     <img src="/assets/images/colorblindTest.jpg" alt="colorblind test">
 </a>
-
 <hr>
-
-### Ishihara Color Vision Test
 
 The [Ishihara Test](https://en.wikipedia.org/wiki/Ishihara_test) is a widely used method for detecting red–green color blindness.
 
