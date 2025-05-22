@@ -61,13 +61,13 @@ These are all bread and butter primary care presentations, right?
 
 The patient with rib pain will get better with ibuprofen and tincture of time. The man's chest infection will improve, but he may need a course of antibiotics. The patient with flu just needs to rest up and take paracetamol while she recovers.
 
-But actually, no. That's not what always happens.
+But actually, no. That's not always what happens.
 
 What if the bony pain is in fact due to multiple myeloma, a rare form of bone cancer? It needs chemotherapy, not ibuprofen.
 
 What if the persistent cough is a sign of sarcoidosis, a rare condition where clusters of inflammatory cells called granulomas form in the lungs. It probably needs steroids, not antibiotics.
 
-And what if the patient with flu-like symptoms has contracted Weils disease, or leptospirosis, while working on the farm's water supply? What if it is entering the second, immune phase, which is a very bad thing, and her kidneys and liver are failing as millions of tiny clots form in her bloodstream? You can fix leptospirosis, but it is best recognised while the patient still has working kidneys.
+And what if the patient with flu-like symptoms has contracted Weils disease, leptospirosis, while working on the farm's water supply? What if it is entering the second, immune phase, which is a very bad thing, and her kidneys and liver are failing as millions of tiny clots form in her bloodstream? You can fix leptospirosis, but it is best recognised while the patient still has working kidneys.
 
 I'm not trying to give anyone nightmares here. Those conditions are really rare. And happily, in the UK we have a pretty good healthcare system, through which even rare conditions like these tend to be diagnosed and treated in a timely fashion.
 
@@ -75,13 +75,13 @@ But have you paused to consider how this happens?
 
 Clearly, things like bruised ribs and coughs and flu are common. They are like horses in a field. 
 
-But things like myeloma, sarcoidoisis and leptospirosis- these are not very common. They may graze in the same field as the horses, but they are in fact zebras.
+On the other hand, things like myeloma, sarcoidoisis and leptospirosis are not very common. They may graze in the same field as the horses, but they are in fact zebras.
 
 Zebras can be quite easy to recognise in broad daylight. The stripes are a dead giveaway, or "a strong visual cue" as some might say in medical education circles.
 
-But dealing with patients on the phone takes away those cues, and more. It can feel more like night than day. And it's easy to miss a zebra in a field at night.
+But broad daylight is not guaranteed in healthcare. Phone consultations for example, by stripping all visual cues, can sometimes make it feel more like night than day. And it's easy to miss a zebra in a field at night.
 
-And yet, there may be something about the murky silhouette that doesn't sit well. 
+Still, there may be something about the murky silhouette that doesn't sit well. 
 
 If the patient with painful ribs is also losing weight, why might that be? If this is the first time the young guy with the cough had troubled his doctor in fifteen years, what's that about? If the patient with "flu" also had very dark urine- is that normal in flu? 
 
