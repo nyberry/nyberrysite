@@ -205,41 +205,9 @@ document.getElementById("calc-btn").addEventListener("click", calculateAge);
 
 <style>
 
-/*
-.input-section {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  padding: 1em;
-  background-color: #f9f9f9;
-  border-bottom: 1px solid #ccc;
-  max-width: 100%;
-  margin: 1em auto;
-}
-
-.form-row {
-  display: flex;
-  align-items: center;
-  margin: auto;
-  gap: 10px;
-}
-
-.input-section label {
-  font-weight: bold;
-  margin-bottom: 5px;
-}
-
-.input-section input {
-  padding: 8px;
-}
-*/
-
-.input-section input[type="date"] {min-width: 180px; max-width: 180px;}
-
-.radio-group {
-  flex-direction: row;
-  gap: 20px;
-  align-items: center;
+#dob {
+  min-width: 180px;
+  max-width: 180px;
 }
 
 
