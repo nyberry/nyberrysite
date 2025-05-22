@@ -35,9 +35,6 @@ title: Growth Charts
   </div>
 </form>
 
-
-<div class="results" id="age-output" style="display: none"></div>
-
 <img style="border-radius: 50%; width: 300px;" id ="cartoon" src="/assets/images/nurseandchild.png">
 
 <div id="growth-chart" style="display: none; margin-top: 1em; position: relative; max-width: 100%; border: 1px solid #ccc;">
@@ -90,10 +87,11 @@ if (decimalAge > 20 || decimalAge < 0) {
   return;
 }
 
+/*
 const ageOutput = document.getElementById("age-output");
 ageOutput.textContent = `Age: ${ageYears} years, ${ageMonths} months, ${ageDays} days`;
 ageOutput.style.display = "block";
-
+*/
 
 // Determine image path
 let imgPath = "";
