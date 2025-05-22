@@ -51,11 +51,11 @@ So let me ask you a question.
 
 But shelve that for a moment, and let me tell you about a few patients I made up.
 
-An elderly lady, who had pain from a cracked rib. She felt it go when she leaned over a sofa arm 6 weeks earlier. It was painful to sneeze, and the pain was bothering her at night.
+An elderly lady, who has pain from a cracked rib. She felt it go when she leaned over a sofa arm six weeks back. It is painful to sneeze, and the pain is bothering her at night.
 
-A fit young man whose family had a string of colds, but his cough seemed to have lingered far longer than anyone else’s and "gone to his chest" – he was keeping the whole house up with his coughing.
+A fit man whose young kids always bring home a string of colds, but his cough seemed to have lingered far longer than anyone else’s and "gone to his chest" – he is keeping the whole house up with his coughing.
 
-And a middle-aged farmer who had a flu like illness with dry cough, headache and aching limbs for 10 days. Initially she took herself off to bed and it seemed to be getting better. But she phoned for advice as it seemed to be getting worse again.
+And a middle-aged farmer who has a flu like illness with dry cough, headache and aching limbs. It's been going on for a week already. Initially she took herself off to bed and it seemed to be getting better. But now things seem to be getting worse again.
 
 These are all bread and butter primary care presentations, right?
 
@@ -69,7 +69,7 @@ What if the persistent cough is a sign of sarcoidosis, a rare condition where cl
 
 And what if the patient with flu-like symptoms has contracted Weils disease, or leptospirosis, while working on the farm's water supply? What if it is entering the second, immune phase, which is a very bad thing, and her kidneys and liver are failing as millions of tiny clots form in her bloodstream? You can fix leptospirosis, but it is best recognised while the patient still has working kidneys.
 
-I'm not trying to give anyone nightmares here. Happily, in the UK we still have a pretty good healthcare system, and usually even rare conditions like these tend to be porperly diagnosed and treated.
+I'm not trying to give anyone nightmares here. Those conditions are really rare. And happily, in the UK we have a pretty good healthcare system, through which even rare conditions like these tend to be diagnosed and treated in a timely fashion.
 
 But have you paused to consider how this happens?
 
