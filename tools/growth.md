@@ -9,7 +9,7 @@ title: Growth Charts
   <table style="margin: 0 auto; border-collapse: collapse;">
     <tr>
       <td style="text-align: right; padding: 0.5rem;"><label for="dob">Date of Birth:</label></td>
-      <td style="padding: 0.5rem; min-width: 180px; max-width: 180px;"><input type="date" id="dob" oninput="checkFormCompletion()"></td>
+      <td style="padding: 0.5rem;"><input type="date" id="dob" style = "min-width: 180px; max-width: 180px;" oninput="checkFormCompletion()"></td>
     </tr>
     <tr>
       <td style="text-align: right; padding: 0.5rem;"><label for="weight">Weight (kg):</label></td>
