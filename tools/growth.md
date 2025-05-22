@@ -5,20 +5,31 @@ title: Growth Charts
 <h2>Plot Growth on Chart</h3>
 
 <form id="input-section">
-    <label for="dob">Date of Birth:</label>
-    <input type="date" id="dob" oninput="checkFormCompletion()">
-    <br><br>
-    <label for="weight">Weight (kg):</label>
-    <input type="number" id="weight" step="0.01" oninput="checkFormCompletion()">
-    <br><br>
-    <label for="height">Height (cm):</label>
-    <input type="number" id="height" step="1" oninput="checkFormCompletion()">
-    <br><br>
-    <label><input type="radio" name="sex" value="girl" checked> Girl</label>
-    <label><input type="radio" name="sex" value="boy"> Boy</label>
-    <br><br>
+  <table style="margin: 0 auto; border-collapse: collapse;">
+    <tr>
+      <td style="text-align: right; padding: 0.5rem;"><label for="dob">Date of Birth:</label></td>
+      <td style="padding: 0.5rem;"><input type="date" id="dob" oninput="checkFormCompletion()"></td>
+    </tr>
+    <tr>
+      <td style="text-align: right; padding: 0.5rem;"><label for="weight">Weight (kg):</label></td>
+      <td style="padding: 0.5rem;"><input type="number" id="weight" step="0.01" oninput="checkFormCompletion()"></td>
+    </tr>
+    <tr>
+      <td style="text-align: right; padding: 0.5rem;"><label for="height">Height (cm):</label></td>
+      <td style="padding: 0.5rem;"><input type="number" id="height" step="1" oninput="checkFormCompletion()"></td>
+    </tr>
+    <tr>
+      <td colspan="2" style="text-align: center; padding: 0.5rem;">
+        <label><input type="radio" name="sex" value="girl" checked> Girl</label>
+        <label><input type="radio" name="sex" value="boy"> Boy</label>
+      </td>
+    </tr>
+  </table>
+  <div style="text-align: center; padding-top: 1rem;">
     <button id="calc-btn" style="display: none;">Plot</button>
+  </div>
 </form>
+
 
 <div class="results" id="age-output" style="display: none"></div>
 
@@ -209,7 +220,6 @@ document.getElementById("calc-btn").addEventListener("click", calculateAge);
   min-width: 180px;
   max-width: 180px;
 }
-
 
 #growth-canvas {
   position: absolute;
