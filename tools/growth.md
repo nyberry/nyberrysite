@@ -20,7 +20,7 @@ title: Growth Charts
     </tr>
     <tr>  
       <td>
-        <input type="radio" name="sex" value="girl" id="girl">
+        <input type="radio" name="sex" value="girl" id="girl" checked>
         <br>
         <label for="girl">Girl</label>
       </td>
