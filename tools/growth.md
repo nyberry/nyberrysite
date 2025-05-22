@@ -20,8 +20,8 @@ title: Growth Charts
     </tr>
     <tr>
       <td colspan="2" style="text-align: center; padding: 0.5rem;">
-        <label><input type="radio" name="sex" value="girl" checked> Girl</label>
-        <label><input type="radio" name="sex" value="boy"> Boy</label>
+        <label><input type="radio" name="sex" value="girl" checked><br>Girl</label>
+        <label><input type="radio" name="sex" value="boy"><br>Boy</label>
       </td>
     </tr>
   </table>
