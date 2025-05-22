@@ -23,6 +23,6 @@ All mammals with spinal nerves have dermatomes - horses, for exampler have 41 pa
 
 <img src="/assets/images/horsedermatomes.gif">
 
-I think the dermatome map makes more sense when you stand like a horse.
+And I think the dermatome map makes more sense when you stand like a horse.
 
 <img src="/assets/images/dermatome.png">
