@@ -18,12 +18,17 @@ title: Growth Charts
       <td style="text-align: right; padding: 0.5rem;"><label for="height">Height (cm):</label></td>
       <td style="padding: 0.5rem;"><input type="number" id="height" step="1" oninput="checkFormCompletion()"></td>
     </tr>
-    <tr>
-      <td colspan="2" style="text-align: center; padding: 0.5rem;">
-        <label><input type="radio" name="sex" value="girl" checked><br>Girl</label>
-        <label><input type="radio" name="sex" value="boy"><br>Boy</label>
+    <tr>  
+      <td>
+        <input type="radio" name="sex" value="girl" id="girl">
+        <br>
+        <label for="girl">Girl</label>
       </td>
-    </tr>
+      <td>
+        <input type="radio" name="sex" value="boy" id="boy">
+        <br>
+        <label for="boy">Boy</label>
+      </tr>
   </table>
   <div style="text-align: center; padding-top: 1rem;">
     <button id="calc-btn" style="display: none;">Plot</button>
