@@ -3,86 +3,6 @@ layout: layout.html
 title: Paeds Doses
 ---
 
-<style>
-  .modal {
-    position: fixed;
-    top: 0; left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: rgba(0, 0, 0, 0.7);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-  }
-
-  .modal-content {
-    background: white;
-    padding: 2rem;
-    border-radius: 8px;
-    max-width: 600px;
-    text-align: left;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
-  }
-
-  .modal-content h2 {
-    margin-top: 0;
-  }
-
-  .modal-content button {
-    background-color: #007BFF;
-    color: white;
-    padding: 0.5rem 1rem;
-    border: none;
-    border-radius: 4px;
-    font-size: 1rem;
-    cursor: pointer;
-  }
-
-  .modal-content button:hover {
-    background-color: #0056b3;
-  }
-
-  #dose-tool {
-    display: none;
-    padding: 1rem;
-    max-width: 600px;
-    margin: 2rem auto;
-  }
-
-  label {
-    display: block;
-    margin-top: 1rem;
-  }
-
-  input, select {
-    width: 100%;
-    padding: 0.5rem;
-    margin-top: 0.25rem;
-    box-sizing: border-box;
-  }
-
-  button.calculate {
-    margin-top: 1rem;
-    background-color: #28a745;
-    color: white;
-    border: none;
-    padding: 0.5rem 1rem;
-    border-radius: 4px;
-    font-size: 1rem;
-    cursor: pointer;
-  }
-
-  button.calculate:hover {
-    background-color: #218838;
-  }
-
-  #result {
-    margin-top: 1rem;
-    font-weight: bold;
-  }
-</style>
-
 <!-- Disclaimer Modal -->
 <div id="disclaimer-modal" class="modal">
   <div class="modal-content">
@@ -99,10 +19,9 @@ title: Paeds Doses
 <!-- Main Tool -->
 <div id="dose-tool">
   <h2>Paediatric Dose Calculator</h2>
-
   <label for="drug">Select drug:</label>
   <select id="drug" onchange="checkFormCompletion()">
-    <option value="">--Select--</option>
+    <!-- <option value="">--Select--</option> -->
     <option value="acetaminophen">Acetaminophen (paracetamol)</option>
     <option value="amoxicillin">Amoxicillin</option>
     <option value="coamoxiclav">Co-amoxiclav</option>
@@ -244,3 +163,86 @@ else if (drug === "coamoxiclav") {
 }
 
 </script>
+
+
+
+
+<style>
+  .modal {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+
+  .modal-content {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    max-width: 600px;
+    text-align: left;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  }
+
+  .modal-content h2 {
+    margin-top: 0;
+  }
+
+  .modal-content button {
+    background-color: #007BFF;
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+
+  .modal-content button:hover {
+    background-color: #0056b3;
+  }
+
+  #dose-tool {
+    display: none;
+    padding: 1rem;
+    max-width: 600px;
+    margin: 2rem auto;
+  }
+
+  label {
+    display: block;
+    margin-top: 1rem;
+  }
+
+  input, select {
+    width: 100%;
+    padding: 0.5rem;
+    margin-top: 0.25rem;
+    box-sizing: border-box;
+  }
+
+  button.calculate {
+    margin-top: 1rem;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+
+  button.calculate:hover {
+    background-color: #218838;
+  }
+
+  #result {
+    margin-top: 1rem;
+    font-weight: bold;
+  }
+</style>

@@ -10,7 +10,7 @@ title: BMI Calculator
   <input type="number" id="height" required>
   <br><br>
   <label for="weight">Weight (kg):</label>
-  <input type="number" id="weight" required>
+  <input type="number" id="weight" step="0.1" required>
   <br><br>
   <button type="submit">Calculate BMI</button>
 </form>

@@ -2,13 +2,14 @@
 layout: layout.html
 title: Growth Charts
 ---
+
 <h2>Plot Growth on Chart</h3>
 
 <form id="input-section">
   <table style="margin: 0 auto; border-collapse: collapse;">
     <tr>
       <td style="text-align: right; padding: 0.5rem;"><label for="dob">Date of Birth:</label></td>
-      <td style="padding: 0.5rem;"><input type="date" id="dob" oninput="checkFormCompletion()"></td>
+      <td style="padding: 0.5rem; min-width: 180px; max-width: 180px;"><input type="date" id="dob" oninput="checkFormCompletion()"></td>
     </tr>
     <tr>
       <td style="text-align: right; padding: 0.5rem;"><label for="weight">Weight (kg):</label></td>
@@ -19,16 +20,9 @@ title: Growth Charts
       <td style="padding: 0.5rem;"><input type="number" id="height" step="1" oninput="checkFormCompletion()"></td>
     </tr>
     <tr>  
-      <td>
-        <input type="radio" name="sex" value="girl" id="girl" checked>
-        <br>
-        <label for="girl">Girl</label>
-      </td>
-      <td>
-        <input type="radio" name="sex" value="boy" id="boy">
-        <br>
-        <label for="boy">Boy</label>
-      </tr>
+      <td><input type="radio" name="sex" value="girl" id="girl" checked><br><label for="girl">Girl</label></td>
+      <td><input type="radio" name="sex" value="boy" id="boy"><br><label for="boy">Boy</label>
+    </tr>
   </table>
   <div style="text-align: center; padding-top: 1rem;">
     <button id="calc-btn" style="display: none;">Plot</button>
@@ -40,7 +34,19 @@ title: Growth Charts
 
 <div id="growth-chart" style="display: none; margin-top: 1em; position: relative; max-width: 100%; border: 1px solid #ccc;">
   <img id="growth-chart-img" src="" alt="Growth Chart" style="width: 100%; display: block;">
-  <canvas id="growth-canvas" style="position: absolute; top: 0; left: 0;"></canvas>
+  <canvas id="growth-canvas" style="position: absolute; top: 0; left: 0;  position: absolute; pointer-events: none;"></canvas>
+</div>
+
+
+<hr>
+
+<h3>Download CDC Growth Charts (pdf)</h3>
+
+<div class="results">
+<a href="/assets/pdf/growthM0-3.pdf">Boys 0-3 </a>|
+<a href="/assets/pdf/growthM2-20.pdf">Boys 2-20 </a>|
+<a href="/assets/pdf/growthF0-3.pdf">Girls 0-3 </a>|
+<a href="/assets/pdf/growthF2-20.pdf">Girls 2-20 </a>
 </div>
 
 
@@ -217,30 +223,3 @@ function plotGrowthPoint(ageYearsDecimal, weightKg, heightCm, sex, img) {
 document.getElementById("calc-btn").addEventListener("click", calculateAge);
 
 </script>
-
-<style>
-
-#dob {
-  min-width: 180px;
-  max-width: 180px;
-}
-
-#growth-canvas {
-  position: absolute;
-  top: 0;
-  left: 0;
-  pointer-events: none; /* prevent blocking clicks */
-}
-
-</style>
-
-
-<hr>
-<h3>Download CDC Growth Charts (pdf)</h3>
-
-<div class="results">
-<a href="/assets/pdf/growthM0-3.pdf">Boys 0-3 </a>|
-<a href="/assets/pdf/growthM2-20.pdf">Boys 2-20 </a>|
-<a href="/assets/pdf/growthF0-3.pdf">Girls 0-3 </a>|
-<a href="/assets/pdf/growthF2-20.pdf">Girls 2-20 </a>
-</div>
