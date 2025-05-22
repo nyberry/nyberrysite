@@ -49,7 +49,7 @@ title: Paeds Doses
 function acceptDisclaimer() {
   document.getElementById("disclaimer-modal").style.display = "none";
   document.getElementById("dose-tool").style.display = "block";
-document.getElementById("weight").focus();
+  document.getElementById("weight").focus();
 }
 
 function checkFormCompletion() {
@@ -205,13 +205,6 @@ else if (drug === "coamoxiclav") {
 
   .modal-content button:hover {
     background-color: #0056b3;
-  }
-
-  #dose-tool {
-    display: none;
-    padding: 1rem;
-    max-width: 600px;
-    margin: 2rem auto;
   }
 
   label {
