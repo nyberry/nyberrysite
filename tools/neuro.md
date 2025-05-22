@@ -3,7 +3,8 @@ layout: layout.html
 title: dermatome map
 ---
 <h2>Dermatome map</h2>
-<img src="/assets/images/dermatome.png">
+
+<img src="/assets/images/dermatome2.png">
 <br>
 <br>
 A dermatome map is a tool for localizing and understanding patterns of skin sensation linked to the spinal nerves.
@@ -18,4 +19,10 @@ Testing sensation across different dermatomes helps assess the integrity of the 
 
 In the case of shingles (herpes zoster), a dermatome map helps recognize the classic pattern of a painful, blistering rash that follows a single dermatome. This distribution reflects reactivation of the virus in a specific sensory nerve, and recognizing the pattern helps confirm the diagnosis and guide treatment.
 
-Horses have 42 pairs of spinal nerves and dermatomes. The figure in the picture is however a human, but standing like a horse because don't you think the dermatomes make more sense that way?
+All mammals with spinal nerves have dermatomes - horses, for exampler have 41 pairs of dermatomes.
+
+<img src="/assets/images/horsedermatomes.gif">
+
+I think the dermatome map makes more sense when you stand like a horse.
+
+<img src="/assets/images/dermatome.png">

@@ -2,7 +2,7 @@
 layout: layout.html
 title: clini
 ---
-<h3>Clini medical report generator</h3>
+<h2>Clini medical report generator</h2>
 
 [clini](https://www.clini.co.uk) is a pilot version of an app designed to streamline the extraction of medical data from clinical documents, and generate patient-friendly reports using AI. 
 
