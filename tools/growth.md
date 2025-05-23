@@ -30,7 +30,7 @@ title: Growth Charts
     </tr>
   </table>
   <div style="text-align: center; padding-top: 0.5rem;">
-    <button id="calc-btn" style="visibility: hidden;">Plot</button>
+    <button id="calc-btn">Plot</button>
   </div>
 </form>
 
@@ -125,7 +125,10 @@ const decimalAge = ageYears + ageMonths / 12 + ageDays / 365.25;
 if (plotPoints.length === 1) {
   disableInputsAfterFirstPlot();
   document.getElementById("calc-btn").innerHTML = "Add another plot";
-}
+  document.getElementById("weight").value = "";
+  document.getElementById("height").value = "";
+  checkFormCompletion();
+  }
 }
 
 
@@ -137,7 +140,6 @@ function checkFormCompletion() {
   const button = document.getElementById("calc-btn");
 
   const formComplete = (height || weight) && dob && dateofplot;
-  button.style.visibility = formComplete ? "visible" : "hidden";
   button.disabled = !formComplete;
 }
 

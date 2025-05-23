@@ -165,20 +165,32 @@ hr {margin: 15px 0;
     border-top: 1px solid #999;
 }
 
+/* Base styling for all buttons */
 button {
-    margin-top: 1rem;
-    background-color: #28a745;
-    color: white;
-    border: none;
-    padding: 0.5rem 1rem;
-    border-radius: 4px;
-    font-size: 1rem;
-    cursor: pointer;
-  }
+  margin-top: 1rem;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: opacity 0.3s ease, color 0.3s ease, background-color 0.3s ease;
+}
 
 button:hover {
-    background-color: #218838;
-  }
+  background-color: #218838;
+}
+
+/* Faded out style when any button is disabled */
+button:disabled,
+button.disabled-button {
+  opacity: 0.5;
+  pointer-events: none;
+  color: #ccc;
+  background-color: #6c757d;
+  cursor: default;
+}
 
 
 
