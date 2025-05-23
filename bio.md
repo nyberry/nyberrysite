@@ -1,6 +1,6 @@
 ---
 layout: layout.html
-title: bio
+title: Dr Nick Berry
 ---
 <br><br>
 <img class="profile_img" src="/assets/images/headshot.jpg" alt="Centered Image">
