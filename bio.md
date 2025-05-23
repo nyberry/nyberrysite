@@ -12,7 +12,7 @@ I specialise in Family Medicine and have Postgraduate qualifications in Sports a
 
 From September 2025 I will be studying Data Science for HealthCare at Exeter University's MSc programme.
 
-To book a consultation, please contact <a href="https://theimcentre.com/">The International Medical Centre</a>. I offer in-person and remote consultations.
+To book an in-person or remote consultation, please contact <a href="https://theimcentre.com/">The International Medical Centre</a>.
 
 
 <div class="icons">

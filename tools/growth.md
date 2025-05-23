@@ -37,6 +37,10 @@ title: Growth Charts
   <canvas id="growth-canvas" style="position: absolute; top: 0; left: 0;  position: absolute; pointer-events: none;"></canvas>
 </div>
 
+<div style="text-align: center; margin-top: 1rem;">
+  <button id="download-btn" style="display: none;">Download Chart</button>
+</div>
+
 
 <hr>
 
@@ -118,8 +122,10 @@ chartImg.onload = () => {
 
 chartImg.src = imgPath;
 chartDiv.style.display = "block";
-document.getElementById("cartoon").style.display = "none";
 
+// show download button 
+document.getElementById("download-btn").style.display = "inline-block";
+document.getElementById("cartoon").style.display = "none";
 }
 
 // Show or hide custom plot date input
@@ -128,7 +134,7 @@ document.querySelectorAll('input[name="plot-date-mode"]').forEach(radio => {
     document.getElementById("plot-date").style.display = 
       radio.value === "custom" ? "inline-block" : "none";
   });
-});
+})
 
 
 function checkFormCompletion() {
@@ -219,6 +225,34 @@ function plotGrowthPoint(ageYearsDecimal, weightKg, heightCm, sex, img) {
   if (weightY !== null) drawCross(ctx, ageX, weightY, 12, "black");
   if (heightY !== null) drawCross(ctx, ageX, heightY, 12, "black");
 }
+
+
+document.getElementById("download-btn").addEventListener("click", () => {
+  const baseImage = document.getElementById("growth-chart-img");
+  const overlayCanvas = document.getElementById("growth-canvas");
+
+  const combinedCanvas = document.createElement("canvas");
+  combinedCanvas.width = baseImage.naturalWidth;
+  combinedCanvas.height = baseImage.naturalHeight;
+
+  const ctx = combinedCanvas.getContext("2d");
+  ctx.drawImage(baseImage, 0, 0, combinedCanvas.width, combinedCanvas.height);
+  ctx.drawImage(overlayCanvas, 0, 0, combinedCanvas.width, combinedCanvas.height);
+
+  const today = new Date();
+  const yyyy = today.getFullYear();
+  const mm = String(today.getMonth() + 1).padStart(2, '0');
+  const dd = String(today.getDate()).padStart(2, '0');
+  const dateStr = `${yyyy}-${mm}-${dd}`;
+
+  const link = document.createElement("a");
+  link.download = `growth-chart-${dateStr}.png`;
+  link.href = combinedCanvas.toDataURL("image/png");
+  link.click();
+});
+
+
+
 
 document.getElementById("calc-btn").addEventListener("click", calculateAge);
 
