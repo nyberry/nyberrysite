@@ -24,8 +24,8 @@ title: Growth Charts
       <td><input type="radio" name="sex" value="boy" id="boy"><br><label for="boy">Boy</label>
     </tr>
   </table>
-  <div style="text-align: center; padding-top: 1rem;">
-    <button id="calc-btn" style="display: none;">Plot</button>
+  <div style="text-align: center; padding-top: 0.5rem;">
+    <button id="calc-btn" style="visibility: hidden;">Plot</button>
   </div>
 </form>
 
@@ -138,9 +138,9 @@ function checkFormCompletion() {
   const button = document.getElementById("calc-btn");
 
   if ((height || weight) && dob) {
-    button.style.display = "inline-block";
+    button.style.visibility = "visible";
   } else {
-    button.style.display = "none";
+    button.style.visibility = "hidden";
   }
 }
 

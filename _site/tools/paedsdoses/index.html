@@ -9,7 +9,11 @@
 
 <body>
   <nav>
-    <div class="menu"><a href="/index">nyberry</a></div>
+    <div class="menu"><a href="/index" aria-label="Home">
+      <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 576 512">
+        <path fill="currentColor" d="M541 229.16L327.41 43a35.84 35.84 0 0 0-46.8 0L35 229.16a16 16 0 0 0-1.16 22.59l21.41 23.57a16 16 0 0 0 22.59 1.16L96 240.81V464a16 16 0 0 0 16 16h112a16 16 0 0 0 16-16V352h96v112a16 16 0 0 0 16 16h112a16 16 0 0 0 16-16V240.81l18.16 15.67a16 16 0 0 0 22.59-1.16l21.41-23.57a16 16 0 0 0-1.16-22.59z"/>
+      </svg>
+    </a></div>
     <ul class="menu">
       <li><a href="/bio">Bio</a></li>
       <li><a href="/blog/">Blog</a></li>
@@ -125,14 +129,14 @@ else if (drug === "amoxicillin") {
       const dose90_2liq = dose90_2/50;
 
       result = `
-        <strong>Amoxicillin 40mg/kg</strong><br><br>
-        <strong>Dose:</strong> ${dose40_2.toFixed(0)} mg every 12 hours, which is ${dose40_2liq.toFixed(1)} ml of 250mg/5ml solution<br>
-        <strong>Or:</strong> ${dose40_3.toFixed(0)} mg every 8 hours, which is ${dose40_3liq.toFixed(1)} ml of 250mg/5ml solution.<br>
-        <br><br>
+        <img src="https://flagcdn.com/us.svg" alt="US flag" width="24"><strong>Amoxicillin 40mg/kg</strong><br><br>
+        <strong>Dose:</strong> ${dose40_2.toFixed(0)} mg every 12 hours, which is ${dose40_2liq.toFixed(1)} ml of 250mg/5ml solution
+        <hr>
+        <img src="https://flagcdn.com/us.svg" alt="US flag" width="24">
         <strong>Amoxicillin 90mg/kg</strong><br><br>
         <strong>Dose:</strong> ${dose90_2.toFixed(0)} mg every 12 hours, which is ${dose90_2liq.toFixed(1)} ml of 250mg/5ml solution<br>
-        <br><br>
-        The lower dose may be appropriate in communities with a low prevalence of penicillin-resistant S. pneumoniae<br><br>
+        <hr>
+        The bigger dose may be appropriate in communities with a high prevalence of penicillin-resistant S. pneumoniae<br><br>
         Source: UpToDate 2025-05-20
       `;
     }
@@ -149,12 +153,13 @@ else if (drug === "coamoxiclav") {
       const dose90_2 = dose90/2;
       const dose90_2liq = dose90_2/120;
       result = `
-        <strong>Amoxicillin 40mg/kg per day with clavulanate 5.7mg/kg per day in 2 doses</strong><br><br>
+        <img src="https://flagcdn.com/us.svg" alt="US flag" width="24"><strong>Amoxicillin 40mg/kg per day with clavulanate 5.7mg/kg per day in 2 doses</strong><br><br>
         <strong>Dose:</strong> ${dose40_2.toFixed(0)} mg every 12 hours, which is ${dose40_2liq.toFixed(1)} ml of 400/57mg per 5ml solution<br>
-        <br><br>
-        <strong>Amoxicillin 90mg/kg per day with clavulanate 6.4mg/kg per day in 2 doses</strong><br><br>
-        <strong>Dose:</strong> ${dose90_2.toFixed(0)} mg every 12 hours, which is ${dose90_2liq.toFixed(1)} ml of 600/42.9mg per 5ml solution<br><br><br>
-        The lower dose may be appropriate in communities with a low prevalence of penicillin-resistant S. pneumoniae<br><br>
+        <hr>
+        <img src="https://flagcdn.com/us.svg" alt="US flag" width="24"><strong>Amoxicillin 90mg/kg per day with clavulanate 6.4mg/kg per day in 2 doses</strong><br><br>
+        <strong>Dose:</strong> ${dose90_2.toFixed(0)} mg every 12 hours, which is ${dose90_2liq.toFixed(1)} ml of 600/42.9mg per 5ml solution<br>
+        <hr>
+        The bigger dose may be appropriate in communities with a high prevalence of penicillin-resistant S. pneumoniae<br><br>
         Source: UpToDate 2025-05-20
       `;
     }

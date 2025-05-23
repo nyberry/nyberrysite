@@ -9,7 +9,11 @@
 
 <body>
   <nav>
-    <div class="menu"><a href="/index">nyberry</a></div>
+    <div class="menu"><a href="/index" aria-label="Home">
+      <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 576 512">
+        <path fill="currentColor" d="M541 229.16L327.41 43a35.84 35.84 0 0 0-46.8 0L35 229.16a16 16 0 0 0-1.16 22.59l21.41 23.57a16 16 0 0 0 22.59 1.16L96 240.81V464a16 16 0 0 0 16 16h112a16 16 0 0 0 16-16V352h96v112a16 16 0 0 0 16 16h112a16 16 0 0 0 16-16V240.81l18.16 15.67a16 16 0 0 0 22.59-1.16l21.41-23.57a16 16 0 0 0-1.16-22.59z"/>
+      </svg>
+    </a></div>
     <ul class="menu">
       <li><a href="/bio">Bio</a></li>
       <li><a href="/blog/">Blog</a></li>
@@ -63,9 +67,12 @@
 <p>The estimated glomerular filtration rate (eGFR) is the preferred method for describing kidney function in most clinical situations.&lt;</p>
 <p>It is calculated using the CKD-EPI equation, which takes into account a person’s age, sex, and serum creatinine level. This estimate reflects the filtration capacity of the kidneys and is used for diagnosing, staging, and monitoring chronic kidney disease (CKD).</p>
 <p>eGFR is standardised to a body surface area of 1.73 m², which allows for comparison across individuals.</p>
-<h3>CrCl</h3>
+<hr>
+<h3>Creatinine Clearance</h3>
 <p>Creatinine Clearance (CrCl) provides an estimate of the actual rate at which the kidneys are clearing creatinine from the blood.</p>
 <p>It is calculated using the Cockcroft-Gualt equation. Unlike eGFR, CrCl incorporates body weight, making it relevant when accurate weight-based dosing is needed- such as with aminoglycoside antibiotics, anticoagulants, and chemotherapy drugs.</p>
+<hr>
+<h3>Formulas</h3>
 <img src="/assets/images/kidneyEquations.png" alt="equations">
 <hr>
 <h2>CKD</h2>
@@ -73,6 +80,8 @@
 <p>CKD is staged from 1 to 5, with stage 3 or worse (eGFR &lt;60) indicating moderate to severe impairment.</p>
 <p>CKD is strongly associated with cardiovascular risk, diabetes, and hypertension. Early detection allows interventions like blood pressure control, glycaemic management, and ACE inhibitors which can slow progression. Monitoring eGFR over time helps guide treatment decisions, detect complications, and plan specialist referral when needed.</p>
   <img src="/assets/images/ckdStages.png" alt="CKD stages">
+<hr>
+<h2>More info</h2>
 <p><a href="https://www.kidney.org/professionals/kdoqi/gfr_calculator">National Kidney Foundation. eGFR Calculators and Equation Overview</a></p>
 <p><a href="https://www.nice.org.uk/guidance/ng203">NICE. Chronic Kidney Disease: Assessment and Management (NG203)</a></p>
 <p><a href="https://kdigo.org/guidelines/ckd-evaluation-and-management/">KDIGO. Clinical Practice Guideline for the Evaluation and Management of Chronic Kidney Disease</a></p>
@@ -90,9 +99,9 @@
     const sex = document.querySelector("input[name='sex']:checked")?.value;
 
     if (!sex || isNaN(age) || isNaN(creatinine)) {
-      output.innerHTML = "Please enter age, sex, and creatinine to calculate eGFR.";
+      output.innerHTML = "";
       document.getElementById('gfr-info').style.display = 'none';
-      document.getElementById('output').style.display = 'block';
+      document.getElementById('output').style.display = 'none';
       return;
     }
 // Determine creatinine units

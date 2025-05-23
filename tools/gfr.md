@@ -45,11 +45,16 @@ It is calculated using the CKD-EPI equation, which takes into account a personâ€
 
 eGFR is standardised to a body surface area of 1.73 mÂ², which allows for comparison across individuals.
 
-<h3>CrCl</h3>
+<hr>
+
+<h3>Creatinine Clearance</h3>
 
 Creatinine Clearance (CrCl) provides an estimate of the actual rate at which the kidneys are clearing creatinine from the blood. 
 
 It is calculated using the Cockcroft-Gualt equation. Unlike eGFR, CrCl incorporates body weight, making it relevant when accurate weight-based dosing is needed- such as with aminoglycoside antibiotics, anticoagulants, and chemotherapy drugs.
+
+<hr>
+<h3>Formulas</h3>
 
 <img src="/assets/images/kidneyEquations.png" alt="equations">
 <hr>
@@ -63,6 +68,10 @@ CKD is staged from 1 to 5, with stage 3 or worse (eGFR <60) indicating moderate 
 CKD is strongly associated with cardiovascular risk, diabetes, and hypertension. Early detection allows interventions like blood pressure control, glycaemic management, and ACE inhibitors which can slow progression. Monitoring eGFR over time helps guide treatment decisions, detect complications, and plan specialist referral when needed.
 
   <img src="/assets/images/ckdStages.png" alt="CKD stages">
+
+<hr>
+
+<h2>More info</h2>
 
 [National Kidney Foundation. eGFR Calculators and Equation Overview](https://www.kidney.org/professionals/kdoqi/gfr_calculator)
 
@@ -85,9 +94,9 @@ CKD is strongly associated with cardiovascular risk, diabetes, and hypertension.
     const sex = document.querySelector("input[name='sex']:checked")?.value;
 
     if (!sex || isNaN(age) || isNaN(creatinine)) {
-      output.innerHTML = "Please enter age, sex, and creatinine to calculate eGFR.";
+      output.innerHTML = "";
       document.getElementById('gfr-info').style.display = 'none';
-      document.getElementById('output').style.display = 'block';
+      document.getElementById('output').style.display = 'none';
       return;
     }
 // Determine creatinine units
