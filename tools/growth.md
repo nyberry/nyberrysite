@@ -242,7 +242,7 @@ function drawDataTable(ctx, dataRows, chartType) {
   ctx.font = "20px sans-serif";
   ctx.textBaseline = "top";
 
-const xOffset = 10;
+const xOffset = 15;
 const yOffset = 3;
 dataRows.forEach((row, i) => {
   const y = startY + i * rowHeight + yOffset;
@@ -262,9 +262,14 @@ dataRows.forEach((row, i) => {
 
 function getDataTableRows() {
   return plotPoints.map(pt => {
+    const totalMonths = Math.round(pt.decimalAge * 12);
+    const years = Math.floor(totalMonths / 12);
+    const months = totalMonths % 12;
+    const ageFormatted = `${years} Y ${months} M`;
+
     return {
       Date: pt.plotDate,
-      Age: pt.decimalAge.toFixed(2),
+      Age: ageFormatted,
       Weight: pt.weightKg !== null ? `${pt.weightKg.toFixed(1)}kg` : "",
       Height: pt.heightCm !== null ? `${pt.heightCm.toFixed(0)}cm` : ""
     };
