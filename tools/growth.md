@@ -5,7 +5,7 @@ title: Growth Charts
 
 <h2>Plot Growth on Chart</h2>
 
-<form id="input-section">
+<form id="input-section" onsubmit="return false;">
   <table style="margin: 0 auto; border-collapse: collapse;">
     <tr>
       <td style="text-align: right; padding: 0.5rem;"><label for="dob">Date of Birth:</label></td>
@@ -133,11 +133,9 @@ function checkFormCompletion() {
   const dateofplot = document.getElementById("dateofplot").value;
   const button = document.getElementById("calc-btn");
 
-  if ((height || weight) && dob) {
-    button.style.visibility = "visible";
-  } else {
-    button.style.visibility = "hidden";
-  }
+  const formComplete = (height || weight) && dob && dateofplot;
+  button.style.visibility = formComplete ? "visible" : "hidden";
+  button.disabled = !formComplete;
 }
 
 function mapValueToPixels(value, fromMin, fromMax, toMin, toMax) {
@@ -335,6 +333,8 @@ document.getElementById("reset-btn").addEventListener("click", () => {
   plotPoints = [];
   document.getElementById("growth-chart").style.display = "none";
   document.getElementById("cartoon").style.display = "block";
+  document.getElementById("reset-btn").style.display = "none";
+  document.getElementById("download-btn").style.display = "none";
   setDateOfPlotToToday();
   enableInputsOnReset(); 
 });
@@ -374,6 +374,7 @@ function enableInputsOnReset() {
 // Fill today's date on page load
 window.onload = function() {
   setDateOfPlotToToday();
+  document.getElementById("calc-btn").disabled = true;
   }
 
 // Add event listener to plot button
