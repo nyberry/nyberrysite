@@ -56,31 +56,26 @@
         <td>Glucose</td>
         <td><input type="number" step="any" id="glucose-us"></td>
         <td><input type="number" step="any" id="glucose-uk"></td>
-        <td><span class="flag" id="flag-glucose"></span></td>
       </tr>
       <tr>
         <td>Total Cholesterol</td>
         <td><input type="number" step="any" id="chol-total-us"></td>
         <td><input type="number" step="any" id="chol-total-uk"></td>
-        <td><span class="flag" id="flag-chol"></span></td>
       </tr>
       <tr>
         <td>LDL Cholesterol</td>
         <td><input type="number" step="any" id="ldl-us"></td>
         <td><input type="number" step="any" id="ldl-uk"></td>
-        <td><span class="flag" id="flag-ldl"></span></td>
       </tr>
       <tr>
         <td>HDL Cholesterol</td>
         <td><input type="number" step="any" id="hdl-us"></td>
         <td><input type="number" step="any" id="hdl-uk"></td>
-        <td><span class="flag" id="flag-hdl"></span></td>
       </tr>
       <tr>
         <td>Urate</td>
         <td><input type="number" step="any" id="urate-us"></td>
         <td><input type="number" step="any" id="urate-uk"></td>
-        <td><span class="flag" id="flag-urate"></span></td>
       </tr>
   <!-- HbA1c heading -->
   <tr>
@@ -94,7 +89,6 @@
     <td>HbA1c</td>
     <td><input type="number" step="any" id="hba1c-us"></td>
     <td><input type="number" step="any" id="hba1c-uk"></td>
-    <td><span class="flag" id="flag-hba1c"></span></td>
   </tr>
 <p></tbody></p>
   </table>
@@ -104,11 +98,10 @@
 </form>
 <style>
   table {  margin: 0 auto; border-collapse: collapse; width: 100%; max-width: 600px;  table-layout: fixed; }
-  th, td { padding: 0.5rem; border: 1px solid #ddd; width: 25%; text-align: center;}
-  .flag { color: red; font-size: 1.2rem; }
+  th, td { padding: 0.2rem; border: 1px solid #ddd; width: 25%; text-align: center;}
 </style>
 <!-- lab converter info (initially hidden) -->
-<div id="converter-info" style="display: none; text-align: centre; margin-top: 2rem;">
+<div id="converter-info" style="display: none; text-align: center; margin-top: 2rem;">
 <hr>
 <h3>Americans Use Different Lab Units</h3>
 <p>The US prefers to measure things in milligrams per deciliter (mg/dL) - how heavy stuff floating in the blood is.</p>
@@ -130,75 +123,103 @@ document.getElementById('unit-converter').addEventListener('submit', function (e
   const chol_rev = 38.67;
 
   // Generic converter that handles individual row
-function convertRow(usId, ukId, flagId, toUk, toUs, precisionUs = 0, precisionUk = 1) {
+function convertRow(usId, ukId, toUk, toUs, precisionUs = 0, precisionUk = 1) {
   const usEl = document.getElementById(usId);
   const ukEl = document.getElementById(ukId);
-  const flag = document.getElementById(flagId);
-
   const usVal = parseFloat(usEl.value);
   const ukVal = parseFloat(ukEl.value);
 
-  if (!isNaN(usVal) && !isNaN(ukVal)) {
-    flag.textContent = '⚠️ just fill one';
-    return;
-  }
-
-  flag.textContent = '';
-
   if (!isNaN(usVal) && isNaN(ukVal)) {
     ukEl.value = toUk(usVal).toFixed(precisionUk);
+    usEl.disabled = true;
+    ukEl.disabled = true;
   } else if (!isNaN(ukVal) && isNaN(usVal)) {
     usEl.value = toUs(ukVal).toFixed(precisionUs);
+    usEl.disabled = true;
+    ukEl.disabled = true;
   }
   document.getElementById('converter-info').style.display = 'block';
 }
 
   // Apply converter to each row
  // Glucose: US = 0 dp, UK = 1 dp
-convertRow('glucose-us', 'glucose-uk', 'flag-glucose',
+convertRow('glucose-us', 'glucose-uk',
   v => v * 0.0555,
   v => v * 18.018,
   0, 1);
 
 // HbA1c: US = 1 dp, UK = 0 dp 
-convertRow('hba1c-us', 'hba1c-uk', 'flag-hba1c',
+convertRow('hba1c-us', 'hba1c-uk',
   x => (x - 2.15) * 10.929,
   x => x / 10.929 + 2.15,
   1, 0);
 
 // Total Cholesterol: US = 0 dp, UK = 1 dp
-convertRow('chol-total-us', 'chol-total-uk', 'flag-chol',
+convertRow('chol-total-us', 'chol-total-uk',
   v => v * 0.0259,
   v => v * 38.67,
   0, 1);
 
 // LDL: US = 0 dp, UK = 1 dp
-convertRow('ldl-us', 'ldl-uk', 'flag-ldl',
+convertRow('ldl-us', 'ldl-uk',
   v => v * 0.0259,
   v => v * 38.67,
   0, 1);
 
 // HDL: US = 0 dp, UK = 1 dp
-convertRow('hdl-us', 'hdl-uk', 'flag-hdl',
+convertRow('hdl-us', 'hdl-uk',
   v => v * 0.0259,
   v => v * 38.67,
   0, 1);
 
 // Urate: US = 0 dp, UK = 1 dp
-convertRow('urate-us', 'urate-uk', 'flag-urate',
+convertRow('urate-us', 'urate-uk',
   v => v * 0.05948,
   v => v * 16.812,
   1, 2);
 });
 
-// Clear button logic
+
+function setupMutualDisabling(id1, id2) {
+  const el1 = document.getElementById(id1);
+  const el2 = document.getElementById(id2);
+
+  el1.addEventListener('input', () => {
+    if (el1.value !== '') {
+      el2.disabled = true;
+    } else {
+      el2.disabled = false;
+    }
+  });
+
+  el2.addEventListener('input', () => {
+    if (el2.value !== '') {
+      el1.disabled = true;
+    } else {
+      el1.disabled = false;
+    }
+  });
+}
+
+
+// Set up mutual disabling for each pair
+setupMutualDisabling('glucose-us', 'glucose-uk');
+setupMutualDisabling('chol-total-us', 'chol-total-uk');
+setupMutualDisabling('ldl-us', 'ldl-uk');
+setupMutualDisabling('hdl-us', 'hdl-uk');
+setupMutualDisabling('urate-us', 'urate-uk');
+setupMutualDisabling('hba1c-us', 'hba1c-uk');
+
+
 document.getElementById('clear-btn').addEventListener('click', function () {
   const inputs = document.querySelectorAll('#unit-converter input');
-  inputs.forEach(input => input.value = '');
-  const flags = document.querySelectorAll('.flag');
-  flags.forEach(flag => flag.textContent = '');
-document.getElementById('converter-info').style.display = 'none';
+  inputs.forEach(input => {
+    input.value = '';
+    input.disabled = false;
+  });
+  document.getElementById('converter-info').style.display = 'none';
 });
+
 </script>
 
     
