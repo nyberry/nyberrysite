@@ -39,10 +39,10 @@
       <h2>BMI Calculator</h2>
 <form id="bmi-form">
   <label for="height">Height (cm):</label>
-  <input type="number" id="height" oninput="checkFormCompletion()">
+  <input type="number" id="height" min="50" max="250" required oninput="checkFormCompletion()">
   <br><br>
   <label for="weight">Weight (kg):</label>
-  <input type="number" id="weight" step="0.1" oninput="checkFormCompletion()">
+  <input type="number" id="weight" min="5" max="250" required step="0.1" oninput="checkFormCompletion()">
   <br><br>
   <button type="submit" disabled="true">Calculate BMI</button>
 </form>
@@ -66,17 +66,16 @@
 <p>BMI does not account for age, sex, or ethnicity- all of which influence body composition. Older adults may lose muscle mass and gain fat without a significant change in BMI, and some ethnic groups may experience metabolic risks at lower BMI thresholds than others.</p>
 </div>
 <script>
-  function checkFormCompletion() {
-    const height = document.getElementById('height').value;
-    const weight = document.getElementById('weight').value;
-    const button = document.querySelector('#bmi-form button');
+function checkFormCompletion() {
+  const height = parseFloat(document.getElementById('height').value);
+  const weight = parseFloat(document.getElementById('weight').value);
+  const button = document.querySelector('#bmi-form button');
 
-    if (height && weight) {
-      button.disabled = false;
-    } else {
-      button.disabled = true;
-    }
-  }
+  const validHeight = !isNaN(height) && height >= 50 && height <= 250;
+  const validWeight = !isNaN(weight) && weight >= 5 && weight <= 250;
+
+  button.disabled = !(validHeight && validWeight);
+}
 
   document.getElementById('bmi-form').addEventListener('submit', function(event) {
     event.preventDefault();
