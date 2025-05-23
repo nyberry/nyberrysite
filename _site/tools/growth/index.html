@@ -52,8 +52,8 @@
       <td style="padding: 0.5rem;"><input type="number" id="height" step="1" oninput="checkFormCompletion()"></td>
     </tr>
     <tr>  
-      <td><input type="radio" name="sex" value="girl" id="girl" checked><br><label for="girl">Girl</label></td>
-      <td><input type="radio" name="sex" value="boy" id="boy"><br><label for="boy">Boy</label>
+      <td><input type="radio" name="sex" value="girl" id="girl" onclick="updateCartoon()" checked><br><label for="girl">Girl</label></td>
+      <td><input type="radio" name="sex" value="boy" id="boy" onclick="updateCartoon()"><br><label for="boy">Boy</label>
     </tr>
   </table>
   <div style="text-align: center; padding-top: 0.5rem;">
@@ -61,7 +61,7 @@
   </div>
 </form>
 <br>
-<img class = "circle-image" id ="cartoon" src="/assets/images/nurseandchild.png">
+<img class = "circle-image" id ="cartoon" src="/assets/images/nurseandgirl.png">
 <div id="growth-chart" style="display: none; margin-top: 1em; position: relative; max-width: 100%; border: 1px solid #ccc;">
   <img id="growth-chart-img" src="" alt="Growth Chart" style="width: 100%; display: block;">
   <canvas id="growth-canvas" style="position: absolute; top: 0; left: 0;  position: absolute; pointer-events: none;"></canvas>
@@ -247,6 +247,17 @@ function plotGrowthPoint(ageYearsDecimal, weightKg, heightCm, sex, img) {
 
   if (weightY !== null) drawCross(ctx, ageX, weightY, 12, "black");
   if (heightY !== null) drawCross(ctx, ageX, heightY, 12, "black");
+}
+
+function updateCartoon() {
+  const girlRadio = document.getElementById("girl");
+  const cartoon = document.getElementById("cartoon");
+
+  if (girlRadio.checked) {
+    cartoon.src = "/assets/images/nurseandgirl.png";
+  } else {
+    cartoon.src = "/assets/images/nurseandboy.png";
+  }
 }
 
 
