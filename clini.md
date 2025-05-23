@@ -14,8 +14,6 @@ Medical test results need to be relayed in a way that is clear and easy to under
 
 The app allows test results and other medical information to be built into a detailed and professional report. Privacy and data security are the top concerns. 
 
-<img style="max-width: 200px; border-radius: 5%;" src="/assets/images/reportdemo.jpg" alt="report">
-
 <hr>
 
-[Try a beta version here](https://www.clini.co.uk)
+[Try the beta version here](https://www.clini.co.uk)
