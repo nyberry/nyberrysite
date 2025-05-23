@@ -7,12 +7,12 @@ title: BMI Calculator
 
 <form id="bmi-form">
   <label for="height">Height (cm):</label>
-  <input type="number" id="height" required>
+  <input type="number" id="height" oninput="checkFormCompletion()">
   <br><br>
   <label for="weight">Weight (kg):</label>
-  <input type="number" id="weight" step="0.1" required>
+  <input type="number" id="weight" step="0.1" oninput="checkFormCompletion()">
   <br><br>
-  <button type="submit">Calculate BMI</button>
+  <button type="submit" disabled="true">Calculate BMI</button>
 </form>
 
 <br>
@@ -52,12 +52,24 @@ title: BMI Calculator
 </div>
 
 <script>
+  function checkFormCompletion() {
+    const height = document.getElementById('height').value;
+    const weight = document.getElementById('weight').value;
+    const button = document.querySelector('#bmi-form button');
+
+    if (height && weight) {
+      button.disabled = false;
+    } else {
+      button.disabled = true;
+    }
+  }
+
   document.getElementById('bmi-form').addEventListener('submit', function(event) {
     event.preventDefault();
     const height = parseFloat(document.getElementById('height').value) / 100;
     const weight = parseFloat(document.getElementById('weight').value);
     const bmi = (weight / (height * height)).toFixed(1);
-    
+
     let category = '';
     if (bmi < 18.5) category = 'Underweight';
     else if (bmi < 25) category = 'Normal weight';
@@ -66,11 +78,8 @@ title: BMI Calculator
     else if (bmi < 40) category = 'E66.812 Obesity 2';
     else category = 'E66.813 Obesity 3';
 
-
-document.getElementById('bmi-value').textContent = `BMI ${bmi} kg/m² (${category})`;
-document.getElementById('bmi-result').style.display = "block";
-
-    // Show the BMI information section
+    document.getElementById('bmi-value').textContent = `BMI ${bmi} kg/m² (${category})`;
+    document.getElementById('bmi-result').style.display = "block";
     document.getElementById('bmi-info').style.display = 'block';
   });
 </script>
