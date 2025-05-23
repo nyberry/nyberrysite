@@ -107,6 +107,7 @@ const decimalAge = ageYears + ageMonths / 12 + ageDays / 365.25;
 // Store the new point
   plotPoints.push({
     decimalAge,
+    plotDate: document.getElementById("dateofplot").value,
     weightKg: isNaN(weightKg) ? null : weightKg,
     heightCm: isNaN(heightCm) ? null : heightCm
   });
@@ -217,10 +218,58 @@ function drawChart(sex, latestAge) {
       if (pt.weightKg !== null) drawCross(ctx, ageX, mapWeightToY(pt.weightKg), 12, "black");
       if (pt.heightCm !== null) drawCross(ctx, ageX, mapHeightToY(pt.heightCm), 12, "black");
     });
+
+    drawDataTable(ctx, getDataTableRows(), useUnder3 ? 'under3' : '2to20');
+
   };
   chartImg.src = imagePath;
 }
- 
+
+// Draws text into a predefined table area on the canvas
+function drawDataTable(ctx, dataRows, chartType) {
+  const isUnder3 = chartType === 'under3';
+
+  // Define column x-coordinates
+  const columns = isUnder3
+    ? { Date: 600, Age: 718, Weight: 825, Height: 950 }
+    : { Date: 161, Age: 300, Weight: 443, Height: 583 };
+
+  // Define row y-coordinates
+  const startY = isUnder3 ? 1731 : 314;
+  const rowHeight = 30;
+
+  ctx.fillStyle = "black";
+  ctx.font = "20px sans-serif";
+  ctx.textBaseline = "top";
+
+const xOffset = 10;
+const yOffset = 3;
+dataRows.forEach((row, i) => {
+  const y = startY + i * rowHeight + yOffset;
+  ctx.fillText(row.Date, columns.Date + xOffset, y);
+  ctx.fillText(row.Age, columns.Age + xOffset, y);
+  ctx.fillText(row.Weight, columns.Weight + xOffset, y);
+  ctx.fillText(row.Height, columns.Height + xOffset, y);
+});
+}
+
+// Example usage:
+// drawDataTable(ctx, [
+//   { Date: "2024-01-01", Age: "2.0", Weight: "14.5kg", Height: "90cm" },
+//   { Date: "2025-01-01", Age: "3.0", Weight: "16.0kg", Height: "95cm" }
+// ], 'under3' or '2to20');
+
+
+function getDataTableRows() {
+  return plotPoints.map(pt => {
+    return {
+      Date: pt.plotDate,
+      Age: pt.decimalAge.toFixed(2),
+      Weight: pt.weightKg !== null ? `${pt.weightKg.toFixed(1)}kg` : "",
+      Height: pt.heightCm !== null ? `${pt.heightCm.toFixed(0)}cm` : ""
+    };
+  });
+}
 
 function updateCartoon() {
   const girlRadio = document.getElementById("girl");
