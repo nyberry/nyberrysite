@@ -50,9 +50,8 @@ title: Growth Charts
   <button id="reset-btn" style="display: none;">Clear</button>
 </div>
 
-
-
 <script>
+
 let plotPoints = [];
 
 function calculateAge(event) {
@@ -113,6 +112,9 @@ const decimalAge = ageYears + ageMonths / 12 + ageDays / 365.25;
 
 if (plotPoints.length === 1) {
   disableInputsAfterFirstPlot();
+} 
+
+if (plotPoints.length >= 1) { 
   document.getElementById("calc-btn").innerHTML = "Add another plot";
   document.getElementById("weight").value = "";
   document.getElementById("height").value = "";
