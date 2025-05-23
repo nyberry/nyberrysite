@@ -38,7 +38,7 @@ title: BMI Calculator
 
   <hr>
 
-  <h3>limitations</h3>
+  <h3>Limitations</h3>
 
   BMI has limitations when applied to individuals, and should be interpreted alongside other indicators such as waist circumference, fitness level, and metabolic health.
 
