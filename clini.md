@@ -16,4 +16,4 @@ The app allows test results and other medical information to be built into a det
 
 <hr>
 
-[Try the beta version here](https://www.clini.co.uk)
+[Try the beta version](https://www.clini.co.uk)
