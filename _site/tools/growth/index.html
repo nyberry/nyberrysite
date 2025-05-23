@@ -36,12 +36,17 @@
   <main class="container">
   
      
-      <h2>Plot Growth on Chart</h3>
+      <h2>Plot Growth on Chart</h2>
 <form id="input-section">
   <table style="margin: 0 auto; border-collapse: collapse;">
     <tr>
       <td style="text-align: right; padding: 0.5rem;"><label for="dob">Date of Birth:</label></td>
       <td style="padding: 0.5rem;"><input type="date" id="dob" style = "min-width: 180px; max-width: 180px;" oninput="checkFormCompletion()"></td>
+    </tr>
+    <tr>
+      <td style="text-align: right; padding: 0.5rem;"><label for="dateofplot">Date of Plot:</label></td>
+      <td style="padding: 0.5rem;"><input type="date" id="dateofplot" style = "min-width: 180px; max-width: 180px;" oninput="checkFormCompletion()">
+      </td>
     </tr>
     <tr>
       <td style="text-align: right; padding: 0.5rem;"><label for="weight">Weight (kg):</label></td>
@@ -61,13 +66,16 @@
   </div>
 </form>
 <br>
-<img class = "circle-image" id ="cartoon" src="/assets/images/nurseandgirl.png">
+<label onclick="toggleSex()">
+  <img class="circle-image" id="cartoon" src="/assets/images/nurseandgirl.png">
+</label>
 <div id="growth-chart" style="display: none; margin-top: 1em; position: relative; max-width: 100%; border: 1px solid #ccc;">
   <img id="growth-chart-img" src="" alt="Growth Chart" style="width: 100%; display: block;">
   <canvas id="growth-canvas" style="position: absolute; top: 0; left: 0;  position: absolute; pointer-events: none;"></canvas>
 </div>
 <div style="text-align: center; margin-top: 1rem;">
-  <button id="download-btn" style="display: none;">Download Chart</button>
+  <button id="download-btn" style="display: none;">Download</button>
+  <button id="reset-btn" style="display: none;">Clear</button>
 </div>
 <hr>
 <h3>Download CDC Growth Charts (pdf)</h3>
@@ -78,26 +86,30 @@
 <a href="/assets/pdf/growthF2-20.pdf">Girls 2-20 </a>
 </div>
 <script>
+let plotPoints = [];
+
 function calculateAge(event) {
   if (event) event.preventDefault();
-  const dob = new Date(document.getElementById("dob").value); 
-  const refDate = new Date() 
+
+  const dob = new Date(document.getElementById("dob").value);
+  const plotDate = new Date(document.getElementById("dateofplot").value);
   const weightKg = parseFloat(document.getElementById("weight").value);
   const heightCm = parseFloat(document.getElementById("height").value);
+  const sex = document.querySelector('input[name="sex"]:checked').value;
 
-  if (isNaN(dob) || isNaN(refDate)) {
-    document.getElementById("age-output").textContent = "Please enter valid dates.";
+  if (isNaN(dob.getTime()) || isNaN(plotDate.getTime())) {
+    alert("Please enter valid dates.");
     return;
   }
 
-  // Calculate age in years, months, and days
-  let ageYears = refDate.getFullYear() - dob.getFullYear();
-  let ageMonths = refDate.getMonth() - dob.getMonth();
-  let ageDays = refDate.getDate() - dob.getDate();
+  // Calculate age as of plotDate
+  let ageYears = plotDate.getFullYear() - dob.getFullYear();
+  let ageMonths = plotDate.getMonth() - dob.getMonth();
+  let ageDays = plotDate.getDate() - dob.getDate();
 
   if (ageDays < 0) {
     ageMonths--;
-    ageDays += new Date(refDate.getFullYear(), refDate.getMonth(), 0).getDate();
+    ageDays += new Date(plotDate.getFullYear(), plotDate.getMonth(), 0).getDate();
   }
 
   if (ageMonths < 0) {
@@ -105,65 +117,41 @@ function calculateAge(event) {
     ageMonths += 12;
   }
 
-// Determine sex
-const sex = document.querySelector('input[name="sex"]:checked').value;
-
 // Compute decimal age
 const decimalAge = ageYears + ageMonths / 12 + ageDays / 365.25;
 
-if (decimalAge > 20 || decimalAge < 0) {
-  const ageOutput = document.getElementById("age-output");
-  ageOutput.textContent = "Age must be 0-20 years.";
-  ageOutput.style.display = "block";
+  if (decimalAge > 20 || decimalAge < 0) {
+    alert("Age must be between 0 and 20 years.");
+    document.getElementById("growth-chart").style.display = "none";
+    return;
+  }
 
-  // Hide chart and return early
-  document.getElementById("growth-chart").style.display = "none";
-  return;
-}
-
-/*
-const ageOutput = document.getElementById("age-output");
-ageOutput.textContent = `Age: ${ageYears} years, ${ageMonths} months, ${ageDays} days`;
-ageOutput.style.display = "block";
-*/
-
-// Determine image path
-let imgPath = "";
-
-if (sex === "girl") {
-  imgPath = decimalAge < 3 ? "/assets/images/growthF03.png" : "/assets/images/growthF220.png";
-} else {
-  imgPath = decimalAge < 3 ? "/assets/images/growthM03.png" : "/assets/images/growthM220.png";
-}
-
-// Display image
-const chartDiv = document.getElementById("growth-chart");
-const chartImg = document.getElementById("growth-chart-img");
-chartImg.onload = () => {
-  plotGrowthPoint(decimalAge, weightKg, heightCm, sex, chartImg);
-};
-
-chartImg.src = imgPath;
-chartDiv.style.display = "block";
-
-// show download button 
-document.getElementById("download-btn").style.display = "inline-block";
-document.getElementById("cartoon").style.display = "none";
-}
-
-// Show or hide custom plot date input
-document.querySelectorAll('input[name="plot-date-mode"]').forEach(radio => {
-  radio.addEventListener('change', () => {
-    document.getElementById("plot-date").style.display = 
-      radio.value === "custom" ? "inline-block" : "none";
+// Store the new point
+  plotPoints.push({
+    decimalAge,
+    weightKg: isNaN(weightKg) ? null : weightKg,
+    heightCm: isNaN(heightCm) ? null : heightCm
   });
-})
+
+
+// Redraw the chart with all points
+  drawChart(sex, decimalAge);
+
+  // Show chart and buttons
+  document.getElementById("growth-chart").style.display = "block";
+  document.getElementById("download-btn").style.display = "inline-block";
+  document.getElementById("reset-btn").style.display = "inline-block";
+  document.getElementById("cartoon").style.display = "none";
+
+  disableInputsAfterFirstPlot();
+}
 
 
 function checkFormCompletion() {
   const height = document.getElementById("height").value;
   const weight = document.getElementById("weight").value;
   const dob = document.getElementById("dob").value;
+  const dateofplot = document.getElementById("dateofplot").value;
   const button = document.getElementById("calc-btn");
 
   if ((height || weight) && dob) {
@@ -226,28 +214,35 @@ function drawCross(ctx, x, y, size = 10, color = "black") {
   ctx.stroke();
 }
 
-function plotGrowthPoint(ageYearsDecimal, weightKg, heightCm, sex, img) {
-  const { mapAgeToX, mapWeightToY, mapHeightToY, imagePath, ageUnit } =
-    getMappingFunctions(sex, ageYearsDecimal);
+function drawChart(sex, latestAge) {
+  const useUnder3 = latestAge < 3;
+  const imagePath = `/assets/images/growth${sex === 'girl' ? 'F' : 'M'}${useUnder3 ? '03' : '220'}.png`;
 
-  const ageX = mapAgeToX(ageUnit === "months" ? ageYearsDecimal * 12 : ageYearsDecimal);
-  const weightY = !isNaN(weightKg) ? mapWeightToY(weightKg) : null;
-  const heightY = !isNaN(heightCm) ? mapHeightToY(heightCm) : null;
+  const chartDiv = document.getElementById("growth-chart");
+  const chartImg = document.getElementById("growth-chart-img");
 
-  const canvas = document.getElementById("growth-canvas");
-  const ctx = canvas.getContext("2d");
+  chartImg.onload = () => {
+    const canvas = document.getElementById("growth-canvas");
+    const ctx = canvas.getContext("2d");
 
-  canvas.width = img.naturalWidth;
-  canvas.height = img.naturalHeight;
+    canvas.width = chartImg.naturalWidth;
+    canvas.height = chartImg.naturalHeight;
+    canvas.style.width = chartImg.width + "px";
+    canvas.style.height = chartImg.height + "px";
 
-  canvas.style.width = img.width + "px";
-  canvas.style.height = img.height + "px";
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
+    const { mapAgeToX, mapWeightToY, mapHeightToY, ageUnit } = getMappingFunctions(sex, latestAge);
 
-  if (weightY !== null) drawCross(ctx, ageX, weightY, 12, "black");
-  if (heightY !== null) drawCross(ctx, ageX, heightY, 12, "black");
+    plotPoints.forEach(pt => {
+      const ageX = mapAgeToX(ageUnit === "months" ? pt.decimalAge * 12 : pt.decimalAge);
+      if (pt.weightKg !== null) drawCross(ctx, ageX, mapWeightToY(pt.weightKg), 12, "black");
+      if (pt.heightCm !== null) drawCross(ctx, ageX, mapHeightToY(pt.heightCm), 12, "black");
+    });
+  };
+  chartImg.src = imagePath;
 }
+ 
 
 function updateCartoon() {
   const girlRadio = document.getElementById("girl");
@@ -258,6 +253,23 @@ function updateCartoon() {
   } else {
     cartoon.src = "/assets/images/nurseandboy.png";
   }
+}
+
+function toggleSex() {
+  const girlRadio = document.getElementById("girl");
+  const boyRadio = document.getElementById("boy");
+  const cartoon = document.getElementById("cartoon");
+
+  if (girlRadio.checked) {
+    boyRadio.checked = true;
+    cartoon.src = "/assets/images/nurseandboy.png";
+  } else {
+    girlRadio.checked = true;
+    cartoon.src = "/assets/images/nurseandgirl.png";
+  }
+
+  // Update any other logic, e.g. hiding/showing buttons, recalculating form, etc.
+  checkFormCompletion();
 }
 
 
@@ -286,8 +298,53 @@ document.getElementById("download-btn").addEventListener("click", () => {
 });
 
 
+// Clear/reset chart button
+document.getElementById("reset-btn").addEventListener("click", () => {
+  plotPoints = [];
+  document.getElementById("growth-chart").style.display = "none";
+  document.getElementById("cartoon").style.display = "block";
+  setDateOfPlotToToday();
+  enableInputsOnReset(); 
+});
 
 
+
+// function that sets dateofplot to today
+function setDateOfPlotToToday() {
+  const today = new Date();
+  const yyyy = today.getFullYear();
+  const mm = String(today.getMonth() + 1).padStart(2, '0');
+  const dd = String(today.getDate()).padStart(2, '0');
+  const formattedToday = `${yyyy}-${mm}-${dd}`;
+
+  const dateInput = document.getElementById("dateofplot");
+  if (dateInput) {
+    dateInput.value = formattedToday;
+    checkFormCompletion();
+  }
+}
+
+// Disable DOB and sex radio buttons after first plot
+function disableInputsAfterFirstPlot() {
+  document.getElementById("dob").disabled = true;
+  document.getElementById("girl").disabled = true;
+  document.getElementById("boy").disabled = true;
+}
+
+// Enable DOB and sex on reset
+function enableInputsOnReset() {
+  document.getElementById("dob").disabled = false;
+  document.getElementById("girl").disabled = false;
+  document.getElementById("boy").disabled = false;
+}
+
+
+// Fill today's date on page load
+window.onload = function() {
+  setDateOfPlotToToday();
+  }
+
+// Add event listener to plot button
 document.getElementById("calc-btn").addEventListener("click", calculateAge);
 
 </script>
