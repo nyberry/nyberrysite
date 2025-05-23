@@ -7,11 +7,13 @@ title: BMI Calculator
 
 <form id="bmi-form">
   <label for="height">Height (cm):</label>
-  <input type="number" id="height" min="50" max="250" required oninput="checkFormCompletion()">
-  <br><br>
+  <input type="number" id="height" min="50" max="250" required oninput="checkFormCompletion();  updateImperial();">
+  <div id="height-imperial" style="min-height: 1.4em; margin-top: 0.4em; font-size: 0.8rem; color: #555;"></div>
+  <br>
   <label for="weight">Weight (kg):</label>
-  <input type="number" id="weight" min="5" max="250" required step="0.1" oninput="checkFormCompletion()">
-  <br><br>
+  <input type="number" id="weight" min="5" max="250" required step="0.1" oninput="checkFormCompletion();  updateImperial();">
+  <div id="weight-imperial" style="min-height: 1.4em; margin-top: 0.4em; font-size: 0.8rem; color: #555;"></div>
+  <br>
   <button type="submit" disabled="true">Calculate BMI</button>
 </form>
 
@@ -28,30 +30,53 @@ title: BMI Calculator
 
   <hr>
 
-  Body mass index (BMI) is a value derived from the weight and height of a person. The BMI is defined as the body mass divided by the square of the body height, and is expressed in units of kg/m2.
+Body mass index (BMI) is a value derived from the weight and height of a person. The BMI is defined as the body mass divided by the square of the body height, and is expressed in units of kg/m2.
 
-  The Body Mass Index (BMI) is a "rule of thumb" used to broadly categorize a person as underweight, normal weght, overweight or obese.
-  
-   <a href="https://digital.nhs.uk/data-and-information/publications/statistical/health-survey-for-england/2021">In 2021</a>, 28% of adults in the UK were obese (BMI > 30) and 64% of adults were overweight or obese.
-   
-   Obesity is linked with an increased risk of heart disease, type 2 diabetes, and some cancers. Both low and high BMIs are associated with increased all cause mortality, with the risk increasing with distance from the 20-25 range.
+The Body Mass Index (BMI) is a "rule of thumb" used to broadly categorize a person as underweight, normal weght, overweight or obese.
+
+<a href="https://digital.nhs.uk/data-and-information/publications/statistical/health-survey-for-england/2021">In 2021</a>, 28% of adults in the UK were obese (BMI > 30) and 64% of adults were overweight or obese.
+
+Obesity is linked with an increased risk of heart disease, type 2 diabetes, and some cancers. Both low and high BMIs are associated with increased all cause mortality, with the risk increasing with distance from the 20-25 range.
 
   <hr>
 
   <h3>Limitations</h3>
 
-  BMI has limitations when applied to individuals, and should be interpreted alongside other indicators such as waist circumference, fitness level, and metabolic health.
+BMI has limitations when applied to individuals, and should be interpreted alongside other indicators such as waist circumference, fitness level, and metabolic health.
 
-  BMI does not differentiate between fat and muscle mass. Athletes or individuals with higher muscle content may be classified as overweight or even obese, despite having low body fat and excellent cardiovascular health.
-  
-  Similarly, BMI does not account for fat distribution, which is an important factor in health risk. Visceral fat (fat around the abdominal organs) poses a higher health risk than fat stored in other areas, but BMI cannot distinguish this.
+BMI does not differentiate between fat and muscle mass. Athletes or individuals with higher muscle content may be classified as overweight or even obese, despite having low body fat and excellent cardiovascular health.
 
-  BMI does not account for age, sex, or ethnicity- all of which influence body composition. Older adults may lose muscle mass and gain fat without a significant change in BMI, and some ethnic groups may experience metabolic risks at lower BMI thresholds than others.
+Similarly, BMI does not account for fat distribution, which is an important factor in health risk. Visceral fat (fat around the abdominal organs) poses a higher health risk than fat stored in other areas, but BMI cannot distinguish this.
 
+BMI does not account for age, sex, or ethnicity- all of which influence body composition. Older adults may lose muscle mass and gain fat without a significant change in BMI, and some ethnic groups may experience metabolic risks at lower BMI thresholds than others.
 
 </div>
 
 <script>
+
+function updateImperial() {
+  const heightCm = parseFloat(document.getElementById('height').value);
+  const weightKg = parseFloat(document.getElementById('weight').value);
+
+  // Convert cm to ft/in
+  if (!isNaN(heightCm)) {
+    const totalInches = heightCm / 2.54;
+    const feet = Math.floor(totalInches / 12);
+    const inches = Math.round(totalInches % 12);
+    document.getElementById('height-imperial').textContent = `${feet} ft ${inches} in`;
+  } else {
+    document.getElementById('height-imperial').textContent = '';
+  }
+
+  // Convert kg to lb
+  if (!isNaN(weightKg)) {
+    const pounds = (weightKg * 2.20462).toFixed(0);
+    document.getElementById('weight-imperial').textContent = `${pounds} lbs`;
+  } else {
+    document.getElementById('weight-imperial').textContent = '';
+  }
+}
+
 function checkFormCompletion() {
   const height = parseFloat(document.getElementById('height').value);
   const weight = parseFloat(document.getElementById('weight').value);

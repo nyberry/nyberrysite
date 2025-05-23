@@ -39,11 +39,13 @@
       <h2>BMI Calculator</h2>
 <form id="bmi-form">
   <label for="height">Height (cm):</label>
-  <input type="number" id="height" min="50" max="250" required oninput="checkFormCompletion()">
-  <br><br>
+  <input type="number" id="height" min="50" max="250" required oninput="checkFormCompletion();  updateImperial();">
+  <div id="height-imperial" style="min-height: 1.4em; margin-top: 0.4em; font-size: 0.8rem; color: #555;"></div>
+  <br>
   <label for="weight">Weight (kg):</label>
-  <input type="number" id="weight" min="5" max="250" required step="0.1" oninput="checkFormCompletion()">
-  <br><br>
+  <input type="number" id="weight" min="5" max="250" required step="0.1" oninput="checkFormCompletion();  updateImperial();">
+  <div id="weight-imperial" style="min-height: 1.4em; margin-top: 0.4em; font-size: 0.8rem; color: #555;"></div>
+  <br>
   <button type="submit" disabled="true">Calculate BMI</button>
 </form>
 <br>
@@ -66,6 +68,30 @@
 <p>BMI does not account for age, sex, or ethnicity- all of which influence body composition. Older adults may lose muscle mass and gain fat without a significant change in BMI, and some ethnic groups may experience metabolic risks at lower BMI thresholds than others.</p>
 </div>
 <script>
+
+function updateImperial() {
+  const heightCm = parseFloat(document.getElementById('height').value);
+  const weightKg = parseFloat(document.getElementById('weight').value);
+
+  // Convert cm to ft/in
+  if (!isNaN(heightCm)) {
+    const totalInches = heightCm / 2.54;
+    const feet = Math.floor(totalInches / 12);
+    const inches = Math.round(totalInches % 12);
+    document.getElementById('height-imperial').textContent = `${feet} ft ${inches} in`;
+  } else {
+    document.getElementById('height-imperial').textContent = '';
+  }
+
+  // Convert kg to lb
+  if (!isNaN(weightKg)) {
+    const pounds = (weightKg * 2.20462).toFixed(0);
+    document.getElementById('weight-imperial').textContent = `${pounds} lbs`;
+  } else {
+    document.getElementById('weight-imperial').textContent = '';
+  }
+}
+
 function checkFormCompletion() {
   const height = parseFloat(document.getElementById('height').value);
   const weight = parseFloat(document.getElementById('weight').value);
