@@ -144,7 +144,10 @@ const decimalAge = ageYears + ageMonths / 12 + ageDays / 365.25;
   document.getElementById("reset-btn").style.display = "inline-block";
   document.getElementById("cartoon").style.display = "none";
 
+if (plotPoints.length === 1) {
   disableInputsAfterFirstPlot();
+  document.getElementById("calc-btn").innerHTML = "Add another plot";
+}
 }
 
 
@@ -357,6 +360,7 @@ document.getElementById("reset-btn").addEventListener("click", () => {
   document.getElementById("cartoon").style.display = "block";
   document.getElementById("reset-btn").style.display = "none";
   document.getElementById("download-btn").style.display = "none";
+  document.getElementById("calc-btn").innerHTML = "Plot";
   setDateOfPlotToToday();
   enableInputsOnReset(); 
 });
