@@ -2,7 +2,7 @@
 layout: layout.html
 title: bio
 ---
-
+<br><br>
 <img class="profile_img" src="/assets/images/headshot.jpg" alt="Centered Image">
 
 ### Hi, I'm Nick.
@@ -12,7 +12,7 @@ I specialise in Family Medicine and have Postgraduate qualifications in Sports a
 
 From September 2025 I will be studying Data Science for HealthCare at Exeter University's MSc programme.
 
-
+To book a consultation, please contact <a href="https://theimcentre.com/">The International Medical Centre</a>. I offer in-person and remote consultations.
 
 
 <div class="icons">
