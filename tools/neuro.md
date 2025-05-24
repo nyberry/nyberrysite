@@ -3,6 +3,7 @@ layout: layout.html
 title: Dermatome Map
 description: A visual guide to dermatomes for localising sensory symptoms and identifying spinal nerve involvement. Includes clinical examples, neuroanatomy reference, and comparative dermatome mapping in humans and horses.
 image: /assets/images/horsedermatomes.gif
+tags: [comments]
 ---
 
 <h2>Dermatome map</h2>
