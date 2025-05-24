@@ -16,7 +16,7 @@ show-date: false
 <img src="{{ page.data.image }}" alt="{{ page.data.title }}">
 {% endif %}
 
-<h3>Blog: {{ page.data.title }}</h3>
+<h3>{{ page.data.title }}</h3>
 {% if page.data.date %}
 <p style="font-size: 0.8rem; color: #666; margin-top: -0.5rem;">
 {{ page.date | date: "%Y-%m-%d" }}
