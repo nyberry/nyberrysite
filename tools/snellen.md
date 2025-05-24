@@ -9,12 +9,26 @@ image: /assets/images/snellen1.png
 
 <script>
   const snellenImg = document.getElementById('snellen-img');
+  const img1 = '/assets/images/snellen1.png';
+  const img2 = '/assets/images/snellen2.png';
+  let isToggled = false;
 
+  // Hover effect
   snellenImg.addEventListener('mouseover', () => {
-    snellenImg.src = '/assets/images/snellen2.png';
+    if (!isToggled) {
+      snellenImg.src = img2;
+    }
   });
 
   snellenImg.addEventListener('mouseout', () => {
-    snellenImg.src = '/assets/images/snellen1.png';
+    if (!isToggled) {
+      snellenImg.src = img1;
+    }
+  });
+
+  // Toggle on click
+  snellenImg.addEventListener('click', () => {
+    isToggled = !isToggled;
+    snellenImg.src = isToggled ? img2 : img1;
   });
 </script>
