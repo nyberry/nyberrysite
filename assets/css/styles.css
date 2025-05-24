@@ -92,7 +92,7 @@ nav .title {
 
 /* main container ---------------------------------------------------------------------------------------------- */
 
-.container {
+.main-container {
     text-align: center;
     padding: 1rem;
     max-width: 600px;
@@ -204,22 +204,25 @@ button.disabled-button {
 
 /* blog CSS ------------------------------------------------------------------------------------------- */
 
-.blog-content {
+.blog-title {
+  margin-bottom: 0.3em;
+  text-align: center;
+}
+
+.blog-date {
+  color: #666;
+  font-size: 0.9em;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.blog-container {
   background-color: #ffffff; 
   max-width: 600px;
   margin: 0 auto;
-  padding: 2rem 5rem;
+  padding: 1rem 2rem;
   text-align: left;
 }
-
-.blog-comments { 
-  background-color: #eeeeee; 
-  max-width: 600px;
-  padding: 0.5rem 5rem;
-  margin: 0 auto;
-  text-align: left;
-}
-
 
 .blog-img {
   display: block;
@@ -242,6 +245,18 @@ button.disabled-button {
 .grid-table td {
   border: 1px solid grey;
   padding: 8px;
+}
+
+
+/* table of contents ----------------------------------------------------------------------------------    */
+
+
+.comments { 
+  background-color: #eeeeee; 
+  max-width: 600px;
+  padding: 1rem 2rem;
+  margin: 0 auto;
+  text-align: left;
 }
 
 /* table of contents ----------------------------------------------------------------------------------    */
