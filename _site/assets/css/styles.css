@@ -234,3 +234,41 @@ button.disabled-button {
   border: 1px solid grey;
   padding: 8px;
 }
+
+/* table of contents & blog contents */
+
+#contents.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1.5rem;
+  padding: 0 1rem;
+  margin: 0 auto;
+}
+
+.card {
+  display: block;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1rem;
+  text-align: center;
+  background: white;
+  transition: transform 0.2s ease;
+  text-decoration: none;  /* ❌ no underline */
+  color: inherit;         /* ✅ use normal text color */
+}
+
+.card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  text-decoration: none;  /* ❌ prevent underline on hover */
+  color: inherit;         /* ✅ keep color the same on hover */
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  max-height: 120px;
+  object-fit: cover;
+  margin-bottom: 0.5rem;
+  border-radius: 4px;
+}

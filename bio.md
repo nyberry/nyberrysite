@@ -12,7 +12,7 @@ I'm a doctor in Doha, Qatar.
 
 I specialise in Family Medicine and have Postgraduate qualifications in Sports and Exercise Medicine and in Medical Education, and work as a GP trainer, mentoring Resident Doctors as they specialise in Family Medicine.
 
-I recently completed Harvard's CS50Web and CS50AI courses and from September 2025 will be studying Data Science for HealthCare on Exeter University's MSc programme.
+I recently completed Harvard's CS50Web and CS50AI courses and from September 2025 will be studying Data Science for Healthcare on Exeter University's MSc programme.
 
 To book an in-person or remote consultation, please contact <a href="https://theimcentre.com/">The International Medical Centre</a>.
 

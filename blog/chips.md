@@ -4,7 +4,7 @@ layout: layout.html
 description: They say that today’s papers will wrap tomorrow’s chips, but that hasn't actually been true since about 1981, when they realised the dyes in the ink were poisonous...
 image: /blog/images/chips.png
 date: 2021-11-24
-tags: [blog]
+tags: [blog, comments]
 order: 200
 ---
 

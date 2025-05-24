@@ -8,6 +8,7 @@
 </head>
 
 <body>
+
   <nav>
     <div class="menu"><a href="/index" aria-label="Home">
       <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 576 512">
@@ -34,35 +35,34 @@
   </nav>
 
   <main class="container">
-  
-     {% if page.url contains "/blog/" and page.inputPath contains "/blog/" %}
-    <div class="blog-content">
-      <h1 style="margin-bottom: 0.3em; text-align: center;">{{ title }}</h2>
-        {% if show-date != false %}
-          <p style="color: #666; font-size: 0.9em; margin-bottom: 1rem; text-align: center;">
-             {{ page.date | date: "%B %d, %Y" }}
-        {% endif %}
-      </p>
-      {{ content }}
-    </div>
+      {% if tags contains "blog" %}
+      <div class="blog-content">
+        <h1 style="margin-bottom: 0.3em; text-align: center;">{{ title }}</h1>
+        <div style="color: #666; font-size: 0.9em; margin-bottom: 1rem; text-align: center;">
+          Nick Berry
+          <br>
+          {% if show-date != false %}
+            {{ page.date | date: "%B %d, %Y" }}
+          {% endif %}
+        </div>
+        {{ content }}
+      </div>
     {% else %}
       {{ content }}
     {% endif %}
 
-{% if page.url contains "/blog/" and page.inputPath contains "/blog/" and comments != false %}
-  <div class ="blog-content"><hr><h3>Leave a comment:</h3></div>
-  <div class ="blog-content"
-       id="cusdis_thread"
-       data-host="https://cusdis.com"
-       data-app-id="c1b4f7e2-a0ab-4847-8541-841005a8c578"
-       data-page-id="{{ page.url }}"
-       data-page-url="https://nyberry.com{{ page.url }}"
-       data-page-title="{{ title }}">
-  </div>
-
-  <script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
-{% endif %}
-
+  {% if tags contains "comments" %}
+      <div class="blog-content"><hr><h3>Leave a comment:</h3></div>
+      <div class="blog-content"
+           id="cusdis_thread"
+           data-host="https://cusdis.com"
+           data-app-id="c1b4f7e2-a0ab-4847-8541-841005a8c578"
+           data-page-id="{{ page.url }}"
+           data-page-url="https://nyberry.com{{ page.url }}"
+           data-page-title="{{ title }}">
+      </div>
+      <script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
+    {% endif %}
   </main>
 </body>
 </html>

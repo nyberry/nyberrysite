@@ -1,16 +1,24 @@
 module.exports = function(eleventyConfig) {
+  // Static files passthrough
   eleventyConfig.addPassthroughCopy("assets");
   eleventyConfig.addPassthroughCopy("blog/images");
 
-  // A collection for content pages
+  // Collection: pages
   eleventyConfig.addCollection("pages", function(collectionApi) {
     return collectionApi.getAll().filter(item =>
       "title" in item.data &&
       "description" in item.data &&
       "image" in item.data &&
-      !item.data.excludeFromIndex  // optional: skip pages you don’t want
+      !item.data.excludeFromIndex
     )
     .sort((a, b) => (a.data.order || 0) - (b.data.order || 0));
+  });
+
+  // Collection: blog
+  eleventyConfig.addCollection("blog", function(collectionApi) {
+    return collectionApi.getAll().filter(item =>
+      item.data.tags && item.data.tags.includes("blog")
+    );
   });
 
   return {
