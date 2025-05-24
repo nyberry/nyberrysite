@@ -1,6 +1,8 @@
 ---
 layout: layout.html
-title: Paeds Doses
+title: Kids' Doses
+description: A quick-reference tool for calculating common paediatric drug doses based on weight. Designed to support prescribing decisions in clinic, with safety prompts and worked examples. Always cross-check with the BNFc or local guidelines.
+image: /assets/images/medicine.png
 ---
 
 <!-- Disclaimer Modal -->
@@ -29,10 +31,8 @@ title: Paeds Doses
     <!-- Add more drugs here -->
   </select>
 
-  <label for="weight">Weight (kg):</label>
-  <input type="number" id="weight" step="0.1" oninput="checkFormCompletion()">
-
-
+<label for="weight">Weight (kg):</label>
+<input type="number" id="weight" step="0.1" oninput="checkFormCompletion()">
 
   <!-- <label for="age">Age (years):</label>
   <input type="number" id="age" placeholder="Optional fallback if weight unknown"> -->
@@ -167,9 +167,6 @@ else if (drug === "coamoxiclav") {
 }
 
 </script>
-
-
-
 
 <style>
   .modal {

@@ -1,14 +1,16 @@
 ---
 title: "Moser’s Circle Problem - and why we still need GPs"
 layout: layout.html
+description: Recently I was thinking about why GP training needs to take so long. Why can't we just replace GPs with reasonably smart people and computers?
+image: /blog/images/moser2.png
 date: 2025-05-20
-tags: blog
+tags: [blog]
+order: 200
 ---
 
+Recently I was thinking about why GP training needs to take so long. Why can't we just replace GPs with reasonably smart people and computers?
 
-Recently I was thinking about why GP training needs to take so long. Why can't we just replace GPs with reasonably smart people and computers? 
-
-It's a tricky question, but I stumbled across something from the world of maths which might be relevant. 
+It's a tricky question, but I stumbled across something from the world of maths which might be relevant.
 
 In the picture below are 5 circles. Each circle has a different number of dots on its edge. When you join all those dots with straight lines, you divide the circle into a number of areas.
 
@@ -17,6 +19,7 @@ In the picture below are 5 circles. Each circle has a different number of dots o
 How many areas are in each of these circles?
 
 Well, if you count them, you will see that:
+
 - The circle with one dot has just one area.
 - The circle with two dots has two areas.
 - The circle with three dots has four areas...
@@ -73,7 +76,7 @@ I'm not trying to give anyone nightmares here. Those conditions are really rare.
 
 But have you paused to consider how this happens?
 
-Clearly, things like bruised ribs and coughs and flu are common. They are like horses in a field. 
+Clearly, things like bruised ribs and coughs and flu are common. They are like horses in a field.
 
 On the other hand, things like myeloma, sarcoidoisis and leptospirosis are not very common. They may graze in the same field as the horses, but they are in fact zebras.
 
@@ -81,9 +84,9 @@ Zebras can be quite easy to recognise in broad daylight. The stripes are a dead 
 
 But broad daylight is not guaranteed in healthcare. Phone consultations for example, by stripping all visual cues, can sometimes make it feel more like night than day. And it's easy to miss a zebra in a field at night.
 
-Still, there may be something about the murky silhouette that doesn't sit well. 
+Still, there may be something about the murky silhouette that doesn't sit well.
 
-If the patient with painful ribs is also losing weight, why might that be? If this is the first time the young guy with the cough had troubled his doctor in fifteen years, what's that about? If the patient with "flu" also had very dark urine- is that normal in flu? 
+If the patient with painful ribs is also losing weight, why might that be? If this is the first time the young guy with the cough had troubled his doctor in fifteen years, what's that about? If the patient with "flu" also had very dark urine- is that normal in flu?
 
 These subtle discords, these incongruencies, these anomalies- they somehow resonate. A faint but discernible bell sounding deep in the subconscious. Experience tells us to pursue a particular line of enquiry or attention. To shine an inquisitive torch into the field, to make the zebra's form clearer. To accurate diagnosis, and to proper treatment.
 
@@ -157,7 +160,6 @@ For those who are interested, the relationship is actually given as:
  
 And the sequence continues like this:
 
-
 <div class="center-table">
   <table class="grid-table">
     <thead>
@@ -189,7 +191,7 @@ And maybe it’s like that when GPs encounter illnesses. Most of the time we dea
 
 But if we see enough undifferentiated equine presentations in primary care, sooner or later we'll see a zebra.
 
-It takes a broad training to spot species we have not previously encountered, to question zebrahood when some aspect does not quite fit the horseshoes. To go back to the basics of physiology and pathology & run the various dots, lines and areas through our own complex mental models. 
+It takes a broad training to spot species we have not previously encountered, to question zebrahood when some aspect does not quite fit the horseshoes. To go back to the basics of physiology and pathology & run the various dots, lines and areas through our own complex mental models.
 
 And even then, zebras can be really difficult to spot in a field of horses, at night.
 
@@ -211,8 +213,8 @@ New technologies will change the way we work, undoubtedly. And we should celebra
 
 They are getting better and better all the time, and they will allow us to be better and better too.
 
-But will GPs eventually be *replaced* by reasonably smart people with computers?
+But will GPs eventually be _replaced_ by reasonably smart people with computers?
 
 <img src="/blog/images/moser3.png" alt="chatGPT having a go" class="blog-img">
 
-It seems we are not there yet. 
+It seems we are not there yet.

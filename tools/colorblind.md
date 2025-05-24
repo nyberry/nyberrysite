@@ -1,6 +1,8 @@
 ---
 layout: layout.html
-title: colorblind test
+title: Colorblind Test
+description: A quick reference tool for screening red–green color vision deficiency using a selection of Ishihara plates. Includes a brief overview of the test's clinical basis and historical background.
+image: /assets/images/colorblindTest.jpg
 ---
 
 <h2>Color Vision Test</h2>
@@ -17,7 +19,7 @@ Created in 1917 by Japanese ophthalmologist Shinobu Ishihara (pictured below), t
 
 Some plates are designed to be seen by everyone, while others hide digits or shapes depending on a person's type of color deficiency.
 
-Ishihara's full test consists of 38 plates, but the existence of a deficiency is usually apparent after only a few plates such as the selection above. 
+Ishihara's full test consists of 38 plates, but the existence of a deficiency is usually apparent after only a few plates such as the selection above.
 
 <img class="profile_img" src="/assets/images/ShinobuIshihara.jpg" alt="石原 忍" width=200px>
 

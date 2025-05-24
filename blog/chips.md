@@ -1,10 +1,12 @@
 ---
 title: "What are GPs for when the Chips are Down?"
 layout: layout.html
+description: They say that today’s papers will wrap tomorrow’s chips, but that hasn't actually been true since about 1981, when they realised the dyes in the ink were poisonous...
+image: /blog/images/chips.png
 date: 2021-11-24
-tags: blog
+tags: [blog]
+order: 200
 ---
-
 
 <img src="/blog/images/chips.png" alt="chips" class="blog-img">
 
@@ -24,7 +26,7 @@ The journalist, who is also a government advisor on health reform, wrote:
 
 Whoa, slow down there, and let's read those somewhat emotive snippets again.
 
-Someone hurt their back, and someone has cancer. These are bad things, and I’m sorry. Hopefully they are both getting better. 
+Someone hurt their back, and someone has cancer. These are bad things, and I’m sorry. Hopefully they are both getting better.
 
 But don't we have purpose-built places where people can go to get fixed up when they have an accident, or an emergency? And wouldn't the friend with cancer have needed hospital treatment anyway? It's possible that I may not have grasped the full nettle of these anecdotes, but unless we are to start setting bones and delivering chemotherapy in our local surgeries, isn't it entirely appropriate for hospitals to continue do that sort of work?
 
@@ -49,6 +51,5 @@ I wonder why someone might say otherwise. Could it be – and this is just a wil
 With this in mind, I retrieved a crumpled broadsheet from the bin outside the chip shop. Having carefully unfolded it, I found the article and more fully appraised the content. Although to be honest, it was kind of smeared, and I couldn’t quite make out the part where it explained how things might be arranged better.
 
 Something smelled a little fishy. I took it with a pinch of salt.
-
 
 ###### What are GPs for, when the chips are down? Berry, N. British Journal of General Practice 2022; 72 (715): 71. DOI: [https://doi.org/10.3399/bjgp22X718373](https://doi.org/10.3399/bjgp22X718373)

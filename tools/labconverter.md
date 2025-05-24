@@ -1,6 +1,8 @@
 ---
 layout: layout.html
-title: US-UK lab unit converter
+title: Lab Unit Converter
+description: Convert common lab values between US and UK units, including glucose, lipids, HbA1c, and urate. A quick-reference tool for clinicians working across different reporting systems or interpreting international lab results.
+image: /assets/images/USUKbridge.png
 ---
 
 <h2>Lab Unit Converter</h2>

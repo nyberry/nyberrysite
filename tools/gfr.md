@@ -1,6 +1,8 @@
 ---
 layout: layout.html
-title: kidney calculator
+title: Kidney Calculator
+description: A clinical calculator for estimating kidney function using both eGFR (CKD-EPI) and Creatinine Clearance (Cockcroft-Gault). Useful for staging CKD, guiding drug dosing, and interpreting renal function in everyday practice.
+image: /assets/images/kidney.png
 ---
 
 <h2>Kidney Function Calculator</h2>
@@ -31,7 +33,6 @@ title: kidney calculator
 <br>
 <img src="/assets/images/kidney.png" alt="kidney" style="width: 200px;">
 
-
 <!-- GFR info (initially hidden) -->
 <div id="gfr-info" style="display: none; text-align: centre; margin-top: 2rem;">
 
@@ -39,7 +40,7 @@ title: kidney calculator
 
 <h3>eGFR</h3>
 
-The estimated glomerular filtration rate (eGFR) is the preferred method for describing kidney function in most clinical situations.< 
+The estimated glomerular filtration rate (eGFR) is the preferred method for describing kidney function in most clinical situations.<
 
 It is calculated using the CKD-EPI equation, which takes into account a person’s age, sex, and serum creatinine level. This estimate reflects the filtration capacity of the kidneys and is used for diagnosing, staging, and monitoring chronic kidney disease (CKD).
 
@@ -49,7 +50,7 @@ eGFR is standardised to a body surface area of 1.73 m², which allows for compar
 
 <h3>Creatinine Clearance</h3>
 
-Creatinine Clearance (CrCl) provides an estimate of the actual rate at which the kidneys are clearing creatinine from the blood. 
+Creatinine Clearance (CrCl) provides an estimate of the actual rate at which the kidneys are clearing creatinine from the blood.
 
 It is calculated using the Cockcroft-Gualt equation. Unlike eGFR, CrCl incorporates body weight, making it relevant when accurate weight-based dosing is needed- such as with aminoglycoside antibiotics, anticoagulants, and chemotherapy drugs.
 

@@ -2,18 +2,19 @@
 layout: layout.html
 title: Dr Nick Berry
 ---
+
 <br><br>
 <img class="profile_img" src="/assets/images/headshot.jpg" alt="Centered Image">
 
 ### Hi, I'm Nick.
+
 I'm a doctor in Doha, Qatar.
 
 I specialise in Family Medicine and have Postgraduate qualifications in Sports and Exercise Medicine and in Medical Education, and work as a GP trainer, mentoring Resident Doctors as they specialise in Family Medicine.
 
-From September 2025 I will be studying Data Science for HealthCare at Exeter University's MSc programme.
+I recently completed Harvard's CS50, CS50P, CS50Web and CS50AI courses and from September 2025 will be studying Data Science for HealthCare on Exeter University's MSc programme.
 
 To book an in-person or remote consultation, please contact <a href="https://theimcentre.com/">The International Medical Centre</a>.
-
 
 <div class="icons">
     <a href="https://www.linkedin.com/in/nick-berry-767329232/" aria-label="LinkedIn">
