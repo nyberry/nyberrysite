@@ -1,7 +1,7 @@
 ---
 layout: layout.html
 title: Kidney Calculator
-description: A clinical calculator for estimating kidney function using both eGFR (CKD-EPI) and Creatinine Clearance (Cockcroft-Gault). Useful for staging CKD, guiding drug dosing, and interpreting renal function in everyday practice.
+description: A clinical calculator for estimating kidney function using both eGFR (CKD-EPI) and Creatinine Clearance (Cockcroft-Gault) methods. Useful for staging CKD and guiding drug dosing.
 image: /assets/images/kidney.png
 ---
 

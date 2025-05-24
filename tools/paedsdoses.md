@@ -1,7 +1,7 @@
 ---
 layout: layout.html
 title: Kids' Doses
-description: A quick-reference tool for calculating common paediatric drug doses based on weight. Designed to support prescribing decisions in clinic, with safety prompts and worked examples. Always cross-check with the BNFc or local guidelines.
+description: A quick-reference tool for calculating common paediatric drug doses based on weight. Always cross-check with the BNFc or local guidelines.
 image: /assets/images/medicine.png
 ---
 

@@ -1,7 +1,7 @@
 ---
 layout: layout.html
 title: BMI Calculator
-description: A quick BMI calculator for use in clinic — enter height and weight to classify and explain body mass index. Useful for screening and risk assessment, with a summary of the limitations to guide interpretation.
+description: A quick BMI calculator — enter height and weight to classify and explain body mass index. With a summary of the limitations to guide interpretation.
 image: /assets/images/scales.png
 ---
 
