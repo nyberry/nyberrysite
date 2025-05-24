@@ -25,6 +25,36 @@
 <li>Hosting: Cloudflare Pages</li>
 <li>Domain: <a href="https://www.nyberry.com">https://www.nyberry.com</a></li>
 </ul>
+<h2>Cusdis + Zapier Webhook Integration Summary</h2>
+<p>This automatically notifies by email each time someone comments on the site via Cusdis.</p>
+<p>Steps Taken:</p>
+<ol>
+<li>Cusdis Setup:</li>
+</ol>
+<ul>
+<li>Add Cusdis embed code to blog post templates.</li>
+<li>Ensure the data-app-id, data-page-id, data-page-url, and data-page-title attributes are correctly set for each post.</li>
+</ul>
+<ol start="2">
+<li>Zapier Webhook Trigger:</li>
+</ol>
+<ul>
+<li>Create a Zap in Zapier with &quot;Catch Hook&quot; as the trigger (from the Webhooks by Zapier app).</li>
+<li>This generated a custom webhook URL.</li>
+</ul>
+<ol start="3">
+<li>Webhook Connection:</li>
+</ol>
+<ul>
+<li>via Cusdis dashboard/ application settings / pasted the Zapier-generated webhook URL in the &quot;Webhook URL&quot; field.</li>
+</ul>
+<ol start="4">
+<li>Email Notification Action:</li>
+</ol>
+<ul>
+<li>Action step in Zapier: &quot;Send Email&quot; (via Zapier's built-in email tool - allows up to 5 emails per day on free level).</li>
+<li>Configure the email to include the comment content, page URL, and commenter info.</li>
+</ul>
 <h2>Live Demo</h2>
 <p>Visit the live site: <a href="https://www.nyberry.com">https://www.nyberry.com</a></p>
 <h2>Sample Tools</h2>

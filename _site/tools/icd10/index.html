@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ICD-10 Lookup Tool</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/assets/css/styles.css">
+</head>
+
+<body>
+
+  <nav>
+    <div class="menu"><a href="/index" aria-label="Home">
+      <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 576 512">
+        <path fill="currentColor" d="M541 229.16L327.41 43a35.84 35.84 0 0 0-46.8 0L35 229.16a16 16 0 0 0-1.16 22.59l21.41 23.57a16 16 0 0 0 22.59 1.16L96 240.81V464a16 16 0 0 0 16 16h112a16 16 0 0 0 16-16V352h96v112a16 16 0 0 0 16 16h112a16 16 0 0 0 16-16V240.81l18.16 15.67a16 16 0 0 0 22.59-1.16l21.41-23.57a16 16 0 0 0-1.16-22.59z"/>
+      </svg>
+    </a></div>
+    <ul class="menu">
+      <li><a href="/bio">Bio</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/clini">Clini</a></li>
+      <li class="dropdown">
+        <a href="#">Tools ▾</a>
+        <ul class="dropdown-content">
+          <li><a href="/tools/bmi">BMI</a></li>  
+          <li><a href="/tools/colorblind">Colour Vision Test</a></li>
+          <li><a href="/tools/neuro">Dermatomes</a></li>
+          <li><a href="/tools/growth">Growth Charts</a></li>
+          <li><a href="/tools/ICD10">ICD-10 Lookup</a></li>
+          <li><a href="/tools/gfr">Kidney Calculator</a></li>
+          <li><a href="/tools/labconverter">Lab Unit Converter</a></li>
+          <li><a href="/tools/paedsdoses">Paeds Doses</a></li>
+          <li><a href="/tools/snellen">Visual Acuity</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+
+  <main class="main-container">
+      
+      <h2>ICD-10 Code Lookup</h2>
+<input type="text" id="search-box" placeholder="Enter condition or code..." style="min-width: 400px; max-width: 400px; padding: 0.5rem; font-size: 1rem;">
+<ul id="results" style="list-style-type: none; padding-left: 0;"></ul>
+<br>
+<br>
+<div>
+    <img class="profile_img_square" src="/assets/images/icd10.png" alt="looking up the codes">
+</div>
+<script>
+let debounceTimer;
+
+document.getElementById('search-box').addEventListener('input', function () {
+    const query = this.value.trim();
+    clearTimeout(debounceTimer);
+
+    if (query.length < 3) return;
+
+    debounceTimer = setTimeout(() => {
+        
+        const resultsList = document.getElementById('results');
+        resultsList.innerHTML = '';
+        fetch(`https://clinicaltables.nlm.nih.gov/api/icd10cm/v3/search?sf=code,name&terms=${encodeURIComponent(query)}`)
+            .then(response => response.json())
+            .then(data => {
+                const results = data[3]; // array of [code, description]
+
+                if (results.length === 0) {
+                    resultsList.innerHTML = '<li>No matches found.</li>';
+                    return;
+                }
+
+                results.slice(0, 20).forEach(item => {
+                    const li = document.createElement('li');
+                    li.textContent = `${item[0]} — ${item[1]}`;
+                    li.style.padding = '0.25rem 0';
+                    resultsList.appendChild(li);
+                });
+            })
+            .catch(error => {
+                console.error('ICD-10 lookup failed:', error);
+                resultsList.innerHTML = '<li>Error retrieving results.</li>';
+            });
+    }, 600); // ms debounce
+});
+</script>
+<style>
+#results li {
+  border-bottom: 1px solid #ccc;
+  margin: 0.25rem 0;
+}
+</style>
+
+    
+
+  
+  </main>
+</body>
+</html>
