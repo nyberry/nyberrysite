@@ -52,7 +52,7 @@ Visit the live site: [https://www.nyberry.com](https://www.nyberry.com)
 
 ## Contributing
 
-This is a personal project, but ideas, feedback, and suggestions are welcome. You can open an issue or reach out via [LinkedIn](https://www.linkedin.com/in/nick-berry-767329232/).
+Ideas, feedback, and suggestions are welcome. You can open an issue or reach out via [LinkedIn](https://www.linkedin.com/in/nick-berry-767329232/).
 
 ## License
 
