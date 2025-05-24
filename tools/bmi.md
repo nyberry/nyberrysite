@@ -1,7 +1,7 @@
 ---
 layout: layout.html
 title: BMI Calculator
-description: A quick BMI calculator — enter height and weight to classify and explain body mass index. With a summary of the limitations to guide interpretation.
+description: Enter height and weight to calculate and explain body mass index. With a summary of the limitations of BMI.
 image: /assets/images/scales.png
 ---
 

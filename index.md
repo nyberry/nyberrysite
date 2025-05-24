@@ -27,7 +27,11 @@ Whether you’re here to run some numbers, check a clinical concept, or just bro
         {{ page.date | date: "%Y-%m-%d" }}
       </p>
     {% endif %}
-  <p>{{ page.data.description }}</p>
+    {% if tags contains 'blog' %}
+      <p>"{{ page.data.description }}"</p>
+      {% else %}
+      <p>{{ page.data.description }}</p>
+    {% endif %}
   </a>
   {% endfor %}
 </div>
