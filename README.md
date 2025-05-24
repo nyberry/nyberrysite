@@ -1,6 +1,6 @@
-# Nyberry.com — Personal Website & Clinical Tools
+# nyberry.com - Personal Website & Clinical Tools
 
-**Nyberry.com** is a personal website built with [Eleventy (11ty)](https://www.11ty.dev/), designed to share clinical calculators, small web tools, and blog posts. It's a lightweight, static site focused on clarity, utility, and performance — curated by a GP with an interest in technology and data science.
+**Nyberry.com** is a personal website built with [Eleventy (11ty)](https://www.11ty.dev/), designed to share clinical calculators, small web tools, and blog posts. It's a lightweight, static site focused on clarity, utility, and performance.
 
 ## Features
 
