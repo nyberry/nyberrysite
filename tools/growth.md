@@ -39,7 +39,7 @@ image: /assets/images/nurseandgirl.png
 <br>
 
 <label onclick="toggleSex()">
-  <img class="circle-image" id="cartoon" src="/assets/images/nurseandgirl.png">
+  <img class="profile_img_square" id="cartoon" src="/assets/images/nurseandgirl.png">
 </label>
 
 <div id="growth-chart" style="display: none; margin-top: 1em; position: relative; max-width: 100%; border: 1px solid #ccc;">

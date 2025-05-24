@@ -44,7 +44,7 @@ image: /assets/images/medicine.png
 </div>
 
 <br>
-<img src="/assets/images/medicine.png" class="circle-image">
+<img src="/assets/images/medicine.png" class="profile_img_square">
 
 </div>
 
