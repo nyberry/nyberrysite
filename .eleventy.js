@@ -14,13 +14,6 @@ module.exports = function(eleventyConfig) {
     .sort((a, b) => (a.data.order || 0) - (b.data.order || 0));
   });
 
-  // Collection: blog
-  eleventyConfig.addCollection("blog", function(collectionApi) {
-    return collectionApi.getAll().filter(item =>
-      item.data.tags && item.data.tags.includes("blog")
-    );
-  });
-
   return {
     dir: {
       input: ".",

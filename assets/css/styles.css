@@ -4,8 +4,8 @@ body {
     background-color: #dddddd;
 }
 
+/* nav bar --------------------------------------------------------------------------------------------------- */
 
-/* nav bar */
 nav {
     box-sizing: border-box;
     position: fixed;
@@ -90,7 +90,7 @@ nav .title {
     display: block;
 }
 
-/* main text container */
+/* main container ---------------------------------------------------------------------------------------------- */
 
 .container {
     text-align: center;
@@ -174,7 +174,7 @@ hr {margin: 15px 0;
     border-top: 1px solid #999;
 }
 
-/* Base styling for all buttons */
+/* Buttons ------------------------------------------------------------------------------------------------------ */
 button {
   margin-top: 1rem;
   background-color: #28a745;
@@ -191,7 +191,6 @@ button:hover {
   background-color: #218838;
 }
 
-/* Faded out style when any button is disabled */
 button:disabled,
 button.disabled-button {
   opacity: 0.5;
@@ -203,15 +202,24 @@ button.disabled-button {
 
 
 
-/* blog CSS */
+/* blog CSS ------------------------------------------------------------------------------------------- */
 
 .blog-content {
   background-color: #ffffff; 
   max-width: 600px;
   margin: 0 auto;
-  padding: 1rem;
+  padding: 2rem 5rem;
   text-align: left;
 }
+
+.blog-comments { 
+  background-color: #eeeeee; 
+  max-width: 600px;
+  padding: 0.5rem 5rem;
+  margin: 0 auto;
+  text-align: left;
+}
+
 
 .blog-img {
   display: block;
@@ -219,6 +227,7 @@ button.disabled-button {
   margin: 0 auto;
   padding: 1rem;
 }
+
 
 .center-table {
   text-align: center;
@@ -235,7 +244,7 @@ button.disabled-button {
   padding: 8px;
 }
 
-/* table of contents & blog contents */
+/* table of contents ----------------------------------------------------------------------------------    */
 
 #contents.grid {
   display: grid;
@@ -268,7 +277,11 @@ button.disabled-button {
   width: 100%;
   height: auto;
   max-height: 120px;
-  object-fit: cover;
+  object-fit: contain;
   margin-bottom: 0.5rem;
   border-radius: 4px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
+

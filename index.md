@@ -3,27 +3,25 @@ layout: layout.html
 title: nyberry
 ---
 
-<img class="profile_img_square" src="/assets/images/toolbox.png" alt="Medical tools">
+<img class="profile_img" src="/assets/images/headshot.jpg" alt="Centered Image">
 
 ### Hi, I'm Nick.
 
-Welcome to my site - a grab-bag of medical tools, quick-reference calculators, and the occasional musing.
+Welcome to my site - a grab-bag of medical calculators, quick-reference tools, and the occasional musing.
 <br><br>
-Whether you’re here to check some numbers, explore a clinical concept, or just browse, I hope you find something useful and thought-provoking.
+Whether you’re here to run some numbers, check a clinical concept, or just browse, I hope you find something useful and thought-provoking.
 <br><br>
 
 <div id="contents" class="grid">
   {% for page in collections.pages %}
   <a href="{{ page.url }}" class="card">
   <img src="{{ page.data.image }}" alt="{{ page.data.title }}">
-  <h3>
-    {% assign tags = page.data.tags | default: "" | split: "," %}
+    {% assign tags = page.data.tags | default: "" %}
     {% if tags contains 'blog' %}
-        Blog: {{ page.data.title }}
+        <h3>Blog: {{ page.data.title }}</h3>
       {% else %}
-        {{ page.data.title }}
-      {% endif %}
-  </h3>
+        <h3>{{ page.data.title }}</h3>
+    {% endif %}
     {% if page.data.date %}
       <p style="font-size: 0.8rem; color: #666; margin-top: -0.5rem;">
         {{ page.date | date: "%Y-%m-%d" }}
