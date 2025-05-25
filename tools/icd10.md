@@ -45,7 +45,7 @@ document.getElementById('search-box').addEventListener('input', function () {
         const resultsList = document.getElementById('results');
         resultsList.innerHTML = '';
 
-        if query.length < 3) return;
+        if (query.length < 3) return;
 
         fetch(`https://clinicaltables.nlm.nih.gov/api/icd10cm/v3/search?sf=code,name&terms=${encodeURIComponent(query)}`)
             .then(response => response.json())
