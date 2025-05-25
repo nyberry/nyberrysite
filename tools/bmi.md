@@ -32,25 +32,48 @@ image: /assets/images/scales.png
 
   <hr>
 
-Body mass index (BMI) is a value derived from the weight and height of a person. The BMI is defined as the body mass divided by the square of the body height, and is expressed in units of kg/m2.
+<h3>Body Mass Index</h3>
 
-The Body Mass Index (BMI) is a "rule of thumb" used to broadly categorize a person as underweight, normal weght, overweight or obese.
+Body mass index (BMI) is derived by dividing the weight of a person by the square of their height. It is a "rule of thumb" measure, used to broadly categorize a person as underweight, normal weight, overweight or obese.
 
-<a href="https://digital.nhs.uk/data-and-information/publications/statistical/health-survey-for-england/2021">In 2021</a>, 28% of adults in the UK were obese (BMI > 30) and 64% of adults were overweight or obese.
+<br>
+<div class="center-table">
+  <table class="grid-table">
+    <thead>
+      <tr>
+        <th>BMI</th>
+        <th>Classification</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>less than 18</td><td>Underweight</td></tr>
+      <tr><td>18 - 24.9</td><td>normal weight</td></tr>
+      <tr><td>25 - 29.9</td><td>overweight</td></tr>
+      <tr><td>more than 30 </td><td>obesity</td></tr>
+    </tbody>
+  </table>
+</div>
+<br>
+
+In 2021, <a href="https://digital.nhs.uk/data-and-information/publications/statistical/health-survey-for-england/2021">28% of adults in the UK</a> were obese (BMI > 30) and 64% of adults were overweight or obese (BMI > 25).
+
+<hr>
+<h3>Relevance</h3>
 
 Obesity is linked with an increased risk of heart disease, type 2 diabetes, and some cancers. Both low and high BMIs are associated with increased all cause mortality, with the risk increasing with distance from the 20-25 range.
 
-  <hr>
-
-  <h3>Limitations</h3>
+<hr>
+<h3>Limitations</h3>
 
 BMI has limitations when applied to individuals, and should be interpreted alongside other indicators such as waist circumference, fitness level, and metabolic health.
 
-BMI does not differentiate between fat and muscle mass. Athletes or individuals with higher muscle content may be classified as overweight or even obese, despite having low body fat and excellent cardiovascular health.
+It does not differentiate between fat and muscle mass. Athletes or individuals with higher muscle content may be classified as overweight or even obese, despite having low body fat and excellent cardiovascular health.
 
 Similarly, BMI does not account for fat distribution, which is an important factor in health risk. Visceral fat (fat around the abdominal organs) poses a higher health risk than fat stored in other areas, but BMI cannot distinguish this.
 
 BMI does not account for age, sex, or ethnicity- all of which influence body composition. Older adults may lose muscle mass and gain fat without a significant change in BMI, and some ethnic groups may experience metabolic risks at lower BMI thresholds than others.
+
+For children and teens, BMI is interpreted differently, using sex-specific BMI-for-age percentiles. [This calculator](https://www.cdc.gov/bmi/child-teen-calculator/index.html) reports BMI, BMI percentile, and BMI category for children and teens 2 through 19.
 
 </div>
 

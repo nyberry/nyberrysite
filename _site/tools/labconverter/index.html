@@ -26,7 +26,7 @@
           <li><a href="/tools/colorblind">Colour Vision Test</a></li>
           <li><a href="/tools/neuro">Dermatomes</a></li>
           <li><a href="/tools/growth">Growth Charts</a></li>
-          <li><a href="/tools/ICD10">ICD-10 Lookup</a></li>
+          <li><a href="/tools/icd10">ICD-10 Lookup</a></li>
           <li><a href="/tools/gfr">Kidney Calculator</a></li>
           <li><a href="/tools/labconverter">Lab Unit Converter</a></li>
           <li><a href="/tools/paedsdoses">Paeds Doses</a></li>
@@ -102,8 +102,8 @@
   table {  margin: 0 auto; border-collapse: collapse; width: 100%; max-width: 600px;  table-layout: fixed; }
   th, td { padding: 0.2rem; border: 1px solid #ddd; width: 25%; text-align: center;}
 </style>
-<!-- lab converter info (initially hidden) -->
-<div id="converter-info" style="display: none; text-align: center; margin-top: 2rem;">
+<!-- lab converter info -->
+<div id="converter-info" style="display: block; text-align: center; margin-top: 2rem;">
 <hr>
 <h3>Americans Use Different Lab Units</h3>
 <p>The US prefers to measure things in milligrams per deciliter (mg/dL) - how heavy stuff floating in the blood is.</p>
@@ -140,7 +140,6 @@ function convertRow(usId, ukId, toUk, toUs, precisionUs = 0, precisionUk = 1) {
     usEl.disabled = true;
     ukEl.disabled = true;
   }
-  document.getElementById('converter-info').style.display = 'block';
 }
 
   // Apply converter to each row
@@ -219,7 +218,6 @@ document.getElementById('clear-btn').addEventListener('click', function () {
     input.value = '';
     input.disabled = false;
   });
-  document.getElementById('converter-info').style.display = 'none';
 });
 
 </script>

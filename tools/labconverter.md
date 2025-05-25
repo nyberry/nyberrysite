@@ -76,8 +76,8 @@ image: /assets/images/USUKbridge.png
   th, td { padding: 0.2rem; border: 1px solid #ddd; width: 25%; text-align: center;}
 </style>
 
-<!-- lab converter info (initially hidden) -->
-<div id="converter-info" style="display: none; text-align: center; margin-top: 2rem;">
+<!-- lab converter info -->
+<div id="converter-info" style="display: block; text-align: center; margin-top: 2rem;">
 
 <hr>
 
@@ -123,7 +123,6 @@ function convertRow(usId, ukId, toUk, toUs, precisionUs = 0, precisionUk = 1) {
     usEl.disabled = true;
     ukEl.disabled = true;
   }
-  document.getElementById('converter-info').style.display = 'block';
 }
 
   // Apply converter to each row
@@ -202,7 +201,6 @@ document.getElementById('clear-btn').addEventListener('click', function () {
     input.value = '';
     input.disabled = false;
   });
-  document.getElementById('converter-info').style.display = 'none';
 });
 
 </script>

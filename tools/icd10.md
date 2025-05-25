@@ -16,20 +16,17 @@ image: /assets/images/icd10.png
     <img class="profile_img_square" src="/assets/images/icd10.png" alt="looking up the codes">
 </div>
 <hr>
-<h3>About ICD-10</h3>
-<strong>A big medical filing cabinet</strong>
+<h3>A big medical filing cabinet</h3>
 
-The International Classification of Diseases, 10th Revision (ICD-10) is a system for coding diseases, symptoms and injuries. Managed by the World Health Organization, it’s used in many health systems to standardize how medical conditions are recorded and tracked. From sore throat to shark attack, ICD-10 has a code for it.
+The International Classification of Diseases, 10th Revision (ICD-10) is a system for coding diseases, symptoms and injuries. Managed by the World Health Organization, it’s used in many health systems to standardize how medical conditions are recorded.
 
-Each condition gets a unique alphanumeric code (like E11.9 for type 2 diabetes without complications), turning medical diagnoses into structured, comparable data.
+Each condition gets a unique code, like <strong>E11.9</strong> for type 2 diabetes, turning medical diagnoses into structured, comparable data. From sore throat to shark attack, ICD-10 has a code for it.
 
-The classifcation evolved from a much simpler system that dates back to 1893. Over the years, it has grown in scope, and now contains over 70,000 codes — reflecting advances in medical knowledge, health tech, and the administrative demands of modern healthcare.
+The classifcation evolved from a much simpler system that dates back to 1893. Over the years, it has grown in scope, and now contains over 70,000 codes — reflecting advances in medical knowledge, health tech, and the administrative demands of modern healthcare. ICD-11 was released in 2022, but ICD-10 is still the standard in many countries including the US.
 
-ICD-11 was released in 2022, but ICD-10 is still the standard in many countries including the US.
+Ever been pecked by a macaw? That’s <strong>W61.12XA</strong>. Burned when your water skis caught fire? That's <strong>V91.07X</strong>.
 
-It contains some highly specific codes. Ever been pecked by a macaw? That’s W61.12XA.
-
-Every code tells a story — of human health, of bureaucracy, and occasionally, of mean parrots.
+Each code tells a story — of health, of bureaucracy; of watersports and parrots.
 
 <img class="profile_img_square" src="/assets/images/macaw.png" alt="macaw">
 
