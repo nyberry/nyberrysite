@@ -1,6 +1,6 @@
 ---
 layout: layout.html
-title: Colorblind Test
+title: Colour Vision Test
 description: A quick reference tool for screening red–green color vision deficiency using a selection of Ishihara plates.
 image: /assets/images/colorblindTest.jpg
 ---
