@@ -34,7 +34,7 @@ image: /assets/images/scales.png
 
 <h3>Body Mass Index</h3>
 
-Body mass index (BMI) is derived by dividing the weight of a person by the square of their height. It is a "rule of thumb" measure, used to broadly categorize a person as underweight, normal weight, overweight or obese.
+Body mass index (BMI) is derived by dividing the weight of a person by the square of their height. It is a "rule of thumb" measure, used to broadly categorize a person as underweight, normal weight, or as having overweight or obesity.
 
 <br>
 <div class="center-table">
@@ -42,11 +42,11 @@ Body mass index (BMI) is derived by dividing the weight of a person by the squar
     <thead>
       <tr>
         <th>BMI</th>
-        <th>Classification</th>
+        <th>Category</th>
       </tr>
     </thead>
     <tbody>
-      <tr><td>less than 18</td><td>Underweight</td></tr>
+      <tr><td>less than 18</td><td>underweight</td></tr>
       <tr><td>18 - 24.9</td><td>normal weight</td></tr>
       <tr><td>25 - 29.9</td><td>overweight</td></tr>
       <tr><td>more than 30 </td><td>obesity</td></tr>
@@ -55,7 +55,9 @@ Body mass index (BMI) is derived by dividing the weight of a person by the squar
 </div>
 <br>
 
-In 2021, <a href="https://digital.nhs.uk/data-and-information/publications/statistical/health-survey-for-england/2021">28% of adults in the UK</a> were obese (BMI > 30) and 64% of adults were overweight or obese (BMI > 25).
+In 2021, <a href="https://digital.nhs.uk/data-and-information/publications/statistical/health-survey-for-england/2021">28% of adults in the UK</a> were classed as obese and 64% of adults were classed as overweight or obese.
+
+For children and teens, BMI is interpreted differently, using sex-specific BMI-for-age percentiles. [This calculator](https://www.cdc.gov/bmi/child-teen-calculator/index.html) reports BMI, BMI percentile, and BMI category for children and teens 2 through 19.
 
 <hr>
 <h3>Relevance</h3>
@@ -65,15 +67,13 @@ Obesity is linked with an increased risk of heart disease, type 2 diabetes, and 
 <hr>
 <h3>Limitations</h3>
 
-BMI has limitations when applied to individuals, and should be interpreted alongside other indicators such as waist circumference, fitness level, and metabolic health.
+BMI should be interpreted alongside other indicators such as waist circumference, fitness level, and metabolic health.
 
 It does not differentiate between fat and muscle mass. Athletes or individuals with higher muscle content may be classified as overweight or even obese, despite having low body fat and excellent cardiovascular health.
 
 Similarly, BMI does not account for fat distribution, which is an important factor in health risk. Visceral fat (fat around the abdominal organs) poses a higher health risk than fat stored in other areas, but BMI cannot distinguish this.
 
 BMI does not account for age, sex, or ethnicity- all of which influence body composition. Older adults may lose muscle mass and gain fat without a significant change in BMI, and some ethnic groups may experience metabolic risks at lower BMI thresholds than others.
-
-For children and teens, BMI is interpreted differently, using sex-specific BMI-for-age percentiles. [This calculator](https://www.cdc.gov/bmi/child-teen-calculator/index.html) reports BMI, BMI percentile, and BMI category for children and teens 2 through 19.
 
 </div>
 

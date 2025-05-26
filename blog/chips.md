@@ -12,9 +12,9 @@ order: 200
 
 They say that today’s papers will wrap tomorrow’s chips, but that hasn't actually been true since about 1981, when they realised the dyes in the ink were poisonous.
 
-Chips or not, an article in the Financial Times caught my attention because it appeared to suggest that family doctors may no longer be needed (“It’s time to stand back and ask what GPs are for”, November 12th 2021).
+Chips or not, an article in _the Financial Times on Sunday_ caught my attention because it appeared to suggest that family doctors may no longer be needed (“It’s time to stand back and ask what GPs are for”, November 12th 2021).
 
-On one hand, this is truly excellent news. It means that tomorrow, rather than face the many demands which usually accompany each Monday morning, we can all go fishing.
+On one hand, this is truly excellent news. It means that tomorrow, rather than face the many demands which usually accompany each Monday morning, I can go fishing.
 
 On the other hand – what on earth are they talking about?
 
@@ -26,9 +26,9 @@ The journalist, who is also a government advisor on health reform, wrote:
 
 Whoa, slow down there, and let's read those somewhat emotive snippets again.
 
-Someone hurt their back, and someone has cancer. These are bad things, and I’m sorry. Hopefully they are both getting better.
+Someone hurt their back, and someone has a type of cancer. These are indeed bad things, and I’m sorry. Hopefully they are both getting better.
 
-But don't we have purpose-built places where people can go to get fixed up when they have an accident, or an emergency? And wouldn't the friend with cancer have needed hospital treatment anyway? It's possible that I may not have grasped the full nettle of these anecdotes, but unless we are to start setting bones and delivering chemotherapy in our local surgeries, isn't it entirely appropriate for hospitals to continue do that sort of work?
+But don't we have purpose-built places where people can go to get fixed up when they have an accident, or an emergency? And wouldn't the friend with a form of cancer have needed hospital treatment anyway? It's possible that I may not have grasped the full nettle of these anecdotes, but unless GPs are to start setting bones and delivering chemotherapy in their local surgeries, isn't it entirely appropriate for hospitals to continue do that sort of work?
 
 “It’s time to stand back and ask what GPs are for”, the piece then proclaims.
 
@@ -40,7 +40,7 @@ The role of a GP practice is, in fact, to deliver the vast majority of the count
 
 Your GP surgery is where you go when your new born baby needs immunising. When your toddler has a limp. When your child has asthma. When your teenager is having mood swings.
 
-Your GP is who you go to when you’ve found a lump. When your mother is forgetting things. When your grandfather, late in the day, is taking his final breaths.
+It's where you go for help when you’ve found a lump. When your mother is forgetting things. When your grandfather, late in the day, is taking his final breaths.
 
 The system is far from perfect. There's always room for improvement. Sometimes there aren't enough people delivering care to match the demands of the people who need to receive it. And recent moves towards bigger, scaled-up surgeries have presented a particular challenge to the relationships families have traditionally had with their doctors.
 
@@ -48,7 +48,7 @@ But surely this is what GPs are for. Around the country, working in partnerships
 
 I wonder why someone might say otherwise. Could it be – and this is just a wild stab in the dark - because they are an advisor on health reform, and shaking things up a little goes with the job?
 
-With this in mind, I retrieved a crumpled broadsheet from the bin outside the chip shop. Having carefully unfolded it, I found the article and more fully appraised the content. Although to be honest, it was kind of smeared, and I couldn’t quite make out the part where it explained how things might be arranged better.
+As the day went on, this was still playing on mind, so I went back and retrieved the crumpled broadsheet from the bin outside the chip shop. Having carefully unfolded it, I found the article and once again appraised the content. Although to be honest, it was kind of smeared, and I couldn’t quite make out the part where it explained how things might be arranged better.
 
 Something smelled a little fishy. I took it with a pinch of salt.
 

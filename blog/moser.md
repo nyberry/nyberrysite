@@ -24,8 +24,6 @@ Well, if you count them, you will see that:
 - The circle with two dots has two areas.
 - The circle with three dots has four areas...
 
-And so on.
-
 The relationship between dots and areas is like this:
 
 <div class="center-table">
@@ -41,7 +39,7 @@ The relationship between dots and areas is like this:
       <tr><td>2</td><td>2</td></tr>
       <tr><td>3</td><td>4</td></tr>
       <tr><td>4</td><td>8</td></tr>
-      <tr><td>5...</td><td>16...</td></tr>
+      <tr><td>5</td><td>16</td></tr>
     </tbody>
   </table>
 </div>
@@ -52,7 +50,7 @@ So let me ask you a question.
 
 <hr>
 
-But shelve that for a moment, and let me tell you about a few patients I made up.
+Hold that thought for a moment, and let me tell you about a few patients I made up.
 
 An elderly lady, who has pain from a cracked rib. She felt it go when she leaned over a sofa arm six weeks back. It is painful to sneeze, and the pain is bothering her at night.
 
@@ -72,7 +70,7 @@ What if the persistent cough is a sign of sarcoidosis, a rare condition where cl
 
 And what if the patient with flu-like symptoms has contracted Weils disease, leptospirosis, while working on the farm's water supply? What if it is entering the second, immune phase, which is a very bad thing, and her kidneys and liver are failing as millions of tiny clots form in her bloodstream? You can fix leptospirosis, but it is best recognised while the patient still has working kidneys.
 
-I'm not trying to give anyone nightmares here. Those conditions are really rare. And happily, in the UK we have a pretty good healthcare system, through which even rare conditions like these tend to be diagnosed and treated in a timely fashion.
+I'm not trying to give anyone nightmares here. Those conditions are pretty rare. And happily, we have a pretty good healthcare system, through which even rare conditions like these tend to be diagnosed and treated in a timely fashion.
 
 But have you paused to consider how this happens?
 
@@ -80,15 +78,15 @@ Clearly, things like bruised ribs and coughs and flu are common. They are like h
 
 On the other hand, things like myeloma, sarcoidoisis and leptospirosis are not very common. They may graze in the same field as the horses, but they are in fact zebras.
 
-Zebras can be quite easy to recognise in broad daylight. The stripes are a dead giveaway, or "a strong visual cue" as some might say in medical education circles.
+Zebras can be easy to recognise in broad daylight. The stripes are a dead giveaway, or "a strong visual cue" as some might say in medical education circles.
 
 But broad daylight is not guaranteed in healthcare. Phone consultations for example, by stripping all visual cues, can sometimes make it feel more like night than day. And it's easy to miss a zebra in a field at night.
 
-Still, there may be something about the murky silhouette that doesn't sit well.
+Even still, there may be something about the murky silhouette that doesn't sit well.
 
-If the patient with painful ribs is also losing weight, why might that be? If this is the first time the young guy with the cough had troubled his doctor in fifteen years, what's that about? If the patient with "flu" also had very dark urine- is that normal in flu?
+If the patient with painful ribs is also losing weight, why might that be? If this is the first time the young guy with the cough had troubled his doctor in fifteen years, what's that about? If the farmer with "flu" also had very dark urine- is that normal in flu?
 
-These subtle discords, these incongruencies, these anomalies- they somehow resonate. A faint but discernible bell sounding deep in the subconscious. Experience tells us to pursue a particular line of enquiry or attention. To shine an inquisitive torch into the field, to make the zebra's form clearer. To accurate diagnosis, and to proper treatment.
+These subtle discords, these incongruencies, these anomalies- they somehow resonate. A faint but discernible bell rings deep in the subconscious. The experienced doctor intuitively knows to pursue a particular line of enquiry or attention. To shine an inquisitive torch into the field, to make the zebra's form clearer. Which leads to accurate diagnosis, and to proper treatment.
 
 <hr>
 
@@ -111,7 +109,7 @@ Remember, the relationship between dots and areas goes like this:
       <tr><td>2</td><td>2</td></tr>
       <tr><td>3</td><td>4</td></tr>
       <tr><td>4</td><td>8</td></tr>
-      <tr><td>5</td><td>16...</td></tr>
+      <tr><td>5</td><td>16</td></tr>
     </tbody>
   </table>
 </div>
@@ -122,7 +120,7 @@ And The question is:
 
 We all did a bit of maths at school, right?
 
-And it might be tempting to look at the pattern: 1,2,4,8,16 - the numbers doubling with each step - and conclude that the relationship between dots and areas is:
+It might be tempting to look at the pattern: 1, 2, 4, 8, 16; see the numbers doubling with each step, and conclude that the relationship between dots and areas is:
 
 <div class="center-table">
   <table class="grid-table">
@@ -177,21 +175,21 @@ And the sequence continues like this:
   </table>
 </div>
 
-But how might a mathematician correctly "diagnose" the 6th circle as having 31 areas, not 32?
+How might a mathematician correctly "diagnose" the 6th circle as having 31 areas, not 32?
 
 I suggest there are two main ways.
 
-One way is by working from first principles. What causes a new area to be formed in Moser's circles? It can only be the division of an existing area by a line, by joining 2 dots; or the division of a line by another line, which requires the joining of 4 dots. And so it is possible to calculate the number of areas by considering out all possible lines and intersections (and take my word for it, the [inductive proof](https://en.wikipedia.org/wiki/Dividing_a_circle_into_areas#Inductive_method) is pretty hideous).
+One way is by working from first principles. What causes a new area to be formed in Moser's circles? It can only be the division of an existing area by a line, by joining 2 dots; or the division of an existing line by another line, which requires the joining of 4 dots. And so it is possible to calculate the number of areas by considering out all possible lines and intersections (and take my word for it, the [inductive proof](https://en.wikipedia.org/wiki/Dividing_a_circle_into_areas#Inductive_method) is pretty hideous).
 
 Another way is by experience. Having seen Moser's circle problem, if we encounter a rare 6-dot-circle in the wild, we will be probably simply remember that it contains 31 areas, not 32.
 
 <hr>
 
-And maybe it’s like that when GPs encounter illnesses. Most of the time we deal with horses (to extend the metaphor; we are not vets).
+And maybe it’s like that when GPs encounter illness. Most of the time we deal with horses (to extend the metaphor; we are not vets).
 
 But if we see enough undifferentiated equine presentations in primary care, sooner or later we'll see a zebra.
 
-It takes a broad training to spot species we have not previously encountered, to question zebrahood when some aspect does not quite fit the horseshoes. To go back to the basics of physiology and pathology & run the various dots, lines and areas through our own complex mental models.
+It takes a broad training to spot species we have not previously encountered, to question zebrahood when some aspect does not quite fit the horseshoe. To go back to the basics of physiology and pathology & run the various dots, lines and areas through our own complex mental models.
 
 And even then, zebras can be really difficult to spot in a field of horses, at night.
 
@@ -199,7 +197,7 @@ And even then, zebras can be really difficult to spot in a field of horses, at n
 
 This is one of the reasons why training a GP from medical school currently takes a minimum of 10 years. There are many animals in the zoo- please let me know if I’m working this metaphor too hard- and learning about them all takes a long time.
 
-We draw on these hard-earned intellectual tools for illumination, in the same way that a mathematician might draw on their accumulated knowledge of geometry, algebra and combinatorics to solve Moser's circle problem. Or to shine light on some other problem in their field. At night.
+We draw on this hard-earned knowledge for illumination, in the same way that a mathematician might draw on their accumulated knowledge of geometry, algebra and combinatorics to solve Moser's circle problem. Or to shine light on some other problem in their field. At night.
 
 <img src="/blog/images/zebra2.png" alt="Zebras lit up at night" class="blog-img" style="border-radius: 70%;">
 
