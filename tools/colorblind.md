@@ -8,8 +8,9 @@ image: /assets/images/colorblindTest.jpg
 <h2>Color Vision Test</h2>
 
 <br>
-<a href="/assets/images/colorblindTest.jpg" target="_blank">
+<a href="/assets/images/colorblindTest.jpg" target="_blank"  style="text-decoration: none;">
     <img src="/assets/images/colorblindTest.jpg" alt="colorblind test">
+<p class="footnote">Click to open in new window</p>
 </a>
 <hr>
 

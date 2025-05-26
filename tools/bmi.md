@@ -10,11 +10,11 @@ image: /assets/images/scales.png
 <form id="bmi-form">
   <label for="height">Height (cm):</label>
   <input type="number" id="height" min="50" max="250" required oninput="checkFormCompletion();  updateImperial();">
-  <div id="height-imperial" style="min-height: 1.4em; margin-top: 0.4em; font-size: 0.8rem; color: #555;"></div>
+  <div id="height-imperial" class="footnote"></div>
   <br>
   <label for="weight">Weight (kg):</label>
   <input type="number" id="weight" min="5" max="250" required step="0.1" oninput="checkFormCompletion();  updateImperial();">
-  <div id="weight-imperial" style="min-height: 1.4em; margin-top: 0.4em; font-size: 0.8rem; color: #555;"></div>
+  <div id="weight-imperial" class="footnote"></div>
   <br>
   <button type="submit" disabled="true">Calculate BMI</button>
 </form>

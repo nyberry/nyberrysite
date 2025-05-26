@@ -168,6 +168,13 @@ input {
     margin-right: auto;
 }
 
+.footnote {
+  min-height: 1.4em;
+  margin-top: 0.4em;
+  font-size: 0.8rem;
+  color: #555;
+}
+
 
 hr {margin: 15px 0;
     border: none;
