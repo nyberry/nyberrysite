@@ -19,6 +19,14 @@
     font-size: 24px;
 }
 
+.info-icon {
+    position: absolute;
+    top: 0;
+    right: 1rem;
+    cursor: pointer;
+    font-size: 1.8rem;
+}
+
 .completion-container {
     display: flex;
     flex-direction: column;
@@ -132,7 +140,7 @@
   padding-left: 0;
 }
 /* Modal overlay */
-#review-modal {
+.sumfing-modal-overlay {
   display: none;
   position: fixed;
   top: 0; left: 0;
@@ -148,12 +156,12 @@
 .sumfing-modal-content {
   background: white;
   padding: 2rem;
-  border-radius: 20px; /* rounded corners */
   max-width: 400px; /* smaller box */
   width: 95%;
   height: 80vh; /* Fixed height */
   text-align: center;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  overflow-y: auto;    
 }
 
 /* Close button */
