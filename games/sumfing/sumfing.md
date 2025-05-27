@@ -49,7 +49,7 @@ order: 399
 </div>
 
 <!-- Modal overlay -->
-<div id="review-modal" class="sumfing-modal" style="display: none;">
+<div id="review-modal" class="sumfing-modal-overlay" style="display: none;">
   <div class="sumfing-modal-content">
     <span id="close-review" class="sumfing-modal-close">&times;</span>
         <div class = "sumfing-title" id="sumfing-modal-headline">Sumfing</div>
