@@ -21,8 +21,8 @@
 
 .info-icon {
     position: absolute;
-    top: 0;
-    right: 0.2rem;
+    top: -0.2rem;
+    right: -0.5rem;
     cursor: pointer;
     font-size: 1.8rem;
 }
@@ -100,16 +100,16 @@
 }
 
 .sumfing-title {
-    font-size: 34px;
+    font-size: 32px;
 }
 
 .sumfing-result {
-    font-size: 34px;
+    font-size: 32px;
     margin-bottom: 14px;
 }
 
 .sumfing-target {
-    font-size: 34px;
+    font-size: 32px;
     margin-bottom: 14px;
 }
 
