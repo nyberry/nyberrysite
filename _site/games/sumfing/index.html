@@ -614,7 +614,7 @@ function showReviewModal() {
 
       const clues = progress.clues[stage];
       const emojiP = document.createElement('p');
-      emojiP.textContent = clues === 3 ? '❌' : clues === 0 ? '✅' : '🤓'.repeat(clues);
+      emojiP.textContent = clues === 3 ? '❌' : clues === 0 ? '✅' : '🤓'.repeat(clues)+'✅';
 
       row.appendChild(tilesDiv);
       row.appendChild(emojiP);
