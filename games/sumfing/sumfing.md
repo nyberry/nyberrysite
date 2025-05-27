@@ -535,53 +535,64 @@ function getSumfingDayNumber(dateStr) {
   return `#${dayNumber}`;
 }
 
-// Update review modal emojis
+
+// Modified showReviewModal with staggered row appearance
 function showReviewModal() {
   const container = document.getElementById('review-content');
   container.innerHTML = '';
-  document.getElementById('sumfing-modal-headline').textContent=`Sumfing ${dayNumber}`;
+  document.getElementById('sumfing-modal-headline').textContent = `Sumfing ${dayNumber}`;
   document.getElementById('sumfing-modal-date').textContent = today;
 
   const stages = ['Easy', 'Medium', 'Hard'];
   const { Easy, Medium, Hard, Extra } = progress.clues;
   const extraAllowed = Easy === 0 && Medium === 0 && Hard === 0;
-  if (progress.stage === 'Completed' && extraAllowed) stages.push('Extra');
+  if (progress.stage === 'Completed' && extraAllowed) {
+    stages.push('Extra');
+  }
 
-  stages.forEach(stage => {
-    const [target, expressions] = currentPuzzle[stage];
-    const expression = expressions[0];
+  stages.forEach((stage, index) => {
+    setTimeout(() => {
+      const [target, expressions] = currentPuzzle[stage];
+      const expression = expressions[0];
 
-    const row = document.createElement('div');
-    row.className = 'sumfing-modal-review-row';
+      const row = document.createElement('div');
+      row.className = 'sumfing-modal-review-row';
 
-    const tilesDiv = document.createElement('div');
-    tilesDiv.className = 'sumfing-modal-review-tiles';
+      const tilesDiv = document.createElement('div');
+      tilesDiv.className = 'sumfing-modal-review-tiles';
 
-    const fullExpression = `${expression}=${target}`;
-    [...fullExpression].forEach(char => {
-      const tile = document.createElement('div');
-      tile.className = 'tile';
-      if (!isNaN(char)) tile.classList.add('number');
-      else if ('+-*/'.includes(char)) tile.classList.add('operator');
-      else if ('!^'.includes(char)) tile.classList.add('special');
-      else if (char === '=') tile.classList.add('equals');
+      const fullExpression = `${expression}=${target}`;
+      [...fullExpression].forEach(char => {
+        const tile = document.createElement('div');
+        tile.className = 'tile';
 
-      tile.textContent = char === '*' ? '×' : char === '/' ? '÷' : char;
-      tilesDiv.appendChild(tile);
-    });
+        if (!isNaN(char)) {
+          tile.classList.add('number');
+        } else if (['+', '-', '*', '/'].includes(char)) {
+          tile.classList.add('operator');
+        } else if (['!', '^'].includes(char)) {
+          tile.classList.add('special');
+        } else if (char === '=') {
+          tile.classList.add('equals');
+        }
 
-    const clues = progress.clues[stage];
-    const emojiP = document.createElement('p');
-    emojiP.textContent = emojiSummary(clues);
-    emojiP.style.fontSize = '2rem';
+        tile.textContent = char === '*' ? '×' : char === '/' ? '÷' : char;
+        tilesDiv.appendChild(tile);
+      });
 
-    row.appendChild(tilesDiv);
-    row.appendChild(emojiP);
-    container.appendChild(row);
+      const clues = progress.clues[stage];
+      const emojiP = document.createElement('p');
+      emojiP.textContent = clues === 3 ? '❌' : clues === 0 ? '✅' : '🤓'.repeat(clues);
+
+      row.appendChild(tilesDiv);
+      row.appendChild(emojiP);
+      container.appendChild(row);
+    }, index * 1000); // stagger each stage by 1 second
   });
 
   document.getElementById('review-modal').style.display = 'flex';
 }
+
 
 
 // Close modal

@@ -151,6 +151,7 @@
   border-radius: 20px; /* rounded corners */
   max-width: 400px; /* smaller box */
   width: 95%;
+  height: 80vh; /* Fixed height */
   text-align: center;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
 }
