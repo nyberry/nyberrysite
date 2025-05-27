@@ -1,0 +1,222 @@
+/*
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #e7e7e7;
+        }
+*/
+.game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    position: relative;
+    min-height: 80vh;
+    font-size: 24px;
+}
+
+.completion-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    position: relative;
+    min-height: 80vh;
+    font-size: 24px;
+}
+
+.box-container {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.tile-container {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.box, .tile {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px;
+    cursor: pointer;
+    font-size: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.1s;
+    background-color: white;
+    color: white;
+}
+
+.tile-container .tile[data-value="1"],.tile-container .tile[data-value="2"],.tile-container .tile[data-value="3"],
+.tile-container .tile[data-value="4"],.tile-container .tile[data-value="5"],.tile-container .tile[data-value="6"],
+.tile-container .tile[data-value="7"],.tile-container .tile[data-value="8"],.tile-container .tile[data-value="9"],
+.tile-container .tile[data-value="0"]
+{
+    background-color: rgb(0, 115, 255);
+}
+
+.tile-container .tile[data-value="+"] {
+    background-color: red;
+}
+
+.tile-container .tile[data-value="-"] {
+    background-color: red;
+}
+
+.tile-container .tile[data-value="*"] {
+    background-color: red;
+}
+
+.tile-container .tile[data-value="/"] {
+    background-color: red;
+}
+
+.tile-container .tile[data-value="!"] {
+    background-color: purple;
+}
+
+.tile-container .tile[data-value="^"] {
+    background-color: purple;
+}
+
+.tile:hover {
+    transform: translateY(-4px);
+}
+
+.sumfing-title {
+    font-size: 36px;
+}
+
+.sumfing-result {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.sumfing-target {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.sumfing-feedback {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+#next-button, #reveal-button, #hint1-button, #hint2-button {
+    display: none;
+    position: relative;
+    padding: 10px 20px;
+    font-size: 24px;
+    cursor: pointer;
+    background-color: rgb(240, 140, 0);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#next-button {
+    background-color: #25D366;
+}
+
+#clue-summary {
+  list-style: none;
+  padding-left: 0;
+}
+/* Modal overlay */
+#review-modal {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(200, 200, 200, 1.00); /* white overlay */
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Modal content box */
+.sumfing-modal-content {
+  background: white;
+  padding: 2rem;
+  border-radius: 20px; /* rounded corners */
+  max-width: 400px; /* smaller box */
+  width: 95%;
+  text-align: center;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Close button */
+.sumfing-modal-close {
+  float: right;
+  font-size: 2rem; /* larger */
+  cursor: pointer;
+  margin-top: -1rem;
+  margin-right: -1rem;
+}
+
+/* Review rows */
+.sumfing-modal-review-row {
+  margin-bottom: 1.5rem;
+}
+
+/* Tile container inside modal */
+.sumfing-modal-review-tiles {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.2rem;
+  margin-bottom: 0.5rem;
+  max-width: 98vw;
+}
+
+/* Individual tile styling */
+.sumfing-modal-review-tiles .tile {
+  width: 35px;
+  height: 35px;
+  font-size: 20px;
+  padding: 0;
+  margin: 0.15rem;
+  border-radius: 6px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+}
+
+/* Color coding */
+.sumfing-modal-review-tiles .tile.number {
+  background-color: rgb(0, 115, 255);
+  color: white;
+}
+
+.sumfing-modal-review-tiles .tile.operator {
+  background-color: red;
+  color: white;
+}
+
+.sumfing-modal-review-tiles .tile.special {
+  background-color: purple;
+  color: white;
+}
+
+.sumfing-modal-review-tiles .tile.equals {
+  background-color: #cce;
+  color: #333;
+}
+
+/* Emoji results */
+.sumfing-modal-review-row p:last-child {
+  font-size: 2rem; /* bigger emoji */
+  margin-top: 0.5rem;
+} 

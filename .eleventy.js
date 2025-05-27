@@ -2,7 +2,8 @@ module.exports = function(eleventyConfig) {
   // Static files passthrough
   eleventyConfig.addPassthroughCopy("assets");
   eleventyConfig.addPassthroughCopy("blog/images");
-
+  eleventyConfig.addPassthroughCopy("games/sumfing/assets");
+  
   // Collection: pages
   eleventyConfig.addCollection("pages", function(collectionApi) {
     return collectionApi.getAll().filter(item =>
