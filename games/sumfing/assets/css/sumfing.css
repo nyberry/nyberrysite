@@ -146,7 +146,7 @@
   top: 0; left: 0;
   width: 100vw;
   height: 100vh;
-  background: rgba(200, 200, 200, 1.00); /* white overlay */
+  background: rgba(200, 200, 200, 0.8); /* white overlay */
   justify-content: center;
   align-items: center;
   z-index: 1000;
@@ -157,8 +157,8 @@
   background: white;
   padding: 2rem;
   max-width: 400px; /* smaller box */
-  width: 95%;
-  height: 80vh; /* Fixed height */
+  width: 90%;
+  height: 75vh; /* Fixed height */
   text-align: center;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
   overflow-y: auto;    
