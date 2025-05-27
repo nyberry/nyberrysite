@@ -22,7 +22,7 @@
 .info-icon {
     position: absolute;
     top: 0;
-    right: 1rem;
+    right: 0.2rem;
     cursor: pointer;
     font-size: 1.8rem;
 }
@@ -39,7 +39,7 @@
 
 .box-container {
     display: flex;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 .tile-container {
@@ -100,17 +100,17 @@
 }
 
 .sumfing-title {
-    font-size: 36px;
+    font-size: 34px;
 }
 
 .sumfing-result {
-    font-size: 36px;
-    margin-bottom: 20px;
+    font-size: 34px;
+    margin-bottom: 14px;
 }
 
 .sumfing-target {
-    font-size: 36px;
-    margin-bottom: 20px;
+    font-size: 34px;
+    margin-bottom: 14px;
 }
 
 .sumfing-feedback {
@@ -121,7 +121,7 @@
 #next-button, #reveal-button, #hint1-button, #hint2-button {
     display: none;
     position: relative;
-    padding: 10px 20px;
+    padding: 10px 10px;
     font-size: 24px;
     cursor: pointer;
     background-color: rgb(240, 140, 0);

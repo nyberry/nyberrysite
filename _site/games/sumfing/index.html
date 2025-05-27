@@ -244,12 +244,12 @@ function initPuzzleUI(puzzle) {
     renderTiles(tiles, puzzle[stage]);
     bindTileEvents();
     bindBoxEvents();
+    document.getElementById('feedback').textContent = '🤓';  // clear immediately
 
     // Delay hint reveal
     setTimeout(() => {
         if (document.getElementById('next-button').style.display === 'none') {
             document.getElementById('hint1-button').style.display = 'block';
-            document.getElementById('feedback').textContent = '🤓';
         }
     }, standardDelay);  
 }
