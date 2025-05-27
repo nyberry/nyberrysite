@@ -129,7 +129,6 @@ document.addEventListener('DOMContentLoaded', () => {
     infoModal.style.display = 'flex';
   });
 
-
   // Optional: close modal when clicking outside content
   window.addEventListener('click', function (event) {
     if (event.target === infoModal) {
@@ -198,6 +197,12 @@ document.addEventListener('DOMContentLoaded', () => {
 // Function to initialise puzzle UI
 function initPuzzleUI(puzzle) {
     const stage = progress.stage;
+
+    if (stage === 'Completed') {
+      showCompletionPage();
+      return;
+    }
+
     const headline = document.getElementById('headline');
     headline.textContent = `Sumfing ${stage}`;
     tiles=puzzle.Tiles;
@@ -474,7 +479,6 @@ function advanceStage() {
     // Puzzle fully complete
     progress.stage = 'Completed';
     saveProgress();
-    showCompletionPage();
     return;
   }
 
@@ -487,16 +491,15 @@ function advanceStage() {
     } else {
       // Otherwise, you're done
       progress.stage = 'Completed';
-      showCompletionPage();
     }
     saveProgress();
     return;
   }
 
   // Fallback
+  console.log("Logic Error in stage advance function")
   progress.stage = 'Completed';
   saveProgress();
-  showCompletionPage();
 }
 
 
