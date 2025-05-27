@@ -1,7 +1,7 @@
 ---
 layout: layout.html
 title: Sumfing
-description: A simple yet challenging number game. Can you arrange the tiles to solve the sum?
+description: A simple yet challenging number game. Can you arrange the tiles to solve the sum? Nothing to do with medicine!
 image: /games/sumfing/assets/images/demoImage.png
 order: 399
 ---
