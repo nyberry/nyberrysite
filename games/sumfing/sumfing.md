@@ -136,10 +136,12 @@ order: 399
 let progress;
 let currentPuzzle;
 let selectedTiles = [];
-let hint_level = 0;
 let unsolved = true;
 let expressions = [];
+let hint_level = 0;
 let hint_answer = [];
+let hintTimeoutId = null;
+let revealTimeoutId = null;
 const standardDelay = 5000;
 const STAGES = ['Easy', 'Medium', 'Hard', 'Extra'];
 const today = new Date().toISOString().split('T')[0];
@@ -254,6 +256,18 @@ function startGameAfterModal() {
 
 // Function to initialise puzzle UI
 function initPuzzleUI(puzzle) {
+
+    // Clear any pending hint/reveal timeouts from the previous stage
+    if (hintTimeoutId) {
+        clearTimeout(hintTimeoutId);
+        hintTimeoutId = null;
+    }
+    if (revealTimeoutId) {
+        clearTimeout(revealTimeoutId);
+        revealTimeoutId = null;
+    }
+    hint_level = 0;
+
     const stage = progress.stage;
 
     if (stage === 'Completed') {
@@ -268,7 +282,6 @@ function initPuzzleUI(puzzle) {
     hint_answer = expressions[0];
     headline.textContent = `Sumfing ${stage}`;
     unsolved = true;
-    hint_level = 0;
     selectedTiles = [];
     
     document.getElementById('next-button').style.display = 'none';
@@ -414,7 +427,8 @@ function revealHint1() {
     progress.clues[progress.stage] = Math.max(progress.clues[progress.stage], 1);
     saveProgress();
     clearBoxesAndTiles();
-    setTimeout(() => {
+    
+    hintTimeoutId = setTimeout(() => {
         if (unsolved) document.getElementById('hint2-button').style.display = 'block';
     }, standardDelay);
 }
@@ -424,7 +438,8 @@ function revealHint2() {
     progress.clues[progress.stage] = Math.max(progress.clues[progress.stage], 2);
     saveProgress();
     clearBoxesAndTiles();
-    setTimeout(() => {
+    
+    revealTimeoutId= setTimeout(() => {
         if (unsolved) document.getElementById('reveal-button').style.display = 'block';
     }, standardDelay);
 }
