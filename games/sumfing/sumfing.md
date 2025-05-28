@@ -147,7 +147,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (saved?.date === today) {
     progress = saved;
-    console.log('progress (in browser local storage):', progress);
+    console.log('progress (in browser localStorage):', progress);
   } else {
     const streak = (saved?.lastPlayed === yesterdayYyyymmdd && saved?.stage === 'Completed')
       ? (saved?.streak || 0) + 1
@@ -219,8 +219,6 @@ function initPuzzleUI(puzzle) {
     expressions = puzzle[stage][1];
     hint_answer = expressions[0];
     headline.textContent = `Sumfing ${stage}`;
-    console.log('puzzle', puzzle, 'stage', stage)
-    console.log('expressions', expressions)
     unsolved = true;
     hint_level = 0;
     selectedTiles = [];
@@ -243,6 +241,7 @@ function initPuzzleUI(puzzle) {
 // Function to render the puzzle
 function renderTiles(tiles, puzzlestage) {
     const [target, expressions] = puzzlestage;
+    console.log(`Rendering stage: ${progress.stage}`)
     document.getElementById('target-display').textContent = `= ${target}`;
 
     const firstExpression = expressions[0]; // eg. "7-5"
