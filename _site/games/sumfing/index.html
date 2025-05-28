@@ -149,55 +149,31 @@ const STAGES = ['Easy', 'Medium', 'Hard', 'Extra'];
 const today = new Date().toISOString().split('T')[0];
 const dayNumber = getSumfingDayNumber(today);
 
-// Welcome Modal //
-
-document.addEventListener('DOMContentLoaded', () => {
-  const welcomeModal = document.getElementById('welcome-modal');
-  const closeBtn = document.getElementById('welcome-close');
-  const playBtn = document.getElementById('play-button');
-
-  // Show the modal on load
-  welcomeModal.style.display = 'flex';
-
-  // Close when the X or Play button is clicked
-  closeBtn.addEventListener('click', () => {
-    welcomeModal.style.display = 'none';
-  });
-
-  playBtn.addEventListener('click', () => {
-    welcomeModal.style.display = 'none';
-  });
-
-  // Optional: close when clicking outside the modal content
-  window.addEventListener('click', (event) => {
-    if (event.target === welcomeModal) {
-      welcomeModal.style.display = 'none';
-    }
-  });
-});
-
 
 // main function on DOM content loaded
 document.addEventListener('DOMContentLoaded', () => {
 
+  // Welcome modal references
+  const welcomeModal = document.getElementById('welcome-modal');
+  const welcomeClose = document.getElementById('welcome-close');
+  const welcomePlay = document.getElementById('play-button');
+
+  // Info modal references
   const infoIcon = document.getElementById('info-icon');
   const infoModal = document.getElementById('info-modal');
   const infoClose = document.getElementById('info-close');
 
-  infoClose.addEventListener('click', () => {
-    infoModal.style.display = 'none';
-  });
-   
-  infoIcon.addEventListener('click', () => {
-    infoModal.style.display = 'flex';
-  });
+  infoClose.addEventListener('click', () => infoModal.style.display = 'none');
+  infoIcon.addEventListener('click', () => infoModal.style.display = 'flex');
 
-  // Close modal when clicking outside content
-  window.addEventListener('click', function (event) {
-    if (event.target === infoModal) {
-      infoModal.style.display = 'none';
-    }
-  }); 
+  // Close modals when clicking outside content
+  window.addEventListener('click', (event) => {
+    if (event.target === infoModal) infoModal.style.display = 'none';
+    if (event.target === welcomeModal) welcomeModal.style.display = 'none';
+  });
+  welcomeClose.addEventListener('click', () => welcomeModal.style.display = 'none');
+  welcomePlay.addEventListener('click', () => welcomeModal.style.display = 'none');
+
 
   document.getElementById('date').textContent = `${today}`;
 
@@ -227,6 +203,11 @@ document.addEventListener('DOMContentLoaded', () => {
     saveProgress();  // ✅ Save it immediately
     console.log('No data in local storage, progress initialised to:', progress);
     }
+
+  // Show welcome modal only if not completed
+  if (progress.stage !== 'Completed') {
+    welcomeModal.style.display = 'flex';
+  }
 
 
   fetch('/games/sumfing/assets/puzzles.json')
