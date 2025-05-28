@@ -150,7 +150,7 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log('progress (in browser local storage):', progress);
   } else {
     const streak = (saved?.lastPlayed === yesterdayYyyymmddd && saved?.stage === 'Completed')
-      ? (Saved?.streak || 0) + 1
+      ? (saved?.streak || 0) + 1
       : 1;
 
     progress = {
@@ -160,7 +160,7 @@ document.addEventListener('DOMContentLoaded', () => {
       streak,
       lastPlayed: today
     };
-    localStorage.setItem(storageKey, JSON.stringify(progress));
+    saveProgress();  // ✅ Save it immediately
     console.log('No data in local storage, progress initialised to:', progress);
     }
 
