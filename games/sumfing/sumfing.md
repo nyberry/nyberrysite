@@ -149,7 +149,7 @@ document.addEventListener('DOMContentLoaded', () => {
     progress = saved;
     console.log('progress (in browser local storage):', progress);
   } else {
-    const streak = (saved?.lastPlayed === yesterdayYyyymmddd && saved?.stage === 'Completed')
+    const streak = (saved?.lastPlayed === yesterdayYyyymmdd && saved?.stage === 'Completed')
       ? (saved?.streak || 0) + 1
       : 1;
 
