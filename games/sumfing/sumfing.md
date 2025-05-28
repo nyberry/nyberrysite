@@ -102,11 +102,10 @@ order: 399
     4️⃣❗ = 4 × 3 × 2 × 1 = 24 ✅<br><br>
     <div class="center-table">
     <table class="grid-table">
-      <thead>
+      <thead style="background: #c8c8c8">
         <tr><td>Factorial</td><td>Value</td>
       </thead>
       <tbody>
-        <tr><td>0!</td><td>1</td></tr>
         <tr><td>1!</td><td>1</td></tr>
         <tr><td>2!</td><td>2</td></tr>
         <tr><td>3!</td><td>6</td></tr>
