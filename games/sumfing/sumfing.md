@@ -101,7 +101,8 @@ order: 399
     There's a new Sumfing every day.<br>
     <img src="/games/sumfing/assets/images/degu.png" alt="degu" style="width: 200px;">
     Enjoy!<br><br>
-    <div class = "footnote">©2025 <a href="https://www.nyberry.com">NYBerry</a></div>pret
+    <div class = "footnote">©2025 <a href="https://www.nyberry.com">NYBerry</a></div>
+    <br><br><br>
   </div>
 </div>
 
