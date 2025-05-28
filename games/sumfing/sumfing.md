@@ -48,7 +48,7 @@ order: 399
 <a href="#" id="review-link">Admire your work</a>
 </div>
 
-<!-- Modal overlay -->
+<!-- Admire your work overlay -->
 <div id="review-modal" class="sumfing-modal-overlay" style="display: none;">
   <div class="sumfing-modal-content">
     <span id="close-review" class="sumfing-modal-close">&times;</span>
@@ -643,8 +643,7 @@ function showReviewModal() {
 
       const clues = progress.clues[stage];
       const emojiP = document.createElement('p');
-      emojiP.textContent = clues === 3 ? '❌' : clues === 0 ? '✅' : '🤓'.repeat(clues)+'✅';
-
+      emojiP.textContent = emojiSummary(stage)
       row.appendChild(tilesDiv);
       row.appendChild(emojiP);
       container.appendChild(row);
