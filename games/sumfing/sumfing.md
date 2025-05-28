@@ -43,6 +43,7 @@ order: 399
         <li>Hard: <span id="clue-hard">0</span></li>
         <li id="row-extra">Extra: <span id="clue-extra">0</span></li>
     </ul>
+<div id = "streak"></div>
 <button id="share-button">Share</button>
 <p id="countdown-message">Sumfing else in 00 hours and 00 minutes</p>
 <a href="#" id="review-link">Admire your work</a>
@@ -127,7 +128,7 @@ document.addEventListener('DOMContentLoaded', () => {
     infoModal.style.display = 'flex';
   });
 
-  // Optional: close modal when clicking outside content
+  // Close modal when clicking outside content
   window.addEventListener('click', function (event) {
     if (event.target === infoModal) {
       infoModal.style.display = 'none';
@@ -137,16 +138,27 @@ document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('date').textContent = `${today}`;
 
   const storageKey = 'sumfing_progress';
-  const saved = JSON.parse(localStorage.getItem(storageKey));
+  const saved = JSON.parse(localStorage.getItem(storageKey));   // retrieve any stored progress from today
+
+  const yesterday = new Date();
+  yesterday.setDate(yesterday.getDate() - 1)
+  const yesterdayYyyymmdd = yesterday.toISOString().slice(0,10);
+
 
   if (saved?.date === today) {
     progress = saved;
     console.log('progress (in browser local storage):', progress);
   } else {
+    const streak = (saved?.lastPlayed === yesterdayYyyymmddd && saved?.stage === 'Completed')
+      ? (Saved?.streak || 0) + 1
+      : 1;
+
     progress = {
       date: today,
       stage: 'Easy',
-      clues: { Easy: 0, Medium: 0, Hard: 0, Extra: 0 }
+      clues: { Easy: 0, Medium: 0, Hard: 0, Extra: 0 },
+      streak,
+      lastPlayed: today
     };
     localStorage.setItem(storageKey, JSON.stringify(progress));
     console.log('No data in local storage, progress initialised to:', progress);
@@ -536,6 +548,10 @@ function showCompletionPage() {
   } else {
     document.getElementById('row-extra').style.display = 'none';
   }
+
+  const streakCount = progress?.streak ?? 1;
+  const dayLabel = streakCount === 1 ? 'day' : 'days';
+  document.getElementById('streak').textContent = `Streak: ${streakCount} ${dayLabel}`;
 
   updateCountdownToMidnight();
 
