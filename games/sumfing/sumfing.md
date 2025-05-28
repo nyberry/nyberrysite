@@ -34,7 +34,8 @@ order: 399
 
 </div>
 
-<div id="completion-page" style="display: none;" class="completion-container">
+<div id="completion-page" style="display: none;" class="game-container">
+<div class = "info-icon" id="info-icon">ℹ️</div>
 <div class = "sumfing-title" id="completion-headline">Sumfing</div>
 <div class = "footnote" id="completion-date"></div><br>
     <ul id="clue-summary">
