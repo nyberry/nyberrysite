@@ -52,7 +52,7 @@ order: 399
 <div id="review-modal" class="sumfing-modal-overlay" style="display: none;">
   <div class="sumfing-modal-content">
     <span id="close-review" class="sumfing-modal-close">&times;</span>
-        <div class = "sumfing-title" id="sumfing-modal-headline">Sumfing</div>
+        <div class = "sumfing-modal-title" id="sumfing-modal-headline">Sumfing</div>
         <div class = "footnote" id="sumfing-modal-date"></div><br>
         <h2>How you did:</h2>
     <div id="review-content"></div>
@@ -63,7 +63,7 @@ order: 399
 <div id="info-modal" class="sumfing-modal-overlay">
   <div class="sumfing-modal-content">
     <span class="sumfing-modal-close" id = "info-close">&times;</span>
-    <h2>How to play</h2>
+    <div class = "sumfing-modal-title">How to play</div>
     <h3>Arrange the tiles to solve the sum</strong></h3>
     <p>2️⃣ ➕ 3️⃣ = 5 ✅</p>
 
