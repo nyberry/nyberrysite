@@ -60,6 +60,19 @@ order: 399
   </div>
 </div>
 
+<!-- Welcome Modal -->
+<div id="welcome-modal" class="sumfing-modal-overlay">
+  <div class="sumfing-modal-content">
+    <span class="sumfing-modal-close" id = "welcome-close">&times;</span>
+    <div class = "sumfing-modal-title">Sumfing</div>
+    <h3>Arrange the tiles to solve the sum</strong></h3>
+    2️⃣ ➕ 3️⃣ = 5 ✅<br><br>
+    Work through the <strong>easy</strong>, <strong>medium</strong>, and <strong>hard</strong> sums.<br><br>
+    If you solve them all with no hints, enjoy the special <strong>“extra”</strong> sum. 🤓<br>
+    <button id="play-button">Play</button>
+  </div>
+</div>
+
 <!-- Info Modal -->
 <div id="info-modal" class="sumfing-modal-overlay">
   <div class="sumfing-modal-content">
@@ -111,6 +124,33 @@ const standardDelay = 5000;
 const STAGES = ['Easy', 'Medium', 'Hard', 'Extra'];
 const today = new Date().toISOString().split('T')[0];
 const dayNumber = getSumfingDayNumber(today);
+
+// Welcome Modal //
+
+document.addEventListener('DOMContentLoaded', () => {
+  const welcomeModal = document.getElementById('welcome-modal');
+  const closeBtn = document.getElementById('welcome-close');
+  const playBtn = document.getElementById('play-button');
+
+  // Show the modal on load
+  welcomeModal.style.display = 'flex';
+
+  // Close when the X or Play button is clicked
+  closeBtn.addEventListener('click', () => {
+    welcomeModal.style.display = 'none';
+  });
+
+  playBtn.addEventListener('click', () => {
+    welcomeModal.style.display = 'none';
+  });
+
+  // Optional: close when clicking outside the modal content
+  window.addEventListener('click', (event) => {
+    if (event.target === welcomeModal) {
+      welcomeModal.style.display = 'none';
+    }
+  });
+});
 
 
 // main function on DOM content loaded
