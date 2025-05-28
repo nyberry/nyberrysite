@@ -69,6 +69,7 @@ order: 399
     2️⃣ ➕ 3️⃣ = 5 ✅<br><br>
     Work through the <strong>easy</strong>, <strong>medium</strong>, and <strong>hard</strong> sums.<br><br>
     If you solve them all with no hints, enjoy the special <strong>“extra”</strong> sum. 🤓<br>
+    <img src="/games/sumfing/assets/images/degu.png" alt="degu" style="width: 200px;">
     <button id="play-button">Play</button>
   </div>
 </div>
@@ -102,8 +103,9 @@ order: 399
     It may also use the factorial operator.<br><br>
     4️⃣❗ = 4 × 3 × 2 × 1 = 24 ✅<br>
     <hr>
-    There's a new Sumfing every day.<br><br>
-    Enjoy! 🤓
+    There's a new Sumfing every day.<br>
+    <img src="/games/sumfing/assets/images/degu.png" alt="degu" style="width: 200px;">
+    Enjoy!
     <br><br>
         <div class = "footnote">©2025 <a href="https://www.nyberry.com">NYBerry</a></div>
 
