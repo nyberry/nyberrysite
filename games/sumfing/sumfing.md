@@ -85,19 +85,20 @@ order: 399
     If you solve them all with no hints, enjoy the special <strong>“extra”</strong> sum. 🤓</br>
     <hr>
     <h3>BIDMAS</h3>
-    The sums are worked out in a standard order, called BIDMAS or PEMDAS.<br><br>
-    Multiplications and divisions are performed <strong>before</strong> additions and subtractions, even if they appear further right in the sum. 🤓<br>
-    2️⃣ ➕ 3️⃣ ✖️ 4️⃣ = 14 ✅<br>
+    The sums are worked out in a standard order, called BIDMAS (or PEMDAS).<br><br>
+    Multiplications and divisions are performed <strong>before</strong> additions and subtractions, even if they appear further right in the sum.<br><br>
+    2️⃣ ➕ 3️⃣ ✖️ 4️⃣ = 14 ✅<br><br>
     2️⃣ ➕ 3️⃣ ✖️ 4️⃣ = 20 ❌
     <hr>
     <h3>Advanced: the EXTRA sum</h3>
-    This bonus sum may use the exponent operator.<br>
+    This bonus sum may use the exponent operator ^<br><br>
     <code>a ^ b</code> means <code>a</code> raised to the power of <code>b</code>.<br><br>
     2️⃣ ^ 5️⃣ = 32 ✅<br><br>
     In BIDMAS, exponent operations are performed before any others.<br><br>
-    It may also use the factorial operator.<br><br>
+    It may also use the factorial operator !<br><br>
     4️⃣❗ = 4 × 3 × 2 × 1 = 24 ✅<br>
     <hr>
+    <h3>Build your streak</h3>
     There's a new Sumfing every day.<br>
     <img src="/games/sumfing/assets/images/degu.png" alt="degu" style="width: 200px;">
     Enjoy!<br><br>
