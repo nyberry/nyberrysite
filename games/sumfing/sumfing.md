@@ -650,6 +650,37 @@ function showReviewModal() {
     }, index * 1000); // stagger each stage by 1 second
   });
 
+  // Final message logic (after all rows added)
+  setTimeout(() => {
+    const allClues = stages.map(stage => progress.clues[stage]);
+    const totalClues = allClues.reduce((sum, clues) => sum + clues, 0);
+
+    const message = document.createElement('div');
+    message.className = 'sumfing-modal-final-message';
+
+    if (totalClues === 0) {
+      message.textContent = 'Perfect! 🤓';
+    } else if (totalClues === 1) {
+      message.textContent = 'Nice work! 🤓';
+    } else if (totalClues === 2) {
+      message.textContent = 'Not bad! 🤓';
+    } else if (totalClues < stages.length * 3) {
+      message.textContent = 'You got there! 🤓';
+    } else {
+      message.textContent = 'Keep trying! 🤓 ';
+    }
+
+    message.style.marginTop = '1rem';
+    message.style.fontSize = '1.2rem';
+    message.style.fontWeight = 'bold';
+    message.style.textAlign = 'center';
+
+    container.appendChild(message);
+  }, stages.length * 1000 + 200); // add buffer after last row
+ 
+
+
+
   document.getElementById('review-modal').style.display = 'flex';
 }
 
