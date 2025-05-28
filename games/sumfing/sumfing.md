@@ -54,7 +54,7 @@ order: 399
     <span id="close-review" class="sumfing-modal-close">&times;</span>
         <div class = "sumfing-modal-title" id="sumfing-modal-headline">Sumfing</div>
         <div class = "footnote" id="sumfing-modal-date"></div><br>
-        <h2>How you did:</h2>
+        <h2>How you did</h2>
     <div id="review-content"></div>
   </div>
 </div>
