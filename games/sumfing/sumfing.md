@@ -730,7 +730,7 @@ function showReviewModal() {
     } else if (totalClues === 2) {
       message.textContent = 'Not bad! 🤓';
     } else if (totalClues < stages.length * 3) {
-      message.textContent = 'You got there! 🤓';
+      message.textContent = 'Not too shabby! 🤓';
     } else {
       message.textContent = 'Keep trying! 🤓 ';
     }
