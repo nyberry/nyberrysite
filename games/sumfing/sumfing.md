@@ -82,7 +82,7 @@ order: 399
     <h3>Arrange the tiles to solve the sum</strong></h3>
     2️⃣ ➕ 3️⃣ = 5 ✅<br><br>
     Work through the <strong>easy</strong>, <strong>medium</strong>, and <strong>hard</strong> sums.<br><br>
-    If you solve them all with no hints, enjoy the special <strong>“extra”</strong> sum. 🤓</br>
+    If you solve them all with no hints, enjoy the special <strong>extra</strong> sum. 🤓</br>
     <hr>
     <h3>BIDMAS</h3>
     The sums are worked out in a standard order, called BIDMAS (or PEMDAS).<br><br>
