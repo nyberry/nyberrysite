@@ -9,7 +9,7 @@ order: 399
 <link rel="stylesheet" href="/games/sumfing/assets/css/sumfing.css">
 
 <div class="game-container">
-  <div class = "info-icon" id="info-icon">ℹ️</div>
+  <div class = "info-icon" id="game-info-icon">ℹ️</div>
   <div class = "sumfing-title" id="headline">Sumfing</div>
   <div class = "footnote" id="date"></div><br>
 
@@ -35,7 +35,7 @@ order: 399
 </div>
 
 <div id="completion-page" style="display: none;" class="game-container">
-<div class = "info-icon" id="info-icon">ℹ️</div>
+<div class = "info-icon" id="completion-info-icon">ℹ️</div>
 <div class = "sumfing-title" id="completion-headline">Sumfing</div>
 <div class = "footnote" id="completion-date"></div><br>
     <ul id="clue-summary">
@@ -154,12 +154,14 @@ document.addEventListener('DOMContentLoaded', () => {
   const welcomePlay = document.getElementById('play-button');
 
   // Info modal references
-  const infoIcon = document.getElementById('info-icon');
+  const gameInfoIcon = document.getElementById('game-info-icon');
+  const completionInfoIcon = document.getElementById('completion-info-icon');
   const infoModal = document.getElementById('info-modal');
   const infoClose = document.getElementById('info-close');
 
   infoClose.addEventListener('click', () => infoModal.style.display = 'none');
-  infoIcon.addEventListener('click', () => infoModal.style.display = 'flex');
+  gameInfoIcon.addEventListener('click', () => infoModal.style.display = 'flex');
+  completionInfoIcon.addEventListener('click', () => infoModal.style.display = 'flex');
 
   // Close modals when clicking outside content
   window.addEventListener('click', (event) => {
