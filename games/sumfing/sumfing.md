@@ -681,6 +681,9 @@ function showReviewModal() {
       const row = document.createElement('div');
       row.className = 'sumfing-modal-review-row';
 
+      const stageName = document.createElement('p');
+      stageName.textContent = progress.stage;
+
       const tilesDiv = document.createElement('div');
       tilesDiv.className = 'sumfing-modal-review-tiles';
 
@@ -706,6 +709,8 @@ function showReviewModal() {
       const clues = progress.clues[stage];
       const emojiP = document.createElement('p');
       emojiP.textContent = emojiSummary(clues)
+
+      row.appendChild(stageName);
       row.appendChild(tilesDiv);
       row.appendChild(emojiP);
       container.appendChild(row);
