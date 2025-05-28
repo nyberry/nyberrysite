@@ -643,7 +643,7 @@ function showReviewModal() {
 
       const clues = progress.clues[stage];
       const emojiP = document.createElement('p');
-      emojiP.textContent = emojiSummary(stage)
+      emojiP.textContent = emojiSummary(clues)
       row.appendChild(tilesDiv);
       row.appendChild(emojiP);
       container.appendChild(row);
