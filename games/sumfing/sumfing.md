@@ -733,7 +733,7 @@ function showReviewModal() {
     } else if (totalClues === 2) {
       message.textContent = 'Not bad! 🤓';
     } else if (totalClues <= 5) {
-      message.textContent = 'Not too shabby! 🤓';
+      message.textContent = 'Keep at it! 🤓';
     } else {
       message.textContent = 'Keep trying! 🤓 ';
     }
