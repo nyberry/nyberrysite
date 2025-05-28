@@ -95,8 +95,28 @@ order: 399
     <code>a ^ b</code> means <code>a</code> raised to the power of <code>b</code>.<br><br>
     2️⃣ ^ 5️⃣ = 32 ✅<br><br>
     In BIDMAS, exponent operations are performed before any others.<br><br>
-    It may also use the factorial operator !<br><br>
+    4️⃣ ✖️ 3️⃣ ^ 2️⃣ = 36 ✅<br><br>
+    4️⃣ ✖️ 3️⃣ ^ 2️⃣ = 144 ❌
+    <hr>
+    The EXTRA sum may also use the factorial operator !<br><br>
     4️⃣❗ = 4 × 3 × 2 × 1 = 24 ✅<br>
+    <div class="center-table">
+    <table class="grid-table">
+      <tbody>
+        <tr><td>0!</td><td>1</td></tr>
+        <tr><td>1!</td><td>1</td></tr>
+        <tr><td>2!</td><td>2</td></tr>
+        <tr><td>3!</td><td>6</td></tr>
+        <tr><td>4!</td><td>24</td></tr>
+        <tr><td>5!</td><td>120</td></tr>
+        <tr><td>6!</td><td>720</td></tr>
+        <tr><td>7!</td><td>5040</td></tr>
+        <tr><td>8!</td><td>40320</td></tr>
+        <tr><td>9!</td><td>362880</td></tr>
+      </tbody>
+    </table>
+  </div>
+
     <hr>
     <h3>Build your streak</h3>
     There's a new Sumfing every day.<br>
