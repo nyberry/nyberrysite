@@ -90,7 +90,7 @@ order: 399
     2️⃣ ➕ 3️⃣ ✖️ 4️⃣ = 14 ✅<br><br>
     2️⃣ ➕ 3️⃣ ✖️ 4️⃣ = 20 ❌
     <hr>
-    <h3>Exponents</h3>
+    <h3>Exponents ^</h3>
     The <strong>extra</strong> sum may use the exponent tile.<br><br>
     <code>a ^ b</code> means <code>a</code> raised to the power of <code>b</code>.<br><br>
     2️⃣ ^ 4️⃣ = 2 x 2 x 2 x 2 = 16 ✅<br><br>
@@ -98,13 +98,13 @@ order: 399
     4️⃣ ✖️ 3️⃣ ^ 2️⃣ = 36 ✅<br><br>
     4️⃣ ✖️ 3️⃣ ^ 2️⃣ = 144 ❌
     <hr>
-    <h3>Factorials</h3>
+    <h3>Factorials !</h3>
     The <strong>extra</strong> sum may also use the factorial tile.<br><br>
     4️⃣❗ = 4 × 3 × 2 × 1 = 24 ✅<br><br>
     <div class="center-table">
     <table class="grid-table">
       <thead>
-        <tr><td>number</td><td>factorial</td>
+        <tr><td>Factorial</td><td>Value</td>
       </thead>
       <tbody>
         <tr><td>0!</td><td>1</td></tr>
