@@ -63,37 +63,35 @@ order: 399
 <div id="info-modal" class="sumfing-modal-overlay">
   <div class="sumfing-modal-content">
     <span class="sumfing-modal-close" id = "info-close">&times;</span>
-    <h2>How it works</h2>
+    <h2>How to play</h2>
     <h3>Arrange the tiles to solve the sum</strong></h3>
-    <p>2️⃣ ➕ 3️⃣ = 5️⃣ ✅</p>
+    <p>2️⃣ ➕ 3️⃣ = 5 ✅</p>
 
     <p>Work through the <strong>easy</strong>, <strong>medium</strong>, and <strong>hard</strong> sums.<br><br>
     If you solve them all with no hints, enjoy the special <strong>“extra”</strong> sum. 🤓</p>
 
     <hr>
     <h3>BIDMAS</h3>
-    <p>The sums are worked out in a standard order, called BIDMAS or PEMDAS. Multiplication and division are performed <strong>before</strong> addition and subtraction, even if they appear further right in the sum. 🤓</p>
+    The sums are worked out in a standard order, called BIDMAS or PEMDAS.<br><br>
+    Multiplications and divisions are performed <strong>before</strong> additions and subtractions, even if they appear further right in the sum. 🤓<br>
 
-    <p>2️⃣ ➕ 3️⃣ ✖️ 4️⃣ = 14 ✅<br>
-    2️⃣ ➕ 3️⃣ ✖️ 4️⃣ = 20 ❌</p>
+    2️⃣ ➕ 3️⃣ ✖️ 4️⃣ = 14 ✅<br>
+    2️⃣ ➕ 3️⃣ ✖️ 4️⃣ = 20 ❌
 
     <hr>
 
     <h3>Advanced: the EXTRA sum</h3>
-    <p>This bonus sum may use the exponent operator. <code>^</code><br>
-    <code>a ^ b</code> means <code>a</code> to the power of <code>b</code>.<br>
-      2️⃣ ^ 5️⃣ = 32
-    </p>
-    In BIDMAS, exponent operations are performed before any others.
-    <p>
-    It may also use the factorial operator ❗<br>
-      4️⃣❗ = 4 × 3 × 2 × 1 = 24
-    </p>
+    This bonus sum may use the exponent operator.<br>
+    <code>a ^ b</code> means <code>a</code> raised to the power of <code>b</code>.<br><br>
+    2️⃣ ^ 5️⃣ = 32 ✅<br><br>
+    In BIDMAS, exponent operations are performed before any others.<br><br>
+    It may also use the factorial operator.<br><br>
+    4️⃣❗ = 4 × 3 × 2 × 1 = 24 ✅<br>
     <hr>
     There's a new Sumfing every day.<br><br>
     Enjoy! 🤓
     <br><br>
-        <div class = "footnote">(c) 2024-2025 Nick Berry</div>
+        <div class = "footnote">©2025 <a href="https://www.nyberry.com">NYBerry</a></div>
 
   </div>
 </div>
