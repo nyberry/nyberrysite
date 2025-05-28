@@ -93,7 +93,7 @@ order: 399
     <h3>Exponents</h3>
     The <strong>extra</strong> sum may use the exponent tile.<br><br>
     <code>a ^ b</code> means <code>a</code> raised to the power of <code>b</code>.<br><br>
-    2️⃣ ^ 5️⃣ = 32 ✅<br><br>
+    2️⃣ ^ 4️⃣ = 2 x 2 x 2 x 2 = 16 ✅<br><br>
     In BIDMAS, exponent operations are performed before any others.<br><br>
     4️⃣ ✖️ 3️⃣ ^ 2️⃣ = 36 ✅<br><br>
     4️⃣ ✖️ 3️⃣ ^ 2️⃣ = 144 ❌
