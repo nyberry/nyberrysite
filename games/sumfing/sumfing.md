@@ -682,7 +682,7 @@ function showReviewModal() {
       row.className = 'sumfing-modal-review-row';
 
       const stageName = document.createElement('p');
-      stageName.textContent = progress.stage;
+      stageName.textContent = stage;
 
       const tilesDiv = document.createElement('div');
       tilesDiv.className = 'sumfing-modal-review-tiles';
