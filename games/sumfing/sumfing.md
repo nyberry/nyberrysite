@@ -90,15 +90,16 @@ order: 399
     2️⃣ ➕ 3️⃣ ✖️ 4️⃣ = 14 ✅<br><br>
     2️⃣ ➕ 3️⃣ ✖️ 4️⃣ = 20 ❌
     <hr>
-    <h3>Advanced: the EXTRA sum</h3>
-    This bonus sum may use the exponent operator ^<br><br>
+    <h3>Advanced: exponents</h3>
+    The bonus extra sum may use the exponent tile ^<br><br>
     <code>a ^ b</code> means <code>a</code> raised to the power of <code>b</code>.<br><br>
     2️⃣ ^ 5️⃣ = 32 ✅<br><br>
     In BIDMAS, exponent operations are performed before any others.<br><br>
     4️⃣ ✖️ 3️⃣ ^ 2️⃣ = 36 ✅<br><br>
     4️⃣ ✖️ 3️⃣ ^ 2️⃣ = 144 ❌
     <hr>
-    The EXTRA sum may also use the factorial operator !<br><br>
+    <h3>Advanced: factorials</h3>
+    The EXTRA sum may also use the factorial tile !<br><br>
     4️⃣❗ = 4 × 3 × 2 × 1 = 24 ✅<br>
     <div class="center-table">
     <table class="grid-table">
