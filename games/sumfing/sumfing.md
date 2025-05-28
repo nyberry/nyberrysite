@@ -125,7 +125,6 @@ const STAGES = ['Easy', 'Medium', 'Hard', 'Extra'];
 const today = new Date().toISOString().split('T')[0];
 const dayNumber = getSumfingDayNumber(today);
 
-
 // main function on DOM content loaded
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -147,8 +146,8 @@ document.addEventListener('DOMContentLoaded', () => {
     if (event.target === infoModal) infoModal.style.display = 'none';
     if (event.target === welcomeModal) welcomeModal.style.display = 'none';
   });
-  welcomeClose.addEventListener('click', () => welcomeModal.style.display = 'none');
-  welcomePlay.addEventListener('click', () => welcomeModal.style.display = 'none');
+  welcomeClose.addEventListener('click', () => startGameAfterModal());
+  welcomePlay.addEventListener('click', () => startGameAfterModal());
 
 
   document.getElementById('date').textContent = `${today}`;
@@ -200,8 +199,6 @@ document.addEventListener('DOMContentLoaded', () => {
             console.log('Puzzle already completed, showing summary...');
             showCompletionPage(); // 👈 Show summary immediately
             return; // 👈 Stop further game logic
-        } else {
-            initPuzzleUI(currentPuzzle, progress); 
         }
       } else {
         console.error('No puzzle found for today:', today);
@@ -223,6 +220,14 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 });
+
+// helper function to start game when modal closes //
+function startGameAfterModal() {
+  const welcomeModal = document.getElementById('welcome-modal');
+  welcomeModal.style.display = 'none';
+  initPuzzleUI(currentPuzzle); 
+}
+
 
 
 // Function to initialise puzzle UI
