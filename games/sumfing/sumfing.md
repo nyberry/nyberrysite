@@ -80,21 +80,16 @@ order: 399
     <span class="sumfing-modal-close" id = "info-close">&times;</span>
     <div class = "sumfing-modal-title">How to play</div>
     <h3>Arrange the tiles to solve the sum</strong></h3>
-    <p>2️⃣ ➕ 3️⃣ = 5 ✅</p>
-
-    <p>Work through the <strong>easy</strong>, <strong>medium</strong>, and <strong>hard</strong> sums.<br><br>
-    If you solve them all with no hints, enjoy the special <strong>“extra”</strong> sum. 🤓</p>
-
+    2️⃣ ➕ 3️⃣ = 5 ✅<br><br>
+    Work through the <strong>easy</strong>, <strong>medium</strong>, and <strong>hard</strong> sums.<br><br>
+    If you solve them all with no hints, enjoy the special <strong>“extra”</strong> sum. 🤓</br>
     <hr>
     <h3>BIDMAS</h3>
     The sums are worked out in a standard order, called BIDMAS or PEMDAS.<br><br>
     Multiplications and divisions are performed <strong>before</strong> additions and subtractions, even if they appear further right in the sum. 🤓<br>
-
     2️⃣ ➕ 3️⃣ ✖️ 4️⃣ = 14 ✅<br>
     2️⃣ ➕ 3️⃣ ✖️ 4️⃣ = 20 ❌
-
     <hr>
-
     <h3>Advanced: the EXTRA sum</h3>
     This bonus sum may use the exponent operator.<br>
     <code>a ^ b</code> means <code>a</code> raised to the power of <code>b</code>.<br><br>
@@ -106,8 +101,7 @@ order: 399
     There's a new Sumfing every day.<br>
     <img src="/games/sumfing/assets/images/degu.png" alt="degu" style="width: 200px;">
     Enjoy!<br><br>
-    <div class = "footnote">©2025 <a href="https://www.nyberry.com">NYBerry</a></div>
-
+    <div class = "footnote">©2025 <a href="https://www.nyberry.com">NYBerry</a></div>pret
   </div>
 </div>
 
