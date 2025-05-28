@@ -68,7 +68,7 @@ order: 399
     <h3>Arrange the tiles to solve the sum</strong></h3>
     2️⃣ ➕ 3️⃣ = 5 ✅<br><br>
     Work through the <strong>easy</strong>, <strong>medium</strong>, and <strong>hard</strong> sums.<br><br>
-    If you solve them all with no hints, enjoy the special <strong>“extra”</strong> sum. 🤓<br>
+    If you solve them all with no hints, enjoy the special <strong>extra</strong> sum. 🤓<br>
     <img src="/games/sumfing/assets/images/degu.png" alt="degu" style="width: 200px;">
     <button id="play-button">Play</button>
   </div>
@@ -90,19 +90,22 @@ order: 399
     2️⃣ ➕ 3️⃣ ✖️ 4️⃣ = 14 ✅<br><br>
     2️⃣ ➕ 3️⃣ ✖️ 4️⃣ = 20 ❌
     <hr>
-    <h3>Advanced: exponents</h3>
-    The bonus extra sum may use the exponent tile ^<br><br>
+    <h3>Exponents</h3>
+    The <strong>extra</strong> sum may use the exponent tile<br><br>
     <code>a ^ b</code> means <code>a</code> raised to the power of <code>b</code>.<br><br>
     2️⃣ ^ 5️⃣ = 32 ✅<br><br>
     In BIDMAS, exponent operations are performed before any others.<br><br>
     4️⃣ ✖️ 3️⃣ ^ 2️⃣ = 36 ✅<br><br>
     4️⃣ ✖️ 3️⃣ ^ 2️⃣ = 144 ❌
     <hr>
-    <h3>Advanced: factorials</h3>
-    The EXTRA sum may also use the factorial tile !<br><br>
-    4️⃣❗ = 4 × 3 × 2 × 1 = 24 ✅<br>
+    <h3>Factorials</h3>
+    The <strong>extra</strong> sum may also use the factorial tile<br><br>
+    4️⃣❗ = 4 × 3 × 2 × 1 = 24 ✅<br><br>
     <div class="center-table">
     <table class="grid-table">
+      <thead>
+        <tr><td>number</td><td>factorial</td>
+      </thead>
       <tbody>
         <tr><td>0!</td><td>1</td></tr>
         <tr><td>1!</td><td>1</td></tr>
