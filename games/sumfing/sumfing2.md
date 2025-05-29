@@ -22,6 +22,9 @@ order: 400
   <div class="tile-container" id="num-tiles"></div>
   <div class="tile-container" id="op-tiles"></div>
   <div class="tile-container" id="extra-op-tiles" style="display: none;"></div>
+  <div id="extra-op-info" class="footnote" style="display: none; text-align: center;">
+    <a href="#" onclick="showExtraOpInfo(); return false;">What's this?</a>
+  </div>
 
   <form onsubmit="return false;">
     <input type="hidden" name="hint_level" id="hint-level-input">
@@ -68,7 +71,7 @@ order: 400
     <h3>Arrange the tiles to solve the sum</strong></h3>
     2️⃣ ➕ 3️⃣ = 5 ✅<br><br>
     Work through the <strong>easy</strong>, <strong>medium</strong>, and <strong>hard</strong> sums.<br><br>
-    If you solve them all with no hints, enjoy the special <strong>extra</strong> sum. 🤓<br>
+    How many can you solve? 🤓<br>
     <img src="/games/sumfing/assets/images/degu.png" alt="degu" style="width: 200px;">
     <button id="play-button">Play</button>
   </div>
@@ -351,8 +354,10 @@ function renderTiles(tiles, puzzlestage) {
             tile.textContent = op;
             extraOpTiles.appendChild(tile);
         });
+        document.getElementById('extra-op-info').style.display = 'block';
     } else {
         extraOpTiles.style.display = 'none';
+        document.getElementById('extra-op-info').style.display = 'none';
     }
 }
 
