@@ -130,14 +130,13 @@ order: 400
 
 <script>
 
-// Welcome Modal //
+// Welcome Modal Content //
 const welcomeHTML = `
-    <span class="sumfing-modal-close" id = "welcome-close">&times;</span>
     <div class = "sumfing-modal-title">Sumfing</div>
     <h3>Arrange the tiles to solve the sum</h3>
     2️⃣ ➕ 3️⃣ = 5 ✅<br><br>
     Work through the <strong>easy</strong>, <strong>medium</strong>, and <strong>hard</strong> sums.<br><br>
-    How many can you solve? 🤓<br>
+    How many can you solve?<br>
     <img src="/games/sumfing/assets/images/degu.png" alt="degu" style="width: 200px;">
     <button id="play-button">Play</button>
     `
@@ -162,11 +161,13 @@ const dayNumber = getSumfingDayNumber(today);
 // main function on DOM content loaded
 document.addEventListener('DOMContentLoaded', () => {
 
-  // add close modals event listener
+  // add close modals event listeners (add one to the play button too), also clicking outside of the modal closes it
   document.getElementById('shared-modal-close').addEventListener('click', () => {
     document.getElementById('shared-modal').style.display = 'none';
   });
-  
+  document.getElementById('play-button').addEventListener('click', () => {
+    document.getElementById('shared-modal').style.display = 'none';
+  });
   window.addEventListener('click', function (event) {
     const modal = document.getElementById('shared-modal');
     if (event.target === modal) {
@@ -174,11 +175,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-
-  // Welcome modal references
-  const welcomeModal = document.getElementById('welcome-modal');
-  const welcomeClose = document.getElementById('welcome-close');
-  const welcomePlay = document.getElementById('play-button');
 
   // Info modal references
   const gameInfoIcon = document.getElementById('game-info-icon');
