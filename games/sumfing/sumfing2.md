@@ -146,7 +146,7 @@ const infoHTML = `
     <h3>Arrange the tiles to solve the sum</strong></h3>
     2️⃣ ➕ 3️⃣ = 5 ✅<br><br>
     Work through the <strong>easy</strong>, <strong>medium</strong>, and <strong>hard</strong> sums.<br><br>
-    How many can you solve?<br>
+    How many can you solve?<br><hr>
     <h3>BIDMAS</h3>
     The sums are worked out in a standard order, called BIDMAS (or PEMDAS).<br><br>
     Multiplications and divisions are performed <strong>before</strong> additions and subtractions, even if they appear further right in the sum.<br><br>
@@ -156,7 +156,7 @@ const infoHTML = `
     `
 
 // global variables //
-let modalContext = null; // could be 'welcome', 'info', etc.
+let modalContext = 'welcome'; // initialise to welcome
 let progress;
 let currentPuzzle;
 let selectedTiles = [];
@@ -183,7 +183,6 @@ document.addEventListener('DOMContentLoaded', () => {
         if (modalContext === 'welcome') {startGameAfterModal();}
      });
    }
-
 
   // clicking outside of the modal closes it
   window.addEventListener('click', function (event) {
