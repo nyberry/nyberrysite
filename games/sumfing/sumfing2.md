@@ -94,15 +94,17 @@ const infoHTML = `
     `
 
 const operatorsHTML = `
-    <h3>Exponents ^</h3>
-    The <strong>hard</strong> sum may use the exponent tile.<br><br>
+    <h2>Advanced tiles</h2>
+    The <strong>hard</strong> sum may use the exponent or factorial tiles.<br>
+    <hr>
+    <h3>Exponent</h3>
     <code>a ^ b</code> means <code>a</code> raised to the power of <code>b</code>.<br><br>
     2️⃣ ^ 4️⃣ = 2 x 2 x 2 x 2 = 16 <br><br>
     In BIDMAS, exponent operations are performed before any others.<br><br>
     4️⃣ ✖️ 3️⃣ ^ 2️⃣ = 36 ✅<br><br>
     4️⃣ ✖️ 3️⃣ ^ 2️⃣ = 144 ❌
     <hr>
-    <h3>Factorials !</h3>
+    <h3>Factorial</h3>
     The <strong>extra</strong> sum may also use the factorial tile.<br><br>
     4️⃣❗ = 4 × 3 × 2 × 1 = 24 <br><br>
     <div class="center-table">
@@ -123,6 +125,7 @@ const operatorsHTML = `
       </tbody>
     </table>
     </div>
+    <img src="/games/sumfing/assets/images/degu.png" alt="degu" style="width: 200px;">
     `
 
 const reviewHTML = `
