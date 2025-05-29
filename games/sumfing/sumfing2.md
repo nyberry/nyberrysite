@@ -161,20 +161,20 @@ const dayNumber = getSumfingDayNumber(today);
 // main function on DOM content loaded
 document.addEventListener('DOMContentLoaded', () => {
 
-  // add close modals event listeners (add one to the play button too), also clicking outside of the modal closes it
-  document.getElementById('shared-modal-close').addEventListener('click', () => {
-    document.getElementById('shared-modal').style.display = 'none';
-  });
-  document.getElementById('play-button').addEventListener('click', () => {
-    document.getElementById('shared-modal').style.display = 'none';
-  });
+  // add close modals event listeners  
+  if (document.getElementById('shared-modal-close')) {
+    document.getElementById('shared-modal-close').addEventListener('click', () => {
+        document.getElementById('shared-modal').style.display = 'none';
+    });
+  }
+
+  // also clicking outside of the modal closes it
   window.addEventListener('click', function (event) {
     const modal = document.getElementById('shared-modal');
     if (event.target === modal) {
       modal.style.display = 'none';
     }
   });
-
 
   // Info modal references
   const gameInfoIcon = document.getElementById('game-info-icon');
@@ -262,8 +262,14 @@ document.addEventListener('DOMContentLoaded', () => {
 function showModal(bodyHTML) {
   document.getElementById('shared-modal-body').innerHTML = bodyHTML;
   document.getElementById('shared-modal').style.display = 'flex';
-}
 
+  // Attach play event listener AFTER content is added
+  if (document.getElementById('play-button')) {
+    document.getElementById('play-button').addEventListener('click', () => {
+      document.getElementById('shared-modal').style.display = 'none';
+    });
+  }
+}
 
 
 // helper function to start game when modal closes //
