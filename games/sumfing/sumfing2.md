@@ -616,6 +616,7 @@ function showCompletionPage() {
   // hide the game section
   document.getElementById('gameplay-elements').style.display = 'none';
   document.getElementById('completion-elements').style.display = 'block';
+  document.getElementById('sumfing-title').textContent = `Sumfing ${dayNumber}`;
 
   const { Easy, Medium, Hard, Extra } = progress.clues;
 
