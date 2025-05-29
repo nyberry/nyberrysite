@@ -105,8 +105,8 @@ const operatorsHTML = `
     4️⃣ ✖️ 3️⃣ ^ 2️⃣ = 144 ❌
     <hr>
     <h3>Factorial</h3>
-    The <strong>extra</strong> sum may also use the factorial tile.<br><br>
-    4️⃣❗ = 4 × 3 × 2 × 1 = 24 <br><br>
+    4️⃣❗means 4 × 3 × 2 × 1 <br>
+    4️⃣❗= 24 <br><br>
     <div class="center-table">
     <table class="grid-table">
       <thead style="background: #c8c8c8">
