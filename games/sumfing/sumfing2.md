@@ -250,9 +250,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
 });
 
-function showModal(bodyHTML, context) {
+function showModal(content, context = null) {
   modalContext = context;
-  document.getElementById('shared-modal-body').innerHTML = bodyHTML;
+
+  const container = document.getElementById('shared-modal-body');
+  container.innerHTML = ''; // clear previous content
+
+  // Insert either raw HTML string or a DOM node
+  if (typeof content === 'string') {
+    container.innerHTML = content; // for string elements like the info modal
+  } else {
+    container.appendChild(content); // for DOM elements like the reivew modal
+  }
+
   document.getElementById('shared-modal').style.display = 'flex';
 
   // Attach play event listener AFTER content is added
@@ -788,7 +798,7 @@ function showReviewModal() {
   }, stages.length * 1000 + 200);
 
   // Use shared modal
-  showModal(container.outerHTML, 'review');
+  showModal(container, 'review'); 
 }
 
 
