@@ -197,7 +197,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // event listener for info icon
   document.getElementById('info-icon').addEventListener('click', () => {
-    showModal(infoHTML);
+    showModal(infoHTML, 'info');
   });
 
   document.getElementById('date').textContent = `${today}`;
@@ -231,7 +231,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Show welcome modal only if not completed
   if (progress.stage !== 'Completed') {
-    showModal(welcomeHTML);
+    showModal(welcomeHTML, 'welcome');
   }
 
 
@@ -271,7 +271,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 });
 
-function showModal(bodyHTML, context = null) {
+function showModal(bodyHTML, context) {
   modalContext = context;
   document.getElementById('shared-modal-body').innerHTML = bodyHTML;
   document.getElementById('shared-modal').style.display = 'flex';
