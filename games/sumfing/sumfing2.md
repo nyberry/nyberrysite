@@ -8,6 +8,7 @@ order: 400
 
 <link rel="stylesheet" href="/games/sumfing/assets/css/sumfing.css">
 
+<!-- main container -->
 <div class="game-container">
 
   <div class = "info-icon" id="info-icon">ℹ️</div>

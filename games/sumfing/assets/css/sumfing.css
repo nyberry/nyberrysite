@@ -19,6 +19,21 @@
     font-size: 24px;
 }
 
+
+#gameplay-elements {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* ✅ ensures inner elements like tiles are centered */
+}
+
+#completion-elements {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* ✅ ensures inner elements like tiles are centered */
+}
+
 .info-icon {
     position: absolute;
     top: 0;
