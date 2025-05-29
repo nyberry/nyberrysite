@@ -266,7 +266,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('next-button').addEventListener('click', () => {
         advanceStage();          
         saveProgress();          
-        initPuzzleUI(currentPuzzle, progress); 
+        initPuzzleUI(currentPuzzle); 
     });
 
 });
@@ -294,6 +294,8 @@ function startGameAfterModal() {initPuzzleUI(currentPuzzle);}
 
 // Function to initialise puzzle UI
 function initPuzzleUI(puzzle) {
+
+    console.log('initPuzzleUI function called')
 
     // Clear any pending hint/reveal timeouts from the previous stage
     if (hintTimeoutId) {
