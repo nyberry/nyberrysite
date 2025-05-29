@@ -26,6 +26,7 @@ order: 400
     <div class="tile-container" id="extra-op-tiles" style="display: none;"></div>
     <div id="extra-op-info" class="footnote" style="display: none; text-align: center;">
         <a href="#" onclick="showModal(operatorsHTML, 'operators'); return false;">What are these? ℹ️</a>
+    </div>
     <form onsubmit="return false;">
         <input type="hidden" name="hint_level" id="hint-level-input">
         <button id="next-button">Next</button>
