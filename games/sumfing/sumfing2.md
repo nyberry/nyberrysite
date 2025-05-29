@@ -192,7 +192,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // event listener for info icon
-  document.getElementById('info-icon').addEventListener('click', () -> {
+  document.getElementById('info-icon').addEventListener('click', () => {
     showModal(infoHTML);
   });
 
