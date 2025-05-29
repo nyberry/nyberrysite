@@ -154,7 +154,7 @@
   padding: 2rem;
   max-width: 400px; /* smaller box */
   width: 100vw;
-  max-height: 99vh;
+  height: 100%;
   text-align: center;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
   overflow-y: auto;    
