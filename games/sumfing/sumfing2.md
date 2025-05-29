@@ -281,7 +281,9 @@ function showModal(bodyHTML, context = null) {
   if (playButton) {
     playButton.addEventListener('click', () => {
       document.getElementById('shared-modal').style.display = 'none';
-      startGameAfterModal();
+      if (modalContext === 'welcome') {
+        startGameAfterModal();
+      }
     });
   }
 }
