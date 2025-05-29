@@ -778,15 +778,15 @@ function showReviewModal() {
     message.className = 'sumfing-modal-final-message';
 
     if (totalClues === 0) {
-      message.textContent = 'Perfect! 🤓';
+      message.textContent = 'Perfect!';
     } else if (totalClues === 1) {
-      message.textContent = 'Nice work! 🤓';
+      message.textContent = 'Nice work!';
     } else if (totalClues === 2) {
-      message.textContent = 'Not bad! 🤓';
-    } else if (totalClues <= 5) {
-      message.textContent = 'Keep at it! 🤓';
+      message.textContent = 'Not bad!';
+    } else if (totalClues === 3) {
+      message.textContent = 'Keep at it!';
     } else {
-      message.textContent = 'Keep trying! 🤓';
+      message.textContent = 'Keep trying!';
     }
 
     message.style.marginTop = '1rem';
@@ -794,8 +794,21 @@ function showReviewModal() {
     message.style.fontWeight = 'bold';
     message.style.textAlign = 'center';
 
+    // 👇 Add degu image
+    const deguImg = document.createElement('img');
+    deguImg.src = '/games/sumfing/assets/images/degu.png';
+    deguImg.alt = 'degu';
+    deguImg.style.width = '200px';
+    deguImg.style.marginTop = '0';
+    deguImg.style.display = 'block';
+    deguImg.style.marginLeft = 'auto';
+    deguImg.style.marginRight = 'auto';
+
+    container.appendChild(deguImg);
     container.appendChild(message);
   }, stages.length * 1000 + 200);
+
+  
 
   // Use shared modal
   showModal(container, 'review'); 
