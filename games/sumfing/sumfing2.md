@@ -181,16 +181,18 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('shared-modal-close').addEventListener('click', () => {
         document.getElementById('shared-modal').style.display = 'none';
         if (modalContext === 'welcome') {startGameAfterModal();}
-  }
-    });
-  }
+     });
+   }
 
-  // also clicking outside of the modal closes it
+
+  // clicking outside of the modal closes it
   window.addEventListener('click', function (event) {
     const modal = document.getElementById('shared-modal');
     if (event.target === modal) {
       modal.style.display = 'none';
-      if (modalContext === 'welcome') {startGameAfterModal();}
+      if (modalContext === 'welcome') {
+        startGameAfterModal();
+      }
     }
   });
 
@@ -270,22 +272,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
 });
 
-// function to show modals
 function showModal(bodyHTML, context = null) {
   modalContext = context;
   document.getElementById('shared-modal-body').innerHTML = bodyHTML;
   document.getElementById('shared-modal').style.display = 'flex';
 
   // Attach play event listener AFTER content is added
-  if (document.getElementById('play-button')) {
-    document.getElementById('play-button').addEventListener('click', () => {
+  const playButton = document.getElementById('play-button');
+  if (playButton) {
+    playButton.addEventListener('click', () => {
       document.getElementById('shared-modal').style.display = 'none';
       startGameAfterModal();
-  }
     });
   }
 }
-
 
 // helper function to start game when modal closes //
 function startGameAfterModal() {initPuzzleUI(currentPuzzle);}
