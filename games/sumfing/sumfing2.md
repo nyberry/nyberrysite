@@ -80,7 +80,6 @@ const infoHTML = `
     2️⃣ ➕ 3️⃣ = 5 ✅<br><br>
     Work through the <strong>easy</strong>, <strong>medium</strong>, and <strong>hard</strong> sums.<br><br>
     How many can you solve?<br><hr>
-    <h3>BIDMAS</h3>
     The sums are worked out in a standard order, called BIDMAS (or PEMDAS).<br><br>
     Multiplications and divisions are performed <strong>before</strong> additions and subtractions, even if they appear further right in the sum.<br><br>
     2️⃣ ➕ 3️⃣ ✖️ 4️⃣ = 14 ✅<br><br>
