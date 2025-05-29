@@ -23,7 +23,7 @@ order: 400
   <div class="tile-container" id="op-tiles"></div>
   <div class="tile-container" id="extra-op-tiles" style="display: none;"></div>
   <div id="extra-op-info" class="footnote" style="display: none; text-align: center;">
-    <a href="#" onclick="showExtraOpInfo(); return false;">What's this? ℹ️</a>
+    <a href="#" onclick="showModal(operatorsHTML, 'operators'); return false;">What are these? ℹ️</a>
   </div>
 
   <form onsubmit="return false;">
@@ -61,35 +61,41 @@ order: 400
   </div>
 </div>
 
-<!-- Admire your work overlay -->
-<div id="review-modal" class="sumfing-modal-overlay" style="display: none;">
-  <div class="sumfing-modal-content">
-    <span id="close-review" class="sumfing-modal-close">&times;</span>
-    <div class = "sumfing-modal-title" id="sumfing-modal-headline">Sumfing</div>
-    <div class = "footnote" id="sumfing-modal-date"></div><br>
-    <div id="review-content"></div>
-  </div>
-</div>
+<script>
 
+// Modals Content //
+const welcomeHTML = `
+    <div class = "sumfing-modal-title">Sumfing</div>
+    <h3>Arrange the tiles to solve the sum</h3>
+    2️⃣ ➕ 3️⃣ = 5 ✅<br><br>
+    Work through the <strong>easy</strong>, <strong>medium</strong>, and <strong>hard</strong> sums.<br><br>
+    How many can you solve?<br>
+    <img src="/games/sumfing/assets/images/degu.png" alt="degu" style="width: 200px;">
+    <button id="play-button">Play</button>
+    `
 
-<!-- Info Modal -->
-<div id="info-modal" class="sumfing-modal-overlay">
-  <div class="sumfing-modal-content">
-    <span class="sumfing-modal-close" id = "info-close">&times;</span>
+const infoHTML = `
     <div class = "sumfing-modal-title">How to play</div>
     <h3>Arrange the tiles to solve the sum</strong></h3>
     2️⃣ ➕ 3️⃣ = 5 ✅<br><br>
     Work through the <strong>easy</strong>, <strong>medium</strong>, and <strong>hard</strong> sums.<br><br>
-    If you solve them all with no hints, enjoy the special <strong>extra</strong> sum. 🤓</br>
-    <hr>
+    How many can you solve?<br><hr>
     <h3>BIDMAS</h3>
     The sums are worked out in a standard order, called BIDMAS (or PEMDAS).<br><br>
     Multiplications and divisions are performed <strong>before</strong> additions and subtractions, even if they appear further right in the sum.<br><br>
     2️⃣ ➕ 3️⃣ ✖️ 4️⃣ = 14 ✅<br><br>
     2️⃣ ➕ 3️⃣ ✖️ 4️⃣ = 20 ❌
     <hr>
+    <h3>Build your streak</h3>
+    There's a new Sumfing every day.<br>
+    <img src="/games/sumfing/assets/images/degu.png" alt="degu" style="width: 200px;">
+    Enjoy!<br><br>
+    <div class = "footnote">©2025 <a href="https://www.nyberry.com">NYBerry</a></div>
+    `
+
+const operatorsHTML = `
     <h3>Exponents ^</h3>
-    The <strong>extra</strong> sum may use the exponent tile.<br><br>
+    The <strong>hard</strong> sum may use the exponent tile.<br><br>
     <code>a ^ b</code> means <code>a</code> raised to the power of <code>b</code>.<br><br>
     2️⃣ ^ 4️⃣ = 2 x 2 x 2 x 2 = 16 <br><br>
     In BIDMAS, exponent operations are performed before any others.<br><br>
@@ -116,43 +122,13 @@ order: 400
         <tr><td>9!</td><td>362880</td></tr>
       </tbody>
     </table>
-  </div>
-
-    <hr>
-    <h3>Build your streak</h3>
-    There's a new Sumfing every day.<br>
-    <img src="/games/sumfing/assets/images/degu.png" alt="degu" style="width: 200px;">
-    Enjoy!<br><br>
-    <div class = "footnote">©2025 <a href="https://www.nyberry.com">NYBerry</a></div>
-    <br><br><br>
-  </div>
-</div>
-
-<script>
-
-// Modals Content //
-const welcomeHTML = `
-    <div class = "sumfing-modal-title">Sumfing</div>
-    <h3>Arrange the tiles to solve the sum</h3>
-    2️⃣ ➕ 3️⃣ = 5 ✅<br><br>
-    Work through the <strong>easy</strong>, <strong>medium</strong>, and <strong>hard</strong> sums.<br><br>
-    How many can you solve?<br>
-    <img src="/games/sumfing/assets/images/degu.png" alt="degu" style="width: 200px;">
-    <button id="play-button">Play</button>
+    </div>
     `
 
-const infoHTML = `
-    <div class = "sumfing-modal-title">How to play</div>
-    <h3>Arrange the tiles to solve the sum</strong></h3>
-    2️⃣ ➕ 3️⃣ = 5 ✅<br><br>
-    Work through the <strong>easy</strong>, <strong>medium</strong>, and <strong>hard</strong> sums.<br><br>
-    How many can you solve?<br><hr>
-    <h3>BIDMAS</h3>
-    The sums are worked out in a standard order, called BIDMAS (or PEMDAS).<br><br>
-    Multiplications and divisions are performed <strong>before</strong> additions and subtractions, even if they appear further right in the sum.<br><br>
-    2️⃣ ➕ 3️⃣ ✖️ 4️⃣ = 14 ✅<br><br>
-    2️⃣ ➕ 3️⃣ ✖️ 4️⃣ = 20 ❌
-    <img src="/games/sumfing/assets/images/degu.png" alt="degu" style="width: 200px;">
+const reviewHTML = `
+    <div class = "sumfing-modal-title" id="sumfing-modal-headline">Sumfing</div>
+    <div class = "footnote" id="sumfing-modal-date"></div><br>
+    <div id="review-content"></div>
     `
 
 // global variables //
