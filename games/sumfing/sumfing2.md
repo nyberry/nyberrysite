@@ -9,7 +9,7 @@ order: 400
 <link rel="stylesheet" href="/games/sumfing/assets/css/sumfing.css">
 
 <div class="game-container">
-  <div class = "info-icon" id="game-info-icon">ℹ️</div>
+  <div class = "info-icon" id="info-icon">ℹ️</div>
   <div class = "sumfing-title" id="headline">Sumfing</div>
   <div class = "footnote" id="date"></div><br>
 
@@ -130,7 +130,7 @@ order: 400
 
 <script>
 
-// Welcome Modal Content //
+// Modals Content //
 const welcomeHTML = `
     <div class = "sumfing-modal-title">Sumfing</div>
     <h3>Arrange the tiles to solve the sum</h3>
@@ -139,6 +139,21 @@ const welcomeHTML = `
     How many can you solve?<br>
     <img src="/games/sumfing/assets/images/degu.png" alt="degu" style="width: 200px;">
     <button id="play-button">Play</button>
+    `
+
+const infoHTML = `
+    <div class = "sumfing-modal-title">How to play</div>
+    <h3>Arrange the tiles to solve the sum</strong></h3>
+    2️⃣ ➕ 3️⃣ = 5 ✅<br><br>
+    Work through the <strong>easy</strong>, <strong>medium</strong>, and <strong>hard</strong> sums.<br><br>
+    If you solve them all with no hints, enjoy the special <strong>extra</strong> sum. 🤓</br>
+    <hr>
+    <h3>BIDMAS</h3>
+    The sums are worked out in a standard order, called BIDMAS (or PEMDAS).<br><br>
+    Multiplications and divisions are performed <strong>before</strong> additions and subtractions, even if they appear further right in the sum.<br><br>
+    2️⃣ ➕ 3️⃣ ✖️ 4️⃣ = 14 ✅<br><br>
+    2️⃣ ➕ 3️⃣ ✖️ 4️⃣ = 20 ❌
+    <img src="/games/sumfing/assets/images/degu.png" alt="degu" style="width: 200px;">
     `
 
 // global variables //
@@ -176,16 +191,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Info modal references
-  const gameInfoIcon = document.getElementById('game-info-icon');
-  const completionInfoIcon = document.getElementById('completion-info-icon');
-  const infoModal = document.getElementById('info-modal');
-  const infoClose = document.getElementById('info-close');
-
-  infoClose.addEventListener('click', () => infoModal.style.display = 'none');
-  gameInfoIcon.addEventListener('click', () => infoModal.style.display = 'flex');
-  completionInfoIcon.addEventListener('click', () => infoModal.style.display = 'flex');
-
+  // event listener for info icon
+  document.getElementById('info-icon').addEventListener('click', () -> {
+    showModal(infoHTML);
+  });
 
   document.getElementById('date').textContent = `${today}`;
 
@@ -218,7 +227,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Show welcome modal only if not completed
   if (progress.stage !== 'Completed') {
-    showModal(welcomeHTML);;
+    showModal(welcomeHTML);
   }
 
 
