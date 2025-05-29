@@ -9,56 +9,53 @@ order: 400
 <link rel="stylesheet" href="/games/sumfing/assets/css/sumfing.css">
 
 <div class="game-container">
+
   <div class = "info-icon" id="info-icon">ℹ️</div>
   <div class = "sumfing-title" id="headline">Sumfing</div>
   <div class = "footnote" id="date"></div><br>
 
-  <div class="box-container" id="box-container"></div>
-
-  <div class="sumfing-target" id="target-display"></div>
-  <div class="sumfing-result" id="result"></div>
-  <div class="sumfing-feedback" id="feedback">🤓</div><br>
-
-  <div class="tile-container" id="num-tiles"></div>
-  <div class="tile-container" id="op-tiles"></div>
-  <div class="tile-container" id="extra-op-tiles" style="display: none;"></div>
-  <div id="extra-op-info" class="footnote" style="display: none; text-align: center;">
-    <a href="#" onclick="showModal(operatorsHTML, 'operators'); return false;">What are these? ℹ️</a>
+<!-- Gameplay elements -->
+  <div id = "gameplay-elements">
+    <div class="box-container" id="box-container"></div>
+    <div class="sumfing-target" id="target-display"></div>
+    <div class="sumfing-result" id="result"></div>
+    <div class="sumfing-feedback" id="feedback">🤓</div><br>
+    <div class="tile-container" id="num-tiles"></div>
+    <div class="tile-container" id="op-tiles"></div>
+    <div class="tile-container" id="extra-op-tiles" style="display: none;"></div>
+    <div id="extra-op-info" class="footnote" style="display: none; text-align: center;">
+        <a href="#" onclick="showModal(operatorsHTML, 'operators'); return false;">What are these? ℹ️</a>
+    <form onsubmit="return false;">
+        <input type="hidden" name="hint_level" id="hint-level-input">
+        <button id="next-button">Next</button>
+    </form>
+    <button id="hint1-button">Hint?</button>
+    <button id="hint2-button">Another hint?</button>
+    <button id="reveal-button">Show answer</button>
   </div>
 
-  <form onsubmit="return false;">
-    <input type="hidden" name="hint_level" id="hint-level-input">
-    <button id="next-button">Next</button>
-  </form>
-
-<button id="hint1-button">Hint?</button>
-<button id="hint2-button">Another hint?</button>
-<button id="reveal-button">Show answer</button>
-
-</div>
-
-<div id="completion-page" style="display: none;" class="game-container">
-<div class = "info-icon" id="completion-info-icon">ℹ️</div>
-<div class = "sumfing-title" id="completion-headline">Sumfing</div>
-<div class = "footnote" id="completion-date"></div><br>
+<!-- Completion elements (initially hidden) -->
+  <div id="completion-elements" style="display: none;">
     <ul id="clue-summary">
         <li>Easy: <span id="clue-easy">0</span></li>
         <li>Medium: <span id="clue-medium">0</span></li>
         <li>Hard: <span id="clue-hard">0</span></li>
         <li id="row-extra">Extra: <span id="clue-extra">0</span></li>
     </ul>
-<div id = "streak"></div>
-<button id="share-button">Share</button>
-<p id="countdown-message">Sumfing else in 00 hours and 00 minutes</p>
-<a href="#" id="review-link">Admire your work</a>
+    <div id="streak"></div>
+    <button id="share-button">Share</button>
+    <p id="countdown-message">Sumfing else in 00 hours and 00 minutes</p>
+    <a href="#" id="review-link">Admire your work</a>
+  </div>
+
 </div>
+
 
 <!-- Shared Modal -->
 <div id="shared-modal" class="sumfing-modal-overlay" style="display: none;">
   <div class="sumfing-modal-content">
     <span id="shared-modal-close" class="sumfing-modal-close">&times;</span>
     <div id="shared-modal-body"></div>
-
   </div>
 </div>
 
@@ -614,10 +611,9 @@ const emojiSummary = (n) => {
 
 // Update Completion Page
 function showCompletionPage() {
-  document.querySelector('.game-container').style.display = 'none';
-  document.getElementById('completion-page').style.display = 'block';
-  document.getElementById('completion-headline').textContent = `Sumfing ${dayNumber}`;
-  document.getElementById('completion-date').textContent = `${today}`;
+  // hide the game section
+  document.getElementById('gameplay-elements').style.display = 'none';
+  document.getElementById('completion-elements').style.display = 'block';
 
   const { Easy, Medium, Hard, Extra } = progress.clues;
 
