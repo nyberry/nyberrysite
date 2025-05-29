@@ -146,8 +146,7 @@ const infoHTML = `
     <h3>Arrange the tiles to solve the sum</strong></h3>
     2️⃣ ➕ 3️⃣ = 5 ✅<br><br>
     Work through the <strong>easy</strong>, <strong>medium</strong>, and <strong>hard</strong> sums.<br><br>
-    If you solve them all with no hints, enjoy the special <strong>extra</strong> sum. 🤓</br>
-    <hr>
+    How many can you solve?<br>
     <h3>BIDMAS</h3>
     The sums are worked out in a standard order, called BIDMAS (or PEMDAS).<br><br>
     Multiplications and divisions are performed <strong>before</strong> additions and subtractions, even if they appear further right in the sum.<br><br>
@@ -157,6 +156,7 @@ const infoHTML = `
     `
 
 // global variables //
+let modalContext = null; // could be 'welcome', 'info', etc.
 let progress;
 let currentPuzzle;
 let selectedTiles = [];
@@ -180,6 +180,8 @@ document.addEventListener('DOMContentLoaded', () => {
   if (document.getElementById('shared-modal-close')) {
     document.getElementById('shared-modal-close').addEventListener('click', () => {
         document.getElementById('shared-modal').style.display = 'none';
+        if (modalContext === 'welcome') {startGameAfterModal();}
+  }
     });
   }
 
@@ -188,6 +190,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const modal = document.getElementById('shared-modal');
     if (event.target === modal) {
       modal.style.display = 'none';
+      if (modalContext === 'welcome') {startGameAfterModal();}
     }
   });
 
@@ -268,7 +271,8 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // function to show modals
-function showModal(bodyHTML) {
+function showModal(bodyHTML, context = null) {
+  modalContext = context;
   document.getElementById('shared-modal-body').innerHTML = bodyHTML;
   document.getElementById('shared-modal').style.display = 'flex';
 
@@ -276,18 +280,15 @@ function showModal(bodyHTML) {
   if (document.getElementById('play-button')) {
     document.getElementById('play-button').addEventListener('click', () => {
       document.getElementById('shared-modal').style.display = 'none';
+      startGameAfterModal();
+  }
     });
   }
 }
 
 
 // helper function to start game when modal closes //
-function startGameAfterModal() {
-  const welcomeModal = document.getElementById('welcome-modal');
-  welcomeModal.style.display = 'none';
-  initPuzzleUI(currentPuzzle); 
-}
-
+function startGameAfterModal() {initPuzzleUI(currentPuzzle);}
 
 
 // Function to initialise puzzle UI
