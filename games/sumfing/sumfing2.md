@@ -23,7 +23,7 @@ order: 400
   <div class="tile-container" id="op-tiles"></div>
   <div class="tile-container" id="extra-op-tiles" style="display: none;"></div>
   <div id="extra-op-info" class="footnote" style="display: none; text-align: center;">
-    <a href="#" onclick="showExtraOpInfo(); return false;">What's this?</a>
+    <a href="#" onclick="showExtraOpInfo(); return false;">What's this? ℹ️</a>
   </div>
 
   <form onsubmit="return false;">
@@ -53,6 +53,14 @@ order: 400
 <a href="#" id="review-link">Admire your work</a>
 </div>
 
+<!-- Shared Modal -->
+<div id="shared-modal" class="sumfing-modal-overlay" style="display: none;">
+  <div class="sumfing-modal-content">
+    <span id="shared-modal-close" class="sumfing-modal-close">&times;</span>
+    <div id="shared-modal-body"></div>
+  </div>
+</div>
+
 <!-- Admire your work overlay -->
 <div id="review-modal" class="sumfing-modal-overlay" style="display: none;">
   <div class="sumfing-modal-content">
@@ -63,19 +71,6 @@ order: 400
   </div>
 </div>
 
-<!-- Welcome Modal -->
-<div id="welcome-modal" class="sumfing-modal-overlay">
-  <div class="sumfing-modal-content">
-    <span class="sumfing-modal-close" id = "welcome-close">&times;</span>
-    <div class = "sumfing-modal-title">Sumfing</div>
-    <h3>Arrange the tiles to solve the sum</strong></h3>
-    2️⃣ ➕ 3️⃣ = 5 ✅<br><br>
-    Work through the <strong>easy</strong>, <strong>medium</strong>, and <strong>hard</strong> sums.<br><br>
-    How many can you solve? 🤓<br>
-    <img src="/games/sumfing/assets/images/degu.png" alt="degu" style="width: 200px;">
-    <button id="play-button">Play</button>
-  </div>
-</div>
 
 <!-- Info Modal -->
 <div id="info-modal" class="sumfing-modal-overlay">
@@ -135,6 +130,18 @@ order: 400
 
 <script>
 
+// Welcome Modal //
+const welcomeHTML = `
+    <span class="sumfing-modal-close" id = "welcome-close">&times;</span>
+    <div class = "sumfing-modal-title">Sumfing</div>
+    <h3>Arrange the tiles to solve the sum</h3>
+    2️⃣ ➕ 3️⃣ = 5 ✅<br><br>
+    Work through the <strong>easy</strong>, <strong>medium</strong>, and <strong>hard</strong> sums.<br><br>
+    How many can you solve? 🤓<br>
+    <img src="/games/sumfing/assets/images/degu.png" alt="degu" style="width: 200px;">
+    <button id="play-button">Play</button>
+    `
+
 // global variables //
 let progress;
 let currentPuzzle;
@@ -150,8 +157,23 @@ const STAGES = ['Easy', 'Medium', 'Hard', 'Extra'];
 const today = new Date().toISOString().split('T')[0];
 const dayNumber = getSumfingDayNumber(today);
 
+
+
 // main function on DOM content loaded
 document.addEventListener('DOMContentLoaded', () => {
+
+  // add close modals event listener
+  document.getElementById('shared-modal-close').addEventListener('click', () => {
+    document.getElementById('shared-modal').style.display = 'none';
+  });
+  
+  window.addEventListener('click', function (event) {
+    const modal = document.getElementById('shared-modal');
+    if (event.target === modal) {
+      modal.style.display = 'none';
+    }
+  });
+
 
   // Welcome modal references
   const welcomeModal = document.getElementById('welcome-modal');
@@ -167,14 +189,6 @@ document.addEventListener('DOMContentLoaded', () => {
   infoClose.addEventListener('click', () => infoModal.style.display = 'none');
   gameInfoIcon.addEventListener('click', () => infoModal.style.display = 'flex');
   completionInfoIcon.addEventListener('click', () => infoModal.style.display = 'flex');
-
-  // Close modals when clicking outside content
-  window.addEventListener('click', (event) => {
-    if (event.target === infoModal) infoModal.style.display = 'none';
-    if (event.target === welcomeModal) welcomeModal.style.display = 'none';
-  });
-  welcomeClose.addEventListener('click', () => startGameAfterModal());
-  welcomePlay.addEventListener('click', () => startGameAfterModal());
 
 
   document.getElementById('date').textContent = `${today}`;
@@ -208,7 +222,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Show welcome modal only if not completed
   if (progress.stage !== 'Completed') {
-    welcomeModal.style.display = 'flex';
+    showModal(welcomeHTML);;
   }
 
 
@@ -247,6 +261,14 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 });
+
+// function to show modals
+function showModal(bodyHTML) {
+  document.getElementById('shared-modal-body').innerHTML = bodyHTML;
+  document.getElementById('shared-modal').style.display = 'flex';
+}
+
+
 
 // helper function to start game when modal closes //
 function startGameAfterModal() {
