@@ -58,6 +58,7 @@ order: 400
   <div class="sumfing-modal-content">
     <span id="shared-modal-close" class="sumfing-modal-close">&times;</span>
     <div id="shared-modal-body"></div>
+
   </div>
 </div>
 
@@ -106,7 +107,7 @@ const operatorsHTML = `
     <hr>
     <h3>Factorial</h3>
     4️⃣❗means 4 × 3 × 2 × 1 <br>
-    4️⃣❗= 24 <br><br>
+    so 4️⃣❗= 24 <br><br>
     <div class="center-table">
     <table class="grid-table">
       <thead style="background: #c8c8c8">
@@ -696,12 +697,17 @@ function getSumfingDayNumber(dateStr) {
 }
 
 
-// Modified showReviewModal with staggered row appearance
 function showReviewModal() {
-  const container = document.getElementById('review-content');
-  container.innerHTML = '';
-  document.getElementById('sumfing-modal-headline').textContent = `Sumfing ${dayNumber}`;
-  document.getElementById('sumfing-modal-date').textContent = today;
+  const container = document.createElement('div');
+  container.id = 'review-content';
+
+  const header = document.createElement('div');
+  header.innerHTML = `
+    <div class="sumfing-modal-title">Sumfing ${dayNumber}</div>
+    <div class="footnote">${today}</div>
+    <br>
+  `;
+  container.appendChild(header);
 
   const stages = ['Easy', 'Medium', 'Hard'];
   const { Easy, Medium, Hard, Extra } = progress.clues;
@@ -745,16 +751,16 @@ function showReviewModal() {
 
       const clues = progress.clues[stage];
       const emojiP = document.createElement('p');
-      emojiP.textContent = emojiSummary(clues)
+      emojiP.textContent = emojiSummary(clues);
 
       row.appendChild(stageName);
       row.appendChild(tilesDiv);
       row.appendChild(emojiP);
       container.appendChild(row);
-    }, index * 1000); // stagger each stage by 1 second
+    }, index * 1000);
   });
 
-  // Final message logic (after all rows added)
+  // Final message
   setTimeout(() => {
     const allClues = stages.map(stage => progress.clues[stage]);
     const totalClues = allClues.reduce((sum, clues) => sum + clues, 0);
@@ -771,7 +777,7 @@ function showReviewModal() {
     } else if (totalClues <= 5) {
       message.textContent = 'Keep at it! 🤓';
     } else {
-      message.textContent = 'Keep trying! 🤓 ';
+      message.textContent = 'Keep trying! 🤓';
     }
 
     message.style.marginTop = '1rem';
@@ -780,20 +786,11 @@ function showReviewModal() {
     message.style.textAlign = 'center';
 
     container.appendChild(message);
-  }, stages.length * 1000 + 200); // add buffer after last row
- 
+  }, stages.length * 1000 + 200);
 
-
-
-  document.getElementById('review-modal').style.display = 'flex';
+  // Use shared modal
+  showModal(container.outerHTML, 'review');
 }
-
-
-
-// Close modal
-document.getElementById('close-review').addEventListener('click', () => {
-  document.getElementById('review-modal').style.display = 'none';
-});
 
 
 </script>
