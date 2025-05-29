@@ -1,41 +1,36 @@
-/*
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-color: #e7e7e7;
-        }
-*/
 .game-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 20px;
+    padding-top: 2rem;
     position: relative;
     min-height: 80vh;
     font-size: 24px;
+}
+
+
+#gameplay-elements {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* ✅ ensures inner elements like tiles are centered */
+}
+
+#completion-elements {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* ✅ ensures inner elements like tiles are centered */
 }
 
 .info-icon {
     position: absolute;
-    top: -0.5rem;
-    right: -0.5rem;
+    top: 0;
+    right: 0;
     cursor: pointer;
     font-size: 1.8rem;
 }
 
-.completion-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 20px;
-    position: relative;
-    min-height: 80vh;
-    font-size: 24px;
-}
 
 .box-container {
     display: flex;
@@ -100,16 +95,16 @@
 }
 
 .sumfing-title {
-    font-size: 33px;
+    font-size: 34px;
 }
 
 .sumfing-result {
-    font-size: 33px;
+    font-size: 34px;
     margin-bottom: 14px;
 }
 
 .sumfing-target {
-    font-size: 33px;
+    font-size: 34px;
     margin-bottom: 14px;
 }
 
@@ -139,6 +134,7 @@
   list-style: none;
   padding-left: 0;
 }
+
 /* Modal overlay */
 .sumfing-modal-overlay {
   display: none;
@@ -160,6 +156,7 @@
   width: 100vw;
   height: 100%;
   text-align: center;
+  align-items: center;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
   overflow-y: auto;    
 }

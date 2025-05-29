@@ -49,132 +49,73 @@
   <main class="main-container">
       
       <link rel="stylesheet" href="/games/sumfing/assets/css/sumfing.css">
+<!-- main container -->
 <div class="game-container">
   <div class = "info-icon" id="info-icon">ℹ️</div>
   <div class = "sumfing-title" id="headline">Sumfing</div>
   <div class = "footnote" id="date"></div><br>
-  <div class="box-container" id="box-container"></div>
-  <div class="sumfing-target" id="target-display"></div>
-  <div class="sumfing-result" id="result"></div>
-  <div class="sumfing-feedback" id="feedback">🤓</div><br>
-  <div class="tile-container" id="num-tiles"></div>
-  <div class="tile-container" id="op-tiles"></div>
-  <div class="tile-container" id="extra-op-tiles" style="display: none;"></div>
-  <form onsubmit="return false;">
-    <input type="hidden" name="hint_level" id="hint-level-input">
-    <button id="next-button">Next</button>
-  </form>
-<p><button id="hint1-button">Hint?</button>
-<button id="hint2-button">Another hint?</button>
-<button id="reveal-button">Show answer</button></p>
-</div>
-<div id="completion-page" style="display: none;" class="completion-container">
-<div class = "sumfing-title" id="completion-headline">Sumfing</div>
-<div class = "footnote" id="completion-date"></div><br>
+<!-- Gameplay elements -->
+  <div id = "gameplay-elements">
+    <div class="box-container" id="box-container"></div>
+    <div class="sumfing-target" id="target-display"></div>
+    <div class="sumfing-result" id="result"></div>
+    <div class="sumfing-feedback" id="feedback">🤓</div><br>
+    <div class="tile-container" id="num-tiles"></div>
+    <div class="tile-container" id="op-tiles"></div>
+    <div class="tile-container" id="extra-op-tiles" style="display: none;"></div>
+    <div id="extra-op-info" class="footnote" style="display: none; text-align: center;">
+        <a href="#" onclick="showModal(operatorsHTML, 'operators'); return false;">What are these?</a>
+    </div>
+    <form onsubmit="return false;">
+        <input type="hidden" name="hint_level" id="hint-level-input">
+        <button id="next-button">Next</button>
+    </form>
+    <button id="hint1-button">Hint?</button>
+    <button id="hint2-button">Another hint?</button>
+    <button id="reveal-button">Show answer</button>
+  </div>
+<!-- Completion elements (initially hidden) -->
+  <div id="completion-elements" style="display: none;">
     <ul id="clue-summary">
         <li>Easy: <span id="clue-easy">0</span></li>
         <li>Medium: <span id="clue-medium">0</span></li>
         <li>Hard: <span id="clue-hard">0</span></li>
-        <li id="row-extra">Extra: <span id="clue-extra">0</span></li>
     </ul>
-<div id = "streak"></div>
-<button id="share-button">Share</button>
-<p id="countdown-message">Sumfing else in 00 hours and 00 minutes</p>
-<a href="#" id="review-link">Admire your work</a>
-</div>
-<!-- Admire your work overlay -->
-<div id="review-modal" class="sumfing-modal-overlay" style="display: none;">
-  <div class="sumfing-modal-content">
-    <span id="close-review" class="sumfing-modal-close">&times;</span>
-        <div class = "sumfing-modal-title" id="sumfing-modal-headline">Sumfing</div>
-        <div class = "footnote" id="sumfing-modal-date"></div><br>
-        <h2>How you did</h2>
-    <div id="review-content"></div>
+    <div id="streak"></div>
+    <button id="share-button">Share</button>
+    <p id="countdown-message">Sumfing else in 00 hours and 00 minutes</p>
+    <a href="#" id="review-link">Admire your work</a>
   </div>
 </div>
-<!-- Welcome Modal -->
-<div id="welcome-modal" class="sumfing-modal-overlay">
+<!-- Shared Modal -->
+<div id="shared-modal" class="sumfing-modal-overlay" style="display: none;">
   <div class="sumfing-modal-content">
-    <span class="sumfing-modal-close" id = "welcome-close">&times;</span>
-    <div class = "sumfing-modal-title">Sumfing</div>
-    <h3>Arrange the tiles to solve the sum</strong></h3>
-    2️⃣ ➕ 3️⃣ = 5 ✅<br><br>
-    Work through the <strong>easy</strong>, <strong>medium</strong>, and <strong>hard</strong> sums.<br><br>
-    If you solve them all with no hints, enjoy the special <strong>“extra”</strong> sum. 🤓<br>
-    <img src="/games/sumfing/assets/images/degu.png" alt="degu" style="width: 200px;">
-    <button id="play-button">Play</button>
+    <span id="shared-modal-close" class="sumfing-modal-close">&times;</span>
+    <div id="shared-modal-body"></div>
   </div>
 </div>
-<!-- Info Modal -->
-<div id="info-modal" class="sumfing-modal-overlay">
-  <div class="sumfing-modal-content">
-    <span class="sumfing-modal-close" id = "info-close">&times;</span>
-    <div class = "sumfing-modal-title">How to play</div>
-    <h3>Arrange the tiles to solve the sum</strong></h3>
-    2️⃣ ➕ 3️⃣ = 5 ✅<br><br>
-    Work through the <strong>easy</strong>, <strong>medium</strong>, and <strong>hard</strong> sums.<br><br>
-    If you solve them all with no hints, enjoy the special <strong>“extra”</strong> sum. 🤓</br>
-    <hr>
-    <h3>BIDMAS</h3>
-    The sums are worked out in a standard order, called BIDMAS or PEMDAS.<br><br>
-    Multiplications and divisions are performed <strong>before</strong> additions and subtractions, even if they appear further right in the sum. 🤓<br>
-    2️⃣ ➕ 3️⃣ ✖️ 4️⃣ = 14 ✅<br>
-    2️⃣ ➕ 3️⃣ ✖️ 4️⃣ = 20 ❌
-    <hr>
-    <h3>Advanced: the EXTRA sum</h3>
-    This bonus sum may use the exponent operator.<br>
-    <code>a ^ b</code> means <code>a</code> raised to the power of <code>b</code>.<br><br>
-    2️⃣ ^ 5️⃣ = 32 ✅<br><br>
-    In BIDMAS, exponent operations are performed before any others.<br><br>
-    It may also use the factorial operator.<br><br>
-    4️⃣❗ = 4 × 3 × 2 × 1 = 24 ✅<br>
-    <hr>
-    There's a new Sumfing every day.<br>
-    <img src="/games/sumfing/assets/images/degu.png" alt="degu" style="width: 200px;">
-    Enjoy!<br><br>
-    <div class = "footnote">©2025 <a href="https://www.nyberry.com">NYBerry</a></div>
-    <br><br><br>
-  </div>
-</div>
+<script src="/games/sumfing/assets/js/modals.js" defer></script>
 <script>
 
 // global variables //
+let modalContext = 'welcome'; // initialise to welcome
 let progress;
 let currentPuzzle;
 let selectedTiles = [];
-let hint_level = 0;
 let unsolved = true;
 let expressions = [];
+let hint_level = 0;
 let hint_answer = [];
+let hintTimeoutId = null;
+let revealTimeoutId = null;
 const standardDelay = 5000;
-const STAGES = ['Easy', 'Medium', 'Hard', 'Extra'];
+const STAGES = ['Easy', 'Medium', 'Hard'];
 const today = new Date().toISOString().split('T')[0];
 const dayNumber = getSumfingDayNumber(today);
 
+
 // main function on DOM content loaded
 document.addEventListener('DOMContentLoaded', () => {
-
-  // Welcome modal references
-  const welcomeModal = document.getElementById('welcome-modal');
-  const welcomeClose = document.getElementById('welcome-close');
-  const welcomePlay = document.getElementById('play-button');
-
-  // Info modal references
-  const infoIcon = document.getElementById('info-icon');
-  const infoModal = document.getElementById('info-modal');
-  const infoClose = document.getElementById('info-close');
-
-  infoClose.addEventListener('click', () => infoModal.style.display = 'none');
-  infoIcon.addEventListener('click', () => infoModal.style.display = 'flex');
-
-  // Close modals when clicking outside content
-  window.addEventListener('click', (event) => {
-    if (event.target === infoModal) infoModal.style.display = 'none';
-    if (event.target === welcomeModal) welcomeModal.style.display = 'none';
-  });
-  welcomeClose.addEventListener('click', () => startGameAfterModal());
-  welcomePlay.addEventListener('click', () => startGameAfterModal());
-
 
   document.getElementById('date').textContent = `${today}`;
 
@@ -183,8 +124,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const yesterday = new Date();
   yesterday.setDate(yesterday.getDate() - 1)
-  const yesterdayYyyymmdd = yesterday.toISOString().slice(0,10);
-
+  const yesterdayYyyymmdd = yesterday.toISOString().slice(0,10);  
 
   if (saved?.date === today) {
     progress = saved;
@@ -207,7 +147,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Show welcome modal only if not completed
   if (progress.stage !== 'Completed') {
-    welcomeModal.style.display = 'flex';
+    showModal(welcomeHTML, 'welcome');
   }
 
 
@@ -235,29 +175,95 @@ document.addEventListener('DOMContentLoaded', () => {
       console.error('Failed to fetch puzzle:', error);
     });
 
-    // ADD EVENT listeners once only
+    addEventListenersOnceOnly();
+});
+
+
+
+function addEventListenersOnceOnly() {
+    
     document.getElementById('hint1-button').addEventListener('click', revealHint1);
     document.getElementById('hint2-button').addEventListener('click', revealHint2);
     document.getElementById('reveal-button').addEventListener('click', revealAnswer);
     document.getElementById('next-button').addEventListener('click', () => {
         advanceStage();          
         saveProgress();          
-        initPuzzleUI(currentPuzzle, progress); 
+        initPuzzleUI(currentPuzzle); 
+    });
+    
+     // add close modals event listeners  
+    if (document.getElementById('shared-modal-close')) {
+      document.getElementById('shared-modal-close').addEventListener('click', () => {
+          document.getElementById('shared-modal').style.display = 'none';
+          if (modalContext === 'welcome') {startGameAfterModal();}
+      });
+    }
+
+    // clicking outside of the modal closes it
+    window.addEventListener('click', function (event) {
+      const modal = document.getElementById('shared-modal');
+      if (event.target === modal) {
+        modal.style.display = 'none';
+        if (modalContext === 'welcome') {
+          startGameAfterModal();
+        }
+      }
     });
 
-});
-
-// helper function to start game when modal closes //
-function startGameAfterModal() {
-  const welcomeModal = document.getElementById('welcome-modal');
-  welcomeModal.style.display = 'none';
-  initPuzzleUI(currentPuzzle); 
+    // event listener for info icon
+    document.getElementById('info-icon').addEventListener('click', () => {
+      showModal(infoHTML, 'info');
+    });
 }
 
+
+function showModal(content, context = null) {
+  modalContext = context;
+
+  const container = document.getElementById('shared-modal-body');
+  container.innerHTML = ''; // clear previous content
+
+  // Insert either raw HTML string or a DOM node
+  if (typeof content === 'string') {
+    container.innerHTML = content; // for string elements like the info modal
+  } else {
+    container.appendChild(content); // for DOM elements like the reivew modal
+  }
+
+  document.getElementById('shared-modal').style.display = 'flex';
+
+  // Attach play event listener AFTER content is added
+  const playButton = document.getElementById('play-button');
+  if (playButton) {
+    playButton.addEventListener('click', () => {
+      document.getElementById('shared-modal').style.display = 'none';
+      if (modalContext === 'welcome') {
+        startGameAfterModal();
+      }
+    });
+  }
+}
+
+// helper function to start game when modal closes //
+function startGameAfterModal() {initPuzzleUI(currentPuzzle);}
 
 
 // Function to initialise puzzle UI
 function initPuzzleUI(puzzle) {
+
+    console.log('initPuzzleUI function called')
+
+    // Clear any pending hint/reveal timeouts from the previous stage
+    if (hintTimeoutId) {
+        clearTimeout(hintTimeoutId);
+        hintTimeoutId = null;
+    }
+    if (revealTimeoutId) {
+        clearTimeout(revealTimeoutId);
+        revealTimeoutId = null;
+    }
+    hint_level = 0;
+
     const stage = progress.stage;
 
     if (stage === 'Completed') {
@@ -268,11 +274,10 @@ function initPuzzleUI(puzzle) {
     const headline = document.getElementById('headline');
     headline.textContent = `Sumfing ${stage}`;
     tiles=puzzle.Tiles;
-    expressions = puzzle[stage][1];
+    expressions = currentPuzzle[stage][1];
     hint_answer = expressions[0];
     headline.textContent = `Sumfing ${stage}`;
     unsolved = true;
-    hint_level = 0;
     selectedTiles = [];
     
     document.getElementById('next-button').style.display = 'none';
@@ -331,7 +336,7 @@ function renderTiles(tiles, puzzlestage) {
     });
 
     const extraOpTiles = document.getElementById('extra-op-tiles');
-    if (progress.stage === 'Extra') {
+    if (progress.stage === 'Hard') {
         extraOpTiles.style.display = 'flex';
         extraOpTiles.innerHTML = '';
         ['!', '^'].forEach((op, i) => {
@@ -342,8 +347,10 @@ function renderTiles(tiles, puzzlestage) {
             tile.textContent = op;
             extraOpTiles.appendChild(tile);
         });
+        document.getElementById('extra-op-info').style.display = 'block';
     } else {
         extraOpTiles.style.display = 'none';
+        document.getElementById('extra-op-info').style.display = 'none';
     }
 }
 
@@ -418,7 +425,8 @@ function revealHint1() {
     progress.clues[progress.stage] = Math.max(progress.clues[progress.stage], 1);
     saveProgress();
     clearBoxesAndTiles();
-    setTimeout(() => {
+    
+    hintTimeoutId = setTimeout(() => {
         if (unsolved) document.getElementById('hint2-button').style.display = 'block';
     }, standardDelay);
 }
@@ -428,7 +436,8 @@ function revealHint2() {
     progress.clues[progress.stage] = Math.max(progress.clues[progress.stage], 2);
     saveProgress();
     clearBoxesAndTiles();
-    setTimeout(() => {
+    
+    revealTimeoutId= setTimeout(() => {
         if (unsolved) document.getElementById('reveal-button').style.display = 'block';
     }, standardDelay);
 }
@@ -536,23 +545,9 @@ function advanceStage() {
     return;
   }
 
-  if (progress.stage === 'Extra') {
+  if (progress.stage === 'Hard') {
     // Puzzle fully complete
     progress.stage = 'Completed';
-    saveProgress();
-    return;
-  }
-
-  if (progress.stage === 'Hard') {
-    // Check if ANY clues were used in any stage
-    const anyCluesUsed = Object.values(progress.clues).some(count => count > 0);
-    if (!anyCluesUsed) {
-      // No clues used — bonus stage!
-      progress.stage = 'Extra';
-    } else {
-      // Otherwise, you're done
-      progress.stage = 'Completed';
-    }
     saveProgress();
     return;
   }
@@ -575,30 +570,22 @@ function saveProgress() {
 const emojiSummary = (n) => {
   if (n === 0) return '✅';
   if (n >= 3) return '❌';
-  return '💡'.repeat(n)+'✅';
+  return '💡'.repeat(n);
 };
 
 
 // Update Completion Page
 function showCompletionPage() {
-  document.querySelector('.game-container').style.display = 'none';
-  document.getElementById('completion-page').style.display = 'block';
-  document.getElementById('completion-headline').textContent = `Sumfing ${dayNumber}`;
-  document.getElementById('completion-date').textContent = `${today}`;
+  // hide the game section
+  document.getElementById('gameplay-elements').style.display = 'none';
+  document.getElementById('completion-elements').style.display = 'block';
+  document.getElementById('headline').textContent = `Sumfing ${dayNumber}`;
 
   const { Easy, Medium, Hard, Extra } = progress.clues;
 
   document.getElementById('clue-easy').textContent = emojiSummary(Easy);
   document.getElementById('clue-medium').textContent = emojiSummary(Medium);
   document.getElementById('clue-hard').textContent = emojiSummary(Hard);
-
-  const extraAllowed = Easy === 0 && Medium === 0 && Hard === 0;
-  if (progress.stage === 'Completed' && extraAllowed) {
-    document.getElementById('row-extra').style.display = 'list-item';
-    document.getElementById('clue-extra').textContent = emojiSummary(Extra);
-  } else {
-    document.getElementById('row-extra').style.display = 'none';
-  }
 
   const streakCount = progress?.streak ?? 1;
   const dayLabel = streakCount === 1 ? 'day' : 'days';
@@ -624,9 +611,6 @@ if (shareButton) {
                     `Easy: ${emojiSummary(Easy)}\n` +
                     `Medium: ${emojiSummary(Medium)}\n` +
                     `Hard: ${emojiSummary(Hard)}`;
-    if (showExtra) {
-      shareText += `\nExtra: ${emojiSummary(Extra)}`;
-    }
     shareText += `\nsumfing.com`;
 
     if (navigator.share) {
@@ -662,102 +646,6 @@ function getSumfingDayNumber(dateStr) {
   
   return `#${dayNumber}`;
 }
-
-
-// Modified showReviewModal with staggered row appearance
-function showReviewModal() {
-  const container = document.getElementById('review-content');
-  container.innerHTML = '';
-  document.getElementById('sumfing-modal-headline').textContent = `Sumfing ${dayNumber}`;
-  document.getElementById('sumfing-modal-date').textContent = today;
-
-  const stages = ['Easy', 'Medium', 'Hard'];
-  const { Easy, Medium, Hard, Extra } = progress.clues;
-  const extraAllowed = Easy === 0 && Medium === 0 && Hard === 0;
-  if (progress.stage === 'Completed' && extraAllowed) {
-    stages.push('Extra');
-  }
-
-  stages.forEach((stage, index) => {
-    setTimeout(() => {
-      const [target, expressions] = currentPuzzle[stage];
-      const expression = expressions[0];
-
-      const row = document.createElement('div');
-      row.className = 'sumfing-modal-review-row';
-
-      const tilesDiv = document.createElement('div');
-      tilesDiv.className = 'sumfing-modal-review-tiles';
-
-      const fullExpression = `${expression}=${target}`;
-      [...fullExpression].forEach(char => {
-        const tile = document.createElement('div');
-        tile.className = 'tile';
-
-        if (!isNaN(char)) {
-          tile.classList.add('number');
-        } else if (['+', '-', '*', '/'].includes(char)) {
-          tile.classList.add('operator');
-        } else if (['!', '^'].includes(char)) {
-          tile.classList.add('special');
-        } else if (char === '=') {
-          tile.classList.add('equals');
-        }
-
-        tile.textContent = char === '*' ? '×' : char === '/' ? '÷' : char;
-        tilesDiv.appendChild(tile);
-      });
-
-      const clues = progress.clues[stage];
-      const emojiP = document.createElement('p');
-      emojiP.textContent = emojiSummary(clues)
-      row.appendChild(tilesDiv);
-      row.appendChild(emojiP);
-      container.appendChild(row);
-    }, index * 1000); // stagger each stage by 1 second
-  });
-
-  // Final message logic (after all rows added)
-  setTimeout(() => {
-    const allClues = stages.map(stage => progress.clues[stage]);
-    const totalClues = allClues.reduce((sum, clues) => sum + clues, 0);
-
-    const message = document.createElement('div');
-    message.className = 'sumfing-modal-final-message';
-
-    if (totalClues === 0) {
-      message.textContent = 'Perfect! 🤓';
-    } else if (totalClues === 1) {
-      message.textContent = 'Nice work! 🤓';
-    } else if (totalClues === 2) {
-      message.textContent = 'Not bad! 🤓';
-    } else if (totalClues < stages.length * 3) {
-      message.textContent = 'You got there! 🤓';
-    } else {
-      message.textContent = 'Keep trying! 🤓 ';
-    }
-
-    message.style.marginTop = '1rem';
-    message.style.fontSize = '1.2rem';
-    message.style.fontWeight = 'bold';
-    message.style.textAlign = 'center';
-
-    container.appendChild(message);
-  }, stages.length * 1000 + 200); // add buffer after last row
- 
-
-
-
-  document.getElementById('review-modal').style.display = 'flex';
-}
-
-
-
-// Close modal
-document.getElementById('close-review').addEventListener('click', () => {
-  document.getElementById('review-modal').style.display = 'none';
-});
-
 
 </script>
 

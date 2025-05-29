@@ -1,20 +1,59 @@
----
-layout: layout.html
-title: Sumfing
-description: A simple yet challenging number game. Can you arrange the tiles to solve the sum? Nothing to do with medicine.
-image: /games/sumfing/assets/images/demoImage.png
-order: 400
----
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sumfing old</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/assets/css/styles.css">
+</head>
 
-<link rel="stylesheet" href="/games/sumfing/assets/css/sumfing.css">
+<body>
 
+  <nav>
+    <div class="menu"><a href="/index" aria-label="Home">
+      <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 576 512">
+        <path fill="currentColor" d="M541 229.16L327.41 43a35.84 35.84 0 0 0-46.8 0L35 229.16a16 16 0 0 0-1.16 22.59l21.41 23.57a16 16 0 0 0 22.59 1.16L96 240.81V464a16 16 0 0 0 16 16h112a16 16 0 0 0 16-16V352h96v112a16 16 0 0 0 16 16h112a16 16 0 0 0 16-16V240.81l18.16 15.67a16 16 0 0 0 22.59-1.16l21.41-23.57a16 16 0 0 0-1.16-22.59z"/>
+      </svg>
+    </a></div>
+    <ul class="menu">
+      <li><a href="/bio">Bio</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/clini">Clini</a></li>
+
+      <!-- 
+      <li class="dropdown">
+        <a href="#">Stuff ▾</a>
+        <ul class="dropdown-content">
+          <li><a href="/games/sumfing/sumfing">Sumfing</a></li>  
+        </ul>
+      </li>
+    -->
+
+      <li class="dropdown">
+        <a href="#">Tools ▾</a>
+        <ul class="dropdown-content">
+          <li><a href="/tools/bmi">BMI</a></li>  
+          <li><a href="/tools/colorblind">Colour Vision Test</a></li>
+          <li><a href="/tools/neuro">Dermatomes</a></li>
+          <li><a href="/tools/growth">Growth Charts</a></li>
+          <li><a href="/tools/icd10">ICD-10 Lookup</a></li>
+          <li><a href="/tools/gfr">Kidney Calculator</a></li>
+          <li><a href="/tools/labconverter">Lab Unit Converter</a></li>
+          <li><a href="/tools/paedsdoses">Paeds Doses</a></li>
+          <li><a href="/tools/snellen">Visual Acuity</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+
+  <main class="main-container">
+      
+      <link rel="stylesheet" href="/games/sumfing/assets/css/sumfing.css">
 <!-- main container -->
 <div class="game-container">
-
   <div class = "info-icon" id="info-icon">ℹ️</div>
   <div class = "sumfing-title" id="headline">Sumfing</div>
   <div class = "footnote" id="date"></div><br>
-
 <!-- Gameplay elements -->
   <div id = "gameplay-elements">
     <div class="box-container" id="box-container"></div>
@@ -35,22 +74,20 @@ order: 400
     <button id="hint2-button">Another hint?</button>
     <button id="reveal-button">Show answer</button>
   </div>
-
 <!-- Completion elements (initially hidden) -->
   <div id="completion-elements" style="display: none;">
     <ul id="clue-summary">
         <li>Easy: <span id="clue-easy">0</span></li>
         <li>Medium: <span id="clue-medium">0</span></li>
         <li>Hard: <span id="clue-hard">0</span></li>
+        <li id="row-extra">Extra: <span id="clue-extra">0</span></li>
     </ul>
     <div id="streak"></div>
     <button id="share-button">Share</button>
     <p id="countdown-message">Sumfing else in 00 hours and 00 minutes</p>
     <a href="#" id="review-link">Admire your work</a>
   </div>
-
 </div>
-
 <!-- Shared Modal -->
 <div id="shared-modal" class="sumfing-modal-overlay" style="display: none;">
   <div class="sumfing-modal-content">
@@ -58,10 +95,74 @@ order: 400
     <div id="shared-modal-body"></div>
   </div>
 </div>
-
-<script src="/games/sumfing/assets/js/modals.js" defer></script>
-
 <script>
+
+// Modals Content //
+const welcomeHTML = `
+    <div class = "sumfing-modal-title">Sumfing</div>
+    <h3>Arrange the tiles to solve the sum</h3>
+    2️⃣ ➕ 3️⃣ = 5 ✅<br><br>
+    Work through the <strong>easy</strong>, <strong>medium</strong>, and <strong>hard</strong> sums.<br><br>
+    How many can you solve?<br>
+    <img src="/games/sumfing/assets/images/degu.png" alt="degu" style="width: 200px;">
+    <button id="play-button">Play</button>
+    `
+
+const infoHTML = `
+    <div class = "sumfing-modal-title">How to play</div>
+    <h3>Arrange the tiles to solve the sum</strong></h3>
+    2️⃣ ➕ 3️⃣ = 5 ✅<br><br>
+    Work through the <strong>easy</strong>, <strong>medium</strong>, and <strong>hard</strong> sums.<br>
+    <hr>
+    The sums are worked out in a standard order, called BIDMAS (or PEMDAS).<br><br>
+    Multiplications and divisions are performed <strong>before</strong> additions and subtractions, even if they appear further right in the sum.<br><br>
+    2️⃣ ➕ 3️⃣ ✖️ 4️⃣ = 14 ✅<br><br>
+    2️⃣ ➕ 3️⃣ ✖️ 4️⃣ = 20 ❌
+    <hr>
+    <h3>Build your streak</h3>
+    There's a new Sumfing every day.<br>
+    <img src="/games/sumfing/assets/images/degu.png" alt="degu" style="width: 200px;">
+    `
+
+const operatorsHTML = `
+    <h2>Advanced tiles</h2>
+    The <strong>hard</strong> sum may use the exponent or factorial tiles.<br>
+    <hr>
+    <h3>Exponent</h3>
+    <code>a ^ b</code> means <code>a</code> raised to the power of <code>b</code>.<br><br>
+    2️⃣ ^ 4️⃣ = 2 x 2 x 2 x 2<br><br>
+    Exponent operations are performed before any others.<br><br>
+    4️⃣ x 3️⃣ ^ 2️⃣ = 36 ✅<br><br>
+    4️⃣ x 3️⃣ ^ 2️⃣ = 144 ❌
+    <hr>
+    <h3>Factorial</h3>
+    4️⃣❗means 4 × 3 × 2 × 1 <br><br>
+    <div class="center-table">
+    <table class="grid-table">
+      <thead style="background: #c8c8c8">
+        <tr><td>Factorial</td><td>Value</td>
+      </thead>
+      <tbody>
+        <tr><td>1!</td><td>1</td></tr>
+        <tr><td>2!</td><td>2</td></tr>
+        <tr><td>3!</td><td>6</td></tr>
+        <tr><td>4!</td><td>24</td></tr>
+        <tr><td>5!</td><td>120</td></tr>
+        <tr><td>6!</td><td>720</td></tr>
+        <tr><td>7!</td><td>5040</td></tr>
+        <tr><td>8!</td><td>40320</td></tr>
+        <tr><td>9!</td><td>362880</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <img src="/games/sumfing/assets/images/degu.png" alt="degu" style="width: 200px;">
+    `
+
+const reviewHTML = `
+    <div class = "sumfing-modal-title" id="sumfing-modal-headline">Sumfing</div>
+    <div class = "footnote" id="sumfing-modal-date"></div><br>
+    <div id="review-content"></div>
+    `
 
 // global variables //
 let modalContext = 'welcome'; // initialise to welcome
@@ -75,13 +176,38 @@ let hint_answer = [];
 let hintTimeoutId = null;
 let revealTimeoutId = null;
 const standardDelay = 5000;
-const STAGES = ['Easy', 'Medium', 'Hard'];
+const STAGES = ['Easy', 'Medium', 'Hard', 'Extra'];
 const today = new Date().toISOString().split('T')[0];
 const dayNumber = getSumfingDayNumber(today);
 
 
+
 // main function on DOM content loaded
 document.addEventListener('DOMContentLoaded', () => {
+
+  // add close modals event listeners  
+  if (document.getElementById('shared-modal-close')) {
+    document.getElementById('shared-modal-close').addEventListener('click', () => {
+        document.getElementById('shared-modal').style.display = 'none';
+        if (modalContext === 'welcome') {startGameAfterModal();}
+     });
+   }
+
+  // clicking outside of the modal closes it
+  window.addEventListener('click', function (event) {
+    const modal = document.getElementById('shared-modal');
+    if (event.target === modal) {
+      modal.style.display = 'none';
+      if (modalContext === 'welcome') {
+        startGameAfterModal();
+      }
+    }
+  });
+
+  // event listener for info icon
+  document.getElementById('info-icon').addEventListener('click', () => {
+    showModal(infoHTML, 'info');
+  });
 
   document.getElementById('date').textContent = `${today}`;
 
@@ -90,7 +216,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const yesterday = new Date();
   yesterday.setDate(yesterday.getDate() - 1)
-  const yesterdayYyyymmdd = yesterday.toISOString().slice(0,10);  
+  const yesterdayYyyymmdd = yesterday.toISOString().slice(0,10);
+
 
   if (saved?.date === today) {
     progress = saved;
@@ -141,13 +268,7 @@ document.addEventListener('DOMContentLoaded', () => {
       console.error('Failed to fetch puzzle:', error);
     });
 
-    addEventListenersOnceOnly();
-});
-
-
-
-function addEventListenersOnceOnly() {
-    
+    // ADD EVENT listeners once only
     document.getElementById('hint1-button').addEventListener('click', revealHint1);
     document.getElementById('hint2-button').addEventListener('click', revealHint2);
     document.getElementById('reveal-button').addEventListener('click', revealAnswer);
@@ -156,32 +277,8 @@ function addEventListenersOnceOnly() {
         saveProgress();          
         initPuzzleUI(currentPuzzle); 
     });
-    
-     // add close modals event listeners  
-    if (document.getElementById('shared-modal-close')) {
-      document.getElementById('shared-modal-close').addEventListener('click', () => {
-          document.getElementById('shared-modal').style.display = 'none';
-          if (modalContext === 'welcome') {startGameAfterModal();}
-      });
-    }
 
-    // clicking outside of the modal closes it
-    window.addEventListener('click', function (event) {
-      const modal = document.getElementById('shared-modal');
-      if (event.target === modal) {
-        modal.style.display = 'none';
-        if (modalContext === 'welcome') {
-          startGameAfterModal();
-        }
-      }
-    });
-
-    // event listener for info icon
-    document.getElementById('info-icon').addEventListener('click', () => {
-      showModal(infoHTML, 'info');
-    });
-}
-
+});
 
 function showModal(content, context = null) {
   modalContext = context;
@@ -240,7 +337,7 @@ function initPuzzleUI(puzzle) {
     const headline = document.getElementById('headline');
     headline.textContent = `Sumfing ${stage}`;
     tiles=puzzle.Tiles;
-    expressions = currentPuzzle[stage][1];
+    expressions = puzzle[stage][1];
     hint_answer = expressions[0];
     headline.textContent = `Sumfing ${stage}`;
     unsolved = true;
@@ -302,7 +399,7 @@ function renderTiles(tiles, puzzlestage) {
     });
 
     const extraOpTiles = document.getElementById('extra-op-tiles');
-    if (progress.stage === 'Hard') {
+    if (progress.stage === 'Extra') {
         extraOpTiles.style.display = 'flex';
         extraOpTiles.innerHTML = '';
         ['!', '^'].forEach((op, i) => {
@@ -511,9 +608,23 @@ function advanceStage() {
     return;
   }
 
-  if (progress.stage === 'Hard') {
+  if (progress.stage === 'Extra') {
     // Puzzle fully complete
     progress.stage = 'Completed';
+    saveProgress();
+    return;
+  }
+
+  if (progress.stage === 'Hard') {
+    // Check if ANY clues were used in any stage
+    const anyCluesUsed = Object.values(progress.clues).some(count => count > 0);
+    if (!anyCluesUsed) {
+      // No clues used — bonus stage!
+      progress.stage = 'Extra';
+    } else {
+      // Otherwise, you're done
+      progress.stage = 'Completed';
+    }
     saveProgress();
     return;
   }
@@ -536,7 +647,7 @@ function saveProgress() {
 const emojiSummary = (n) => {
   if (n === 0) return '✅';
   if (n >= 3) return '❌';
-  return '💡'.repeat(n);
+  return '💡'.repeat(n)+'✅';
 };
 
 
@@ -552,6 +663,14 @@ function showCompletionPage() {
   document.getElementById('clue-easy').textContent = emojiSummary(Easy);
   document.getElementById('clue-medium').textContent = emojiSummary(Medium);
   document.getElementById('clue-hard').textContent = emojiSummary(Hard);
+
+  const extraAllowed = Easy === 0 && Medium === 0 && Hard === 0;
+  if (progress.stage === 'Completed' && extraAllowed) {
+    document.getElementById('row-extra').style.display = 'list-item';
+    document.getElementById('clue-extra').textContent = emojiSummary(Extra);
+  } else {
+    document.getElementById('row-extra').style.display = 'none';
+  }
 
   const streakCount = progress?.streak ?? 1;
   const dayLabel = streakCount === 1 ? 'day' : 'days';
@@ -577,6 +696,9 @@ if (shareButton) {
                     `Easy: ${emojiSummary(Easy)}\n` +
                     `Medium: ${emojiSummary(Medium)}\n` +
                     `Hard: ${emojiSummary(Hard)}`;
+    if (showExtra) {
+      shareText += `\nExtra: ${emojiSummary(Extra)}`;
+    }
     shareText += `\nsumfing.com`;
 
     if (navigator.share) {
@@ -613,4 +735,117 @@ function getSumfingDayNumber(dateStr) {
   return `#${dayNumber}`;
 }
 
+
+function showReviewModal() {
+  const container = document.createElement('div');
+  container.id = 'review-content';
+
+  const header = document.createElement('div');
+  header.innerHTML = `
+    <div class="sumfing-modal-title">Sumfing ${dayNumber}</div>
+    <div class="footnote">${today}</div>
+    <br>
+  `;
+  container.appendChild(header);
+
+  const stages = ['Easy', 'Medium', 'Hard'];
+  const { Easy, Medium, Hard, Extra } = progress.clues;
+  const extraAllowed = Easy === 0 && Medium === 0 && Hard === 0;
+  if (progress.stage === 'Completed' && extraAllowed) {
+    stages.push('Extra');
+  }
+
+  stages.forEach((stage, index) => {
+    setTimeout(() => {
+      const [target, expressions] = currentPuzzle[stage];
+      const expression = expressions[0];
+
+      const row = document.createElement('div');
+      row.className = 'sumfing-modal-review-row';
+
+      const clues = progress.clues[stage];
+      const stageHeader = document.createElement('p');
+      stageHeader.innerHTML = `<strong>${stage}:</strong> ${emojiSummary(clues)}`;
+
+      const tilesDiv = document.createElement('div');
+      tilesDiv.className = 'sumfing-modal-review-tiles';
+
+      const fullExpression = `${expression}=${target}`;
+      [...fullExpression].forEach(char => {
+        const tile = document.createElement('div');
+        tile.className = 'tile';
+
+        if (!isNaN(char)) {
+          tile.classList.add('number');
+        } else if (['+', '-', '*', '/'].includes(char)) {
+          tile.classList.add('operator');
+        } else if (['!', '^'].includes(char)) {
+          tile.classList.add('special');
+        } else if (char === '=') {
+          tile.classList.add('equals');
+        }
+
+        tile.textContent = char === '*' ? '×' : char === '/' ? '÷' : char;
+        tilesDiv.appendChild(tile);
+      });
+
+      row.appendChild(stageHeader);
+      row.appendChild(tilesDiv);
+      container.appendChild(row);
+    }, index * 1000);
+  });
+
+  // Final message
+  setTimeout(() => {
+    const allClues = stages.map(stage => progress.clues[stage]);
+    const totalClues = allClues.reduce((sum, clues) => sum + clues, 0);
+
+    const message = document.createElement('div');
+    message.className = 'sumfing-modal-final-message';
+
+    if (totalClues === 0) {
+      message.textContent = 'Perfect!';
+    } else if (totalClues === 1) {
+      message.textContent = 'Nice work!';
+    } else if (totalClues === 2) {
+      message.textContent = 'Not bad!';
+    } else if (totalClues === 3) {
+      message.textContent = 'Keep at it!';
+    } else {
+      message.textContent = 'Keep trying!';
+    }
+
+    message.style.marginTop = '1rem';
+    message.style.fontSize = '1.2rem';
+    message.style.fontWeight = 'bold';
+    message.style.textAlign = 'center';
+
+    // 👇 Add degu image
+    const deguImg = document.createElement('img');
+    deguImg.src = '/games/sumfing/assets/images/degu.png';
+    deguImg.alt = 'degu';
+    deguImg.style.width = '200px';
+    deguImg.style.marginTop = '0';
+    deguImg.style.display = 'block';
+    deguImg.style.marginLeft = 'auto';
+    deguImg.style.marginRight = 'auto';
+
+    container.appendChild(deguImg);
+    container.appendChild(message);
+  }, stages.length * 1000 + 200);
+
+  
+
+  // Use shared modal
+  showModal(container, 'review'); 
+}
+
+
 </script>
+
+    
+
+  
+  </main>
+</body>
+</html>
