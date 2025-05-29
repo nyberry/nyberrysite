@@ -42,18 +42,13 @@ const operatorsHTML = `
     <div class="center-table">
     <table class="grid-table">
       <thead style="background: #c8c8c8">
-        <tr><td>Factorial</td><td>Value</td>
+        <tr><td>Factorial</td><td>Value</td><td class="spacer" style="background: #ffffff"></td><td>Factorial</td><td>Value</td></tr
       </thead>
       <tbody>
-        <tr><td>1!</td><td>1</td></tr>
-        <tr><td>2!</td><td>2</td></tr>
-        <tr><td>3!</td><td>6</td></tr>
-        <tr><td>4!</td><td>24</td></tr>
-        <tr><td>5!</td><td>120</td></tr>
-        <tr><td>6!</td><td>720</td></tr>
-        <tr><td>7!</td><td>5040</td></tr>
-        <tr><td>8!</td><td>40320</td></tr>
-        <tr><td>9!</td><td>362880</td></tr>
+        <tr><td>2!</td><td>2</td><td class="spacer"></td><td>6!</td><td>720</td></tr>
+        <tr><td>3!</td><td>6</td><td class="spacer"></td><td>7!</td><td>5040</td></tr>
+        <tr><td>4!</td><td>24</td><td class="spacer"></td><td>8!</td><td>40320</td></tr>
+        <tr><td>5!</td><td>120</td><td class="spacer"></td><td>9!</td><td>362880</td></tr>
       </tbody>
     </table>
     </div>

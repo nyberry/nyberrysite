@@ -254,6 +254,13 @@ button.disabled-button {
   padding: 4px;
 }
 
+.grid-table td.spacer {
+  border-top: none;
+  border-bottom: none;
+  background: none;
+  width: 1rem;
+}
+
 
 /* table of contents ----------------------------------------------------------------------------------    */
 
