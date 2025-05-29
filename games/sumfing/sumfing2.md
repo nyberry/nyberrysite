@@ -98,8 +98,8 @@ const operatorsHTML = `
     <hr>
     <h3>Exponent</h3>
     <code>a ^ b</code> means <code>a</code> raised to the power of <code>b</code>.<br><br>
-    2️⃣ ^ 4️⃣ = 2 x 2 x 2 x 2 = 16 <br><br>
-    In BIDMAS, exponent operations are performed before any others.<br><br>
+    2️⃣ ^ 4️⃣ = 2 x 2 x 2 x 2<br><br>
+    Exponent operations are performed before any others.<br><br>
     4️⃣ ✖️ 3️⃣ ^ 2️⃣ = 36 ✅<br><br>
     4️⃣ ✖️ 3️⃣ ^ 2️⃣ = 144 ❌
     <hr>
