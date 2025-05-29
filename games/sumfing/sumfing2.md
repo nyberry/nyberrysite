@@ -78,8 +78,8 @@ const infoHTML = `
     <div class = "sumfing-modal-title">How to play</div>
     <h3>Arrange the tiles to solve the sum</strong></h3>
     2️⃣ ➕ 3️⃣ = 5 ✅<br><br>
-    Work through the <strong>easy</strong>, <strong>medium</strong>, and <strong>hard</strong> sums.<br><br>
-    How many can you solve?<br><hr>
+    Work through the <strong>easy</strong>, <strong>medium</strong>, and <strong>hard</strong> sums.<br>
+    <hr>
     The sums are worked out in a standard order, called BIDMAS (or PEMDAS).<br><br>
     Multiplications and divisions are performed <strong>before</strong> additions and subtractions, even if they appear further right in the sum.<br><br>
     2️⃣ ➕ 3️⃣ ✖️ 4️⃣ = 14 ✅<br><br>
@@ -100,8 +100,8 @@ const operatorsHTML = `
     <code>a ^ b</code> means <code>a</code> raised to the power of <code>b</code>.<br><br>
     2️⃣ ^ 4️⃣ = 2 x 2 x 2 x 2<br><br>
     Exponent operations are performed before any others.<br><br>
-    4️⃣ ✖️ 3️⃣ ^ 2️⃣ = 36 ✅<br><br>
-    4️⃣ ✖️ 3️⃣ ^ 2️⃣ = 144 ❌
+    4️⃣ x 3️⃣ ^ 2️⃣ = 36 ✅<br><br>
+    4️⃣ x 3️⃣ ^ 2️⃣ = 144 ❌
     <hr>
     <h3>Factorial</h3>
     4️⃣❗means 4 × 3 × 2 × 1 <br><br>
