@@ -26,6 +26,7 @@ order: 400
   <div class = "sumfing-title" id="headline">Sumfing</div>
   <div class = "footnote" id="date"></div><br>
   <div class = "degu-trophy" id="degu-trophy"><img src = "/games/sumfing/assets/images/degutrophy.png"></div>
+  <audio id="chimes" src="/games/sumfing/assets/audio/chime.mp3"></audio>
 
 <!-- Gameplay elements -->
   <div id = "gameplay-elements">
@@ -396,7 +397,8 @@ function checkExpression() {
         document.getElementById('reveal-button').style.display = 'none';
         document.getElementById('hint-level-input').value = hint_level;
         document.getElementById('next-button').style.display = 'block';
-        setTimeout(playCorrectSound, 500);
+        //setTimeout(playCorrectSound, 500);
+        document.getElementById("chimes").play();
     } else {
         setTimeout(playWrongSound, 500);
         document.getElementById('feedback').textContent = 'Not quite';
