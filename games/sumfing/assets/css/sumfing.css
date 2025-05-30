@@ -23,13 +23,32 @@
   align-items: center; /* ✅ ensures inner elements like tiles are centered */
 }
 
-.info-icon {
-    position: absolute;
-    top: 0;
-    right: 0;
-    cursor: pointer;
-    font-size: 1.8rem;
+.info-button-container {
+  position: absolute;
+  top: 0rem;
+  left: 0rem;
+  z-index: 10;
 }
+
+.mute-button-container {
+  position: absolute;
+  top: 0rem;
+  right: 0rem;
+  z-index: 10;
+}
+
+.info-icon,
+.mute-icon {
+  font-size: 1.8rem;
+  cursor: pointer;
+  user-select: none;
+}
+
+.degu-trophy {
+  display: none;
+  width: 200px;
+}
+
 
 
 .box-container {

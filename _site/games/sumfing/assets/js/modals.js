@@ -52,6 +52,7 @@ const operatorsHTML = `
       </tbody>
     </table>
     </div>
+    <img src="/games/sumfing/assets/images/degu.png" alt="degu" style="width: 200px;">
     `
 
 const reviewHTML = `

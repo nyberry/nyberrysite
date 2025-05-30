@@ -10,10 +10,11 @@ order: 400
 
 <!-- main container -->
 <div class="game-container">
-
-  <div class = "info-icon" id="info-icon">ℹ️</div>
+  <div class = "info-button-container"><div class="info-icon" id="info-icon">ℹ️</div></div>
+  <div class = "mute-button-container"><div class="mute-icon" id="mute-icon" aria-label="Toggle sound" tabindex="0" role="button">🔈</div></div>
   <div class = "sumfing-title" id="headline">Sumfing</div>
   <div class = "footnote" id="date"></div><br>
+  <div class = "degu-trophy" id="degu-trophy"><img src = "/games/sumfing/assets/images/degutrophy.png"></div>
 
 <!-- Gameplay elements -->
   <div id = "gameplay-elements">
@@ -37,7 +38,7 @@ order: 400
   </div>
 
 <!-- Completion elements (initially hidden) -->
-  <div id="completion-elements" style="display: none;">
+  <div id="completion-elements" style="display: none;"> 
     <ul id="clue-summary">
         <li>Easy: <span id="clue-easy">0</span></li>
         <li>Medium: <span id="clue-medium">0</span></li>
@@ -45,7 +46,7 @@ order: 400
     </ul>
     <div id="streak"></div>
     <button id="share-button">Share</button>
-    <p id="countdown-message">Sumfing else in 00 hours and 00 minutes</p>
+    <div class="footnote"><p id="countdown-message">Sumfing else in 00 hours and 00 minutes</p></div>
     <a href="#" id="review-link">Admire your work</a>
   </div>
 
@@ -60,6 +61,7 @@ order: 400
 </div>
 
 <script src="/games/sumfing/assets/js/modals.js" defer></script>
+<script src="/games/sumfing/assets/js/audio.js" defer></script>
 
 <script>
 
@@ -74,6 +76,7 @@ let hint_level = 0;
 let hint_answer = [];
 let hintTimeoutId = null;
 let revealTimeoutId = null;
+let audioCtx = null;
 const standardDelay = 5000;
 const STAGES = ['Easy', 'Medium', 'Hard'];
 const today = new Date().toISOString().split('T')[0];
@@ -82,6 +85,8 @@ const dayNumber = getSumfingDayNumber(today);
 
 // main function on DOM content loaded
 document.addEventListener('DOMContentLoaded', () => {
+
+  ensureAudioContext(); // ✅ set up the unlock-on-first-click listener
 
   document.getElementById('date').textContent = `${today}`;
 
@@ -334,6 +339,7 @@ function bindTileEvents() {
                 tile.style.visibility = 'hidden';
                 applyTileStyle(tile, emptyBox);
                 selectedTiles.push(tile.dataset.value);
+                playPlaceSound();
                 if (selectedTiles.length === document.querySelectorAll('.box').length) {
                     checkExpression();
                 }
@@ -349,6 +355,7 @@ function bindBoxEvents() {
                 const tile = [...document.querySelectorAll('.tile')].find(t => t.dataset.id === box.dataset.id);
                 if (tile) tile.style.visibility = 'visible';
                 selectedTiles.pop();
+                playRemoveSound();
                 box.textContent = '';
                 delete box.dataset.value;
                 delete box.dataset.id;
@@ -369,6 +376,7 @@ function bindBoxEvents() {
 function checkExpression() {
     const expression = [...document.querySelectorAll('.box')].map(b => b.dataset.value || '').join('');
     if (expressions.includes(expression)) {
+        playCorrectSound();
         document.getElementById('feedback').textContent = 'Correct ✅';
         unsolved = false;
         document.getElementById('hint1-button').style.display = 'none';
@@ -377,6 +385,7 @@ function checkExpression() {
         document.getElementById('hint-level-input').value = hint_level;
         document.getElementById('next-button').style.display = 'block';
     } else {
+        playWrongSound();
         document.getElementById('feedback').textContent = 'Not quite';
     }
 }
@@ -514,6 +523,7 @@ function advanceStage() {
   if (progress.stage === 'Hard') {
     // Puzzle fully complete
     progress.stage = 'Completed';
+    playArpeggio();
     saveProgress();
     return;
   }
@@ -546,6 +556,9 @@ function showCompletionPage() {
   document.getElementById('gameplay-elements').style.display = 'none';
   document.getElementById('completion-elements').style.display = 'block';
   document.getElementById('headline').textContent = `Sumfing ${dayNumber}`;
+
+  // Show the trophy degu image on completion
+  document.getElementById('degu-trophy').style.display = 'block';
 
   const { Easy, Medium, Hard, Extra } = progress.clues;
 
