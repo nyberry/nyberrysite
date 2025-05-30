@@ -196,7 +196,9 @@ button {
 
 button:hover {
   background-color: #218838;
+  transform: translateY(-4px);
 }
+
 
 button:disabled,
 button.disabled-button {
@@ -205,6 +207,33 @@ button.disabled-button {
   color: #ccc;
   background-color: #6c757d;
   cursor: default;
+}
+
+.button-row {
+  display: flex;
+  justify-content: center;  /* Or 'space-between', 'flex-start', etc. */
+  gap: 1rem;                /* Optional: space between buttons */
+  margin-top: 1rem;         /* Optional: spacing from elements above */
+}
+
+#next-button, #reveal-button, #hint1-button, #hint2-button, #share-button, #admire-button {
+    display: none;
+    position: relative;
+    padding: 10px 10px;
+    font-size: 24px;
+    cursor: pointer;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#reveal-button, #hint1-button, #hint2-button {
+    background-color: rgb(240, 140, 0);
+}
+
+#next-button, #share-button, #admire-button {
+    background-color: #25D366;
 }
 
 
@@ -367,8 +396,6 @@ button.disabled-button {
   width: 200px;
 }
 
-
-
 .box-container {
     display: flex;
     margin-bottom: 10px;
@@ -442,30 +469,20 @@ button.disabled-button {
 
 .sumfing-target {
     font-size: 34px;
-    margin-bottom: 14px;
-}
-
-.sumfing-feedback {
-    font-size: 24px;
     margin-bottom: 10px;
 }
 
-#next-button, #reveal-button, #hint1-button, #hint2-button {
-    display: none;
-    position: relative;
-    padding: 10px 10px;
-    font-size: 24px;
-    cursor: pointer;
-    background-color: rgb(240, 140, 0);
-    color: white;
-    border: none;
-    border-radius: 5px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+.sumfing-feedback {
+    font-size: 34px;
+    margin-bottom: 10px;
 }
 
-#next-button {
-    background-color: #25D366;
+.deguFeedback {
+  display: flex;
+  align-items: center;
+  height: 120px;
 }
+
 
 #clue-summary {
   list-style: none;

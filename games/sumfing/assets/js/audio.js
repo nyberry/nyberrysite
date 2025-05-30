@@ -23,7 +23,7 @@ function ensureAudioContext() {
 
 function playTone(frequency, duration = 100, type = 'sine') {
   if (soundMuted) return;
-  ensureAudioContext();
+  //ensureAudioContext();
 
   const oscillator = audioCtx.createOscillator();
   const gainNode = audioCtx.createGain();
@@ -42,11 +42,11 @@ function playTone(frequency, duration = 100, type = 'sine') {
 }
 
 function playPlaceSound() {
-  playTone(880, 20); // High A
+  playTone(880, 20); // blip
 }
 
 function playRemoveSound() {
-  playTone(440, 30); // Low A
+  playTone(440, 30); // blop
 }
 
 function playWrongSound() {
@@ -54,9 +54,13 @@ function playWrongSound() {
 }
 
 function playCorrectSound() {
-  playTone(1760, 300, 'triangle'); // High C (ding)
+  playTone(1760, 300, 'triangle'); // beep
 }
 
+function playChimes() {
+  if (soundMuted) return;
+  document.getElementById("chimes").play(); // kerching
+}
 
 function playArpeggio() {
   if (soundMuted || !audioCtx) return;

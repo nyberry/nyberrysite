@@ -24,7 +24,7 @@ order: 400
   <div class = "info-button-container"><div class="info-icon" id="info-icon">ℹ️</div></div>
   <div class = "mute-button-container"><div class="mute-icon" id="mute-icon" aria-label="Toggle sound" tabindex="0" role="button">🔈</div></div>
   <div class = "sumfing-title" id="headline">Sumfing</div>
-  <div class = "footnote" id="date"></div><br>
+  <div class = "footnote" id="date"></div>
   <div class = "degu-trophy" id="degu-trophy"><img src = "/games/sumfing/assets/images/degutrophy.png"></div>
   <audio id="chimes" src="/games/sumfing/assets/audio/chime.mp3"></audio>
 
@@ -32,8 +32,8 @@ order: 400
   <div id = "gameplay-elements">
     <div class="box-container" id="box-container"></div>
     <div class="sumfing-target" id="target-display"></div>
-    <div class="sumfing-result" id="result"></div>
-    <div class="sumfing-feedback" id="feedback">🤓</div><br>
+    <!-- <div class="sumfing-result" id="result"></div> -->
+    <div class="sumfing-feedback" id="feedback"></div>
     <div class="tile-container" id="num-tiles"></div>
     <div class="tile-container" id="op-tiles"></div>
     <div class="tile-container" id="extra-op-tiles" style="display: none;"></div>
@@ -57,9 +57,11 @@ order: 400
         <li>Hard: <span id="clue-hard">0</span></li>
     </ul>
     <div id="streak"></div>
-    <button id="share-button">Share</button>
+    <div class="button-row">
+      <button id="share-button">Share</button>
+      <button id="admire-button">Admire</button>
+    </div>
     <div class="footnote"><p id="countdown-message">Sumfing else in 00 hours and 00 minutes</p></div>
-    <a href="#" id="review-link">Admire your work</a>
   </div>
 
 </div>
@@ -269,7 +271,7 @@ function initPuzzleUI(puzzle) {
     renderTiles(tiles, puzzle[stage]);
     bindTileEvents();
     bindBoxEvents();
-    document.getElementById('feedback').textContent = '🤓';  // clear immediately
+    showFeedbackDegu("neutral");
 
     // Delay hint reveal
     setTimeout(() => {
@@ -342,6 +344,26 @@ function renderTiles(tiles, puzzlestage) {
 
 /* Gameplay functions */
 
+function showFeedbackDegu(feedback) {
+  const feedbackDegu = document.getElementById('feedback');
+  if (feedback === "neutral") {
+    feedbackDegu.innerHTML = `<div class="deguFeedback">
+      <img src="/games/sumfing/assets/images/degu.png" style="height: 100%;">
+    </div>`;
+  }
+  else if (feedback === "correct") {
+    feedbackDegu.innerHTML = `<div class="deguFeedback">
+      <span>Correct✅</span>
+    </div>`;
+  }
+  else if (feedback === "notQuite") {
+    feedbackDegu.innerHTML = `<div class="deguFeedback">
+      <span>Not quite...</span>
+    </div>`;
+  }
+}
+
+
 function bindTileEvents() {
     document.querySelectorAll('.tile').forEach(tile => {
         tile.addEventListener('click', () => {
@@ -379,7 +401,7 @@ function bindBoxEvents() {
                 if (hint_level === 2) showOperators();
                 if (hint_level === 3) showAnswers();
                 if (selectedTiles.length < document.querySelectorAll('.box').length) {
-                    document.getElementById('feedback').textContent = '🤓';
+                    showFeedbackDegu('neutral');
                     document.getElementById('next-button').style.display = 'none';
                 }
             }
@@ -390,18 +412,17 @@ function bindBoxEvents() {
 function checkExpression() {
     const expression = [...document.querySelectorAll('.box')].map(b => b.dataset.value || '').join('');
     if (expressions.includes(expression)) {
-        document.getElementById('feedback').textContent = 'Correct ✅';
+        showFeedbackDegu('correct');
         unsolved = false;
         document.getElementById('hint1-button').style.display = 'none';
         document.getElementById('hint2-button').style.display = 'none';
         document.getElementById('reveal-button').style.display = 'none';
         document.getElementById('hint-level-input').value = hint_level;
         document.getElementById('next-button').style.display = 'block';
-        //setTimeout(playCorrectSound, 500);
-        document.getElementById("chimes").play();
+        playChimes();
     } else {
         setTimeout(playWrongSound, 500);
-        document.getElementById('feedback').textContent = 'Not quite';
+        showFeedbackDegu('notQuite');
     }
 }
 
@@ -464,7 +485,7 @@ function clearBoxesAndTiles() {
         }
     });
     selectedTiles = [];
-    document.getElementById('feedback').textContent = '🤓';
+    showFeedbackDegu('neutral');
     document.getElementById('hint1-button').style.display = 'none';
     document.getElementById('hint2-button').style.display = 'none';
     document.getElementById('reveal-button').style.display = 'none';
@@ -533,6 +554,7 @@ function advanceStage() {
     progress.stage = STAGES[currentIndex + 1];
     saveProgress();
     playPlaceSound();
+    showFeedbackDegu('neutral');
     return;
   }
 
@@ -587,8 +609,10 @@ function showCompletionPage() {
   document.getElementById('streak').textContent = `Streak: ${streakCount} ${dayLabel}`;
 
   updateCountdownToMidnight();
-
-  document.getElementById('review-link').addEventListener('click', (e) => {
+  
+  document.getElementById('share-button').style.display = 'block';
+  document.getElementById('admire-button').style.display = 'block';
+  document.getElementById('admire-button').addEventListener('click', (e) => {
     e.preventDefault();
     showReviewModal();
   });
