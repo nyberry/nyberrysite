@@ -389,7 +389,6 @@ function bindBoxEvents() {
 function checkExpression() {
     const expression = [...document.querySelectorAll('.box')].map(b => b.dataset.value || '').join('');
     if (expressions.includes(expression)) {
-        playCorrectSound();
         document.getElementById('feedback').textContent = 'Correct ✅';
         unsolved = false;
         document.getElementById('hint1-button').style.display = 'none';
@@ -397,8 +396,9 @@ function checkExpression() {
         document.getElementById('reveal-button').style.display = 'none';
         document.getElementById('hint-level-input').value = hint_level;
         document.getElementById('next-button').style.display = 'block';
+        setTimeout(playCorrectSound, 500);
     } else {
-        playWrongSound();
+        setTimeout(playWrongSound, 500);
         document.getElementById('feedback').textContent = 'Not quite';
     }
 }
@@ -530,6 +530,7 @@ function advanceStage() {
     // Move to next stage
     progress.stage = STAGES[currentIndex + 1];
     saveProgress();
+    playPlaceSound();
     return;
   }
 
@@ -537,7 +538,6 @@ function advanceStage() {
     // Puzzle fully complete
     progress.stage = 'Completed';
     playArpeggio();
-    playCorrectSound();
     saveProgress();
     return;
   }
