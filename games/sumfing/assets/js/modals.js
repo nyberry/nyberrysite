@@ -156,7 +156,7 @@ function showReviewModal() {
 
     // 👇 Add degu image
     const deguImg = document.createElement('img');
-    deguImg.src = '/games/sumfing/assets/images/degu.png';
+    deguImg.src = '/games/sumfing/assets/images/degutrophy.png';
     deguImg.alt = 'degu';
     deguImg.style.width = '200px';
     deguImg.style.marginTop = '0';
