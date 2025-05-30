@@ -1,3 +1,81 @@
+body {
+    margin: 0;
+    font-family: sans-serif;
+    background-color: #dddddd;
+}
+
+
+.main-container {
+    text-align: center;
+    padding: 1rem;
+    max-width: 600px;
+    margin: 10px auto 0 auto;
+    width: 100%;
+    box-sizing: border-box;
+    overflow-y: auto;
+}
+
+
+img {
+    max-width: 100%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+
+.center-table {
+  text-align: center;
+}
+
+.grid-table {
+  border-collapse: collapse;
+  margin: 0 auto;
+}
+
+.grid-table th,
+.grid-table td {
+  border: 1px solid grey;
+  padding: 4px;
+}
+
+.grid-table td.spacer {
+  border-top: none;
+  border-bottom: none;
+  background: none;
+  width: 1rem;
+}
+
+
+
+/* Buttons ------------------------------------------------------------------------------------------------------ */
+button {
+  margin-top: 1rem;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: opacity 0.3s ease, color 0.3s ease, background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #218838;
+}
+
+button:disabled,
+button.disabled-button {
+  opacity: 0.5;
+  pointer-events: none;
+  color: #ccc;
+  background-color: #6c757d;
+  cursor: default;
+}
+
+
 .game-container {
     display: flex;
     flex-direction: column;

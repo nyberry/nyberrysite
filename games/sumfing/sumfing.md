@@ -1,11 +1,22 @@
 ---
-layout: layout.html
 title: Sumfing
 description: A simple yet challenging number game. Can you arrange the tiles to solve the sum? Nothing to do with medicine.
 image: /games/sumfing/assets/images/demoImage.png
 order: 400
 ---
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{{ title }}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/games/sumfing/assets/css/sumfing.css">
+</head>
+
+<body>
+ <main class="main-container">
+     
 <link rel="stylesheet" href="/games/sumfing/assets/css/sumfing.css">
 
 <!-- main container -->
@@ -59,6 +70,8 @@ order: 400
     <div id="shared-modal-body"></div>
   </div>
 </div>
+
+ </main>
 
 <script src="/games/sumfing/assets/js/modals.js" defer></script>
 <script src="/games/sumfing/assets/js/audio.js" defer></script>
@@ -628,3 +641,6 @@ function getSumfingDayNumber(dateStr) {
 }
 
 </script>
+
+</body>
+</html>
