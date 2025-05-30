@@ -524,6 +524,7 @@ function advanceStage() {
     // Puzzle fully complete
     progress.stage = 'Completed';
     playArpeggio();
+    playCorrectSound();
     saveProgress();
     return;
   }
