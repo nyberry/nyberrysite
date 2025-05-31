@@ -59,7 +59,7 @@ function playChimes() {
   document.getElementById("chimes").play(); // kerching
 }
 
-function playArpeggio() {
+function playFanfare() {
    if (soundMuted) return;
    document.getElementById("fanfare").play(); // kerching
 }

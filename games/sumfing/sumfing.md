@@ -121,7 +121,7 @@ document.addEventListener('DOMContentLoaded', () => {
       streak,
       lastPlayed: today
     };
-    saveProgress();  // ✅ Save it immediately
+    saveProgress(); 
     console.log('No data in local storage, progress initialised to:', progress);
     }
 
@@ -143,8 +143,8 @@ document.addEventListener('DOMContentLoaded', () => {
         console.log('Todays puzzle:', puzzle);
         if (progress?.stage === 'Completed') {
             console.log('Puzzle already completed, showing summary...');
-            showCompletionPage(); // 👈 Show summary immediately
-            return; // 👈 Stop further game logic
+            showCompletionPage(); 
+            return; 
         }
       } else {
         console.error('No puzzle found for today:', today);
@@ -346,7 +346,7 @@ function showFeedbackDegu(feedback) {
   }
   else if (feedback === "correct") {
     feedbackDegu.innerHTML = `<div class="deguFeedback">
-      <span>Correct✅</span>
+      <span>Correct ✅</span>
     </div>`;
   }
   else if (feedback === "notQuite") {
@@ -554,7 +554,8 @@ function advanceStage() {
   if (progress.stage === 'Hard') {
     // Puzzle fully complete
     progress.stage = 'Completed';
-    playArpeggio();
+    document.getElementById('next-button').textContent = 'See results';
+    playFanfare();
     saveProgress();
     return;
   }
