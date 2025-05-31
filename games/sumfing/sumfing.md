@@ -33,10 +33,7 @@ order: 400
         <div id="extra-op-info" class="footnote" style="display: none; text-align: center;">
             <a href="#" onclick="showModal(operatorsHTML, 'operators'); return false;">What are these?</a>
         </div>
-        <form onsubmit="return false;">
-            <input type="hidden" name="hint_level" id="hint-level-input">
-            <button id="next-button">Next</button>
-        </form>
+        <button id="next-button">Next</button>
         <button id="hint1-button">Hint?</button>
         <button id="hint2-button">Another hint?</button>
         <button id="reveal-button">Show answer</button>
