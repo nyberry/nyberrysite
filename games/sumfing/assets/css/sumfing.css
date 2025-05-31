@@ -71,7 +71,7 @@ button.disabled-button {
   margin-top: 1rem;         /* Optional: spacing from elements above */
 }
 
-#next-button, #reveal-button, #play-button, #hint1-button, #hint2-button, #share-button, #admire-button {
+#next-button, #see-results-button, #reveal-button, #play-button, #hint1-button, #hint2-button, #share-button, #admire-button, #extra-yes, #extra-no {
     display: none;
     position: relative;
     padding: 10px 10px;
@@ -83,11 +83,11 @@ button.disabled-button {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-#reveal-button, #hint1-button, #hint2-button {
+#reveal-button, #hint1-button, #hint2-button, #extra-no {
     background-color: rgb(240, 140, 0);
 }
 
-#next-button, #share-button, #play-button, #admire-button {
+#next-button, #see-results-button, #share-button, #play-button, #admire-button, #extra-yes {
     background-color: #25D366;
 }
 

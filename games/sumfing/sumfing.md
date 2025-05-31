@@ -34,6 +34,7 @@ order: 400
             <a href="#" onclick="showModal(operatorsHTML, 'operators'); return false;">What are these?</a>
         </div>
         <button id="next-button">Next</button>
+        <button id="see-results-button">See results</button>
         <button id="hint1-button">Hint?</button>
         <button id="hint2-button">Another hint?</button>
         <button id="reveal-button">Show answer</button>
@@ -44,6 +45,7 @@ order: 400
             <li>Easy: <span id="clue-easy"></span></li>
             <li>Medium: <span id="clue-medium"></span></li>
             <li>Hard: <span id="clue-hard"></span></li>
+            <li id="clue-extra-item">Extra: <span id="clue-extra"></span></li>
         </ul>
         <div id="streak"></div>
         <div class="button-row">
@@ -59,12 +61,11 @@ order: 400
         <span id="shared-modal-close" class="sumfing-modal-close">&times;</span>
         <div id="shared-modal-body"></div>
       </div>
-      <audio id="chimes" src="/games/sumfing/assets/audio/chime.mp3"></audio>
-      <audio id="nope" src="/games/sumfing/assets/audio/nope.mp3"></audio>
-      <audio id="fanfare" src="/games/sumfing/assets/audio/fanfare.mp3"></audio>
     </div>
+    <audio id="chimes" src="/games/sumfing/assets/audio/chime.mp3"></audio>
+    <audio id="nope" src="/games/sumfing/assets/audio/nope.mp3"></audio>
+    <audio id="fanfare" src="/games/sumfing/assets/audio/fanfare.mp3"></audio>
  </main>
-
 
 <script src="/games/sumfing/assets/js/modals.js" defer></script>
 <script src="/games/sumfing/assets/js/audio.js" defer></script>
@@ -84,7 +85,7 @@ let hintTimeoutId = null;
 let revealTimeoutId = null;
 let audioCtx = null;
 const standardDelay = 5000;
-const STAGES = ['Easy', 'Medium', 'Hard'];
+const STAGES = ['Easy', 'Medium', 'Hard', 'Extra'];
 const today = new Date().toISOString().split('T')[0];
 const dayNumber = getSumfingDayNumber(today);
 
@@ -196,7 +197,6 @@ function addEventListenersOnceOnly() {
 
 function showModal(content, context = null) {
   modalContext = context;
-
   const container = document.getElementById('shared-modal-body');
   container.innerHTML = ''; // clear previous content
 
@@ -313,7 +313,7 @@ function renderTiles(tiles, puzzlestage) {
     });
 
     const extraOpTiles = document.getElementById('extra-op-tiles');
-    if (progress.stage === 'Hard') {
+    if (progress.stage === 'Extra') {
         extraOpTiles.style.display = 'flex';
         extraOpTiles.innerHTML = '';
         ['!', '^'].forEach((op, i) => {
@@ -334,24 +334,6 @@ function renderTiles(tiles, puzzlestage) {
 
 /* Gameplay functions */
 
-function showFeedbackDegu(feedback) {
-  const feedbackDegu = document.getElementById('feedback');
-  if (feedback === "neutral") {
-    feedbackDegu.innerHTML = `<div class="deguFeedback">
-      <img src="/games/sumfing/assets/images/degu.png" style="height: 100%;">
-    </div>`;
-  }
-  else if (feedback === "correct") {
-    feedbackDegu.innerHTML = `<div class="deguFeedback">
-      <span>Correct ✅</span>
-    </div>`;
-  }
-  else if (feedback === "notQuite") {
-    feedbackDegu.innerHTML = `<div class="deguFeedback">
-      <span>Not quite...</span>
-    </div>`;
-  }
-}
 
 
 function bindTileEvents() {
@@ -407,7 +389,9 @@ function checkExpression() {
         document.getElementById('hint1-button').style.display = 'none';
         document.getElementById('hint2-button').style.display = 'none';
         document.getElementById('reveal-button').style.display = 'none';
-        if (progress.stage === 'Hard') {document.getElementById('next-button').textContent = 'See results';}
+        const nextBtn = document.getElementById('next-button');
+        const resultsBtn = document.getElementById('see-results-button');
+        if (progress.stage === 'Extra') {document.getElementById('next-button').textContent = 'See results';}
         document.getElementById('next-button').style.display = 'block';
         playChimes();
     } else {
@@ -415,6 +399,26 @@ function checkExpression() {
         showFeedbackDegu('notQuite');
     }
 }
+
+function showFeedbackDegu(feedback) {
+  const feedbackDegu = document.getElementById('feedback');
+  if (feedback === "neutral") {
+    feedbackDegu.innerHTML = `<div class="deguFeedback">
+      <img src="/games/sumfing/assets/images/degu.png" style="height: 100%;">
+    </div>`;
+  }
+  else if (feedback === "correct") {
+    feedbackDegu.innerHTML = `<div class="deguFeedback">
+      <span>Correct ✅</span>
+    </div>`;
+  }
+  else if (feedback === "notQuite") {
+    feedbackDegu.innerHTML = `<div class="deguFeedback">
+      <span>Not quite...</span>
+    </div>`;
+  }
+}
+
 
 function applyTileStyle(tile, box) {
     box.style.backgroundColor = getComputedStyle(tile).backgroundColor;
@@ -540,7 +544,6 @@ function advanceStage() {
   console.log('Completed stage', currentIndex, progress.stage);
 
   if (progress.stage === 'Easy' || progress.stage === 'Medium') {
-    // Move to next stage
     progress.stage = STAGES[currentIndex + 1];
     saveProgress();
     playPlaceSound();
@@ -548,18 +551,72 @@ function advanceStage() {
     return;
   }
 
-  if (progress.stage === 'Hard') {
-    // Puzzle fully complete
+ else if (progress.stage === 'Hard') {
+  showModal(offerextraHTML, 'offerextra');
+
+  setTimeout(() => {
+    const yesBtn = document.getElementById('extra-yes');
+    const noBtn = document.getElementById('extra-no');
+    const modalOverlay = document.getElementById('shared-modal');
+    const modalClose = document.getElementById('shared-modal-close');
+
+    const closeAndComplete = () => {
+      modalOverlay.style.display = 'none';
+      progress.stage = 'Completed';
+      saveProgress();
+      playFanfare();
+      showCompletionPage();
+      window.removeEventListener('click', outsideClickHandler);
+    };
+
+    const outsideClickHandler = (event) => {
+      if (event.target === modalOverlay) {
+        closeAndComplete();
+      }
+    };
+
+    window.addEventListener('click', outsideClickHandler);
+
+    // ✅ Close button click
+    if (modalClose) {
+      modalClose.addEventListener('click', () => {
+        closeAndComplete();
+      });
+    }
+
+    // ✅ "Yes" and "No" buttons
+    if (yesBtn && noBtn) {
+      yesBtn.addEventListener('click', () => {
+        window.removeEventListener('click', outsideClickHandler);
+        modalOverlay.style.display = 'none';
+        progress.stage = 'Extra';
+        progress.extraAttempted = true;
+        saveProgress();
+        playPlaceSound();
+        showFeedbackDegu('neutral');
+        initPuzzleUI(currentPuzzle);
+      });
+
+      noBtn.addEventListener('click', () => {
+        closeAndComplete();
+      });
+    } else {
+      console.warn("Modal buttons not found.");
+    }
+  }, 100);
+}
+
+  else if (progress.stage === 'Extra') {
     progress.stage = 'Completed';
     playFanfare();
     saveProgress();
-    return;
   }
 
-  // Fallback
-  console.log("Logic Error in stage advance function")
-  progress.stage = 'Completed';
-  saveProgress();
+  else {
+    console.log("Logic Error in stage advance function");
+    progress.stage = 'Completed';
+    saveProgress();
+  }
 }
 
 
@@ -586,13 +643,25 @@ function showCompletionPage() {
   document.getElementById('headline').textContent = `Sumfing ${dayNumber}`;
 
   // Show the trophy degu image on completion
-  document.getElementById('degu-trophy').style.display = 'block';
+  const trophy = document.getElementById('degu-trophy');
+  trophy.style.display = 'block';
 
   const { Easy, Medium, Hard, Extra } = progress.clues;
 
   setTimeout (() => {document.getElementById('clue-easy').textContent = emojiSummary(Easy);}, 700);
   setTimeout (() => {document.getElementById('clue-medium').textContent = emojiSummary(Medium);}, 1300);
   setTimeout (() => {document.getElementById('clue-hard').textContent = emojiSummary(Hard);}, 2000);
+
+  // ✅ Conditionally show Extra only if attempted
+  if (progress.extraAttempted) {
+    trophy.querySelector('img').src = '/games/sumfing/assets/images/deguTrophyAdvanced.png';
+    setTimeout(() => {
+      document.getElementById('clue-extra').textContent = emojiSummary(Extra);
+      document.getElementById('clue-extra-item').style.display = 'list-item';
+    }, 2600);
+  } else {
+    document.getElementById('clue-extra-item').style.display = 'none';
+  }
   
   const streakCount = progress?.streak ?? 1;
   const dayLabel = streakCount === 1 ? 'day' : 'days';
@@ -614,12 +683,14 @@ const shareButton = document.getElementById('share-button');
 if (shareButton) {
   shareButton.addEventListener('click', () => {
     const { Easy, Medium, Hard, Extra } = progress.clues;
-    const showExtra = progress.stage === 'Completed' && Easy === 0 && Medium === 0 && Hard === 0;
-
+    
     let shareText = `Sumfing ${dayNumber}\n` +
                     `Easy: ${emojiSummary(Easy)}\n` +
                     `Medium: ${emojiSummary(Medium)}\n` +
                     `Hard: ${emojiSummary(Hard)}`;
+    if (progress.extraAttempted) {
+      shareText += `\nExtra: ${emojiSummary(Extra)}`;
+    }
     shareText += `\nsumfing.com`;
 
     if (navigator.share) {

@@ -62,13 +62,13 @@ const reviewHTML = `
 
 const offerextraHTML = `
   <h2>Bonus level</h2>
-  Try the bonus level?
+  Try the bonus level?<br>
   (Advanced)
-  <div class="button-row">
-  <button id="yes-extra-button" style="display: block !important;">Yes</button></div>
-  <button id="no-extra-button" style="display: block !important;">No</button></div>
-  </div>
   <img src="/games/sumfing/assets/images/degu.png" alt="degu" style="width: 200px;">
+  <div class="button-row">
+  <button id="extra-yes" style="display: block !important;">Yes</button>
+  <button id="extra-no" style="display: block !important;">No</button>
+  </div>
   `
 
 
@@ -84,13 +84,12 @@ function showReviewModal() {
   `;
   container.appendChild(header);
 
-  const stages = ['Easy', 'Medium', 'Hard'];
-  const { Easy, Medium, Hard } = progress.clues;
-  const extraAllowed = Easy === 0 && Medium === 0 && Hard === 0;
-  if (progress.stage === 'Completed' && extraAllowed) {
-    stages.push('Extra');
-  }
 
+  const stages = ['Easy', 'Medium', 'Hard'];
+  if (progress.extraAttempted) stages.push('Extra');
+  
+  const { Easy, Medium, Hard, Extra } = progress.clues;
+  
   stages.forEach((stage, index) => {
     setTimeout(() => {
       const [target, expressions] = currentPuzzle[stage];
@@ -166,7 +165,8 @@ function showReviewModal() {
 
     // 👇 Add degu image
     const deguImg = document.createElement('img');
-    deguImg.src = '/games/sumfing/assets/images/degutrophy.png';
+    const trophySrc = progress.extraAttempted ? '/games/sumfing/assets/images/deguTrophyAdvanced.png' : '/games/sumfing/assets/images/degutrophy.png';
+    deguImg.src = trophySrc;
     deguImg.alt = 'degu';
     deguImg.style.width = '200px';
     deguImg.style.marginTop = '0';
