@@ -590,9 +590,9 @@ function showCompletionPage() {
 
   const { Easy, Medium, Hard, Extra } = progress.clues;
 
-  setTimeout (() => {document.getElementById('clue-easy').textContent = emojiSummary(Easy);}, 1000);
-  setTimeout (() => {document.getElementById('clue-medium').textContent = emojiSummary(Medium);}, 2000);
-  setTimeout (() => {document.getElementById('clue-hard').textContent = emojiSummary(Hard);}, 3000);
+  setTimeout (() => {document.getElementById('clue-easy').textContent = emojiSummary(Easy);}, 700);
+  setTimeout (() => {document.getElementById('clue-medium').textContent = emojiSummary(Medium);}, 1300);
+  setTimeout (() => {document.getElementById('clue-hard').textContent = emojiSummary(Hard);}, 2000);
   
   const streakCount = progress?.streak ?? 1;
   const dayLabel = streakCount === 1 ? 'day' : 'days';
