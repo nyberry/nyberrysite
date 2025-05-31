@@ -41,9 +41,9 @@ order: 400
       <!-- Completion elements (initially hidden) -->
       <div id="completion-elements" style="display: none;"> 
         <ul id="clue-summary">
-            <li>Easy: <span id="clue-easy">0</span></li>
-            <li>Medium: <span id="clue-medium">0</span></li>
-            <li>Hard: <span id="clue-hard">0</span></li>
+            <li>Easy: <span id="clue-easy"></span></li>
+            <li>Medium: <span id="clue-medium"></span></li>
+            <li>Hard: <span id="clue-hard"></span></li>
         </ul>
         <div id="streak"></div>
         <div class="button-row">
