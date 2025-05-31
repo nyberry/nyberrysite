@@ -50,11 +50,8 @@ function playRemoveSound() {
 }
 
 function playWrongSound() {
-  playTone(220, 300, 'square'); // Buzz
-}
-
-function playCorrectSound() {
-  playTone(1760, 300, 'triangle'); // beep
+  if (soundMuted) return;
+  document.getElementById("nope").play(); // nope
 }
 
 function playChimes() {
@@ -63,27 +60,8 @@ function playChimes() {
 }
 
 function playArpeggio() {
-  if (soundMuted || !audioCtx) return;
-
-  const notes = [440, 554, 659, 880]; // A4, C#5, E5, A5
-  const duration = 150; // ms
-  const gap = 120; // delay between notes in ms
-
-  notes.forEach((freq, i) => {
-    const oscillator = audioCtx.createOscillator();
-    const gainNode = audioCtx.createGain();
-
-    oscillator.connect(gainNode);
-    gainNode.connect(audioCtx.destination);
-
-    oscillator.type = 'sine';
-    oscillator.frequency.value = freq;
-
-    const startTime = audioCtx.currentTime + (i * gap) / 1000;
-    oscillator.start(startTime);
-    oscillator.stop(startTime + duration / 1000);
-    gainNode.gain.setValueAtTime(0.2, startTime);
-  });
+   if (soundMuted) return;
+   document.getElementById("fanfare").play(); // kerching
 }
 
 

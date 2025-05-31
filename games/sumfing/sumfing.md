@@ -22,7 +22,6 @@ order: 400
       <div class = "sumfing-title" id="headline">Sumfing</div>
       <div class = "footnote" id="date"></div>
       <div class = "degu-trophy" id="degu-trophy"><img src = "/games/sumfing/assets/images/degutrophy.png"></div>
-      <audio id="chimes" src="/games/sumfing/assets/audio/chime.mp3"></audio>
       <!-- Gameplay elements -->
       <div id = "gameplay-elements">
         <div class="box-container" id="box-container"></div>
@@ -63,6 +62,9 @@ order: 400
         <span id="shared-modal-close" class="sumfing-modal-close">&times;</span>
         <div id="shared-modal-body"></div>
       </div>
+      <audio id="chimes" src="/games/sumfing/assets/audio/chime.mp3"></audio>
+      <audio id="nope" src="/games/sumfing/assets/audio/nope.mp3"></audio>
+      <audio id="fanfare" src="/games/sumfing/assets/audio/fanfare.mp3"></audio>
     </div>
  </main>
 
