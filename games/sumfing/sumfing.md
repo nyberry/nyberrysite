@@ -596,7 +596,7 @@ function showCompletionPage() {
   
   const streakCount = progress?.streak ?? 1;
   const dayLabel = streakCount === 1 ? 'day' : 'days';
-  document.getElementById('streak').textContent = `Streak: ${streakCount} ${dayLabel}`;
+  setTimeout (() => {document.getElementById('streak').textContent = `Streak: ${streakCount} ${dayLabel}`;},3000);
 
   updateCountdownToMidnight();
   
