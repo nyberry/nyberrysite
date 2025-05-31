@@ -407,6 +407,7 @@ function checkExpression() {
         document.getElementById('hint1-button').style.display = 'none';
         document.getElementById('hint2-button').style.display = 'none';
         document.getElementById('reveal-button').style.display = 'none';
+        if (progress.stage === 'Hard') {document.getElementById('next-button').textContent = 'See results';}
         document.getElementById('next-button').style.display = 'block';
         playChimes();
     } else {
@@ -550,7 +551,6 @@ function advanceStage() {
   if (progress.stage === 'Hard') {
     // Puzzle fully complete
     progress.stage = 'Completed';
-    document.getElementById('next-button').textContent = 'See results';
     playFanfare();
     saveProgress();
     return;
