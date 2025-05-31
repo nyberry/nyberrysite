@@ -16,65 +16,56 @@ order: 400
 
 <body>
  <main class="main-container">
-     
-<link rel="stylesheet" href="/games/sumfing/assets/css/sumfing.css">
-
-<!-- main container -->
-<div class="game-container">
-  <div class = "info-button-container"><div class="info-icon" id="info-icon">ℹ️</div></div>
-  <div class = "mute-button-container"><div class="mute-icon" id="mute-icon" aria-label="Toggle sound" tabindex="0" role="button">🔈</div></div>
-  <div class = "sumfing-title" id="headline">Sumfing</div>
-  <div class = "footnote" id="date"></div>
-  <div class = "degu-trophy" id="degu-trophy"><img src = "/games/sumfing/assets/images/degutrophy.png"></div>
-  <audio id="chimes" src="/games/sumfing/assets/audio/chime.mp3"></audio>
-
-<!-- Gameplay elements -->
-  <div id = "gameplay-elements">
-    <div class="box-container" id="box-container"></div>
-    <div class="sumfing-target" id="target-display"></div>
-    <!-- <div class="sumfing-result" id="result"></div> -->
-    <div class="sumfing-feedback" id="feedback"></div>
-    <div class="tile-container" id="num-tiles"></div>
-    <div class="tile-container" id="op-tiles"></div>
-    <div class="tile-container" id="extra-op-tiles" style="display: none;"></div>
-    <div id="extra-op-info" class="footnote" style="display: none; text-align: center;">
-        <a href="#" onclick="showModal(operatorsHTML, 'operators'); return false;">What are these?</a>
+    <div class="game-container">
+      <div class = "info-button-container"><div class="info-icon" id="info-icon">ℹ️</div></div>
+      <div class = "mute-button-container"><div class="mute-icon" id="mute-icon" aria-label="Toggle sound" tabindex="0" role="button">🔈</div></div>
+      <div class = "sumfing-title" id="headline">Sumfing</div>
+      <div class = "footnote" id="date"></div>
+      <div class = "degu-trophy" id="degu-trophy"><img src = "/games/sumfing/assets/images/degutrophy.png"></div>
+      <audio id="chimes" src="/games/sumfing/assets/audio/chime.mp3"></audio>
+      <!-- Gameplay elements -->
+      <div id = "gameplay-elements">
+        <div class="box-container" id="box-container"></div>
+        <div class="sumfing-target" id="target-display"></div>
+        <div class="sumfing-feedback" id="feedback"></div>
+        <div class="tile-container" id="num-tiles"></div>
+        <div class="tile-container" id="op-tiles"></div>
+        <div class="tile-container" id="extra-op-tiles" style="display: none;"></div>
+        <div id="extra-op-info" class="footnote" style="display: none; text-align: center;">
+            <a href="#" onclick="showModal(operatorsHTML, 'operators'); return false;">What are these?</a>
+        </div>
+        <form onsubmit="return false;">
+            <input type="hidden" name="hint_level" id="hint-level-input">
+            <button id="next-button">Next</button>
+        </form>
+        <button id="hint1-button">Hint?</button>
+        <button id="hint2-button">Another hint?</button>
+        <button id="reveal-button">Show answer</button>
+      </div>
+      <!-- Completion elements (initially hidden) -->
+      <div id="completion-elements" style="display: none;"> 
+        <ul id="clue-summary">
+            <li>Easy: <span id="clue-easy">0</span></li>
+            <li>Medium: <span id="clue-medium">0</span></li>
+            <li>Hard: <span id="clue-hard">0</span></li>
+        </ul>
+        <div id="streak"></div>
+        <div class="button-row">
+          <button id="share-button">Share</button>
+          <button id="admire-button">Admire</button>
+        </div>
+        <div class="footnote"><p id="countdown-message">Sumfing else in 00 hours and 00 minutes</p></div>
+      </div>
     </div>
-    <form onsubmit="return false;">
-        <input type="hidden" name="hint_level" id="hint-level-input">
-        <button id="next-button">Next</button>
-    </form>
-    <button id="hint1-button">Hint?</button>
-    <button id="hint2-button">Another hint?</button>
-    <button id="reveal-button">Show answer</button>
-  </div>
-
-<!-- Completion elements (initially hidden) -->
-  <div id="completion-elements" style="display: none;"> 
-    <ul id="clue-summary">
-        <li>Easy: <span id="clue-easy">0</span></li>
-        <li>Medium: <span id="clue-medium">0</span></li>
-        <li>Hard: <span id="clue-hard">0</span></li>
-    </ul>
-    <div id="streak"></div>
-    <div class="button-row">
-      <button id="share-button">Share</button>
-      <button id="admire-button">Admire</button>
+    <!-- Shared Modal template -->
+    <div id="shared-modal" class="sumfing-modal-overlay" style="display: none;">
+      <div class="sumfing-modal-content">
+        <span id="shared-modal-close" class="sumfing-modal-close">&times;</span>
+        <div id="shared-modal-body"></div>
+      </div>
     </div>
-    <div class="footnote"><p id="countdown-message">Sumfing else in 00 hours and 00 minutes</p></div>
-  </div>
-
-</div>
-
-<!-- Shared Modal -->
-<div id="shared-modal" class="sumfing-modal-overlay" style="display: none;">
-  <div class="sumfing-modal-content">
-    <span id="shared-modal-close" class="sumfing-modal-close">&times;</span>
-    <div id="shared-modal-body"></div>
-  </div>
-</div>
-
  </main>
+
 
 <script src="/games/sumfing/assets/js/modals.js" defer></script>
 <script src="/games/sumfing/assets/js/audio.js" defer></script>
