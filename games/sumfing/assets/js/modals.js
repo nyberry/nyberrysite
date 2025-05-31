@@ -7,7 +7,7 @@ const welcomeHTML = `
     Work through the <strong>easy</strong>, <strong>medium</strong>, and <strong>hard</strong> sums.<br><br>
     How many can you solve?<br>
     <img src="/games/sumfing/assets/images/degu.png" alt="degu" style="width: 200px;">
-    <div class="button-row><button id="play-button" style="display: block;">Play</button></div>
+    <div class="button-row"><button id="play-button" style="display: block;">Play</button></div>
     `
 
 const infoHTML = `
