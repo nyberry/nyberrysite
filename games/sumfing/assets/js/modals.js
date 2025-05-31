@@ -60,6 +60,17 @@ const reviewHTML = `
     <div id="review-content"></div>
     `
 
+const offerextraHTML = `
+  <h2>Bonus level</h2>
+  Try the bonus level?
+  (Advanced)
+  <div class="button-row">
+  <button id="yes-extra-button" style="display: block !important;">Yes</button></div>
+  <button id="no-extra-button" style="display: block !important;">No</button></div>
+  </div>
+  <img src="/games/sumfing/assets/images/degu.png" alt="degu" style="width: 200px;">
+  `
+
 
 function showReviewModal() {
   const container = document.createElement('div');
