@@ -613,17 +613,6 @@ function saveProgress() {
 }
 
 
-// Completion page //
-
-// Helper function to return emoji summary
-const emojiSummary = (n) => {
-  if (n === 0) return '✅';
-  if (n >= 3) return '❌';
-  return '💡'.repeat(n);
-};
-
-
-// Update Completion Page
 function showCompletionPage() {
 
   const { Easy, Medium, Hard, Extra } = progress.clues;
@@ -661,6 +650,15 @@ function showCompletionPage() {
 
   setTimeout (() => {updateCountdownToMidnight();}, delay * 7);
 }
+
+
+// Helper function to return emoji summary
+const emojiSummary = (n) => {
+  if (n === 0) return '✅';
+  if (n >= 3) return '❌';
+  return '💡'.repeat(n);
+};
+
 
 function attachShareButtonHandler() {
   const shareButton = document.getElementById('share-button');
