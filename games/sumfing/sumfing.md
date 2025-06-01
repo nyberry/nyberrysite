@@ -668,15 +668,17 @@ function showCompletionPage() {
   const dayLabel = streakCount === 1 ? 'day' : 'days';
   setTimeout (() => {document.getElementById('streak').textContent = `Streak: ${streakCount} ${dayLabel}`;},3000);
 
-  updateCountdownToMidnight();
-  
-  setTimeout (() => {document.getElementById('share-button').style.display = 'block';}, 3500)
-  setTimeout (() => {document.getElementById('admire-button').style.display = 'block';}, 4000)
+  setTimeout (() => {
+    document.getElementById('share-button').style.display = 'block';
+    document.getElementById('admire-button').style.display = 'block';
+    }, 3500);
 
   document.getElementById('admire-button').addEventListener('click', (e) => {
     e.preventDefault();
     showReviewModal();
   });
+
+  setTimeout (() => {updateCountdownToMidnight();},4000);
 }
 
 
