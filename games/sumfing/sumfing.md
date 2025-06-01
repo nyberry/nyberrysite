@@ -641,9 +641,10 @@ function showCompletionPage() {
   document.getElementById('completion-elements').style.display = 'block';
   document.getElementById('headline').textContent = `Sumfing ${dayNumber}`;
 
-  // Show the trophy degu image on completion
+  // Set the trophy degu image 
   const trophy = document.getElementById('degu-trophy');
-  trophy.style.display = 'block';
+  const trophySrc = progress.extraAttempted ? '/games/sumfing/assets/images/deguTrophyAdvanced.png' : '/games/sumfing/assets/images/degutrophy.png';
+  trophy.querySelector('img').src = trophySrc;
 
   const { Easy, Medium, Hard, Extra } = progress.clues;
 
@@ -668,12 +669,15 @@ function showCompletionPage() {
 
   updateCountdownToMidnight();
   
-  document.getElementById('share-button').style.display = 'block';
-  document.getElementById('admire-button').style.display = 'block';
+  setTimeout (() => {document.getElementById('share-button').style.display = 'block';}, 4000)
+  setTimeout (() => {document.getElementById('admire-button').style.display = 'block';}, 4500)
+
   document.getElementById('admire-button').addEventListener('click', (e) => {
     e.preventDefault();
     showReviewModal();
   });
+
+  setTimeout (() => {trophy.style.display = 'block';}, 5000)
 }
 
 
