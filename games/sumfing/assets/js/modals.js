@@ -62,8 +62,8 @@ const reviewHTML = `
 
 const offerextraHTML = `
   <h2>Bonus level</h2>
-  Try the bonus level?<br>
-  (Advanced)
+  <p>Try the extra level?</p><br>
+  <p>(Advanced)</p>
   <img src="/games/sumfing/assets/images/degu.png" alt="degu" style="width: 200px;">
   <div class="button-row">
   <button id="extra-yes" style="display: block !important;">Yes</button>
