@@ -454,7 +454,6 @@ function revealAnswer() {
     clearBoxesAndTiles();
     disableEventListeners();
     setTimeout(() => {
-        document.getElementById('hint-level-input').value = hint_level;
         document.getElementById('next-button').style.display = 'block';
     }, 2000);
 }

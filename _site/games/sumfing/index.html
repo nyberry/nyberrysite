@@ -438,15 +438,16 @@ function revealHint2() {
 }
 
 function revealAnswer() {
+    console.log("Starting reveal function");
     hint_level = 3;
     progress.clues[progress.stage] = 3;
     saveProgress();
     clearBoxesAndTiles();
     disableEventListeners();
     setTimeout(() => {
-        document.getElementById('hint-level-input').value = hint_level;
         document.getElementById('next-button').style.display = 'block';
     }, 2000);
+    console.log("Ending reveal function");
 }
 
 function disableEventListeners() {
