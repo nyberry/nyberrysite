@@ -52,7 +52,7 @@ order: 400
           <button id="share-button">Share</button>
           <button id="admire-button">Admire</button>
         </div>
-        <div class="footnote"><p id="countdown-message">Sumfing else in 00 hours and 00 minutes</p></div>
+        <div class="footnote"><p id="countdown-message"></p></div>
       </div>
     </div>
     <!-- Shared Modal template -->
