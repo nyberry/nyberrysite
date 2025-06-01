@@ -42,10 +42,10 @@ order: 400
       <!-- Completion elements (initially hidden) -->
       <div id="completion-elements" style="display: none;"> 
         <ul id="clue-summary">
-            <li>Easy: <span id="clue-easy"></span></li>
-            <li>Medium: <span id="clue-medium"></span></li>
-            <li>Hard: <span id="clue-hard"></span></li>
-            <li id="clue-extra-item">Extra: <span id="clue-extra"></span></li>
+            <li><span id="clue-easy"></span></li>
+            <li><span id="clue-medium"></span></li>
+            <li><span id="clue-hard"></span></li>
+            <li><span id="clue-extra"></span></li>
         </ul>
         <div id="streak"></div>
         <div class="button-row">
@@ -625,58 +625,53 @@ const emojiSummary = (n) => {
 
 // Update Completion Page
 function showCompletionPage() {
+
+  const { Easy, Medium, Hard, Extra } = progress.clues;
+  const streakCount = progress?.streak ?? 1;
+  const dayLabel = streakCount === 1 ? 'day' : 'days';
+  const delay = 700;
+
   // hide the game section
   document.getElementById('gameplay-elements').style.display = 'none';
   document.getElementById('completion-elements').style.display = 'block';
+
+  // start showing the page elements
   document.getElementById('headline').textContent = `Sumfing ${dayNumber}`;
 
-  // Set the trophy degu image 
   const trophy = document.getElementById('degu-trophy');
-  const trophySrc = progress.extraAttempted ? '/games/sumfing/assets/images/deguTrophyAdvanced.png' : '/games/sumfing/assets/images/degutrophy.png';
+  const trophySrc = (progress.extraAttempted && Extra != 3)
+    ? '/games/sumfing/assets/images/deguTrophyAdvanced.png'
+    : '/games/sumfing/assets/images/degutrophy.png';
   trophy.querySelector('img').src = trophySrc;
   trophy.style.display = 'block';
 
-  const { Easy, Medium, Hard, Extra } = progress.clues;
-
-  setTimeout (() => {document.getElementById('clue-easy').textContent = emojiSummary(Easy);}, 700);
-  setTimeout (() => {document.getElementById('clue-medium').textContent = emojiSummary(Medium);}, 1300);
-  setTimeout (() => {document.getElementById('clue-hard').textContent = emojiSummary(Hard);}, 2000);
-
-  // ✅ Conditionally show Extra only if attempted
-  if (progress.extraAttempted) {
-    trophy.querySelector('img').src = '/games/sumfing/assets/images/deguTrophyAdvanced.png';
-    setTimeout(() => {
-      document.getElementById('clue-extra').textContent = emojiSummary(Extra);
-      document.getElementById('clue-extra-item').style.display = 'list-item';
-    }, 2600);
-  } else {
-    document.getElementById('clue-extra-item').style.display = 'none';
-  }
+  setTimeout (() => {document.getElementById('clue-easy').textContent = 'Easy ' + emojiSummary(Easy);}, delay );
+  setTimeout (() => {document.getElementById('clue-medium').textContent = 'Medium ' + emojiSummary(Medium);}, delay * 2 );
+  setTimeout (() => {document.getElementById('clue-hard').textContent = 'Hard ' + emojiSummary(Hard);}, delay * 3);
+  if (progress.extraAttempted) { setTimeout(() => { document.getElementById('clue-extra').textContent = 'Extra ' + emojiSummary(Extra);}, delay * 4);}
   
-  const streakCount = progress?.streak ?? 1;
-  const dayLabel = streakCount === 1 ? 'day' : 'days';
-  setTimeout (() => {document.getElementById('streak').textContent = `Streak: ${streakCount} ${dayLabel}`;},3000);
+  setTimeout (() => {document.getElementById('streak').textContent = `Streak: ${streakCount} ${dayLabel}`;},delay * 5);
 
   setTimeout (() => {
     document.getElementById('share-button').style.display = 'block';
     document.getElementById('admire-button').style.display = 'block';
-    }, 3500);
+    attachShareButtonHandler();
+    attachAdmireButtonHandler();
+    }, delay * 6);
 
-  document.getElementById('admire-button').addEventListener('click', (e) => {
-    e.preventDefault();
-    showReviewModal();
-  });
-
-  setTimeout (() => {updateCountdownToMidnight();},4000);
+  setTimeout (() => {updateCountdownToMidnight();}, delay * 7);
 }
 
+function attachShareButtonHandler() {
+  const shareButton = document.getElementById('share-button');
+  if (!shareButton) return;
 
-// Share button handler
-const shareButton = document.getElementById('share-button');
-if (shareButton) {
-  shareButton.addEventListener('click', () => {
+  // Remove any existing listeners (optional but safe)
+  const newShareButton = shareButton.cloneNode(true);
+  shareButton.replaceWith(newShareButton);
+
+  newShareButton.addEventListener('click', () => {
     const { Easy, Medium, Hard, Extra } = progress.clues;
-    
     let shareText = `Sumfing ${dayNumber}\n` +
                     `Easy: ${emojiSummary(Easy)}\n` +
                     `Medium: ${emojiSummary(Medium)}\n` +
@@ -696,15 +691,23 @@ if (shareButton) {
   });
 }
 
+function attachAdmireButtonHandler() {
+  const oldBtn = document.getElementById('admire-button');
+  if (!oldBtn) return;
+  const newBtn = oldBtn.cloneNode(true);
+  oldBtn.replaceWith(newBtn);
+
+  newBtn.addEventListener('click', showReviewModal);
+}
+
+
 function updateCountdownToMidnight() {
   const now = new Date();
   const midnight = new Date(now);
   midnight.setHours(24, 0, 0, 0);
-
   const diffMs = midnight - now;
   const diffHrs = Math.floor(diffMs / 1000 / 60 / 60);
   const diffMins = Math.floor((diffMs / 1000 / 60) % 60);
-
   document.getElementById('countdown-message').textContent =
     `Sumfing else in ${String(diffHrs).padStart(2, '0')} hours and ${String(diffMins).padStart(2, '0')} minutes`;
 }
@@ -713,10 +716,8 @@ function updateCountdownToMidnight() {
 function getSumfingDayNumber(dateStr) {
   const start = new Date('2024-07-26'); // Day 1
   const today = new Date(dateStr); // e.g., '2025-05-27'
-  
   const msPerDay = 1000 * 60 * 60 * 24;
   const dayNumber = Math.floor((today - start) / msPerDay) + 1;
-  
   return `#${dayNumber}`;
 }
 

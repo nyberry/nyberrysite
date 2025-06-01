@@ -27,7 +27,7 @@ const infoHTML = `
     `
 
 const operatorsHTML = `
-    <h2>Advanced tiles</h2>
+    <div class = "sumfing-modal-title">Advanced Tiles</div>
     The <strong>hard</strong> sum may use the exponent or factorial tiles.<br>
     <hr>
     <h3>Exponent</h3>
@@ -61,9 +61,9 @@ const reviewHTML = `
     `
 
 const offerextraHTML = `
-  <h2>Bonus level</h2>
-  Try the bonus level?<br>
-  (Advanced)
+  <div class = "sumfing-modal-title">Bonus Level</div>
+  <p>Try the extra level?</p>
+  <p>(Advanced)</p>
   <img src="/games/sumfing/assets/images/degu.png" alt="degu" style="width: 200px;">
   <div class="button-row">
   <button id="extra-yes" style="display: block !important;">Yes</button>
@@ -165,7 +165,9 @@ function showReviewModal() {
 
     // 👇 Add degu image
     const deguImg = document.createElement('img');
-    const trophySrc = progress.extraAttempted ? '/games/sumfing/assets/images/deguTrophyAdvanced.png' : '/games/sumfing/assets/images/degutrophy.png';
+    const trophySrc = (progress.extraAttempted && Extra != 3)
+      ? '/games/sumfing/assets/images/deguTrophyAdvanced.png'
+      : '/games/sumfing/assets/images/degutrophy.png';
     deguImg.src = trophySrc;
     deguImg.alt = 'degu';
     deguImg.style.width = '200px';
