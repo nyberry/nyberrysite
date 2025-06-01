@@ -551,6 +551,7 @@ function advanceStage() {
   }
 
  else if (progress.stage === 'Hard') {
+
   showModal(offerextraHTML, 'offerextra');
 
   setTimeout(() => {
@@ -565,29 +566,17 @@ function advanceStage() {
       saveProgress();
       playFanfare();
       showCompletionPage();
-      window.removeEventListener('click', outsideClickHandler);
+      modalClose.removeEventListener('click', closeAndComplete);
     };
-
-    const outsideClickHandler = (event) => {
-      if (event.target === modalOverlay) {
-        closeAndComplete();
-      }
-    };
-
-    window.addEventListener('click', outsideClickHandler);
 
     // ✅ Close button click
-    if (modalClose) {
-      modalClose.addEventListener('click', () => {
-        closeAndComplete();
-      });
-    }
+    modalClose.addEventListener('click', closeAndComplete, { once: true });
 
     // ✅ "Yes" and "No" buttons
     if (yesBtn && noBtn) {
       yesBtn.addEventListener('click', () => {
-        window.removeEventListener('click', outsideClickHandler);
         modalOverlay.style.display = 'none';
+        modalClose.removeEventListener('click', closeAndComplete);
         progress.stage = 'Extra';
         progress.extraAttempted = true;
         saveProgress();
