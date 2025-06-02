@@ -154,7 +154,7 @@ document.addEventListener('DOMContentLoaded', () => {
       console.error('Failed to fetch puzzle:', error);
     });
 
-    addEventListenersOnceOnly();
+  addEventListenersOnceOnly();
 });
 
 
@@ -171,7 +171,6 @@ function addEventListenersOnceOnly() {
   const muted = localStorage.getItem('sumfing_audioMuted') === 'true';
 
   ensureAudioContext(); // ✅ set up the unlock-on-first-click listener
-  setAudioIcon(muted);
   if (muted && audioCtx?.state === 'running') audioCtx.suspend();
   if (muteIcon) muteIcon.addEventListener('click', toggleMute);
 

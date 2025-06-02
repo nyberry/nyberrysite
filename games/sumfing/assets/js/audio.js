@@ -83,5 +83,5 @@ function toggleMute() {
   }
 }
 
-
 let soundMuted = localStorage.getItem('sumfing_audioMuted') === 'true';
+setAudioIcon(soundMuted);
