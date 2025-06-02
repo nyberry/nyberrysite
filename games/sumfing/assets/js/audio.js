@@ -1,4 +1,3 @@
-let audioCtx = null;
 let soundMuted = localStorage.getItem('sumfing_audioMuted') === 'true';
 
 function ensureAudioContext() {

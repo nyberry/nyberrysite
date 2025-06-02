@@ -85,6 +85,7 @@ let hint_level = 0;
 let hint_answer = [];
 let hintTimeoutId = null;
 let revealTimeoutId = null;
+let audioCtx = null;
 
 const standardDelay = 5000;
 const STAGES = ['Easy', 'Medium', 'Hard', 'Extra'];
