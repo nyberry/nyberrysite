@@ -1,30 +1,51 @@
+let audioCtx = null;
+let soundMuted = localStorage.getItem('sumfing_audioMuted') === 'true';
+
 function ensureAudioContext() {
   document.addEventListener('click', () => {
     if (!audioCtx) {
       audioCtx = new (window.AudioContext || window.webkitAudioContext)();
 
-      // must actually *use* the context — even silently — to unlock
       const osc = audioCtx.createOscillator();
       const gain = audioCtx.createGain();
-
       osc.connect(gain);
       gain.connect(audioCtx.destination);
-
       osc.frequency.value = 0;
-      gain.gain.setValueAtTime(0, audioCtx.currentTime); // silent
+      gain.gain.setValueAtTime(0, audioCtx.currentTime);
       osc.start();
       osc.stop(audioCtx.currentTime + 0.01);
 
       console.log("AudioContext unlocked");
+
+      if (soundMuted && audioCtx.state === 'running') {
+        audioCtx.suspend();
+      }
     }
   }, { once: true });
 }
 
+function setAudioIcon(muted) {
+  const icon = document.getElementById('mute-icon');
+  if (icon) icon.textContent = muted ? '🔇' : '🔈';
+}
+
+function toggleMute() {
+  const current = localStorage.getItem('sumfing_audioMuted') === 'true';
+  const newState = !current;
+  soundMuted = newState;
+  localStorage.setItem('sumfing_audioMuted', newState);
+  setAudioIcon(newState);
+
+  if (audioCtx) {
+    audioCtx.suspend().catch(() => {});
+    if (!newState && audioCtx.state === 'suspended') {
+      audioCtx.resume();
+    }
+  }
+}
 
 function playTone(frequency, duration = 100, type = 'sine') {
-  if (soundMuted) return;
-  //ensureAudioContext();
-
+  if (soundMuted || !audioCtx) return;
   const oscillator = audioCtx.createOscillator();
   const gainNode = audioCtx.createGain();
 
@@ -41,47 +62,20 @@ function playTone(frequency, duration = 100, type = 'sine') {
   }, duration);
 }
 
-function playPlaceSound() {
-  playTone(880, 20); // blip
-}
-
-function playRemoveSound() {
-  playTone(440, 30); // blop
-}
+function playPlaceSound() { playTone(880, 20); }
+function playRemoveSound() { playTone(440, 30); }
 
 function playWrongSound() {
-  if (soundMuted) return;
-  document.getElementById("nope").play(); // nope
+  if (!soundMuted) document.getElementById("nope")?.play();
 }
-
 function playChimes() {
-  if (soundMuted) return;
-  document.getElementById("chimes").play(); // kerching
+  if (!soundMuted) document.getElementById("chimes")?.play();
 }
-
 function playFanfare() {
-   if (soundMuted) return;
-   document.getElementById("fanfare").play(); // kerching
+  if (!soundMuted) document.getElementById("fanfare")?.play();
 }
 
-
-function setAudioIcon(muted) {
-  const icon = document.getElementById('mute-icon');
-  icon.textContent = muted ? '🔇' : '🔈';
-}
-
-function toggleMute() {
-  const current = localStorage.getItem('sumfing_audioMuted') === 'true';
-  const newState = !current;
-  soundMuted = newState; // ✅ update global state
-  localStorage.setItem('sumfing_audioMuted', newState);
-  setAudioIcon(newState);
-  // optional: mute/unmute audio context if you're using Web Audio
-  if (audioCtx) {
-    audioCtx.suspend().catch(() => {}); // fallback
-    if (!newState && audioCtx.state === 'suspended') audioCtx.resume();
-  }
-}
-
-let soundMuted = localStorage.getItem('sumfing_audioMuted') === 'true';
-setAudioIcon(soundMuted);
+document.addEventListener('DOMContentLoaded', () => {
+  setAudioIcon(soundMuted);
+  document.getElementById('mute-icon')?.addEventListener('click', toggleMute);
+});

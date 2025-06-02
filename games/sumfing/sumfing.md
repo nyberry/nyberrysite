@@ -85,7 +85,6 @@ let hint_level = 0;
 let hint_answer = [];
 let hintTimeoutId = null;
 let revealTimeoutId = null;
-let audioCtx = null;
 
 const standardDelay = 5000;
 const STAGES = ['Easy', 'Medium', 'Hard', 'Extra'];
@@ -96,6 +95,7 @@ const dayNumber = getSumfingDayNumber(today);
 // main function on DOM content loaded
 document.addEventListener('DOMContentLoaded', () => {
 
+  ensureAudioContext();
   document.getElementById('date').textContent = `${today}`;
 
   const storageKey = 'sumfing_progress';
@@ -167,12 +167,6 @@ function addEventListenersOnceOnly() {
   const closeBtn = document.getElementById('shared-modal-close');
   const infoIcon = document.getElementById('info-icon');
   const modal = document.getElementById('shared-modal');
-  const muteIcon = document.getElementById('mute-icon');
-  const muted = localStorage.getItem('sumfing_audioMuted') === 'true';
-
-  ensureAudioContext(); // ✅ set up the unlock-on-first-click listener
-  if (muted && audioCtx?.state === 'running') audioCtx.suspend();
-  if (muteIcon) muteIcon.addEventListener('click', toggleMute);
 
   if (hint1Btn) hint1Btn.addEventListener('click', revealHint1);
   if (hint2Btn) hint2Btn.addEventListener('click', revealHint2);
