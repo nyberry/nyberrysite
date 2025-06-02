@@ -184,6 +184,7 @@ function addEventListenersOnceOnly() {
   }
 }
 
+
 function showModal(content, context = null) {
   modalContext = context;
   const container = document.getElementById('shared-modal-body');
