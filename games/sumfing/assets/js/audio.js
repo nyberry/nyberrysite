@@ -65,18 +65,23 @@ function playFanfare() {
 }
 
 
-let soundMuted = false;
-
-const muteIcon = document.getElementById('mute-icon');
-muteIcon.addEventListener('click', toggleMute);
-muteIcon.addEventListener('keydown', function (e) {
-  if (e.key === 'Enter' || e.key === ' ') {
-    e.preventDefault();
-    toggleMute();
-  }
-});
+function setAudioIcon(muted) {
+  const icon = document.getElementById('mute-icon');
+  icon.textContent = muted ? '🔇' : '🔈';
+}
 
 function toggleMute() {
-  soundMuted = !soundMuted;
-  muteIcon.textContent = soundMuted ? '🔇' : '🔈';
+  const current = localStorage.getItem('sumfing_audioMuted') === 'true';
+  const newState = !current;
+  soundMuted = newState; // ✅ update global state
+  localStorage.setItem('sumfing_audioMuted', newState);
+  setAudioIcon(newState);
+  // optional: mute/unmute audio context if you're using Web Audio
+  if (audioCtx) {
+    audioCtx.suspend().catch(() => {}); // fallback
+    if (!newState && audioCtx.state === 'suspended') audioCtx.resume();
+  }
 }
+
+
+let soundMuted = localStorage.getItem('sumfing_audioMuted') === 'true';

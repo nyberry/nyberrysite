@@ -8,7 +8,7 @@ body {
 .main-container {
     text-align: center;
     padding: 1rem;
-    max-width: 600px;
+    max-width: 500px;
     margin: 10px auto 0 auto;
     width: 100%;
     box-sizing: border-box;
@@ -271,6 +271,17 @@ button.disabled-button {
   z-index: 1000;
 }
 
+.sumfing-modal-header {
+  display: flex;
+  justify-content: flex-end;
+  padding: 0rem 0rem 0rem 0rem;
+}
+
+.sumfing-modal-close {
+    font-size: 2rem;
+    cursor: pointer;
+}
+
 .sumfing-modal-content {
   background: white;
   padding: 2rem;
@@ -285,16 +296,13 @@ button.disabled-button {
 
 .sumfing-modal-title {
     font-size: 33px;
-    margin-top: 30px;
+    text-align: center;
+    margin-top: 0px;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.sumfing-modal-close {
-  float: right;
-  font-size: 2rem; /* larger */
-  cursor: pointer;
-  margin-top: 0;
-  margin-right: 0;
-}
 
 .sumfing-modal-review-row {
   margin-bottom: 1rem;

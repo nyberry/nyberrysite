@@ -34,7 +34,6 @@ order: 400
             <a href="#" onclick="showModal(operatorsHTML, 'operators'); return false;">What are these?</a>
         </div>
         <button id="next-button">Next</button>
-        <button id="see-results-button">See results</button>
         <button id="hint1-button">Hint?</button>
         <button id="hint2-button">Another hint?</button>
         <button id="reveal-button">Show answer</button>
@@ -58,10 +57,13 @@ order: 400
     <!-- Shared Modal template -->
     <div id="shared-modal" class="sumfing-modal-overlay" style="display: none;">
       <div class="sumfing-modal-content">
-        <span id="shared-modal-close" class="sumfing-modal-close">&times;</span>
+        <div class="sumfing-modal-header">
+          <div class="sumfing-modal-close" id="shared-modal-close">×</div>
+        </div>
         <div id="shared-modal-body"></div>
       </div>
     </div>
+    <!-- Audio -->
     <audio id="chimes" src="/games/sumfing/assets/audio/chime.mp3"></audio>
     <audio id="nope" src="/games/sumfing/assets/audio/nope.mp3"></audio>
     <audio id="fanfare" src="/games/sumfing/assets/audio/fanfare.mp3"></audio>
@@ -73,7 +75,7 @@ order: 400
 <script>
 
 // global variables //
-let modalContext = 'welcome'; // initialise to welcome
+let modalContext = 'welcome';
 let progress;
 let currentPuzzle;
 let selectedTiles = [];
@@ -84,16 +86,15 @@ let hint_answer = [];
 let hintTimeoutId = null;
 let revealTimeoutId = null;
 let audioCtx = null;
+
 const standardDelay = 5000;
 const STAGES = ['Easy', 'Medium', 'Hard', 'Extra'];
-const today = new Date().toISOString().split('T')[0];
+const today = getLocalDateString();
 const dayNumber = getSumfingDayNumber(today);
 
 
 // main function on DOM content loaded
 document.addEventListener('DOMContentLoaded', () => {
-
-  ensureAudioContext(); // ✅ set up the unlock-on-first-click listener
 
   document.getElementById('date').textContent = `${today}`;
 
@@ -159,41 +160,36 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 function addEventListenersOnceOnly() {
-    
-    document.getElementById('hint1-button').addEventListener('click', revealHint1);
-    document.getElementById('hint2-button').addEventListener('click', revealHint2);
-    document.getElementById('reveal-button').addEventListener('click', revealAnswer);
-    document.getElementById('next-button').addEventListener('click', () => {
-        advanceStage();          
-        saveProgress();          
-        initPuzzleUI(currentPuzzle); 
-    });
-    
-     // add close modals event listeners  
-    if (document.getElementById('shared-modal-close')) {
-      document.getElementById('shared-modal-close').addEventListener('click', () => {
-          document.getElementById('shared-modal').style.display = 'none';
-          if (modalContext === 'welcome') {startGameAfterModal();}
-      });
-    }
+  const hint1Btn = document.getElementById('hint1-button');
+  const hint2Btn = document.getElementById('hint2-button');
+  const revealBtn = document.getElementById('reveal-button');
+  const nextBtn = document.getElementById('next-button');
+  const closeBtn = document.getElementById('shared-modal-close');
+  const infoIcon = document.getElementById('info-icon');
+  const modal = document.getElementById('shared-modal');
+  const muteIcon = document.getElementById('mute-icon');
+  const muted = localStorage.getItem('sumfing_audioMuted') === 'true';
 
-    // clicking outside of the modal closes it
+  ensureAudioContext(); // ✅ set up the unlock-on-first-click listener
+  setAudioIcon(muted);
+  if (muted && audioCtx?.state === 'running') audioCtx.suspend();
+  if (muteIcon) muteIcon.addEventListener('click', toggleMute);
+
+  if (hint1Btn) hint1Btn.addEventListener('click', revealHint1);
+  if (hint2Btn) hint2Btn.addEventListener('click', revealHint2);
+  if (revealBtn) revealBtn.addEventListener('click', revealAnswer);
+  if (nextBtn) nextBtn.addEventListener('click', advanceStage);
+  if (closeBtn) closeBtn.addEventListener('click', closeSharedModal);
+  if (infoIcon) infoIcon.addEventListener('click', () => showModal(infoHTML, 'info'));
+
+  if (modal) {
     window.addEventListener('click', function (event) {
-      const modal = document.getElementById('shared-modal');
       if (event.target === modal) {
-        modal.style.display = 'none';
-        if (modalContext === 'welcome') {
-          startGameAfterModal();
-        }
+        closeSharedModal();
       }
     });
-
-    // event listener for info icon
-    document.getElementById('info-icon').addEventListener('click', () => {
-      showModal(infoHTML, 'info');
-    });
+  }
 }
-
 
 function showModal(content, context = null) {
   modalContext = context;
@@ -221,12 +217,20 @@ function showModal(content, context = null) {
   }
 }
 
+function closeSharedModal() {
+  const modal = document.getElementById('shared-modal');
+  modal.style.display = 'none';
+  if (modalContext === 'welcome') {
+    startGameAfterModal();
+  }
+}
+
 // helper function to start game when modal closes //
 function startGameAfterModal() {initPuzzleUI(currentPuzzle);}
 
 
 // Function to initialise puzzle UI
-function initPuzzleUI(puzzle) {
+function initPuzzleUI() {
 
     console.log('initPuzzleUI function called')
 
@@ -250,7 +254,7 @@ function initPuzzleUI(puzzle) {
 
     const headline = document.getElementById('headline');
     headline.textContent = `Sumfing ${stage}`;
-    tiles=puzzle.Tiles;
+    tiles=currentPuzzle.Tiles;
     expressions = currentPuzzle[stage][1];
     hint_answer = expressions[0];
     headline.textContent = `Sumfing ${stage}`;
@@ -258,7 +262,7 @@ function initPuzzleUI(puzzle) {
     selectedTiles = [];
     
     document.getElementById('next-button').style.display = 'none';
-    renderTiles(tiles, puzzle[stage]);
+    renderTiles(tiles, currentPuzzle[stage]);
     bindTileEvents();
     bindBoxEvents();
     showFeedbackDegu("neutral");
@@ -389,9 +393,6 @@ function checkExpression() {
         document.getElementById('hint1-button').style.display = 'none';
         document.getElementById('hint2-button').style.display = 'none';
         document.getElementById('reveal-button').style.display = 'none';
-        const nextBtn = document.getElementById('next-button');
-        const resultsBtn = document.getElementById('see-results-button');
-        if (progress.stage === 'Extra') {document.getElementById('next-button').textContent = 'See results';}
         document.getElementById('next-button').style.display = 'block';
         playChimes();
     } else {
@@ -432,7 +433,9 @@ function revealHint1() {
     clearBoxesAndTiles();
     
     hintTimeoutId = setTimeout(() => {
-        if (unsolved) document.getElementById('hint2-button').style.display = 'block';
+        if (unsolved) {
+          document.getElementById('hint2-button').style.display = 'block';
+        }
     }, standardDelay);
 }
 
@@ -443,7 +446,9 @@ function revealHint2() {
     clearBoxesAndTiles();
     
     revealTimeoutId= setTimeout(() => {
-        if (unsolved) document.getElementById('reveal-button').style.display = 'block';
+        if (unsolved) {
+          document.getElementById('reveal-button').style.display = 'block';
+        }
     }, standardDelay);
 }
 
@@ -538,6 +543,8 @@ function lightenColor(rgb, percent) {
     return `rgb(${r}, ${g}, ${b})`;
 }
 
+
+
 function advanceStage() {
   const currentIndex = STAGES.indexOf(progress.stage);
   console.log('Completed stage', currentIndex, progress.stage);
@@ -547,10 +554,18 @@ function advanceStage() {
     saveProgress();
     playPlaceSound();
     showFeedbackDegu('neutral');
+    initPuzzleUI();
     return;
   }
 
- else if (progress.stage === 'Hard') {
+  const advanceToCompletionPage = () => {
+      progress.stage = 'Completed';
+      saveProgress();
+      playFanfare();
+      showCompletionPage();
+    };
+
+  if (progress.stage === 'Hard') {
 
   showModal(offerextraHTML, 'offerextra');
 
@@ -559,30 +574,41 @@ function advanceStage() {
     const noBtn = document.getElementById('extra-no');
     const modalOverlay = document.getElementById('shared-modal');
     const modalClose = document.getElementById('shared-modal-close');
+    const modal = modalOverlay;
 
     const closeAndComplete = () => {
       modalOverlay.style.display = 'none';
-      progress.stage = 'Completed';
-      saveProgress();
-      playFanfare();
-      showCompletionPage();
-      modalClose.removeEventListener('click', closeAndComplete);
+      removeExtraModalEventListeners();
+      advanceToCompletionPage();
     };
 
-    // ✅ Close button click
-    modalClose.addEventListener('click', closeAndComplete, { once: true });
+    const removeExtraModalEventListeners = () => {
+      modalClose.removeEventListener('click', closeAndComplete);
+      window.removeEventListener('click', outsideClickHandler);
+    };
 
-    // ✅ "Yes" and "No" buttons
+    const outsideClickHandler = function (event) {
+      if (event.target === modal) {
+        closeAndComplete();
+      }
+    };
+
+    const addExtraModalEventListeners = () => {
+      modalClose.addEventListener('click', closeAndComplete, { once: true });
+      window.addEventListener('click', outsideClickHandler);
+    };
+
     if (yesBtn && noBtn) {
       yesBtn.addEventListener('click', () => {
         modalOverlay.style.display = 'none';
-        modalClose.removeEventListener('click', closeAndComplete);
+        removeExtraModalEventListeners();
         progress.stage = 'Extra';
         progress.extraAttempted = true;
         saveProgress();
         playPlaceSound();
         showFeedbackDegu('neutral');
-        initPuzzleUI(currentPuzzle);
+        document.getElementById('next-button').textContent = "See Results";
+        initPuzzleUI();
       });
 
       noBtn.addEventListener('click', () => {
@@ -591,19 +617,18 @@ function advanceStage() {
     } else {
       console.warn("Modal buttons not found.");
     }
+
+    addExtraModalEventListeners();
   }, 100);
 }
 
   else if (progress.stage === 'Extra') {
-    progress.stage = 'Completed';
-    playFanfare();
-    saveProgress();
+    advanceToCompletionPage();
   }
 
   else {
     console.log("Logic Error in stage advance function");
-    progress.stage = 'Completed';
-    saveProgress();
+    advanceToCompletionPage();
   }
 }
 
@@ -662,7 +687,9 @@ const emojiSummary = (n) => {
 
 function attachShareButtonHandler() {
   const shareButton = document.getElementById('share-button');
-  if (!shareButton) return;
+  if (!shareButton) {
+    return;
+  }
 
   // Remove any existing listeners (optional but safe)
   const newShareButton = shareButton.cloneNode(true);
@@ -691,11 +718,17 @@ function attachShareButtonHandler() {
 
 function attachAdmireButtonHandler() {
   const oldBtn = document.getElementById('admire-button');
-  if (!oldBtn) return;
+  if (!oldBtn) {
+    return;
+  }
   const newBtn = oldBtn.cloneNode(true);
   oldBtn.replaceWith(newBtn);
 
   newBtn.addEventListener('click', showReviewModal);
+}
+
+function getLocalDateString(date = new Date()) {
+  return date.toLocaleDateString('en-CA'); // "YYYY-MM-DD"
 }
 
 
