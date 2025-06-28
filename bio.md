@@ -8,13 +8,15 @@ title: Dr Nick Berry
 
 ### Hi, I'm Nick.
 
-I'm a doctor in Doha, Qatar.
+I'm a doctor in Dorset, England.
 
-I specialise in Family Medicine and have Postgraduate qualifications in Sports and Exercise Medicine and in Medical Education, and work as a GP trainer, mentoring Resident Doctors as they specialise in Family Medicine.
+I specialise in Family Medicine and have Postgraduate qualifications in Sports and Exercise Medicine and in Medical Education, and work as a GP Trainer, mentoring Resident Doctors as they specialise in Family Medicine.
+
+Through my company NYB Medical Limited, I provide medical services including commissioned medical examinations and opinions.
 
 From September 2025 I will be studying Data Science for Healthcare on Exeter University's MSc programme.
 
-To book an in-person or remote consultation, please contact <a href="https://theimcentre.com/">The International Medical Centre</a>.
+General Medical Council Registration Number: 4428280.
 
 <div class="icons">
     <a href="https://www.linkedin.com/in/nick-berry-767329232/" aria-label="LinkedIn">
