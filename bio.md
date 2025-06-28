@@ -8,7 +8,7 @@ title: Dr Nick Berry
 
 ### Hi, I'm Nick.
 
-I'm a doctor in Dorset, England.
+I'm a doctor in Dorset, UK.
 
 I specialise in Family Medicine and have Postgraduate qualifications in Sports and Exercise Medicine and in Medical Education, and work as a GP Trainer, mentoring Resident Doctors as they specialise in Family Medicine.
 
