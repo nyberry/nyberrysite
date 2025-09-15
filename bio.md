@@ -10,11 +10,9 @@ title: Dr Nick Berry
 
 I'm a doctor in Dorset, UK.
 
-I specialise in Family Medicine and have Postgraduate qualifications in Sports and Exercise Medicine and in Medical Education, and work as a GP Trainer, mentoring Resident Doctors as they specialise in Family Medicine.
+Within the National Health Service, I specialise in Family Medicine and have Postgraduate qualifications in Sports and Exercise Medicine and in Medical Education, and work as a GP Trainer, mentoring Resident Doctors as they specialise in Family Medicine.
 
-Through my company NYB Medical Limited, I provide medical services including commissioned medical examinations and opinions.
-
-From September 2025 I will be studying Data Science for Healthcare on Exeter University's MSc programme.
+Outside of the National Health Service, I am interested in the application of AI technologies in primary care, and am studying for a masters degree in data science for healthcare at Exeter University. I also specialise in international and cross-border healthcare, and am a Medical Examiner for the US Department of Veterans Affairs.
 
 General Medical Council Registration Number: 4428280.
 
