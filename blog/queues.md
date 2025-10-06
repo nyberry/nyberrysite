@@ -2,6 +2,9 @@
 title: Queues
 description: Draft assignment for Data Science course HPDM139
 order: 400
+date: 2025-10-03
+tags: [blog, comments]
+order: 200
 ---
 
 
