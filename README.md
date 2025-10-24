@@ -67,7 +67,7 @@ Visit the live site: [https://www.nyberry.com](https://www.nyberry.com)
 
 ## Blog Topics
 
-- Technology, general practice, and reflections on AI use in healthcare.
+- Reflections on healthcare technology and general practice.
 
 ## Goals
 
@@ -86,5 +86,5 @@ This project is licensed under the MIT License. See the `LICENSE` file for detai
 ## Author
 
 **Nick Berry**  
-General Practitioner and developer exploring scalable clinical tools  
+GP and data science student  
 [https://www.nyberry.com](https://www.nyberry.com)
